@@ -40,26 +40,26 @@ const el = {
 // Global names for CCAF Domains
 const DOMAIN_NAMES = {
   1: "Domain 1: Agentic Architecture & Orchestration",
-  2: "Domain 2: Claude Code Configuration & Workflows",
-  3: "Domain 3: Prompt Engineering & Structured Output",
-  4: "Domain 4: Tool Design & MCP Integration",
+  2: "Domain 2: Tool Design & MCP Integration",
+  3: "Domain 3: Claude Code Configuration & Workflows",
+  4: "Domain 4: Prompt Engineering & Structured Output",
   5: "Domain 5: Context Management & Reliability"
 };
 
 const DOMAIN_DESCRIPTIONS = {
   1: "Agentic loops, state orchestration, task decomposition, and SDK hooks.",
-  2: "CLAUDE.md hierarchies, custom slash commands, and CI/CD review loops.",
-  3: "JSON schema enforcement, few-shot examples, XML tags, and prompt caching.",
-  4: "MCP client-server integration, tool schemas, error propagation, and scopes.",
+  2: "MCP client-server integration, tool schemas, error propagation, and scopes.",
+  3: "CLAUDE.md hierarchies, custom slash commands, and CI/CD review loops.",
+  4: "JSON schema enforcement, few-shot examples, XML tags, and prompt caching.",
   5: "Context windows, summarization fallbacks, and human-in-the-loop (HITL) gates."
 };
 
 // Custom SVGs for the 5 Competency Domains
 const DOMAIN_SVGS = {
   1: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>`,
-  2: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>`,
-  3: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>`,
-  4: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M18.36 6.64a9 9 0 1 1-12.73 0M12 2v10"/></svg>`,
+  2: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M18.36 6.64a9 9 0 1 1-12.73 0M12 2v10"/></svg>`,
+  3: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>`,
+  4: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>`,
   5: `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line></svg>`
 };
 

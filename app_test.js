@@ -49,9 +49,9 @@ runTest('drawMockExamQuestions returns exactly 60 questions with proportional do
   drawn.forEach(q => counts[q.domain]++);
 
   assert.strictEqual(counts[1], 16, 'Domain 1 must have exactly 16 questions drawn');
-  assert.strictEqual(counts[2], 12, 'Domain 2 must have exactly 12 questions drawn');
+  assert.strictEqual(counts[2], 11, 'Domain 2 must have exactly 11 questions drawn');
   assert.strictEqual(counts[3], 12, 'Domain 3 must have exactly 12 questions drawn');
-  assert.strictEqual(counts[4], 11, 'Domain 4 must have exactly 11 questions drawn');
+  assert.strictEqual(counts[4], 12, 'Domain 4 must have exactly 12 questions drawn');
   assert.strictEqual(counts[5], 9, 'Domain 5 must have exactly 9 questions drawn');
 });
 

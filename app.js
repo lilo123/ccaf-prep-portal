@@ -18,7 +18,7 @@ let state = {
 // LocalStorage Key constants
 const STORAGE_MASTERY = 'CCAF_MASTERY_LOG';
 const STORAGE_SESSION = 'CCAF_ACTIVE_SESSION';
-const APP_VERSION = '1.5.1';
+const APP_VERSION = '1.6.0';
 
 /**
  * Initialize Application and Event Listeners

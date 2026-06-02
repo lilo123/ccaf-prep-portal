@@ -1,7 +1,7 @@
 /**
  * validate_database.js
  * Standalone zero-dependency Node.js database validator for CCAF scenario questions.
- * Audits all entries against schema constraints and deep database invariants.
+ * Audits all entries against schema constraints, precomputed O(1) index proxies, and deep database invariants.
  */
 
 const path = require('path');
@@ -26,19 +26,24 @@ let counts = { 1: 0, 2: 0, 3: 0, 4: 0, 5: 0 };
 let uniqueIds = new Set();
 let correctPositions = { A: 0, B: 0, C: 0, D: 0 };
 
-// Domain weightings & minimum variety pool limits
+// Domain weightings & minimum variety pool limits (Realigned v1.6.0)
 const MIN_POOL_LIMITS = {
   1: 32, // Domain 1 (27% weight, draw 16) -> 32+
-  2: 24, // Domain 2 (20% weight, draw 12) -> 24+
+  2: 22, // Domain 2 (18% weight, draw 11) -> 22+
   3: 24, // Domain 3 (20% weight, draw 12) -> 24+
-  4: 22, // Domain 4 (18% weight, draw 11) -> 22+
+  4: 24, // Domain 4 (20% weight, draw 12) -> 24+
   5: 18  // Domain 5 (15% weight, draw 9)  -> 18+
 };
 
 const idRegex = /^CCAF-[1-5]-[0-9]{3}$/;
 
 CCAF_DATABASE.forEach((q, index) => {
-  const qLabel = `Question[${index}] (ID: ${q.id || 'MISSING'})`;
+  const qLabel = `Question[${index}] (ID: ${q ? q.id || 'MISSING' : 'INVALID'})`;
+
+  if (!q || typeof q !== 'object') {
+    errors.push(`${qLabel}: Entry is not a valid JavaScript object.`);
+    return;
+  }
 
   // 1. Basic field presence & type validations
   if (!q.id || typeof q.id !== 'string') {
@@ -67,12 +72,14 @@ CCAF_DATABASE.forEach((q, index) => {
     }
   }
 
-  if (!q.scenario || typeof q.scenario !== 'string' || q.scenario.trim().length < 50) {
-    errors.push(`${qLabel}: 'scenario' must be a string of at least 50 characters (got ${q.scenario ? q.scenario.length : 0}).`);
+  if (typeof q.scenario !== 'string' || q.scenario.trim().length < 50) {
+    const gotLen = typeof q.scenario === 'string' ? q.scenario.trim().length : 'invalid_type';
+    errors.push(`${qLabel}: 'scenario' must be a string of at least 50 trimmed characters (got ${gotLen}).`);
   }
 
-  if (!q.question || typeof q.question !== 'string' || q.question.trim().length < 15) {
-    errors.push(`${qLabel}: 'question' must be a string of at least 15 characters (got ${q.question ? q.question.length : 0}).`);
+  if (typeof q.question !== 'string' || q.question.trim().length < 15) {
+    const gotLen = typeof q.question === 'string' ? q.question.trim().length : 'invalid_type';
+    errors.push(`${qLabel}: 'question' must be a string of at least 15 trimmed characters (got ${gotLen}).`);
   }
 
   // 2. Options validation
@@ -86,8 +93,20 @@ CCAF_DATABASE.forEach((q, index) => {
         errors.push(`${optLabel}: Invalid option object.`);
         return;
       }
-      if (!opt.text || typeof opt.text !== 'string' || opt.text.trim().length < 5) {
-        errors.push(`${optLabel}: 'text' must be a string of at least 5 characters.`);
+      
+      // Check stable option ID presence and structure
+      const expectedOptId = `opt_${oIdx + 1}`;
+      if (opt.id !== expectedOptId) {
+        errors.push(`${optLabel}: Missing or incorrect 'id' property (expected '${expectedOptId}', got '${opt.id}').`);
+      }
+
+      if (!Object.isFrozen(opt)) {
+        errors.push(`${optLabel}: Option object must be immutable (Object.isFrozen).`);
+      }
+
+      if (typeof opt.text !== 'string' || opt.text.trim().length < 5) {
+        const gotLen = typeof opt.text === 'string' ? opt.text.trim().length : 'invalid_type';
+        errors.push(`${optLabel}: 'text' must be a string of at least 5 trimmed characters (got ${gotLen}).`);
       }
       if (typeof opt.isCorrect !== 'boolean') {
         errors.push(`${optLabel}: 'isCorrect' must be a boolean.`);
@@ -96,21 +115,26 @@ CCAF_DATABASE.forEach((q, index) => {
         const correctOptId = String.fromCharCode(65 + oIdx);
         correctPositions[correctOptId]++;
       }
-      if (!opt.explanation || typeof opt.explanation !== 'string' || opt.explanation.trim().length < 10) {
-        errors.push(`${optLabel}: 'explanation' must be a string of at least 10 characters.`);
+      if (typeof opt.explanation !== 'string' || opt.explanation.trim().length < 10) {
+        const gotLen = typeof opt.explanation === 'string' ? opt.explanation.trim().length : 'invalid_type';
+        errors.push(`${optLabel}: 'explanation' must be a string of at least 10 trimmed characters (got ${gotLen}).`);
       }
     });
 
-    // Deep Invariant: Exactly one option is correct
     if (correctCount !== 1) {
       errors.push(`${qLabel}: Must contain exactly one option with isCorrect: true (found ${correctCount}).`);
     }
+    if (!Object.isFrozen(q.options)) {
+      errors.push(`${qLabel}: Options array must be immutable (Object.isFrozen).`);
+    }
+  }
+
+  if (!Object.isFrozen(q)) {
+    errors.push(`${qLabel}: Question object must be immutable (Object.isFrozen).`);
   }
 
   // 3. Reference validation
-  if (!q.reference || typeof q.reference !== 'string') {
-    errors.push(`${qLabel}: Missing or invalid 'reference' (must be string).`);
-  } else if (!q.reference.startsWith('https://')) {
+  if (typeof q.reference !== 'string' || !q.reference.startsWith('https://')) {
     errors.push(`${qLabel}: 'reference' must be a valid HTTPS URL starting with 'https://' (got '${q.reference}').`);
   }
 });
@@ -136,6 +160,58 @@ for (const pos in correctPositions) {
   if (pct > 35) {
     errors.push(`Bias violation: Option ${pos} exhibits extreme positional bias (${pct}% > 35% limit).`);
   }
+}
+
+// 5. Audit Precomputed O(1) Index & Proxy Immutability Traps
+console.log('\nAuditing Precomputed O(1) Index & Proxy Immutability Traps...');
+if (!CCAF_DATABASE.INDEX || !CCAF_DATABASE.INDEX.byId || !CCAF_DATABASE.INDEX.byDomain) {
+  errors.push('Database Index Error: CCAF_DATABASE.INDEX structure is missing or malformed.');
+} else {
+  const index = CCAF_DATABASE.INDEX;
+  if (index.byId.size !== CCAF_DATABASE.length) {
+    errors.push(`Database Index Error: index.byId.size (${index.byId.size}) does not match CCAF_DATABASE.length (${CCAF_DATABASE.length}).`);
+  } else {
+    console.log(`- index.byId.size matches pool count (${index.byId.size})`);
+  }
+
+  // Verify Symbol.iterator binding
+  try {
+    let iterationCount = 0;
+    for (const [id, q] of index.byId) {
+      iterationCount++;
+    }
+    if (iterationCount !== CCAF_DATABASE.length) {
+      errors.push(`Proxy Iterator Error: Iterated count (${iterationCount}) does not match expected (${CCAF_DATABASE.length}).`);
+    } else {
+      console.log(`- Proxy Symbol.iterator successfully evaluated across ${iterationCount} Map entries`);
+    }
+  } catch (err) {
+    errors.push(`Proxy Iterator Error: Failed to iterate over index.byId Map (${err.message}).`);
+  }
+
+  // Verify immutability rejection traps
+  try {
+    index.byId.set('TEST_MUTATE', {});
+    errors.push('Proxy Immutability Error: index.byId.set() succeeded instead of throwing runtime immutability error.');
+  } catch (err) {
+    console.log(`- Proxy immutability trap successfully intercepted set() mutation (${err.message})`);
+  }
+
+  try {
+    index.byId.delete('CCAF-1-001');
+    errors.push('Proxy Immutability Error: index.byId.delete() succeeded instead of throwing runtime immutability error.');
+  } catch (err) {
+    console.log(`- Proxy immutability trap successfully intercepted delete() mutation (${err.message})`);
+  }
+}
+
+if (errors.length > 0) {
+  console.error(`❌ Structural & Index Validation FAILED with ${errors.length} error(s):`);
+  console.error('--------------------------------------------------');
+  errors.forEach((err) => console.error(`- ${err}`));
+  console.error('--------------------------------------------------');
+  console.error('Validator exiting early with code 1.');
+  process.exit(1);
 }
 
 console.log('\nAuditing Correct Option Length Bias (v1.4.0 Dual-Layered constraints)...');
@@ -209,7 +285,7 @@ if (errors.length > 0) {
   console.error('Validator exiting with code 1.');
   process.exit(1);
 } else {
-  console.log('✅ Validation SUCCESS! All schema constraints and deep invariants passed.');
+  console.log('✅ Validation SUCCESS! All schema constraints, O(1) proxy indices, and deep invariants passed.');
   console.log('--------------------------------------------------');
   console.log('Database Statistics:');
   console.log(`Total Questions in Pool: ${CCAF_DATABASE.length}`);

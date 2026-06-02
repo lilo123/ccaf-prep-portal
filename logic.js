@@ -35,12 +35,12 @@ function sampleRandom(array, k) {
 /**
  * 1. Proportional Mock Exam Draw Engine
  * Draws exactly 60 questions matching official syllabus weights:
- * Domain 1: 16, Domain 2: 12, Domain 3: 12, Domain 4: 11, Domain 5: 9
+ * Domain 1: 16, Domain 2: 11, Domain 3: 12, Domain 4: 12, Domain 5: 9
  */
 function drawMockExamQuestions(database) {
   if (!Array.isArray(database)) throw new Error('Database Error: Invalid database provided');
 
-  const domainDrawLimits = { 1: 16, 2: 12, 3: 12, 4: 11, 5: 9 };
+  const domainDrawLimits = { 1: 16, 2: 11, 3: 12, 4: 12, 5: 9 };
   
   // Single-pass grouping (O(N)) using precomputed index if available
   let domainPools;
