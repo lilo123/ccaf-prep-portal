@@ -71,7 +71,7 @@ const CCAF_DATABASE = [
     "question": "Which session state management strategy is the most appropriate to optimize token consumption?",
     "options": [
       {
-        "text": "Format the entire raw transaction history table inside the conversation context using highly compressed custom markdown syntax and shorthand headers to reduce character counts. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Format the entire raw transaction history table inside the conversation context using highly compressed custom markdown syntax and shorthand headers to reduce character counts. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Markdown compression has negligible impact on token consumption compared to repeating massive raw transaction history arrays. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -100,17 +100,17 @@ const CCAF_DATABASE = [
     "question": "How should you configure task decomposition to handle large-scale code edits safely?",
     "options": [
       {
-        "text": "Enable high temperature (0.9) and instruct the agent to write highly condensed, single-line code representations. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Enable high temperature (0.9) and instruct the agent to write highly condensed, single-line code representations.",
         "isCorrect": false,
         "explanation": "Trap: Condensed, single-line code is unreadable, error-prone, and does not solve the underlying token output limit constraint. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Configure the agent to write code edits to a temporary local file using bash append commands rather than returning full blocks. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the agent to write code edits to a temporary local file using bash append commands rather than returning full blocks. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: If the model output is truncated mid-stream due to token limits, the resulting code file will be corrupted regardless of the tool type. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Switch the entire pipeline to Claude 3 Haiku as it has faster execution speeds. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Switch the entire pipeline to Claude 3 Haiku as it has faster execution speeds. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Claude 3 Haiku still has the same output token limit and inferior reasoning, leading to poorer refactoring results. Forcing immediate blocking execution operations."
       },
@@ -144,7 +144,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Prompts are not hard programmatic constraints. The model may ignore prompt sleep intervals and execute tool blocks concurrently. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Switch the backend model to Claude 3.5 Sonnet to benefit from its larger context window. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Switch the backend model to Claude 3.5 Sonnet to benefit from its larger context window. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Larger context windows do not change parallel tool-calling behaviors or rate limits. Forcing immediate blocking execution operations."
       }
@@ -158,7 +158,7 @@ const CCAF_DATABASE = [
     "question": "Which memory management strategy is mandatory to guarantee long-term daemon stability?",
     "options": [
       {
-        "text": "Configure the agent to run in raw plan-only mode without state memory. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the agent to run in raw plan-only mode without state memory.",
         "isCorrect": false,
         "explanation": "Trap: Disabling state memory entirely prevents the agent from tracking tasks, rendering it useless for multi-turn logging analysis. This pattern is strictly discouraged in high-throughput enterprise deployments. Ignoring structural parameter requirements within schema options."
       },
@@ -168,12 +168,12 @@ const CCAF_DATABASE = [
         "explanation": "Sliding-window pruning limits the active state size in memory, completely preventing conversation bloat and background OOM crashes."
       },
       {
-        "text": "Increase the VM's RAM swap space by 16GB. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the VM's RAM swap space by 16GB. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Bumping RAM merely delays the OOM; if the conversation state grows infinitely, the system will eventually crash anyway. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Rely on the browser's automatic garbage collection to clean up the model's history arrays. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Rely on the browser's automatic garbage collection to clean up the model's history arrays. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Garbage collection cannot clean up active arrays that are still referenced by the running conversation loop. Circumventing protocol connection validation checks."
       }
@@ -187,22 +187,22 @@ const CCAF_DATABASE = [
     "question": "Which coordination mechanism will eliminate these redundant sub-agent calls?",
     "options": [
       {
-        "text": "Increase the translator agent's temperature to 1.0 to prevent repetitive output. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the translator agent's temperature to 1.0 to prevent repetitive output.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls creativity and variation, which actually degrades translation accuracy and does not prevent redundant calls. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Use a single agent with a very long system prompt instead of a multi-agent coordinator pattern. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use a single agent with a very long system prompt instead of a multi-agent coordinator pattern.",
         "isCorrect": false,
         "explanation": "Trap: Single-agent setups for massive documents suffer from context degradation and do not natively solve the redundant task calling loop. Ensuring the sub-agent execution context is completely isolated from the main session state variables."
       },
       {
-        "text": "Implement a shared session ledger using a key-value lookup table (caching translated paragraph hashes) that the coordinator audits before calling the sub-agent. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Implement a shared session ledger using a key-value lookup table (caching translated paragraph hashes) that the coordinator audits before calling the sub-agent.",
         "isCorrect": true,
         "explanation": "A shared lookup ledger acts as a cache, letting the coordinator skip calling the translator sub-agent for identical inputs."
       },
       {
-        "text": "Instruct the translator agent to read the entire 50,000-line document at once. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the translator agent to read the entire 50,000-line document at once. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Forcing the sub-agent to read a massive document at once consumes huge tokens and easily leads to incomplete translation output due to token limits. Exceeding overall system execution budget allocations."
       }
@@ -216,22 +216,22 @@ const CCAF_DATABASE = [
     "question": "What is the best architectural practice for handling tool authentication failures?",
     "options": [
       {
-        "text": "Instruct the agent in the prompt to try executing the auth command again with a different password. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the prompt to try executing the auth command again with a different password.",
         "isCorrect": false,
         "explanation": "Trap: An agent cannot guess or generate a new valid password on its own, leading to endless failed attempts. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Configure the agent to ignore the tool error and proceed to the next step of the plan. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the agent to ignore the tool error and proceed to the next step of the plan. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring auth failures leads to cascading failures in subsequent steps that depend on the tool's output. Utilizing unvalidated raw string parameters inside execution contexts."
       },
       {
-        "text": "Implement an exponential backoff retry loop up to 50 attempts inside the tool call logic. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement an exponential backoff retry loop up to 50 attempts inside the tool call logic.",
         "isCorrect": false,
         "explanation": "Trap: Retrying auth failures 50 times merely delays the stall, consuming vast execution time and logs for a non-transient error. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Define a strict escalation hook that intercepts '401' errors at the SDK tool execution layer, halts the agent loop immediately, and prompts the user for re-authentication. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Define a strict escalation hook that intercepts '401' errors at the SDK tool execution layer, halts the agent loop immediately, and prompts the user for re-authentication.",
         "isCorrect": true,
         "explanation": "Auth failures are non-transient. Halting the loop immediately and escalating to the user is the only robust way to handle 401 errors without endless loop stalls."
       }
@@ -250,17 +250,17 @@ const CCAF_DATABASE = [
         "explanation": "Spawning parallel worker agents to analyze independent files concurrently dramatically reduces execution time, compiling the results in a final single turn."
       },
       {
-        "text": "Run the analysis using a lower temperature (0.0) to speed up model responses. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Run the analysis using a lower temperature (0.0) to speed up model responses. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects determinism, not model inference speed or parallel file-handling. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Increase the context window size of a single agent and feed all 50 files in a single prompt sequentially. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the context window size of a single agent and feed all 50 files in a single prompt sequentially. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Feeding all files to a single agent sequentially is slow, and easily triggers context degradation or incomplete analysis. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Use a recursive agent pattern where one agent calls itself 50 times in a deep nested chain. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use a recursive agent pattern where one agent calls itself 50 times in a deep nested chain.",
         "isCorrect": false,
         "explanation": "Trap: Deep recursive nesting is slow, highly fragile, and multiplies token costs exponentially. Forcing immediate blocking execution operations."
       }
@@ -274,22 +274,22 @@ const CCAF_DATABASE = [
     "question": "Which session boundaries configuration is required to maintain routing accuracy?",
     "options": [
       {
-        "text": "Clear the orchestrator's memory after every sub-agent call. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Clear the orchestrator's memory after every sub-agent call. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Clearing the orchestrator's memory entirely breaks task tracking and prevents it from compiling research results. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Implement strict session isolation: Sub-agents operate in separate, isolated contexts and return only their final structured outputs to the orchestrator. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Implement strict session isolation: Sub-agents operate in separate, isolated contexts and return only their final structured outputs to the orchestrator.",
         "isCorrect": true,
         "explanation": "Isolating sub-agent contexts prevents history leakage, keeping the orchestrator's context clean and routing highly accurate."
       },
       {
-        "text": "Increase the reasoning temperature to 0.7 to help the orchestrator distinguish histories. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the reasoning temperature to 0.7 to help the orchestrator distinguish histories. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Higher temperature increases randomness and exacerbates routing confusion. Utilizing unvalidated raw string parameters inside execution contexts."
       },
       {
-        "text": "Merge all agents into a single system prompt using multiple persona tags. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Merge all agents into a single system prompt using multiple persona tags.",
         "isCorrect": false,
         "explanation": "Trap: Merging all personas into a single prompt increases context confusion, token cost, and routing errors. Forcing immediate blocking execution operations."
       }
@@ -303,12 +303,12 @@ const CCAF_DATABASE = [
     "question": "What is the mandatory timeout configuration for robust agentic loops?",
     "options": [
       {
-        "text": "Increase the Node.js process memory limit to 4GB. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the Node.js process memory limit to 4GB. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Memory limits do not prevent network connection stalls."
       },
       {
-        "text": "Disable the tool execution step entirely for websites that have failed once during scheduled runs. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable the tool execution step entirely for websites that have failed once during scheduled runs.",
         "isCorrect": false,
         "explanation": "Trap: Disabling tools permanently degrades the assistant's capabilities for temporary transient network issues."
       },
@@ -318,7 +318,7 @@ const CCAF_DATABASE = [
         "explanation": "Hard deadlines at the tool wrapper layer prevent indefinite stalls, allowing the agent to catch the timeout error and gracefully degrade or escalate."
       },
       {
-        "text": "Write a loop in the prompt telling the agent to wait patiently for slow websites before timing out. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a loop in the prompt telling the agent to wait patiently for slow websites before timing out. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: The agent cannot change network sockets or socket timeouts via prompts. Prompt instructions cannot prevent technical thread stalls."
       }
@@ -366,17 +366,17 @@ const CCAF_DATABASE = [
         "explanation": "Validation gates at stage boundaries prevent corrupted data from propagating down the pipeline, ensuring graceful failure handling."
       },
       {
-        "text": "Wrap the entire pipeline in a single try-catch block that retries the cleaning step up to 20 times. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Wrap the entire pipeline in a single try-catch block that retries the cleaning step up to 20 times. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Retrying 20 times on static corrupted data wastes tokens, as the error is non-transient. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Set the model temperature to 0.0 to make the parsing logic more deterministic. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 to make the parsing logic more deterministic. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not fix a lack of input validation or prevent cascading exceptions. Utilizing unvalidated raw string parameters inside execution contexts."
       },
       {
-        "text": "Widen the modeling agent's context so it can see the raw corrupted CSV data and try to fix it itself. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the modeling agent's context so it can see the raw corrupted CSV data and try to fix it itself. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Expecting the modeling agent to perform cleaning logic violates single-responsibility design and increases modeling bugs. Exceeding overall system execution budget allocations."
       }
@@ -390,7 +390,7 @@ const CCAF_DATABASE = [
     "question": "Which roll-back or compensation strategy should be integrated into the orchestrator design?",
     "options": [
       {
-        "text": "Widen the timeout limits of all regional tools to 1 hour. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the timeout limits of all regional tools to 1 hour. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Extremely long timeouts stall the deployment indefinitely and do not resolve the inconsistency when a hard failure eventually occurs. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
       },
@@ -400,12 +400,12 @@ const CCAF_DATABASE = [
         "explanation": "Transactional tracking and compensation logic ensure the orchestrator rolls back completed steps when a partial deployment fails, keeping the environment consistent."
       },
       {
-        "text": "Configure the regional deployment tools to ignore all timeout errors. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the regional deployment tools to ignore all timeout errors. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring failures leads to silent errors, where the orchestrator assumes successful deployment for a broken environment. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
       },
       {
-        "text": "Instruct the orchestrator in the system prompt to never leave things in an inconsistent state. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the orchestrator in the system prompt to never leave things in an inconsistent state. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Prompt commands cannot magically execute complex database rollback transactions or API state corrections without explicit tools. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
       }
@@ -419,12 +419,12 @@ const CCAF_DATABASE = [
     "question": "Which design fix will resolve this multi-agent deadlock?",
     "options": [
       {
-        "text": "Set the temperature of both agents to 0.9 to encourage creative execution. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature of both agents to 0.9 to encourage creative execution. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Randomness in reasoning does not fix structural deadlock loops. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Merge A and B's memories into a single shared local storage key. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Merge A and B's memories into a single shared local storage key. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Sharing memory does not change their waiting loops or the execution flow causing the deadlock. Forcing immediate blocking execution operations."
       },
@@ -434,7 +434,7 @@ const CCAF_DATABASE = [
         "explanation": "An explicit state machine orchestrator enforces a clean execution order, preventing cyclical waiting dependencies and deadlocks."
       },
       {
-        "text": "Clear their history states after every 3 turns. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Clear their history states after every 3 turns. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Clearing memory breaks task tracking and does not resolve the cyclical dependency. Forcing immediate blocking execution operations."
       }
@@ -448,17 +448,17 @@ const CCAF_DATABASE = [
     "question": "Which guardrail design is most appropriate to keep the agent aligned?",
     "options": [
       {
-        "text": "Disable tool usage entirely for off-topic queries. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable tool usage entirely for off-topic queries. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: If the agent's main context is still invoked, it will still attempt to answer off-topic questions via text, failing brand alignment. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Write a 10-page system prompt listing all the things the bot is NOT allowed to talk about. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a 10-page system prompt listing all the things the bot is NOT allowed to talk about. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Over-specified negative prompts consume huge tokens and increase model confusion, often causing it to fail on valid edge cases. Enforcing strict execution budget guardrails."
       },
       {
-        "text": "Set the reasoning temperature to 0.0 to ensure rigid responses. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the reasoning temperature to 0.0 to ensure rigid responses. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls determinism, not the semantic topic boundary or input routing. Exceeding overall system execution budget allocations."
       },
@@ -482,17 +482,17 @@ const CCAF_DATABASE = [
         "explanation": "A structured callback status contract ensures the orchestrator is aware of sub-agent execution failures, allowing it to trigger retries or graceful halts."
       },
       {
-        "text": "Widen the orchestrator's context window so it can see all sub-agent execution environments in real time. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the orchestrator's context window so it can see all sub-agent execution environments in real time. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Context windows cannot monitor runtime VM states or capture unhandled exceptions without a callback structure. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency. Removing structured tool constraints entirely from prompt headers."
       },
       {
-        "text": "Instruct the sub-agents in their prompts to tell the orchestrator if they fail. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the sub-agents in their prompts to tell the orchestrator if they fail. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Asynchronous text updates in conversational logs lack programmatic error-catching safety, leading to missed crash alerts. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Have all sub-agents write their outputs to a shared database and let the orchestrator poll the database on an interval. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Have all sub-agents write their outputs to a shared database and let the orchestrator poll the database on an interval. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Interval polling introduces latency, and database checks do not natively propagate logical execution failures without a strict status contract. Ignoring structural parameter requirements within schema options."
       }
@@ -506,7 +506,7 @@ const CCAF_DATABASE = [
     "question": "Which design pattern will optimize API costs and throughput for this pipeline?",
     "options": [
       {
-        "text": "Instruct the model in the prompt to process all 10 million rows in a single turn. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model in the prompt to process all 10 million rows in a single turn. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Attempting to feed 10M rows in a single turn exceeds context windows and output limits, causing immediate crashes. Forcing immediate blocking execution operations."
       },
@@ -516,12 +516,12 @@ const CCAF_DATABASE = [
         "explanation": "Batching rows and using the Batch API significantly lowers cost and optimizes throughput for large-scale datasets."
       },
       {
-        "text": "Use a sliding-window caching pattern for row cleaning. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use a sliding-window caching pattern for row cleaning. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Caching helps with repetitive data but does not resolve the underlying sequential API call overhead for a massive unique dataset. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Switch the agent to Claude 3 Haiku and process rows sequentially. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Switch the agent to Claude 3 Haiku and process rows sequentially. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Even with a cheaper model, sequential API calls for 10M rows are highly slow and cost-prohibitive. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
       }
@@ -535,22 +535,22 @@ const CCAF_DATABASE = [
     "question": "Which architectural pattern is the most robust way to integrate Human-in-the-Loop (HITL) control?",
     "options": [
       {
-        "text": "Disable the email deletion tool entirely for the agent. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable the email deletion tool entirely for the agent. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Disabling the tool prevents the agent from ever executing valid user-requested deletions, rendering the assistant incomplete. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency. Ignoring structural parameter requirements within schema options."
       },
       {
-        "text": "Set the model temperature to 0.0 to prevent unauthorized actions. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 to prevent unauthorized actions. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls text variation, not tool scoping or execution security. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Implement a strict tool execution interceptor: at the SDK tool execution layer, high-risk tools (like `delete_email` or `create_event`) are flagged. When called, the execution pauses, serializes the state, and waits for an external API confirmation signature from the user interface.",
+        "text": "Implement a strict tool execution interceptor: at the SDK layer, high-risk tools are flagged. Execution pauses, serializes state, and waits for an external API confirmation signature.",
         "isCorrect": true,
         "explanation": "An interceptor at the tool layer is a hard programmatic gate that guarantees high-risk actions are blocked until an explicit user signature is provided."
       },
       {
-        "text": "Write a system prompt telling the agent to always ask the user before deleting things. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to always ask the user before deleting things. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Prompts are steerable guidelines, not hard security gates. An agent can still hallucinate or be manipulated into executing the tool. Enforcing strict execution budget guardrails."
       }
@@ -564,17 +564,17 @@ const CCAF_DATABASE = [
     "question": "What is the best retry and escalation design for handling 429 errors in this pipeline?",
     "options": [
       {
-        "text": "Use a cheaper model (Haiku) during peak hours to bypass rate limits. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use a cheaper model (Haiku) during peak hours to bypass rate limits. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Organization rate limits are based on tokens/requests per minute across all models, so model swapping does not solve sustained capacity limits. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Instruct the agent in the prompt to try again immediately if it sees a 429 error. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the prompt to try again immediately if it sees a 429 error. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Immediate retries without backoff exacerbate the rate limit, worsening the organization-level block. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Widen the orchestrator's context window to store failed queries in history. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the orchestrator's context window to store failed queries in history. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Context windows do not prevent or handle HTTP 429 network failures. Utilizing unvalidated raw string parameters inside execution contexts."
       },
@@ -598,17 +598,17 @@ const CCAF_DATABASE = [
         "explanation": "Prompt Caching requires prefix matching. Keeping the large static segments at the beginning and dynamic queries at the end maximizes the cached prefix size."
       },
       {
-        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Widen the context window of the agent to maximum capacity. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the agent to maximum capacity. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates. Utilizing unvalidated raw string parameters inside execution contexts."
       },
       {
-        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate. Exceeding overall system execution budget allocations."
       }
@@ -622,7 +622,7 @@ const CCAF_DATABASE = [
     "question": "Which design pattern is the most robust way to prevent these silent data corruptions?",
     "options": [
       {
-        "text": "Merge all sub-agents into a single orchestrator agent. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Merge all sub-agents into a single orchestrator agent. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Single-agent monoliths suffer from context bloat and do not natively provide input/output boundary validation. Circumventing protocol connection validation checks."
       },
@@ -632,12 +632,12 @@ const CCAF_DATABASE = [
         "explanation": "Validating outputs against strict schemas at sub-agent boundaries catches parser corruptions early, halting the pipeline before silent codebase damage occurs."
       },
       {
-        "text": "Instruct the refactoring agent in the prompt to always verify if the input AST looks correct. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the refactoring agent in the prompt to always verify if the input AST looks correct. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Conversational prompts are not reliable parser validators. Silent corruptions can easily slip through conversational text audits. Utilizing unvalidated raw string parameters inside execution contexts."
       },
       {
-        "text": "Use in-memory cache to persist AST states across turns. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use in-memory cache to persist AST states across turns.",
         "isCorrect": false,
         "explanation": "Trap: Persisting corrupted data in in-memory cache does not fix the corruption or prevent it from being processed. Exceeding overall system execution budget allocations."
       }
@@ -651,12 +651,12 @@ const CCAF_DATABASE = [
     "question": "Which orchestration pattern handles slow parallel workers most gracefully?",
     "options": [
       {
-        "text": "Use a cheaper model (Haiku) to speed up the parallel workers. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use a cheaper model (Haiku) to speed up the parallel workers. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Haiku has faster raw inference, but complex research tasks may yield lower quality or fail entirely under its reasoning capabilities. Utilizing unvalidated raw string parameters inside execution contexts."
       },
       {
-        "text": "Configure the orchestrator to wait indefinitely for all parallel workers. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the orchestrator to wait indefinitely for all parallel workers. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Indefinite waiting causes thread stalls and freezes the entire web application UI. Exceeding overall system execution budget allocations."
       },
@@ -666,7 +666,7 @@ const CCAF_DATABASE = [
         "explanation": "A partial resolution pattern prevents total timeout failures by rendering whatever worker data is ready, keeping the UX highly informative."
       },
       {
-        "text": "Instruct the parallel workers in the prompt to write faster summaries. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the parallel workers in the prompt to write faster summaries. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Prompt instructions cannot alter model inference speeds or network download durations. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
       }
@@ -680,17 +680,17 @@ const CCAF_DATABASE = [
     "question": "What is the best architectural practice to secure the database access?",
     "options": [
       {
-        "text": "Store database credentials directly in in-memory cache. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store database credentials directly in in-memory cache. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Storing raw DB credentials in in-memory cache is a massive client-side security vulnerability. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Write a strong system prompt instructing the agent to only select data and never delete rows. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a strong system prompt instructing the agent to only select data and never delete rows. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Prompt constraints can be bypassed via user prompt injections, leading to potential database breaches. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Implement a confirmation prompt in the UI before executing any select query. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement a confirmation prompt in the UI before executing any select query.",
         "isCorrect": false,
         "explanation": "Trap: UI confirmations for simple SELECT queries are highly disruptive to UX and do not prevent malicious write queries at the tool level. Exceeding overall system execution budget allocations."
       },
@@ -714,17 +714,17 @@ const CCAF_DATABASE = [
         "explanation": "SDK lifecycle hooks provide an elegant, automated way to intercept agent steps and collect precise performance telemetry without cluttering core logic."
       },
       {
-        "text": "Instruct the model in the system prompt to compute and output its latency numbers. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model in the system prompt to compute and output its latency numbers. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: LLMs cannot compute their own real-world hardware execution speeds or latency numbers. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding overall system execution budget allocations."
       },
       {
-        "text": "Have the sub-agents print their execution durations directly in GChat messages. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Have the sub-agents print their execution durations directly in GChat messages.",
         "isCorrect": false,
         "explanation": "Trap: Conversational text logging is unparseable, cluttering the user's feed, and fails to integrate with structured telemetry tools. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Implement a time check loop inside the database validation file. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement a time check loop inside the database validation file. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Database validators only audit static questions and do not monitor active conversational runtimes. Exceeding overall system execution budget allocations."
       }
@@ -738,22 +738,22 @@ const CCAF_DATABASE = [
     "question": "What is the best graceful degradation pattern for this routing failure?",
     "options": [
       {
-        "text": "Clear the conversational context and restart the support session automatically. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Clear the conversational context and restart the support session automatically.",
         "isCorrect": false,
         "explanation": "Trap: Cyclical session restarts frustrate the user and do not resolve the unclassifiable complex request. Ensuring the sub-agent execution context is completely isolated from the main session state variables."
       },
       {
-        "text": "Define a default fallback route: if classification confidence is low or fails, automatically route the request to a human customer support agent queue. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Define a default fallback route: if classification confidence is low or fails, automatically route the request to a human customer support agent queue.",
         "isCorrect": true,
         "explanation": "A default fallback human escalation route ensures that complex, unclassifiable requests are handled gracefully, preventing support stalls."
       },
       {
-        "text": "Set the model temperature to 1.0 to encourage creative routing options. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 1.0 to encourage creative routing options. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: High temperature increases routing hallucinations, causing queries to be misrouted to wrong specialized sub-agents. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Widen the routing agent's system prompt to cover all possible customer problems. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the routing agent's system prompt to cover all possible customer problems.",
         "isCorrect": false,
         "explanation": "Trap: Monolithic support prompts suffer from context dilution and do not resolve routing failures for rare, unexpected queries. Circumventing protocol connection validation checks."
       }
@@ -767,12 +767,12 @@ const CCAF_DATABASE = [
     "question": "Which design pattern ensures absolute architectural transparency?",
     "options": [
       {
-        "text": "Instruct the agent in the system prompt to always be highly honest and transparent. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to always be highly honest and transparent. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Prompt guidelines are easily bypassed or ignored by the model, failing to guarantee systematic auditability. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Set the temperature to 0.0 to guarantee deterministic diagnostics. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature to 0.0 to guarantee deterministic diagnostics. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not expose thought blocks or reasoning logs to the user. Forcing immediate blocking execution operations."
       },
@@ -782,7 +782,7 @@ const CCAF_DATABASE = [
         "explanation": "Serializing and displaying thought blocks provides full traceability, giving users and auditors complete visibility into how a decision was made."
       },
       {
-        "text": "Widen the model's context window to keep old conversation histories. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the model's context window to keep old conversation histories. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Keeping histories in memory does not expose intermediate thought blocks to the UI without explicit serialization. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
       }
@@ -796,17 +796,17 @@ const CCAF_DATABASE = [
     "question": "What is the most robust architectural practice to ensure unparseable markdown is never returned to tests?",
     "options": [
       {
-        "text": "Widen the testing timeout to 10 minutes to give the agent time to self-correct. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the testing timeout to 10 minutes to give the agent time to self-correct. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Long timeouts do not clean up unparseable markdown syntaxes. This pattern is strictly discouraged in high-throughput enterprise deployments. Removing structured tool constraints entirely from prompt headers."
       },
       {
-        "text": "Use in-memory cache to store parsing templates. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use in-memory cache to store parsing templates. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Persisting templates in in-memory cache has no bearing on runtime code extraction and cleaning. Forcing immediate blocking execution operations. Removing structured tool constraints entirely from prompt headers."
       },
       {
-        "text": "Instruct the agent in the prompt to only return raw code and never write markdown. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the prompt to only return raw code and never write markdown. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: LLMs are conversational and frequently violate negative prompt boundaries, outputting backticks anyway. Exceeding overall system execution budget allocations."
       },
@@ -830,17 +830,17 @@ const CCAF_DATABASE = [
         "explanation": "Caching dependencies locally and running tools in offline-local mode completely eliminates download delays and network dependency bottlenecks."
       },
       {
-        "text": "Rely on the browser's native caching mechanism to speed up downloads. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Rely on the browser's native caching mechanism to speed up downloads. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Browser caches do not apply to background Node.js process package managers (like npm/pip) executing inside sandboxed environments. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Configure the tool to ignore all download timeout errors. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the tool to ignore all download timeout errors. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring download timeouts causes silent execution failures, leaving dependencies missing. Utilizing unvalidated raw string parameters inside execution contexts."
       },
       {
-        "text": "Spawn only one sub-agent to handle all package installation steps. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Spawn only one sub-agent to handle all package installation steps. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Running installations sequentially still encounters the same massive download latency bottleneck. Utilizing unvalidated raw string parameters inside execution contexts."
       }
@@ -854,7 +854,7 @@ const CCAF_DATABASE = [
     "question": "Which plan-halting strategy is necessary to resolve this cyclical deadlock?",
     "options": [
       {
-        "text": "Set the temperature of B to 1.0 to encourage different critiques. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature of B to 1.0 to encourage different critiques. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Randomness increases hallucination risk and does not resolve structural conversational stalls. Circumventing protocol connection validation checks."
       },
@@ -864,12 +864,12 @@ const CCAF_DATABASE = [
         "explanation": "An explicit turn limit acts as a circuit breaker, preventing infinite conversational loops and ensuring graceful escalation."
       },
       {
-        "text": "Clear their history states after every cycle. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Clear their history states after every cycle. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Clearing memory entirely breaks the refactoring progress, forcing the plan back to step 1. Forcing immediate blocking execution operations."
       },
       {
-        "text": "Widen the context window of B to hold the complete argument history. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of B to hold the complete argument history. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Keeping the full history of the argument in context does not break the circular reasoning pattern. Exceeding overall system execution budget allocations."
       }
@@ -888,7 +888,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Exposing encrypted credentials in the prompt context violates security policy and leaves credentials vulnerable to exfiltration."
       },
       {
-        "text": "Configure the orchestrator to instantiate local Docker containers on demand, mounting host file systems to execute native scripts within the primary loop. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the orchestrator to instantiate local Docker containers on demand, mounting host file systems to execute native scripts within the primary loop. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Local container spawning fails to provide network isolation and exposes the primary orchestration environment to escape vulnerabilities."
       },
@@ -980,7 +980,7 @@ const CCAF_DATABASE = [
         "explanation": "Serializing execution state to persistent checkpoint storage allows an orchestrator to instantly resume complex tasks exactly where they failed."
       },
       {
-        "text": "Enforce an automated retry loop that catches network timeout errors and completely restarts the initial orchestration prompt sequence from the beginning. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Enforce an automated retry loop that catches network timeout errors and completely restarts the initial orchestration prompt sequence from the beginning. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Restarting long-running tasks from the initial prompt discards hours of successful tool processing and incurs massive duplicate API costs."
       },
@@ -1004,7 +1004,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Apply credibility heuristics to pick the most likely correct number, finish analysis with that value, and add a footnote mentioning the discrepancy. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Include both numbers in the analysis output without marking them as conflicting, letting the synthesis agent decide which to use based on broader context. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Include both numbers in the analysis output without marking them as conflicting, letting the synthesis agent decide which to use based on broader context. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
@@ -1067,7 +1067,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: The synthesis agent lacks instructions to detect coverage gaps. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "The document analysis agent filters out non-visual sources due to overly strict relevance criteria. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "The document analysis agent filters out non-visual sources due to overly strict relevance criteria. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
@@ -1217,7 +1217,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Store findings in a vector database and give the synthesis agent search tools to query during its work. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store findings in a vector database and give the synthesis agent search tools to query during its work. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -1246,7 +1246,7 @@ const CCAF_DATABASE = [
         "explanation": "A limited-scope fact-verification tool lets the synthesis agent handle 85% of simple checks directly, eliminating most loops, while preserving the coordinator delegation path for the 15% of complex verifications. This applies least privilege while significantly reducing latency."
       },
       {
-        "text": "Have the web-search agent proactively cache extra context around each source during initial research in anticipation of synthesis needing verification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Have the web-search agent proactively cache extra context around each source during initial research in anticipation of synthesis needing verification. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -1318,7 +1318,7 @@ const CCAF_DATABASE = [
     "question": "What change is most effective?",
     "options": [
       {
-        "text": "Add explicit verification checkpoints between stages, requiring the agent to record progress after resolving each issue before moving to the next. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add explicit verification checkpoints between stages, requiring the agent to record progress after resolving each issue before moving to the next. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Add explicit verification checkpoints between stages, requiring the agent to record progress after resolving each issue before moving to the next. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -1347,7 +1347,7 @@ const CCAF_DATABASE = [
     "question": "What is the most effective way to improve escalation calibration?",
     "options": [
       {
-        "text": "Require the agent to self-rate confidence on a 1\u201310 scale before each response and automatically route to humans when confidence drops below a threshold. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Require the agent to self-rate confidence on a 1\u201310 scale before each response and automatically route to humans when confidence drops below a threshold. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Require the agent to self-rate confidence on a 1\u201310 scale before each response and automatically route to humans when confidence drops below a threshold. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -1357,7 +1357,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Add explicit escalation criteria to the system prompt with few-shot examples showing when to escalate versus resolve autonomously. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Add explicit escalation criteria to the system prompt with few-shot examples showing when to escalate versus resolve autonomously. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": true,
         "explanation": "Explicit escalation criteria with few-shot examples directly address the root cause\u2014unclear decision boundaries between simple and complex cases. It\u2019s the most proportional, effective first intervention that teaches the agent when to escalate and when to resolve autonomously without extra infrastructure. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
@@ -1420,7 +1420,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Implement few-shot examples in the system prompt showing complete explanations for five common complex case types, demonstrating how to include policy context, timelines, and next steps. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement few-shot examples in the system prompt showing complete explanations for five common complex case types, demonstrating how to include policy context, timelines, and next steps. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -1468,7 +1468,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Increase the summarization threshold from 70% to 85% so conversations have more room before summarization triggers. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Store full conversation history in external storage and implement retrieval when the agent detects references like \u201cas I mentioned.\u201d. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store full conversation history in external storage and implement retrieval when the agent detects references like \u201cas I mentioned.\u201d. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
@@ -1492,7 +1492,7 @@ const CCAF_DATABASE = [
     "question": "How should you address this?",
     "options": [
       {
-        "text": "Implement a confidence scoring system that acts autonomously above 85% confidence and requests clarification below the threshold. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement a confidence scoring system that acts autonomously above 85% confidence and requests clarification below the threshold. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Implement a confidence scoring system that acts autonomously above 85% confidence and requests clarification below the threshold. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -1550,12 +1550,12 @@ const CCAF_DATABASE = [
     "question": "What determines this decision?",
     "options": [
       {
-        "text": "Parse Claude\u2019s text for phrases like \u201cI\u2019m done\u201d or \u201cCan I help with anything else?\u201d\u2014natural language signals indicate task completion. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Parse Claude\u2019s text for phrases like \u201cI\u2019m done\u201d or \u201cCan I help with anything else?\u201d\u2014natural language signals indicate task completion. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Parse Claude\u2019s text for phrases like \u201cI\u2019m done\u201d or \u201cCan I help with anything else?\u201d\u2014natural language signals indicate task completion. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Check the `stop_reason` field in Claude\u2019s response\u2014continue if it is `tool_use` and stop if it is `end_turn`. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Check the `stop_reason` field in Claude\u2019s response\u2014continue if it is `tool_use` and stop if it is `end_turn`. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": true,
         "explanation": "`stop_reason` is Claude\u2019s explicit structured signal for loop control: `tool_use` indicates Claude wants to run a tool and receive results back, while `end_turn` indicates Claude has completed its response and the loop should end. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
@@ -1579,12 +1579,12 @@ const CCAF_DATABASE = [
     "question": "Which change is most effective?",
     "options": [
       {
-        "text": "Improve the system prompt. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Improve the system prompt. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Improve the system prompt This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Add few-shot examples. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add few-shot examples. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Add few-shot examples This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -1594,7 +1594,7 @@ const CCAF_DATABASE = [
         "explanation": "When critical business logic requires a specific tool sequence, software provides **deterministic guarantees** that prompt-based approaches (B, C) cannot. D addresses availability, not tool ordering."
       },
       {
-        "text": "Implement a routing classifier. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement a routing classifier. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Implement a routing classifier This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -1608,7 +1608,7 @@ const CCAF_DATABASE = [
     "question": "How do you improve calibration?",
     "options": [
       {
-        "text": "Self-rated confidence (1\u201310) with automatic escalation. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Self-rated confidence (1\u201310) with automatic escalation. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Self-rated confidence (1\u201310) with automatic escalation This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -1637,22 +1637,22 @@ const CCAF_DATABASE = [
     "question": "Where should you create the command file?",
     "options": [
       {
-        "text": "`.claude/commands/` in the project repository. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "`.claude/commands/` in the project repository.",
         "isCorrect": true,
         "explanation": "Project commands stored in `.claude/commands/` are version-controlled and automatically available to everyone. B is for personal commands. C is for instructions, not command definitions. D does not exist. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "`~/.claude/commands/`. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "`~/.claude/commands/`.",
         "isCorrect": false,
         "explanation": "Trap: `~/.claude/commands/` This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Root `CLAUDE.md`. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Root `CLAUDE.md`. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Root `CLAUDE.md` This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "`.claude/config.json`. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "`.claude/config.json`.",
         "isCorrect": false,
         "explanation": "Trap: `.claude/config.json` This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -1681,7 +1681,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Direct execution and switch to planning when it gets hard. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Direct execution and switch to planning when it gets hard. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -1695,22 +1695,22 @@ const CCAF_DATABASE = [
     "question": "What approach should you use?",
     "options": [
       {
-        "text": "Put everything in the root CLAUDE.md. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Put everything in the root CLAUDE.md.",
         "isCorrect": false,
         "explanation": "Trap: Put everything in the root CLAUDE.md This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Skills in `.claude/skills/`. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Skills in `.claude/skills/`. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: Skills in `.claude/skills/` This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "`.claude/rules/` files with YAML frontmatter and glob patterns. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "`.claude/rules/` files with YAML frontmatter and glob patterns.",
         "isCorrect": true,
         "explanation": "`.claude/rules/` with glob patterns (e.g., `**/*.test.tsx`) enables automatic convention application based on file paths\u2014ideal for tests spread across the codebase. B relies on model inference. C is manual/on-demand. D does not work well when relevant files are in many directories. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "CLAUDE.md in every directory. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "CLAUDE.md in every directory.",
         "isCorrect": false,
         "explanation": "Trap: CLAUDE.md in every directory This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -1782,22 +1782,22 @@ const CCAF_DATABASE = [
     "question": "How do you reduce overhead while maintaining reliability?",
     "options": [
       {
-        "text": "Accumulate all verification needs into a batch and return them to the coordinator at the end. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Accumulate all verification needs into a batch and return them to the coordinator at the end.",
         "isCorrect": false,
         "explanation": "Trap: Accumulate all verification needs into a batch and return them to the coordinator at the end This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Give the synthesis agent a limited `verify_fact` tool for simple checks, and continue routing complex verification through the coordinator. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Give the synthesis agent a limited `verify_fact` tool for simple checks, and continue routing complex verification through the coordinator.",
         "isCorrect": true,
         "explanation": "This applies the principle of least privilege: the synthesis agent gets exactly what it needs for the 85% common case (simple fact checks) while preserving the coordinator-mediated path for complex investigations. B introduces blocking dependencies (later synthesis steps may depend on earlier verified facts). C breaks separation of responsibilities. D relies on speculative caching that cannot reliably predict needs."
       },
       {
-        "text": "Give the synthesis agent full access to all web-search tools. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Give the synthesis agent full access to all web-search tools.",
         "isCorrect": false,
         "explanation": "Trap: Give the synthesis agent full access to all web-search tools This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Proactively cache additional context around each source. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Proactively cache additional context around each source. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Proactively cache additional context around each source This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -1826,7 +1826,7 @@ const CCAF_DATABASE = [
         "explanation": "The two-tool token-binding approach makes it architecturally impossible to execute without a prior preview\u2014the execute tool literally requires a token that only the preview tool can generate. This is the only approach that enforces the constraint at the code level rather than relying on LLM compliance with instructions (C), timing heuristics (A), or orchestration infrastructure (B)."
       },
       {
-        "text": "Add detailed instructions and few-shot examples to the tool description requiring the agent to always call with `dry_run=true` first and wait for user confirmation before calling again. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add detailed instructions and few-shot examples to the tool description requiring the agent to always call with `dry_run=true` first and wait for user confirmation before calling again. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -1850,7 +1850,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Recommend a balanced portfolio without addressing the conflict. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Recommend a balanced portfolio without addressing the conflict. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
@@ -1898,7 +1898,7 @@ const CCAF_DATABASE = [
     "question": "What approach best balances preservation with token reduction?",
     "options": [
       {
-        "text": "Summarize the entire conversation history. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Summarize the entire conversation history.",
         "isCorrect": false,
         "explanation": "Trap: Summarize the entire conversation history. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -1908,12 +1908,12 @@ const CCAF_DATABASE = [
         "explanation": "The hybrid approach preserves the highest-value information at the lowest cost. Critical facts like allergies and recipe quantities are extracted into a compact structured block (preventing the precision loss that occurs during summarization), general discussion is summarized, and recent exchanges are kept verbatim for conversational coherence. Options A and B risk losing critical dietary information; D is architectural overkill for a single cooking session."
       },
       {
-        "text": "Keep only the most recent 20,000 tokens. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Keep only the most recent 20,000 tokens. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: Keep only the most recent 20,000 tokens. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Store the full conversation externally and retrieve relevant parts via semantic search. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store the full conversation externally and retrieve relevant parts via semantic search. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: Store the full conversation externally and retrieve relevant parts via semantic search. This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -1942,7 +1942,7 @@ const CCAF_DATABASE = [
         "explanation": "The hybrid approach addresses both dimensions of the problem: retaining exact recent context (critical for conversational coherence) while maintaining a compressed representation of earlier preferences (preventing total loss when pairs are dropped). Increasing the window (C) simply delays the same problem. Vector search (B) may miss important context that isn't semantically similar to the current query. Full per-turn summarization (D) adds overhead and accumulates summarization errors."
       },
       {
-        "text": "Summarize dropped messages every turn and prepend the running summary. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Summarize dropped messages every turn and prepend the running summary. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -2000,7 +2000,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Add structured XML tags marking discussion conclusions. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add structured XML tags marking discussion conclusions. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -2029,7 +2029,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Use post-response validation to regenerate non-compliant responses. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use post-response validation to regenerate non-compliant responses. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -2058,7 +2058,7 @@ const CCAF_DATABASE = [
         "explanation": "A 2,800-token system prompt with declarative rules is vulnerable to drift because abstract rules require the model to reason about them on every turn. Replacing verbose rules with concrete few-shot examples that demonstrate correct proficiency-level adaptation gives the model clear behavioral patterns to match\u2014this is more reliably followed across many turns than abstract instructions. Reminder injection (A) helps but addresses symptoms; end-placement (C) helps initially but not with turn-level drift; regeneration (D) is expensive and corrective."
       },
       {
-        "text": "Evaluate responses and regenerate if difficulty level mismatches. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Evaluate responses and regenerate if difficulty level mismatches. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -2072,22 +2072,22 @@ const CCAF_DATABASE = [
     "question": "Where should these behavioral guidelines be defined?",
     "options": [
       {
-        "text": "Prepended to each user message. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Prepended to each user message. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Prepended to each user message. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "In the first assistant message. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "In the first assistant message.",
         "isCorrect": false,
         "explanation": "Trap: In the first assistant message. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "In environment variables. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "In environment variables. This architectural model establishes explicit interface boundaries across execution layers.",
         "isCorrect": false,
         "explanation": "Trap: In environment variables. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "In the system prompt. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "In the system prompt. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": true,
         "explanation": "The system prompt is specifically designed for persistent behavioral constraints and guidelines that apply throughout the entire conversation. Prepending to each user message (A) is redundant overhead. The first assistant message (C) is unreliable because the model can deviate from its own prior statements. Environment variables (D) have no effect on model behavior. This structured approach establishes clear architectural guardrails across operational boundaries."
       }
@@ -2116,7 +2116,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Add system prompt instructions to avoid those phrases. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add system prompt instructions to avoid those phrases. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -2145,7 +2145,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
       {
-        "text": "Force the assistant to call a status tool on each turn. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Force the assistant to call a status tool on each turn. This orchestration structure defines explicit state communication parameters across agents.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       }
@@ -2159,22 +2159,22 @@ const CCAF_DATABASE = [
     "question": "What approach best improves the trade-off?",
     "options": [
       {
-        "text": "Proceed with hidden defaults. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Proceed with hidden defaults. This design establishes specific architectural parameter declarations within the module.",
         "isCorrect": false,
         "explanation": "Trap: Proceed with hidden defaults. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Ask all clarifying questions in one compound message. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Ask all clarifying questions in one compound message.",
         "isCorrect": false,
         "explanation": "Trap: Ask all clarifying questions in one compound message. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "State assumptions explicitly and proceed while inviting corrections. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "State assumptions explicitly and proceed while inviting corrections.",
         "isCorrect": true,
         "explanation": "Stating assumptions explicitly and proceeding gives the user an immediate, useful response while preserving their ability to correct wrong assumptions. Hidden defaults (A) leave the user unaware of what was assumed. A compound question list (B) still demands upfront effort from the user. A structured form (D) adds more friction, not less\u2014contradicting the goal of reducing abandonment. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Use a structured intake form. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use a structured intake form.",
         "isCorrect": false,
         "explanation": "Trap: Use a structured intake form. This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -2193,7 +2193,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Classify ambiguity with a smaller model before responding. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Use predefined interpretations without stating assumptions. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use predefined interpretations without stating assumptions. This structural layout operates through standard programmatic declarations during runtime.",
         "isCorrect": false,
         "explanation": "Trap: This architectural pattern introduces tight coupling and severe performance bottlenecks across multi-agent boundaries."
       },
@@ -2222,17 +2222,17 @@ const CCAF_DATABASE = [
         "explanation": "Structuring instructions inside XML tags and enforcing raw JSON mode is the most reliable way to suppress model chit-chat and code fences, guaranteeing parseable output."
       },
       {
-        "text": "Configure the downstream parser to execute a try-catch loop that attempts to eval() the raw text. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the downstream parser to execute a try-catch loop that attempts to eval() the raw text. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: Running eval() on uncleaned LLM text is a severe security vulnerability and fails frequently on conversational preambles. This operational alternative introduces severe performance bottlenecks and networking layer latency. Preventing markdown backtick noise."
       },
       {
-        "text": "Widen the context window of the model to 200,000 tokens and increase the temperature to 0.9. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the model to 200,000 tokens and increase the temperature to 0.9. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Large context windows and high temperature increase output variation and hallucination, worsening formatting issues. Using strict XML schema checks. To bypass token prefill limits."
       },
       {
-        "text": "Inject a few-shot example showing a markdown JSON block inside the user query. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Inject a few-shot example showing a markdown JSON block inside the user query. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Showing few-shot examples *with* markdown fences actively encourages the model to output the unwanted code fences. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       }
@@ -2246,7 +2246,7 @@ const CCAF_DATABASE = [
     "question": "What is the best prompting technique to enforce this rigid choice constraint?",
     "options": [
       {
-        "text": "Increase the model temperature to 1.0 to allow the model to evaluate synonyms creatively. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the model temperature to 1.0 to allow the model to evaluate synonyms creatively. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Creative synonym generation violates the rigid label constraints, breaking downstream automated database filters. This pattern is strictly discouraged in high-throughput enterprise deployments. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
@@ -2256,12 +2256,12 @@ const CCAF_DATABASE = [
         "explanation": "Encapsulating rigid choices inside custom XML tags combined with strict output constraints and matching few-shots guarantees optimal alignment with the allowed list. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Disable the system prompt entirely and write the instructions inside the user prompt on every turn. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable the system prompt entirely and write the instructions inside the user prompt on every turn. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Bypassing system prompts reduces steering capability and token efficiency. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
       {
-        "text": "Use in-memory cache to store the classification metrics. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use in-memory cache to store the classification metrics. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is browser data storage and cannot enforce prompt steering or label selection constraints during runtime. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
@@ -2275,12 +2275,12 @@ const CCAF_DATABASE = [
     "question": "Which XML tagging structure is the recommended best practice for Anthropic models?",
     "options": [
       {
-        "text": "Use markdown headers (e.g. # SYSTEM, ## DATA) instead of XML tags. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use markdown headers (e.g. # SYSTEM, ## DATA) instead of XML tags. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: While markdown headers are helpful, they are less robust than explicit, self-closing XML tag boundaries for separating complex instructions from raw data. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
       {
-        "text": "Wrap all text segments in custom JSON objects. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Wrap all text segments in custom JSON objects. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: JSON prompts increase token counts significantly due to formatting brackets, and are harder for the model to parse compared to natural XML tags. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
@@ -2290,7 +2290,7 @@ const CCAF_DATABASE = [
         "explanation": "Anthropic models are pre-trained on structured XML datasets; using lowercase, descriptive XML tags is the canonical way to maximize prompt comprehension and instruction alignment."
       },
       {
-        "text": "Put all system instructions inside square brackets [like this] and reference data in curly brackets {like this}. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Put all system instructions inside square brackets [like this] and reference data in curly brackets {like this}. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Custom bracket conventions lack standard semantic training grounding in Claude, leading to unpredictable parsing results. Preventing markdown backtick noise. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       }
@@ -2338,17 +2338,17 @@ const CCAF_DATABASE = [
         "explanation": "Grouping reference documents at the beginning and instructions/tasks at the end maximizes the model's attention on the retrieval context, solving the 'lost in the middle' degradation."
       },
       {
-        "text": "Spread the retrieved snippets randomly throughout the entire prompt chain. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Spread the retrieved snippets randomly throughout the entire prompt chain. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: Scattering snippets randomly increases semantic noise, causing severe attention degradation. This operational alternative introduces severe performance bottlenecks and networking layer latency. Using strict XML schema checks. To bypass token prefill limits."
       },
       {
-        "text": "Set the model temperature to 0.9 to encourage creative scanning. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.9 to encourage creative scanning. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: High temperature increases hallucinations during factual retrieval, decreasing extraction accuracy. Preventing markdown backtick noise. Using strict XML schema checks."
       },
       {
-        "text": "Disable the use of system prompts and put all instructions inside each snippet. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable the use of system prompts and put all instructions inside each snippet. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Disabling system prompts degrades overall steering and massively bloats token costs. Preventing markdown backtick noise. Using strict XML schema checks."
       }
@@ -2362,7 +2362,7 @@ const CCAF_DATABASE = [
     "question": "Which prompt safety pattern is most robust to mitigate prompt injection?",
     "options": [
       {
-        "text": "Disable the system prompt entirely to prevent injection attacks. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable the system prompt entirely to prevent injection attacks. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Disabling the system prompt removes all guidelines, leaving the agent completely unsteerable. This pattern is strictly discouraged in high-throughput enterprise deployments. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
@@ -2372,12 +2372,12 @@ const CCAF_DATABASE = [
         "explanation": "Isolating user inputs inside dedicated XML tags and instructing the model to treat them strictly as data is the most robust way to mitigate prompt injection attacks. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set the model temperature to 0.0 to ensure rigid responses. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 to ensure rigid responses. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects output variability, but does not prevent the model from following instructions contained in a prompt injection. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       },
       {
-        "text": "Write a system prompt listing all the potential injection words (e.g., 'ignore', 'bypass') and telling the agent to block them. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt listing all the potential injection words (e.g., 'ignore', 'bypass') and telling the agent to block them. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Blacklisting words is fragile, as attackers can easily bypass the list using synonyms, foreign languages, or encoding. Using strict XML schema checks. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
@@ -2391,12 +2391,12 @@ const CCAF_DATABASE = [
     "question": "Which prompting and system prompt pattern will handle large extraction tasks most gracefully?",
     "options": [
       {
-        "text": "Set the temperature to 0.8 to encourage more creative formatting. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature to 0.8 to encourage more creative formatting. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls creativity, not token output limits or formatting constraints. Using strict XML schema checks."
       },
       {
-        "text": "Instruct the model to write in highly compressed, single-line JSON strings. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model to write in highly compressed, single-line JSON strings. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: Single-line compression is unreadable, error-prone, and does not resolve the underlying output limit constraint. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
@@ -2406,7 +2406,7 @@ const CCAF_DATABASE = [
         "explanation": "Enforcing extraction limits per turn and using a multi-turn pagination loop is the most reliable way to handle large data extraction without hitting output limits."
       },
       {
-        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Retrying the exact same large task will result in the same truncation error, wasting tokens. Using strict XML schema checks. To bypass token prefill limits."
       }
@@ -2430,7 +2430,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Hardcoding makes prompts difficult to maintain, version-control, or validate statically. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
       {
-        "text": "Store the system prompt directly inside the `static local configuration files` database. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store the system prompt directly inside the `static local configuration files` database. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: `static local configuration files` is a static questions database and has no bearing on runtime prompt configurations. Using strict XML schema checks. To bypass token prefill limits."
       },
@@ -2454,17 +2454,17 @@ const CCAF_DATABASE = [
         "explanation": "A strict grounding constraint combined with a fallback instruction ('information not found') is the most robust way to mitigate hallucinations in RAG systems."
       },
       {
-        "text": "Increase the model temperature to 1.0 to allow the model to infer missing details creatively. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the model temperature to 1.0 to allow the model to infer missing details creatively. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: High temperature increases the likelihood of hallucinations and factual inaccuracies. This operational alternative introduces severe performance bottlenecks and networking layer latency. Using strict XML schema checks. To bypass token prefill limits."
       },
       {
-        "text": "Disable the system prompt entirely and put all instructions inside each snippet. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable the system prompt entirely and put all instructions inside each snippet. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Disabling the system prompt removes all guidelines, leaving the agent completely unsteerable. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
       {
-        "text": "Widen the context window of the model to maximum capacity. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the model to maximum capacity. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity does not enforce factual grounding or prevent hallucinations. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
@@ -2478,7 +2478,7 @@ const CCAF_DATABASE = [
     "question": "Which prompting technique is most effective to eliminate these conversational preambles?",
     "options": [
       {
-        "text": "Configure the downstream parser to execute a try-catch loop that attempts to eval() the raw text. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the downstream parser to execute a try-catch loop that attempts to eval() the raw text. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Running eval() on uncleaned LLM text is a severe security vulnerability and fails frequently on conversational preambles. This pattern is strictly discouraged in high-throughput enterprise deployments. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
@@ -2488,12 +2488,12 @@ const CCAF_DATABASE = [
         "explanation": "Combining raw JSON output constraints with XML tags and matching few-shot examples is the most reliable way to suppress conversational preambles, guaranteeing parseable output. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set the model temperature to 1.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 1.0. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: High temperature increases output variation, worsening formatting consistency. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
       {
-        "text": "Widen the context window of the model to 200,000 tokens. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the model to 200,000 tokens.",
         "isCorrect": false,
         "explanation": "Trap: Large context windows do not suppress conversational preambles or enforce formatting constraints. Preventing markdown backtick noise. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       }
@@ -2536,17 +2536,17 @@ const CCAF_DATABASE = [
     "question": "Which prompting pattern will handle large context extraction tasks most gracefully?",
     "options": [
       {
-        "text": "Instruct the model to write in highly compressed, single-line JSON strings. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model to write in highly compressed, single-line JSON strings.",
         "isCorrect": false,
         "explanation": "Trap: Single-line compression is unreadable, error-prone, and does not resolve the underlying output limit constraint."
       },
       {
-        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: Retrying the exact same large task will result in the same truncation error, wasting tokens. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
       {
-        "text": "Set the temperature to 0.8 to encourage more creative formatting. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature to 0.8 to encourage more creative formatting. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls creativity, not token output limits or formatting constraints. Preventing markdown backtick noise. Using strict XML schema checks."
       },
@@ -2570,17 +2570,17 @@ const CCAF_DATABASE = [
         "explanation": "Defining conversational stages inside XML tags combined with stage checks and matching few-shot examples is the most reliable way to enforce structural consistency."
       },
       {
-        "text": "Write a system prompt telling the agent to always be highly structured. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to always be highly structured. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: Conversational prompts are easily bypassed or ignored by the model, failing to guarantee systematic structure. This operational alternative introduces severe performance bottlenecks and networking layer latency. Preventing markdown backtick noise. Using strict XML schema checks."
       },
       {
-        "text": "Clear the conversational context and restart the session automatically if a stage is skipped. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Clear the conversational context and restart the session automatically if a stage is skipped. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Cyclical session restarts frustrate the user and do not resolve the structural execution failure. Using strict XML schema checks. To bypass token prefill limits."
       },
       {
-        "text": "Set the model temperature to 0.0 to ensure rigid responses. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 to ensure rigid responses. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects output variability, but does not enforce structural constraints. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       }
@@ -2623,12 +2623,12 @@ const CCAF_DATABASE = [
     "question": "Which prompt security safeguard is most effective to prevent this system prompt leakage?",
     "options": [
       {
-        "text": "Write a system prompt telling the agent to never reveal its instructions. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to never reveal its instructions. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Prompts are easily bypassed via direct injection attacks, exposing the sensitive credentials."
       },
       {
-        "text": "Set the model temperature to 0.0, to ensure strict adherence to the JSON schema boundaries and completely bypass system-prompt guidelines. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0, to ensure strict adherence to the JSON schema boundaries and completely bypass system-prompt guidelines. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not prevent the model from printing variables that exist in its active context history. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
@@ -2638,7 +2638,7 @@ const CCAF_DATABASE = [
         "explanation": "Isolating user inputs inside dedicated XML tags combined with strict data-only instructions is the most robust way to mitigate system prompt leakage."
       },
       {
-        "text": "Encrypt the system prompt and store it in in-memory cache. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Encrypt the system prompt and store it in in-memory cache. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is accessible client-side and storing prompts there does not prevent the LLM from printing them if it has access to the variables. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       }
@@ -2652,17 +2652,17 @@ const CCAF_DATABASE = [
     "question": "What is the best validation gate pattern for this pipeline?",
     "options": [
       {
-        "text": "Set the model temperature to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
       {
-        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: Agents are highly prone to missing subtle syntax errors (like missing commas or brackets) during conversational passes. Using strict XML schema checks. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       },
       {
-        "text": "Implement an interval cron validation check on the server. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement an interval cron validation check on the server. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
@@ -2686,17 +2686,17 @@ const CCAF_DATABASE = [
         "explanation": "Prompt Caching requires prefix matching. Keeping the large static segments at the beginning and dynamic queries at the end maximizes the cached prefix size."
       },
       {
-        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature to 0.0 to make prompt generation more deterministic.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. This operational alternative introduces severe performance bottlenecks and networking layer latency. Preventing markdown backtick noise."
       },
       {
-        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate. Preventing markdown backtick noise."
       },
       {
-        "text": "Widen the context window of the model to maximum capacity. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the model to maximum capacity. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates. Preventing markdown backtick noise. Using strict XML schema checks."
       }
@@ -2710,7 +2710,7 @@ const CCAF_DATABASE = [
     "question": "What is the recommended setup to automate this check?",
     "options": [
       {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. This pattern is strictly discouraged in high-throughput enterprise deployments. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
@@ -2720,12 +2720,12 @@ const CCAF_DATABASE = [
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside `CLAUDE.md` ensures the agent self-corrects style errors before committing files. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Store formatting rules in in-memory cache. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store formatting rules in in-memory cache. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
       {
-        "text": "Set the reasoning temperature of all agents to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the reasoning temperature of all agents to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
@@ -2749,12 +2749,12 @@ const CCAF_DATABASE = [
         "explanation": "Trap: While lowering temperature increases determinism, it does not guarantee the suppression of conversational preambles before structured JSON output."
       },
       {
-        "text": "Provide an assistant message prefill containing the opening bracket `{` at the end of the API prompt turns. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Provide an assistant message prefill containing the opening bracket `{` at the end of the API prompt turns. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": true,
         "explanation": "Providing an assistant message prefill with an opening bracket `{` is the canonical, deterministic technique to force Claude to output raw JSON structures without conversational preambles. Forcing the model to begin generating JSON structure immediately."
       },
       {
-        "text": "Execute a post-processing script that performs regular expression pattern matching across the entire model output buffer to strip out preamble text before parsing. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Execute a post-processing script that performs regular expression pattern matching across the entire model output buffer to strip out preamble text before parsing. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Post-processing string stripping is fragile and fails when the model generates non-standard conversational text or nested complex markdown structures."
       }
@@ -2768,7 +2768,7 @@ const CCAF_DATABASE = [
     "question": "How should you configure the API prompt payload to minimize prefill latency and reduce billing costs?",
     "options": [
       {
-        "text": "Convert the comprehensive guidebook into an ephemeral vector storage embedding database within localStorage to completely bypass prompt token prefill overhead. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Convert the comprehensive guidebook into an ephemeral vector storage embedding database within localStorage to completely bypass prompt token prefill overhead. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is a client-side browser database mechanism and cannot serve as a low-latency vector embedding store for backend API prompt runtimes. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
@@ -2802,17 +2802,17 @@ const CCAF_DATABASE = [
         "explanation": "Leveraging conversational message history to feed back structured errors inside XML tags is the canonical way to enable self-correction with high success rates."
       },
       {
-        "text": "Manually edit the brackets in the local script instead of calling the API again. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Manually edit the brackets in the local script instead of calling the API again. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: Manual string hacking is fragile and fails when the model generates complex, nested XML schema errors. This operational alternative introduces severe performance bottlenecks and networking layer latency. Using strict XML schema checks. To bypass token prefill limits."
       },
       {
-        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Swapping contexts in a new single-turn request loses the model's original generation path, making self-correction much harder. Using strict XML schema checks."
       },
       {
-        "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations.",
         "isCorrect": false,
         "explanation": "Trap: High temperature during retries increases the likelihood of generating new, unrelated syntax errors. Preventing markdown backtick noise. Using strict XML schema checks."
       }
@@ -2826,7 +2826,7 @@ const CCAF_DATABASE = [
     "question": "What is the best validation gate pattern for this pipeline?",
     "options": [
       {
-        "text": "Implement an interval cron validation check on the server. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement an interval cron validation check on the server. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes. This pattern is strictly discouraged in high-throughput enterprise deployments. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
@@ -2836,12 +2836,12 @@ const CCAF_DATABASE = [
         "explanation": "A programmatic static JSON parser gate at the tool layer is an unbypassable validation measure that guarantees data integrity before downstream propagation. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Agents are highly prone to missing subtle syntax errors (like missing commas or brackets) during conversational passes. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       },
       {
-        "text": "Set the model temperature to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       }
@@ -2855,12 +2855,12 @@ const CCAF_DATABASE = [
     "question": "What is the recommended setup to automate this check?",
     "options": [
       {
-        "text": "Set the reasoning temperature of all agents to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the reasoning temperature of all agents to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. Preventing markdown backtick noise. Using strict XML schema checks."
       },
       {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": false,
         "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. Preventing markdown backtick noise. Using strict XML schema checks."
       },
@@ -2870,7 +2870,7 @@ const CCAF_DATABASE = [
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside `CLAUDE.md` ensures the agent self-corrects style errors before committing files."
       },
       {
-        "text": "Store formatting rules in in-memory cache. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store formatting rules in in-memory cache. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
@@ -2884,17 +2884,17 @@ const CCAF_DATABASE = [
     "question": "Which prompt construction pattern will optimize the hit rate for these snippets?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the model to maximum capacity. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates."
       },
       {
-        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature to 0.0 to make prompt generation more deterministic.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
       {
-        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. This deployment layout structures tool execution parameters within the active environment.",
         "isCorrect": false,
         "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate. Preventing markdown backtick noise."
       },
@@ -2942,12 +2942,12 @@ const CCAF_DATABASE = [
     "question": "What is the most effective prompt engineering technique to guarantee JSON schema conformity?",
     "options": [
       {
-        "text": "Instruct the model in the prompt to be extremely careful and double-check that your output is a valid JSON array before sending it. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model in the prompt to be extremely careful and double-check that your output is a valid JSON array before sending it. This setup utilizes explicit configuration definitions across the underlying tool interface.",
         "isCorrect": false,
         "explanation": "Trap: Conversational warnings carry weak success guarantees compared to structured few-shot syntax blocks. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Wrap the JSON schema in explicit XML tags and provide clear few-shot examples of valid outputs. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Wrap the JSON schema in explicit XML tags and provide clear few-shot examples of valid outputs. This structural model establishes distinct parameter boundaries for protocol communication.",
         "isCorrect": true,
         "explanation": "XML wrapping and few-shot examples represent premium best practices for structured JSON generation accuracy. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
@@ -2986,7 +2986,7 @@ const CCAF_DATABASE = [
         "explanation": "Targeting few-shot examples at the specific ambiguous scenarios where errors occur, with explicit rationale for why one tool is preferable to alternatives, teaches the model the comparative decision process needed for edge cases. This is more effective than generic examples or declarative rules."
       },
       {
-        "text": "Add 10\u201315 examples of clear, unambiguous requests demonstrating correct tool choice for typical scenarios for each tool. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add 10\u201315 examples of clear, unambiguous requests demonstrating correct tool choice for typical scenarios for each tool. This interface design depends on specific operational declarations at the protocol layer.",
         "isCorrect": false,
         "explanation": "Trap: This design compromises the Model Context Protocol boundary and violates least-privilege security roots."
       }
@@ -3000,7 +3000,7 @@ const CCAF_DATABASE = [
     "question": "What is the most likely cause of this MCP server JSON-RPC crash?",
     "options": [
       {
-        "text": "The tool is running inside a sandboxed container without root permissions. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "The tool is running inside a sandboxed container without root permissions. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: Lack of root permissions can cause filesystem write errors, but does not trigger a JSON-RPC protocol violation error. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding maximum prefill token window limits."
       },
@@ -3034,17 +3034,17 @@ const CCAF_DATABASE = [
         "explanation": "Connection refused errors indicate a network-level block; verifying that firewalls, proxies, and target ports are open is the correct first step. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Widen the context window of the Claude client to 200,000 tokens, executing sequential tool decomposition without classification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the Claude client to 200,000 tokens, executing sequential tool decomposition without classification. This workflow structure depends on specific operational declarations at the workspace layer.",
         "isCorrect": false,
         "explanation": "Trap: Context window size has no bearing on TCP/IP connection handshake loops. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Instruct the model in the system prompt to retry the connection with standard timeouts. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model in the system prompt to retry the connection with standard timeouts.",
         "isCorrect": false,
         "explanation": "Trap: A model cannot change network interfaces or bypass firewall ports via conversational thoughts."
       },
       {
-        "text": "Clear in-memory cache keys and reload the browser SPA website. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Clear in-memory cache keys and reload the browser SPA website. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: Local browser state does not configure or clear low-level network websocket blocks. Circumventing protocol connection validation checks."
       }
@@ -3073,7 +3073,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Temperature affects generative creativity, not the model's adherence to basic API input requirements."
       },
       {
-        "text": "Disable the search utility and replace it with a static bash shell grep execution, executing sequential tool decomposition without classification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable the search utility and replace it with a static bash shell grep execution, executing sequential tool decomposition without classification. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: Bash grep commands are complex, slow, error-prone, and represent a downgrade in usability compared to structured APIs."
       }
@@ -3102,7 +3102,7 @@ const CCAF_DATABASE = [
         "explanation": "Asynchronous state tracking via tracking IDs prevents client connection timeouts, allowing the agent to manage long-running tasks gracefully."
       },
       {
-        "text": "Widen the regional network timeout limits of all MCP servers to 1 hour, executing sequential tool decomposition without classification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the regional network timeout limits of all MCP servers to 1 hour, executing sequential tool decomposition without classification. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: 1-hour timeouts freeze the conversational loop, destroying the user experience. Circumventing protocol connection validation checks."
       }
@@ -3116,22 +3116,22 @@ const CCAF_DATABASE = [
     "question": "Where should you define this multi-server configuration?",
     "options": [
       {
-        "text": "Store the server configurations inside the static local configuration files file. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store the server configurations inside the static local configuration files file.",
         "isCorrect": false,
         "explanation": "Trap: `static local configuration files` is a static database and has no bear on the client's MCP runtime registry. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "Set the model temperature to 0.0 during server setup. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 during server setup. This workflow structure depends on specific operational declarations at the workspace layer.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects text generation, not low-level protocol registry systems. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "Instruct each developer to manually execute `npm link` on all servers. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct each developer to manually execute `npm link` on all servers.",
         "isCorrect": false,
         "explanation": "Trap: Manual local commands lead to drift, missing servers, and environment inconsistency. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Inside the shared, version-controlled `CLAUDE.md` file or a central `mcp_config.json` configuration file in the repository. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Inside the shared, version-controlled `CLAUDE.md` file or a central `mcp_config.json` configuration file in the repository.",
         "isCorrect": true,
         "explanation": "Using version-controlled configuration files (like `mcp_config.json` or `CLAUDE.md`) is the most reliable way to distribute unified server settings across a team."
       }
@@ -3150,17 +3150,17 @@ const CCAF_DATABASE = [
         "explanation": "Filtering outputs inside the MCP server tool handler is a secure, programmatic check that prevents sensitive data from ever escaping to the agent, completely independent of LLM behavior. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Implement an interval cron validation check on the server. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement an interval cron validation check on the server. This workflow structure depends on specific operational declarations at the workspace layer.",
         "isCorrect": false,
         "explanation": "Trap: Cron checks run post-execution and do not prevent real-time leaks to the active conversation. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Set the model temperature to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Temperature does not scan buffers for hidden passwords."
       },
       {
-        "text": "Instruct the agent in the system prompt to never read password lines. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to never read password lines. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: Prompts are not reliable security controls. The agent can still read and accidentally log the raw data. Circumventing protocol connection validation checks."
       }
@@ -3174,22 +3174,22 @@ const CCAF_DATABASE = [
     "question": "How should you configure the MCP server custom command to ensure clean parsing?",
     "options": [
       {
-        "text": "Disable linter execution and rely on manual checks. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable linter execution and rely on manual checks. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: Disabling the linter removes automated quality safeguards. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "Configure the server command with a plain-text flag (e.g., `NO_COLOR=1` or `--plain`) to strip out escape color sequences at the source. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Configure the server command with a plain-text flag (e.g., `NO_COLOR=1` or `--plain`) to strip out escape color sequences at the source.",
         "isCorrect": true,
         "explanation": "Stripping terminal color escape codes at the command level ensures the output payload contains clean, easily parseable text for the agent's reasoning model."
       },
       {
-        "text": "Widen the linter tool timeout limit to 5 minutes, executing sequential tool decomposition without classification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the linter tool timeout limit to 5 minutes, executing sequential tool decomposition without classification.",
         "isCorrect": false,
         "explanation": "Trap: Stalls are caused by parsing errors, not execution timeouts."
       },
       {
-        "text": "Instruct the agent in the system prompt to ignore ASCII color codes. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to ignore ASCII color codes.",
         "isCorrect": false,
         "explanation": "Trap: LLMs struggle to parse and clean raw terminal color escape sequences natively in their token representations."
       }
@@ -3203,12 +3203,12 @@ const CCAF_DATABASE = [
     "question": "Which configuration is required to enforce this boundary?",
     "options": [
       {
-        "text": "Widen the root.gitignore to include neighboring project folders, executing sequential tool decomposition without classification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the root.gitignore to include neighboring project folders, executing sequential tool decomposition without classification. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: Excluding folders globally in.gitignore breaks monorepo work and is highly impractical. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Delete neighboring project folders before launching the server. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Delete neighboring project folders before launching the server.",
         "isCorrect": false,
         "explanation": "Trap: Folder deletion is highly destructive and breaks monorepo local builds. Exceeding maximum prefill token window limits."
       },
@@ -3218,7 +3218,7 @@ const CCAF_DATABASE = [
         "explanation": "Configuring strict filesystem path constraints at the MCP server level is a robust infrastructure-level boundary that guarantees directory isolation."
       },
       {
-        "text": "Set the model temperature of the search tool to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature of the search tool to 0.0. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls creativity, not filesystem scope boundaries."
       }
@@ -3232,17 +3232,17 @@ const CCAF_DATABASE = [
     "question": "What is the recommended setup to automate this check?",
     "options": [
       {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly.",
         "isCorrect": false,
         "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Set the reasoning temperature of all agents to 0.0, executing sequential tool decomposition without classification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the reasoning temperature of all agents to 0.0, executing sequential tool decomposition without classification. This workflow structure depends on specific operational declarations at the workspace layer.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule."
       },
       {
-        "text": "Store formatting rules in in-memory cache. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store formatting rules in in-memory cache. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines."
       },
@@ -3290,7 +3290,7 @@ const CCAF_DATABASE = [
     "question": "What is the first network troubleshooting step you should execute?",
     "options": [
       {
-        "text": "Instruct the model in the system prompt to retry the connection with standard timeouts. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model in the system prompt to retry the connection with standard timeouts. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: A model cannot change network interfaces or bypass firewall ports via conversational thoughts. Circumventing protocol connection validation checks."
       },
@@ -3300,12 +3300,12 @@ const CCAF_DATABASE = [
         "explanation": "Connection refused errors indicate a network-level block; verifying that firewalls, proxies, and target ports are open is the correct first step."
       },
       {
-        "text": "Clear in-memory cache keys and reload the browser SPA website. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Clear in-memory cache keys and reload the browser SPA website. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Local browser state does not configure or clear low-level network websocket blocks."
       },
       {
-        "text": "Widen the context window of the Claude client to 200,000 tokens. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the Claude client to 200,000 tokens.",
         "isCorrect": false,
         "explanation": "Trap: Context window size has no bearing on TCP/IP connection handshake loops. Exceeding maximum prefill token window limits."
       }
@@ -3319,12 +3319,12 @@ const CCAF_DATABASE = [
     "question": "What is the best validation gate pattern for this tool?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity, executing sequential tool decomposition without classification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the model to maximum capacity, executing sequential tool decomposition without classification. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity has no bearing on filesystem security or validation loops."
       },
       {
-        "text": "Instruct the agent in the system prompt to never delete files. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to never delete files.",
         "isCorrect": false,
         "explanation": "Trap: Conversational prompt instructions are not absolute constraints and the model can still fail on complex generations. Exceeding maximum prefill token window limits."
       },
@@ -3334,7 +3334,7 @@ const CCAF_DATABASE = [
         "explanation": "Enforcing strict validation hooks or UI confirmation signatures is a secure, programmatic gate that blocks destructive actions before tool execution, ensuring absolute filesystem security."
       },
       {
-        "text": "Use in-memory cache to store container variables. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use in-memory cache to store container variables. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is client-side browser storage and has no integration with low-level container security. Circumventing protocol connection validation checks."
       }
@@ -3348,7 +3348,7 @@ const CCAF_DATABASE = [
     "question": "Where should you define this configuration to guarantee consistency?",
     "options": [
       {
-        "text": "Store the configurations inside the static local configuration files file. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store the configurations inside the static local configuration files file. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: `static local configuration files` is a static questions database and has no bearing on MCP server configurations. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -3421,7 +3421,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Stdio-based transport does not use network ports, so port mapping is irrelevant. Circumventing protocol connection validation checks."
       },
       {
-        "text": "The Node.js runtime version is less than v20, executing sequential tool decomposition without classification. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "The Node.js runtime version is less than v20, executing sequential tool decomposition without classification. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: Process crash is caused by code syntax bugs, not standard Node environment versions."
       }
@@ -3474,7 +3474,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Disabling all bash tools entirely prevents code compilation and testing, rendering the agent unusable."
       },
       {
-        "text": "Write a system prompt telling the agent to only edit files inside its directory circumventing protocol connection validation checks, to block destructive queries. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to only edit files inside its directory circumventing protocol connection validation checks, to block destructive queries. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Prompt constraints are easily bypassed via direct command injection attacks, exposing the host filesystem."
       },
@@ -3498,17 +3498,17 @@ const CCAF_DATABASE = [
         "explanation": "Streaming log reads chunk-by-chunk prevents the entire file from loading into memory at once, avoiding buffer overflow and OOM crashes. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Widen the Node.js process memory allocation limit to 4GB. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the Node.js process memory allocation limit to 4GB. This workflow structure depends on specific operational declarations at the workspace layer.",
         "isCorrect": false,
         "explanation": "Trap: Bumping memory limits is a temporary workaround that still crashes when log sizes exceed 4GB. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Disable log viewing entirely from the tool suite. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable log viewing entirely from the tool suite. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Disabling tools removes core troubleshooting capabilities from the automated pipeline."
       },
       {
-        "text": "Instruct the model in the prompt to read the log file faster. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model in the prompt to read the log file faster. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: Prompts cannot increase Node.js execution speeds or buffer allocation behaviors."
       }
@@ -3522,7 +3522,7 @@ const CCAF_DATABASE = [
     "question": "Which MCP transport configuration is architecturally required to connect both servers securely and efficiently?",
     "options": [
       {
-        "text": "Establish an overarching WebSocket network mesh across both servers utilizing `stdio` transport streams over public internet routing gateways to maintain consistency. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Establish an overarching WebSocket network mesh across both servers utilizing `stdio` transport streams over public internet routing gateways to maintain consistency. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: Stdio transport streams operate locally over standard operating system pipes and cannot be routed natively over public internet WebSocket gateways. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -3551,7 +3551,7 @@ const CCAF_DATABASE = [
     "question": "Which MCP capability should you implement to expose this structured reference data?",
     "options": [
       {
-        "text": "Define an exhaustive custom system prompt wrapper within `CLAUDE.md` that embeds all schemas and log files statically before executing any conversational turns. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Define an exhaustive custom system prompt wrapper within `CLAUDE.md` that embeds all schemas and log files statically before executing any conversational turns. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: Statically embedding real-time logs inside `CLAUDE.md` prevents dynamic state checking and exhausts prompt prefill token budget on initial startup. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -3585,7 +3585,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: LocalStorage is isolated within individual client browser runtime instances and cannot distribute unified enterprise prompt templates across developer IDEs. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Distribute a bash script that overwrites the global system instructions file on every machine start to guarantee universal formatting adherence across workflows. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Distribute a bash script that overwrites the global system instructions file on every machine start to guarantee universal formatting adherence across workflows. This workflow structure depends on specific operational declarations at the workspace layer.",
         "isCorrect": false,
         "explanation": "Trap: Bash scripts that overwrite system configuration files are highly intrusive, error-prone, and lack native integration with dynamic user argument handling."
       },
@@ -3624,7 +3624,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Asynchronous cron monitoring jobs evaluate execution logs post-facto and cannot prevent malicious read or write operations during active tool execution."
       },
       {
-        "text": "Store the absolute allowed filesystem directory path strings inside browser localStorage and pass them as dynamic prompt parameters during tool execution loops. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store the absolute allowed filesystem directory path strings inside browser localStorage and pass them as dynamic prompt parameters during tool execution loops. This configuration structures automated execution parameters within the active repository.",
         "isCorrect": false,
         "explanation": "Trap: Relying on localStorage variables passed as prompt parameters provides zero underlying filesystem security boundaries at the running MCP server layer."
       }
@@ -3643,12 +3643,12 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Tool description warnings carry zero programmatic security guarantees against malicious inputs. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Restrict tool inputs to parameterized parameters and compile queries using prepared statements. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Restrict tool inputs to parameterized parameters and compile queries using prepared statements. This workflow structure depends on specific operational declarations at the workspace layer.",
         "isCorrect": true,
         "explanation": "Enforcing rigid structured schemas and prepared queries inside server code prevents injection vulnerabilities completely. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Implement an online regex check inside the system prompt that filters out common SQL injection keywords like SELECT or DROP. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement an online regex check inside the system prompt that filters out common SQL injection keywords like SELECT or DROP. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Regex filters are easily bypassed by sophisticated attackers and add massive context prefill token loads."
       },
@@ -3735,7 +3735,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Have each developer add the server in user scope via `claude mcp add --scope user`. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Create an MCP server wrapper that reads tokens from a `.env` file and proxies GitHub API calls, then add the wrapper to the project `.mcp.json`. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Create an MCP server wrapper that reads tokens from a `.env` file and proxies GitHub API calls, then add the wrapper to the project `.mcp.json`. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: This configuration bypasses standard validation guardrails and introduces non-deterministic execution behaviors."
       },
@@ -3764,7 +3764,7 @@ const CCAF_DATABASE = [
         "explanation": "The systematic keyword-driven pattern (78% vs 93%) strongly indicates explicit routing logic in the system prompt reacting to the word \u201caccount\u201d and steering the agent toward customer-related tools. Since tool descriptions are already clear, the discrepancy points to prompt-level instructions creating unintended behavioral steering."
       },
       {
-        "text": "The model needs more training data on multi-concept messages and should be fine-tuned on examples containing both account and order terminology. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "The model needs more training data on multi-concept messages and should be fine-tuned on examples containing both account and order terminology. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: This configuration bypasses standard validation guardrails and introduces non-deterministic execution behaviors."
       },
@@ -3783,7 +3783,7 @@ const CCAF_DATABASE = [
     "question": "Which approach is most maintainable?",
     "options": [
       {
-        "text": "Modify tools you control to return human-readable formats and create wrappers for third-party tools. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Modify tools you control to return human-readable formats and create wrappers for third-party tools. This operational configuration utilizes explicit execution parameters within the workspace.",
         "isCorrect": false,
         "explanation": "Trap: Modify tools you control to return human-readable formats and create wrappers for third-party tools. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -3812,22 +3812,22 @@ const CCAF_DATABASE = [
     "question": "What is the first step?",
     "options": [
       {
-        "text": "Few-shot examples. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Few-shot examples.",
         "isCorrect": false,
         "explanation": "Trap: Few-shot examples This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Add a routing layer. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add a routing layer.",
         "isCorrect": false,
         "explanation": "Trap: Add a routing layer This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Merge the tools. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Merge the tools. This execution design establishes explicit configuration parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Merge the tools This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Expand each tool\u2019s description with input formats, examples, and boundaries. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Expand each tool\u2019s description with input formats, examples, and boundaries.",
         "isCorrect": true,
         "explanation": "Tool descriptions are the model\u2019s primary selection mechanism. This is the lowest-effort, highest-impact fix. A adds tokens without addressing the root cause. C is overengineering. D requires more effort than justified. This structured approach establishes clear architectural guardrails across operational boundaries. This recommended pattern guarantees robust foundational stability across multi-agent processing systems."
       }
@@ -3846,17 +3846,17 @@ const CCAF_DATABASE = [
         "explanation": "Claude Code supports hierarchical CLAUDE.md structures, inheriting root guidelines and merging nested directory-level instructions cleanly."
       },
       {
-        "text": "Create separate git branches for each folder, keeping folder-specific CLAUDE.md files on separate branch heads. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Create separate git branches for each folder, keeping folder-specific CLAUDE.md files on separate branch heads.",
         "isCorrect": false,
         "explanation": "Trap: Branch separation prevents unified monorepo work and is an anti-pattern for configuration management. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
       },
       {
-        "text": "Exclusively use project-level skills configured via the command line using slash commands. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Exclusively use project-level skills configured via the command line using slash commands. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Slash skills are personal configurations that do not persist in the git repository or scale across team workspaces. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Consolidate all folder rules into the root CLAUDE.md and use conditional logic tags based on file path regexes inside a single prompt. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Consolidate all folder rules into the root CLAUDE.md and use conditional logic tags based on file path regexes inside a single prompt. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: A single massive CLAUDE.md file consumes unnecessary token prefill on every turn, degrading performance and routing accuracy. To prevent pipeline failures."
       }
@@ -3870,7 +3870,7 @@ const CCAF_DATABASE = [
     "question": "Which local configuration is mandatory to run Claude Code in this offline environment?",
     "options": [
       {
-        "text": "Link Claude Code to a local MCP server running a distilled Llama model. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Link Claude Code to a local MCP server running a distilled Llama model. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Linking local MCP servers provides tools, but does not replace Claude Code's core cloud reasoning API dependencies. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       },
@@ -3880,12 +3880,12 @@ const CCAF_DATABASE = [
         "explanation": "Claude Code's reasoning engine resides on Anthropic's cloud; running it requires outbound API access, which must be secured via proxy. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Launch Claude Code with the `--offline` or `--local` command-line flag to use a local model. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Launch Claude Code with the `--offline` or `--local` command-line flag to use a local model.",
         "isCorrect": false,
         "explanation": "Trap: Claude Code does not ship with a local weights compiler or offline model runner; the `--offline` flag does not exist. Forcing strict AST checks. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
       },
       {
-        "text": "Download the static local configuration files database to the local directory to enable offline compilation. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Download the static local configuration files database to the local directory to enable offline compilation. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: Having a data file locally does not resolve the core client's API network dependencies. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       }
@@ -3899,12 +3899,12 @@ const CCAF_DATABASE = [
     "question": "Which configuration combination is necessary to run Claude Code autonomously in CI/CD pipelines?",
     "options": [
       {
-        "text": "Write a prompt telling the agent to always type 'yes' in the terminal. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a prompt telling the agent to always type 'yes' in the terminal. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Prompts cannot inject keyboard stdin responses into CLI prompt blocks; the execution will still stall. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Set the Node.js timeout limit to 300 seconds in the GitHub Actions YAML. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the Node.js timeout limit to 300 seconds in the GitHub Actions YAML. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Setting timeouts merely aborts the pipeline after 5 minutes, leaving the execution stalled and incomplete. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       },
@@ -3914,7 +3914,7 @@ const CCAF_DATABASE = [
         "explanation": "Enabling non-interactive/auto-approve CLI flags is mandatory to bypass tool execution approval blockers, allowing autonomous pipeline execution."
       },
       {
-        "text": "Disable the bash execution tool entirely in the CI/CD runner. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable the bash execution tool entirely in the CI/CD runner. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: Disabling the tool prevents the agent from running test compilation commands, defeating the purpose of CI/CD review. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
       }
@@ -3938,7 +3938,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: `static local configuration files` is a static data pool and cannot configure the Claude Code client command registry. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       },
       {
-        "text": "Instruct each developer to manually run the `/skill add` CLI command in their local Claude Code session. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct each developer to manually run the `/skill add` CLI command in their local Claude Code session. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Manual local CLI commands are fragile, error-prone, and cannot be verified programmatically."
       },
@@ -3962,17 +3962,17 @@ const CCAF_DATABASE = [
         "explanation": "Excluding heavy lock files, node_modules, and build directories protects the prefill token budget and speeds up startup times."
       },
       {
-        "text": "Run Claude Code with the `--fast` flag. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Run Claude Code with the `--fast` flag. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: The `--fast` flag is not a standard Claude Code CLI argument and does not exclude files from indexing. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Delete all temporary directories and lock files manually before launching Claude Code. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Delete all temporary directories and lock files manually before launching Claude Code. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Deleting lock files and build directories manually breaks the local development build and is highly impractical. To prevent pipeline failures."
       },
       {
-        "text": "Instruct the agent in the system prompt to ignore node_modules during search. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to ignore node_modules during search.",
         "isCorrect": false,
         "explanation": "Trap: Conversational prompts are evaluated AFTER files are already indexed/prefilled, wasting token budget. Ensuring deterministic execution constraints."
       }
@@ -3986,7 +3986,7 @@ const CCAF_DATABASE = [
     "question": "Which logging and configuration setup is most suitable to achieve this audit trail?",
     "options": [
       {
-        "text": "Use a Chrome browser window to monitor the agent's sessions. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use a Chrome browser window to monitor the agent's sessions. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Claude Code is a CLI-based tool, and browser monitoring is not supported natively. This pattern is strictly discouraged in high-throughput enterprise deployments. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
       },
@@ -3996,12 +3996,12 @@ const CCAF_DATABASE = [
         "explanation": "Configuring the client to output raw tool transaction logs directly is the most reliable way to establish an audit trail for compliance. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Disable bash tool access to prevent auditing challenges. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable bash tool access to prevent auditing challenges. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Disabling bash tools prevents valid compilation and testing, rendering the CLI tool useless. Utilizing project-level skills configured via slash commands to intercept git commits automatically. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
       },
       {
-        "text": "Instruct the agent in the system prompt to write its actions to an audit.txt file. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to write its actions to an audit.txt file. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: LLMs can fail to log actions consistently, and a system prompt cannot capture low-level tool exceptions or bash failures. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
       }
@@ -4015,22 +4015,22 @@ const CCAF_DATABASE = [
     "question": "How should you configure the custom command in CLAUDE.md to ensure clean parsing?",
     "options": [
       {
-        "text": "Instruct the agent in the system prompt to ignore ASCII color codes. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to ignore ASCII color codes.",
         "isCorrect": false,
         "explanation": "Trap: LLMs struggle to parse and clean raw terminal color escape sequences natively in their token representations. To prevent pipeline failures."
       },
       {
-        "text": "Widen the linter tool timeout limit to 5 minutes. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the linter tool timeout limit to 5 minutes. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Stalls are caused by parsing errors, not execution timeouts. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       },
       {
-        "text": "Configure the command in CLAUDE.md with a plain-text flag (e.g., `--no-color` or `NO_COLOR=1`) to strip out terminal formatting codes. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Configure the command in CLAUDE.md with a plain-text flag (e.g., `--no-color` or `NO_COLOR=1`) to strip out terminal formatting codes.",
         "isCorrect": true,
         "explanation": "Enforcing plain-text output formats at the CLI command layer ensures clean, parseable text for the agent's reasoning model."
       },
       {
-        "text": "Disable linter execution and rely on manual visual checks. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable linter execution and rely on manual visual checks.",
         "isCorrect": false,
         "explanation": "Trap: Disabling the linter removes automated quality safeguards from the CI/CD pipeline."
       }
@@ -4044,22 +4044,22 @@ const CCAF_DATABASE = [
     "question": "Which configuration is required to enforce this boundary?",
     "options": [
       {
-        "text": "Widen the root.gitignore to include the neighboring project folders. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the root.gitignore to include the neighboring project folders.",
         "isCorrect": false,
         "explanation": "Trap: Excluding folders globally in.gitignore prevents git tracking and breaks normal developer workflows in the monorepo. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Set the model temperature of the search tool to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature of the search tool to 0.0. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls creativity, not filesystem scope boundaries. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Delete neighboring project folders before launching Claude Code. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Delete neighboring project folders before launching Claude Code.",
         "isCorrect": false,
         "explanation": "Trap: Deleting folders is highly destructive, impractical, and breaks local monorepo development. To prevent pipeline failures."
       },
       {
-        "text": "Place a separate CLAUDE.md file in each project directory and instruct Claude Code to run with the `--local-root` or scoping flag. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Place a separate CLAUDE.md file in each project directory and instruct Claude Code to run with the `--local-root` or scoping flag.",
         "isCorrect": true,
         "explanation": "Hierarchical CLAUDE.md files combined with local scoping flags ensure that Claude Code's file access is restricted to the active project directory."
       }
@@ -4088,7 +4088,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Disabling tools does not enforce rules or configure pytest frameworks. To prevent pipeline failures."
       },
       {
-        "text": "Have the on-call engineer type these rules in the chat session on every new task. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Have the on-call engineer type these rules in the chat session on every new task. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: Manual prompting is highly repetitive, fragile, and depends on developer recall. Forcing strict AST checks."
       }
@@ -4102,7 +4102,7 @@ const CCAF_DATABASE = [
     "question": "How should you configure Claude Code to output ONLY the raw markdown summary in the pipeline?",
     "options": [
       {
-        "text": "Widen the pipeline execution timeout to 30 minutes. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the pipeline execution timeout to 30 minutes. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Long timeouts do not remove conversational chit-chat or format outputs. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       },
@@ -4112,12 +4112,12 @@ const CCAF_DATABASE = [
         "explanation": "Combining raw CLI flags with strict CLAUDE.md formatting instructions is the most robust way to eliminate conversational noise in automated pipelines. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Configure the pipeline to post-process and strip out all lines starting with standard greetings. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the pipeline to post-process and strip out all lines starting with standard greetings. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Post-processing text greets is fragile, as model outputs vary and can easily bypass hardcoded text cleaners. To prevent pipeline failures. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
       },
       {
-        "text": "Set the model temperature to 1.0 to encourage creative output format. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 1.0 to encourage creative output format.",
         "isCorrect": false,
         "explanation": "Trap: Higher temperature increases text variation and random conversation, worsening formatting consistency. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
       }
@@ -4131,12 +4131,12 @@ const CCAF_DATABASE = [
     "question": "What is the best distribution mechanism?",
     "options": [
       {
-        "text": "Configure a local cron job on each workstation to download scripts from a shared drive. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure a local cron job on each workstation to download scripts from a shared drive. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: External cron scripts bypass the repository version control, introducing out-of-sync errors. To prevent pipeline failures."
       },
       {
-        "text": "Instruct each developer to manually run npm install on the tools folder. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct each developer to manually run npm install on the tools folder.",
         "isCorrect": false,
         "explanation": "Trap: Manual installs do not sync automatically and frequently lead to dependency drift. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       },
@@ -4146,7 +4146,7 @@ const CCAF_DATABASE = [
         "explanation": "Leveraging version control for both scripts and `CLAUDE.md` command mappings guarantees automated, atomic updates across all developer workspaces upon git sync."
       },
       {
-        "text": "Keep scripts inside in-memory cache to ensure persistence. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Keep scripts inside in-memory cache to ensure persistence. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is client-side browser storage and has no integration with Claude Code command-line tools. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       }
@@ -4160,22 +4160,22 @@ const CCAF_DATABASE = [
     "question": "What is the best configuration to prevent this indexing slowdown?",
     "options": [
       {
-        "text": "Instruct the compiler to write all object files to a remote server. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the compiler to write all object files to a remote server.",
         "isCorrect": false,
         "explanation": "Trap: Remote compiling introduces huge network latency and is highly impractical for standard local development builds. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Manually run the slash command `/clear-cache` in every session. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Manually run the slash command `/clear-cache` in every session.",
         "isCorrect": false,
         "explanation": "Trap: Clearing cache manually is annoying and doesn't prevent the indexing engine from immediately rescanning the files on the next step. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Set the model temperature to 0.0 during compiles. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 during compiles. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects generative determinism, not filesystem index performance. Forcing strict AST checks, to prevent pipeline failures."
       },
       {
-        "text": "Add the compiler output file extension patterns (e.g., `*.o`, `*.d`, `build/`) to the shared `CLAUDE.md` file exclusions list or `.gitignore`. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Add the compiler output file extension patterns (e.g., `*.o`, `*.d`, `build/`) to the shared `CLAUDE.md` file exclusions list or `.gitignore`.",
         "isCorrect": true,
         "explanation": "Excluding compiled binary/object patterns from CLAUDE.md ensures the indexing engine completely skips them, protecting token budget and speed."
       }
@@ -4194,17 +4194,17 @@ const CCAF_DATABASE = [
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside `CLAUDE.md` ensures the agent self-corrects style errors before committing files."
       },
       {
-        "text": "Store formatting rules in in-memory cache. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store formatting rules in in-memory cache. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Set the reasoning temperature of all agents to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the reasoning temperature of all agents to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Write a system prompt telling the agent to always follow PEP 8 rules strictly. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to always follow PEP 8 rules strictly. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. Ensuring deterministic execution constraints."
       }
@@ -4218,7 +4218,7 @@ const CCAF_DATABASE = [
     "question": "How should you optimize the repository configuration to handle this massive size?",
     "options": [
       {
-        "text": "Run Claude Code inside a Chrome browser tab. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Run Claude Code inside a Chrome browser tab. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Claude Code is a CLI-based terminal application; running it inside a browser tab is not natively supported. This pattern is strictly discouraged in high-throughput enterprise deployments. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
       },
@@ -4228,12 +4228,12 @@ const CCAF_DATABASE = [
         "explanation": "Strictly excluding non-essential directories in massive repos limits the index size, protecting memory limits and drastically improving startup times. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Instruct the agent in the prompt to only look at the first 10 files it sees. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the prompt to only look at the first 10 files it sees. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Prompts are evaluated after files are already indexed/prefilled, so they do not prevent initial OOM crashes. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
       },
       {
-        "text": "Widen the VM's RAM capacity to 64GB. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the VM's RAM capacity to 64GB. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: Bumping RAM is expensive and merely delays the index limit; if the repo is massive, indexing will still consume enormous token prefill budgets. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
       }
@@ -4247,12 +4247,12 @@ const CCAF_DATABASE = [
     "question": "How should you design the custom command execution inside CLAUDE.md?",
     "options": [
       {
-        "text": "Ignore all non-zero exit codes to keep the pipeline running. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Ignore all non-zero exit codes to keep the pipeline running. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring exit codes leads to silent deployment failures, leaving the environment corrupted. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       },
       {
-        "text": "Set the timeout limit of the bash command to 1 hour. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the timeout limit of the bash command to 1 hour. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Timeout limits do not capture runtime script exit statuses. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       },
@@ -4262,7 +4262,7 @@ const CCAF_DATABASE = [
         "explanation": "Forwarding stderr and checking exit codes programmatically ensures Claude Code captures process failures and triggers correct error mitigation."
       },
       {
-        "text": "Instruct the agent in the system prompt to guess if the bash command succeeded. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to guess if the bash command succeeded. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: An agent cannot guess or evaluate shell success without access to exit codes and stderr logs. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
       }
@@ -4276,17 +4276,17 @@ const CCAF_DATABASE = [
     "question": "How should you configure the test runner inside CLAUDE.md?",
     "options": [
       {
-        "text": "Store the jest configuration scripts inside static local configuration files. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store the jest configuration scripts inside static local configuration files.",
         "isCorrect": false,
         "explanation": "Trap: `static local configuration files` is a static question database and has no bear on terminal command configurations. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
       },
       {
-        "text": "Set the model temperature to 0.0 during tests. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 during tests. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects text creativity, not jest command structures. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       },
       {
-        "text": "Instruct each developer to manually type the coverage flags in their terminals. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct each developer to manually type the coverage flags in their terminals. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Manual instructions do not automate the agent's test runner pipeline, leading to incomplete test execution. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       },
@@ -4310,17 +4310,17 @@ const CCAF_DATABASE = [
         "explanation": "Scoping file mounts in Docker is a hard infrastructure-level boundary that guarantees filesystem security, completely independent of the model's instructions."
       },
       {
-        "text": "Disable all bash tools inside the container. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable all bash tools inside the container. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Disabling bash tools completely prevents code compilation and testing, rendering the agent unusable. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Use in-memory cache to store container variables. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use in-memory cache to store container variables.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage has no bearing on low-level Linux container security or filesystem isolation. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Write a system prompt telling the agent to only edit files inside its directory. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to only edit files inside its directory. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: Prompt constraints are easily bypassed via direct command injection attacks, exposing the host filesystem. Forcing strict AST checks, to prevent pipeline failures."
       }
@@ -4349,7 +4349,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Default models often jump straight to code generation without a plan, especially under complex or confusing prompts. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Store the planning instructions inside the static local configuration files file. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store the planning instructions inside the static local configuration files file. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: `static local configuration files` is a static database and does not configure the Claude Code client's runtime instructions. Ensuring deterministic execution constraints."
       }
@@ -4363,12 +4363,12 @@ const CCAF_DATABASE = [
     "question": "How should you structure the custom command in CLAUDE.md to prevent these connection stalls?",
     "options": [
       {
-        "text": "Instruct the agent in the system prompt to check if the database is running before calling the tool. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to check if the database is running before calling the tool. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: An agent cannot programmatically verify port states via conversational thoughts without executing a tool. To prevent pipeline failures."
       },
       {
-        "text": "Disable database migration tasks from the workspace entirely. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Disable database migration tasks from the workspace entirely. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Disabling tasks removes core capabilities from the automated workflow. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       },
@@ -4378,7 +4378,7 @@ const CCAF_DATABASE = [
         "explanation": "Configuring hard connection timeouts on the CLI command level guarantees the script fails fast, allowing the agent to immediately catch the error and escalate."
       },
       {
-        "text": "Increase the Node.js process timeout to 1 hour in the shell environment. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the Node.js process timeout to 1 hour in the shell environment.",
         "isCorrect": false,
         "explanation": "Trap: Long timeouts worsen the stall, freezing the agentic pipeline. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       }
@@ -4392,22 +4392,22 @@ const CCAF_DATABASE = [
     "question": "Which configuration combination will prevent this tracking clutter?",
     "options": [
       {
-        "text": "Set the model temperature to 0.0 during builds. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 during builds. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Temperature does not affect git tracking or file indexing patterns. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       },
       {
-        "text": "Manually run git rm on the class files before launching Claude Code. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Manually run git rm on the class files before launching Claude Code.",
         "isCorrect": false,
         "explanation": "Trap: Manual deletion is repetitive, slow, and doesn't prevent the agent from immediately generating and tracking new class files. Ensuring deterministic execution constraints."
       },
       {
-        "text": "Instruct the agent in the system prompt to never use the git add command on class files. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to never use the git add command on class files.",
         "isCorrect": false,
         "explanation": "Trap: Conversational prompt instructions are fragile and frequently bypassed during automated file operations."
       },
       {
-        "text": "Add the compiled patterns (e.g. `**/*.class`, `target/`) to both the repository `.gitignore` and the exclusions list in `CLAUDE.md`. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Add the compiled patterns (e.g. `**/*.class`, `target/`) to both the repository `.gitignore` and the exclusions list in `CLAUDE.md`.",
         "isCorrect": true,
         "explanation": "Excluding compiled patterns in both `.gitignore` and `CLAUDE.md` ensures Claude Code never indexes or attempts to track build artifacts."
       }
@@ -4431,7 +4431,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: `static local configuration files` is a static questions database and cannot configure the Claude Code command registry. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
       },
       {
-        "text": "Instruct each developer to set up a local bash alias in their `~/.bashrc` file. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct each developer to set up a local bash alias in their `~/.bashrc` file. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Local bash aliases are hard to sync and do not integrate natively as Claude Code slash commands."
       },
@@ -4450,7 +4450,7 @@ const CCAF_DATABASE = [
     "question": "How should you configure the test runner inside CLAUDE.md to enforce this constraint?",
     "options": [
       {
-        "text": "Instruct each developer to manually type the coverage flags in their terminals. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct each developer to manually type the coverage flags in their terminals. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Manual instructions do not automate the agent's test runner pipeline, leading to incomplete test execution. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
       },
@@ -4460,12 +4460,12 @@ const CCAF_DATABASE = [
         "explanation": "Hardcoding the exact test command with coverage thresholds inside `CLAUDE.md` ensures the automated test runner executes the correct coverage scripts persistently. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Store the go coverage configuration scripts inside static local configuration files. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store the go coverage configuration scripts inside static local configuration files.",
         "isCorrect": false,
         "explanation": "Trap: `static local configuration files` is a static questions database and has no bear on terminal command configurations. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       },
       {
-        "text": "Set the model temperature to 0.0 during testsmd instruction modules do not pollute the active shell execution environments. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0 during testsmd instruction modules do not pollute the active shell execution environments. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects text creativity, not go test command structures. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       }
@@ -4484,7 +4484,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Bloating CLAUDE.md with entire rulebooks and scripts consumes excessive prefill tokens on every run and lacks dynamic tool execution wrappers. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Modify the global Claude Code binary execution binary files directly, recompiling the base agent runtime to permanently bundle custom enterprise linters. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Modify the global Claude Code binary execution binary files directly, recompiling the base agent runtime to permanently bundle custom enterprise linters. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Modifying core execution binaries creates extreme maintenance overhead, breaks upstream upgrades, and violates standard extension patterns."
       },
@@ -4508,7 +4508,7 @@ const CCAF_DATABASE = [
     "question": "Which configuration mechanism prevents indexing of these sensitive and heavy assets?",
     "options": [
       {
-        "text": "Declare a natural language directive inside `CLAUDE.md` instructing the underlying language model to politely ignore sensitive directories when searching. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Declare a natural language directive inside `CLAUDE.md` instructing the underlying language model to politely ignore sensitive directories when searching. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Natural language instructions in CLAUDE.md do not prevent background file indexing and discovery engines from reading sensitive files. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -4542,7 +4542,7 @@ const CCAF_DATABASE = [
         "explanation": "permissions.deny establishes hard security governance boundaries at the execution middleware level, blocking unauthorized tools before execution."
       },
       {
-        "text": "Set the environment variable `CLAUDE_SAFETY_LEVEL=STRICT` in the developer's bash profile to engage internal heuristic protections against dangerous tools. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the environment variable `CLAUDE_SAFETY_LEVEL=STRICT` in the developer's bash profile to engage internal heuristic protections against dangerous tools. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Heuristic safety variables do not provide deterministic, unbypassable execution guarantees against specific enterprise tools or network calls. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -4595,7 +4595,7 @@ const CCAF_DATABASE = [
     "question": "Which improvement is most effective?",
     "options": [
       {
-        "text": "Create a dedicated error-handling agent that monitors all failures via a shared queue and decides recovery actions, sending restart commands directly to subagents. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Create a dedicated error-handling agent that monitors all failures via a shared queue and decides recovery actions, sending restart commands directly to subagents. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Create a dedicated error-handling agent that monitors all failures via a shared queue and decides recovery actions, sending restart commands directly to subagents. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -4629,7 +4629,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Continue synthesis using only successful sources and produce an output without mentioning which data was unavailable. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "The synthesis subagent returns an error to the coordinator, triggering a full retry or task failure due to incomplete data. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "The synthesis subagent returns an error to the coordinator, triggering a full retry or task failure due to incomplete data. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
@@ -4663,7 +4663,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Catch the timeout within the subagent and return an empty result set marked as successful. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Implement automatic exponential-backoff retries inside the subagent, only returning a generic \u201csearch unavailable\u201d status after exhausting retries. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement automatic exponential-backoff retries inside the subagent, only returning a generic \u201csearch unavailable\u201d status after exhausting retries. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
@@ -4687,7 +4687,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Remove `fetch_url` from the document analysis agent and route all URL fetching through the coordinator to the web-search agent. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Replace `fetch_url` with a `load_document` tool that validates that URLs point to document formats. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Replace `fetch_url` with a `load_document` tool that validates that URLs point to document formats. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": true,
         "explanation": "Replacing a general-purpose tool with a document-specific tool that validates URLs against document formats fixes the root cause by constraining capability at the interface level. This follows the principle of least privilege, making undesired search behavior impossible rather than merely discouraged. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
@@ -4697,7 +4697,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Add instructions to the document analysis agent prompt that `fetch_url` should only be used to download document URLs, not to search. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add instructions to the document analysis agent prompt that `fetch_url` should only be used to download document URLs, not to search. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       }
@@ -4745,7 +4745,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Enable extended thinking mode for the generation stage to allow more thorough deliberation before producing suggestions. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Add explicit self-review instructions to the generation prompt asking Claude to critique its own suggestions before finalizing output. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add explicit self-review instructions to the generation prompt asking Claude to critique its own suggestions before finalizing output. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
@@ -4755,7 +4755,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Run a second independent instance of Claude Code to review the changes without access to the generator\u2019s reasoning. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Run a second independent instance of Claude Code to review the changes without access to the generator\u2019s reasoning. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": true,
         "explanation": "A second independent Claude Code instance without access to the generator\u2019s reasoning directly addresses the root cause by avoiding confirmation bias. This \u201cfresh eyes\u201d perspective mirrors human peer review, where another reviewer catches issues the author rationalized. This structured approach establishes clear architectural guardrails across operational boundaries."
       }
@@ -4895,7 +4895,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Include `git blame` data so Claude can identify comments that predate recent code changes. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Add few-shot examples of misleading comments to help the model recognize similar patterns in the codebase. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add few-shot examples of misleading comments to help the model recognize similar patterns in the codebase. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
@@ -4914,7 +4914,7 @@ const CCAF_DATABASE = [
     "question": "Which approach best restores developer trust?",
     "options": [
       {
-        "text": "Keep all categories enabled but display confidence scores with each finding so developers can decide what to investigate. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Keep all categories enabled but display confidence scores with each finding so developers can decide what to investigate. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Keep all categories enabled but display confidence scores with each finding so developers can decide what to investigate. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -4948,12 +4948,12 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Reduce the requested number of suggestions from 10 to 5, assuming Claude prioritizes the most valuable cases first. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Add instructions directing Claude to focus exclusively on edge cases and error conditions rather than success paths. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add instructions directing Claude to focus exclusively on edge cases and error conditions rather than success paths. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Include the existing test file in context so Claude can determine what scenarios are already covered. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Include the existing test file in context so Claude can determine what scenarios are already covered. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": true,
         "explanation": "Including the existing test file fixes the root cause of duplication: Claude can only avoid suggesting already-covered scenarios if it knows what tests already exist. This gives Claude the information needed to propose genuinely new, valuable tests. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
@@ -5045,7 +5045,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Switch to a larger model with a bigger context window so it can pay sufficient attention to all 14 files in one pass. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Switch to a larger model with a bigger context window so it can pay sufficient attention to all 14 files in one pass. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       }
@@ -5059,7 +5059,7 @@ const CCAF_DATABASE = [
     "question": "What change best addresses investigation time?",
     "options": [
       {
-        "text": "Add a post-processor that analyzes finding patterns and automatically suppresses those that match historical false-positive signatures. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add a post-processor that analyzes finding patterns and automatically suppresses those that match historical false-positive signatures. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Add a post-processor that analyzes finding patterns and automatically suppresses those that match historical false-positive signatures. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -5069,7 +5069,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Require Claude to include its rationale and confidence estimate directly in each finding. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Require Claude to include its rationale and confidence estimate directly in each finding. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": true,
         "explanation": "Including rationale and confidence directly in each finding reduces investigation time by letting developers quickly triage without opening each finding. It satisfies the \u201cno filtering\u201d constraint because all findings remain visible while accelerating developer decision-making. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
@@ -5088,7 +5088,7 @@ const CCAF_DATABASE = [
     "question": "Which approach best restores developer trust?",
     "options": [
       {
-        "text": "Keep all categories enabled but display confidence scores with each finding so developers can decide what to investigate. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Keep all categories enabled but display confidence scores with each finding so developers can decide what to investigate. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Keep all categories enabled but display confidence scores with each finding so developers can decide what to investigate. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -5122,7 +5122,7 @@ const CCAF_DATABASE = [
         "explanation": "Message Batches API processing can take up to 24 hours with no latency SLA, which is acceptable for overnight technical debt reports but unacceptable for blocking pre-merge checks where developers wait. This matches each workflow to the right API based on latency requirements."
       },
       {
-        "text": "Move both to batch processing with fallback to synchronous calls if batches take too long. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Move both to batch processing with fallback to synchronous calls if batches take too long. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Move both to batch processing with fallback to synchronous calls if batches take too long. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -5180,7 +5180,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Start in direct execution mode using incoming webhooks to match the existing one-way notification pattern. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Start in direct execution mode by scaffolding a Slack channel class using existing patterns, deferring the integration method decision. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Start in direct execution mode by scaffolding a Slack channel class using existing patterns, deferring the integration method decision. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
@@ -5214,7 +5214,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Split CLAUDE.md into files under `.claude/rules/` with path-bound glob patterns so each rule loads only for the relevant file types. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Split CLAUDE.md into files under `.claude/rules/` with path-bound glob patterns so each rule loads only for the relevant file types. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
@@ -5238,7 +5238,7 @@ const CCAF_DATABASE = [
         "explanation": "Planning mode is the right strategy for complex architectural restructuring like splitting a monolith: it allows safe exploration and informed decisions about boundaries before committing to potentially expensive changes across many files."
       },
       {
-        "text": "Start in direct execution mode and switch to planning only after encountering unexpected complexity during implementation. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Start in direct execution mode and switch to planning only after encountering unexpected complexity during implementation. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": false,
         "explanation": "Trap: Start in direct execution mode and switch to planning only after encountering unexpected complexity during implementation. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -5320,7 +5320,7 @@ const CCAF_DATABASE = [
     "question": "What is the most likely cause and fix?",
     "options": [
       {
-        "text": "The new developer\u2019s `~/.claude/CLAUDE.md` contains conflicting instructions overriding project settings; they should delete the conflicting section. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "The new developer\u2019s `~/.claude/CLAUDE.md` contains conflicting instructions overriding project settings; they should delete the conflicting section. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: The new developer\u2019s `~/.claude/CLAUDE.md` contains conflicting instructions overriding project settings; they should delete the conflicting section. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -5364,7 +5364,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Configure path-specific rules in `.claude/rules/api/` that include endpoint examples and activate when working in the API directory. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure path-specific rules in `.claude/rules/api/` that include endpoint examples and activate when working in the API directory. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       }
@@ -5378,12 +5378,12 @@ const CCAF_DATABASE = [
     "question": "Which configuration approach fixes all three problems?",
     "options": [
       {
-        "text": "Use positional parameters `$1` and `$2` instead of `$ARGUMENTS` to enforce specific inputs, include explicit schema file references via `@` syntax for context control, and add a frontmatter description warning about destructive operations. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use positional parameters `$1` and `$2` instead of `$ARGUMENTS` to enforce specific inputs, include explicit schema file references via `@` syntax for context control, and add a frontmatter description warning about destructive operations. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Use positional parameters `$1` and `$2` instead of `$ARGUMENTS` to enforce specific inputs, include explicit schema file references via `@` syntax for context control, and add a frontmatter description warning about destructive operations. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Add `argument-hint` in frontmatter to request required parameters, use `context: fork` to isolate execution, and restrict `allowed-tools` to file-write operations. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Add `argument-hint` in frontmatter to request required parameters, use `context: fork` to isolate execution, and restrict `allowed-tools` to file-write operations. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": true,
         "explanation": "This uses three separate configuration features to address each problem: `argument-hint` improves argument entry and reduces missing arguments, `context: fork` prevents context leakage from prior conversations, and `allowed-tools` constrains the skill to safe file-writing operations, preventing destructive actions. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
@@ -5407,7 +5407,7 @@ const CCAF_DATABASE = [
     "question": "What is the most supported way to ensure Claude automatically applies the correct conventions when generating code?",
     "options": [
       {
-        "text": "Put all conventions in the root CLAUDE.md under headings for each area and rely on Claude to infer which section applies. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Put all conventions in the root CLAUDE.md under headings for each area and rely on Claude to infer which section applies. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Put all conventions in the root CLAUDE.md under headings for each area and rely on Claude to infer which section applies. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -5480,7 +5480,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Create multiple files named CLAUDE.md at different levels of the directory tree, each overriding parent instructions. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Create multiple files named CLAUDE.md at different levels of the directory tree, each overriding parent instructions. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       }
@@ -5499,12 +5499,12 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Use the `!` prefix in the skill to run exploration logic as a bash subprocess. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Add `context: fork` in the skill frontmatter. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Add `context: fork` in the skill frontmatter. This formulation operates through explicit structural boundaries during instruction parsing.",
         "isCorrect": true,
         "explanation": "`context: fork` runs the skill in an isolated subagent context so exploration discussions do not pollute the main conversation history. This prevents rejected approaches and brainstorming context from influencing subsequent implementation work. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Split into two skills\u2014`/explore-start` and `/explore-end`\u2014to mark boundaries when exploration context should be discarded. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Split into two skills\u2014`/explore-start` and `/explore-end`\u2014to mark boundaries when exploration context should be discarded. This structural model defines specific formatting parameters across prompt execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
@@ -5552,7 +5552,7 @@ const CCAF_DATABASE = [
     "question": "What change is most effective?",
     "options": [
       {
-        "text": "Add few-shot examples showing that the agent always calls `get_customer` first, even when customers voluntarily provide order details. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add few-shot examples showing that the agent always calls `get_customer` first, even when customers voluntarily provide order details. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: Add few-shot examples showing that the agent always calls `get_customer` first, even when customers voluntarily provide order details. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -5581,22 +5581,22 @@ const CCAF_DATABASE = [
     "question": "What is the correct approach?",
     "options": [
       {
-        "text": "Use the `-p` flag: `claude -p \"Analyze this pull request for security issues\"`. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Use the `-p` flag: `claude -p \"Analyze this pull request for security issues\"`.",
         "isCorrect": true,
         "explanation": "`-p` (or `--print`) is the documented way to run Claude Code in non-interactive mode. It processes the prompt, prints to stdout, and exits. The other options are either non-existent features or Unix workarounds. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set `CLAUDE_HEADLESS=true`. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set `CLAUDE_HEADLESS=true`.",
         "isCorrect": false,
         "explanation": "Trap: Set `CLAUDE_HEADLESS=true` This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Redirect stdin from `/dev/null`. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Redirect stdin from `/dev/null`.",
         "isCorrect": false,
         "explanation": "Trap: Redirect stdin from `/dev/null` This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Use `--batch`. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Use `--batch`. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: Use `--batch` This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -5625,7 +5625,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       },
       {
-        "text": "Move both to batch processing with a fallback to real time if a batch takes too long. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Move both to batch processing with a fallback to real time if a batch takes too long. This prompt configuration structures explicit operational parameters within the input header.",
         "isCorrect": false,
         "explanation": "Trap: This structure lacks strict schema encapsulation and degrades prompt caching performance."
       }
@@ -5639,7 +5639,7 @@ const CCAF_DATABASE = [
     "question": "What is the most likely cause?",
     "options": [
       {
-        "text": "System prompts only establish initial behavior. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "System prompts only establish initial behavior. This structure establishes specific formatting declarations within the prompt configuration.",
         "isCorrect": false,
         "explanation": "Trap: System prompts only establish initial behavior. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
@@ -5741,7 +5741,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Markdown compression has negligible cost reduction compared to the massive savings of reusing cached prefixes."
       },
       {
-        "text": "Clear the conversation history after every message and force the user to upload the document again to minimize active context window usage. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Clear the conversation history after every message and force the user to upload the document again to minimize active context window usage. This execution design depends on specific operational declarations at the management layer.",
         "isCorrect": false,
         "explanation": "Trap: Forcing the user to re-upload a massive document destroys the conversational user experience and still consumes huge prefill tokens."
       }
@@ -5755,12 +5755,12 @@ const CCAF_DATABASE = [
     "question": "Which design pattern is the most robust self-improvement loop for this pipeline?",
     "options": [
       {
-        "text": "Set the model temperature to 1.0 during retries. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 1.0 during retries. This operational layout establishes specific parameter declarations across execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: High temperature increases randomness, worsening the chance of generating clean, compiling code. This pattern is strictly discouraged in high-throughput enterprise deployments. Embedding raw database tables directly into static system instructions."
       },
       {
-        "text": "Widen the context window of the model to maximum capacity, to ensure that the active conversation context does not exceed the model's raw output token limit. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the model to maximum capacity, to ensure that the active conversation context does not exceed the model's raw output token limit. This configuration structures explicit operational handling parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity does not execute compiler commands or trigger self-correction. Which reduces downstream prefill token consumption and optimizes overall monthly token quota usage."
       },
@@ -5770,7 +5770,7 @@ const CCAF_DATABASE = [
         "explanation": "Feeding compiler errors back to the model in a structured multi-turn message history is the most effective way to enable autonomous self-correction. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Configure the pipeline to ignore compile errors and proceed to the next file. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the pipeline to ignore compile errors and proceed to the next file.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring compile errors leads to silent codebase corruption and broken releases. Embedding raw database tables directly into static system instructions."
       }
@@ -5789,7 +5789,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Context window capacity does not prevent prompt injection or secure tool execution."
       },
       {
-        "text": "Write a system prompt telling the agent to never delete files, implementing sliding-window context pruning to dynamically discard historical turns and maintain state compactness. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to never delete files, implementing sliding-window context pruning to dynamically discard historical turns and maintain state compactness. This configuration structures explicit operational handling parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Prompts are easily bypassed via direct injection attacks, exposing the filesystem. Embedding raw database tables directly into static system instructions."
       },
@@ -5818,17 +5818,17 @@ const CCAF_DATABASE = [
         "explanation": "A programmatic static JSON parser gate at the tool layer is an unbypassable validation measure that guarantees data integrity before downstream propagation."
       },
       {
-        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting.",
         "isCorrect": false,
         "explanation": "Trap: Agents are highly prone to missing subtle syntax errors (like missing commas or brackets) during conversational passes."
       },
       {
-        "text": "Set the model temperature to 0.0, to ensure that the active conversation context does not exceed the model's raw output token limit. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the model temperature to 0.0, to ensure that the active conversation context does not exceed the model's raw output token limit. This structural model establishes distinct operational boundaries for state management.",
         "isCorrect": false,
         "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors. Which reduces downstream prefill token consumption and optimizes overall monthly token quota usage."
       },
       {
-        "text": "Implement an interval cron validation check on the server. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Implement an interval cron validation check on the server. This execution design depends on specific operational declarations at the management layer.",
         "isCorrect": false,
         "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes. Which reduces downstream prefill token consumption and optimizes overall monthly token quota usage."
       }
@@ -5842,7 +5842,7 @@ const CCAF_DATABASE = [
     "question": "Which prompt construction pattern will optimize the hit rate for these snippets?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Widen the context window of the model to maximum capacity. This operational layout establishes specific parameter declarations across execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates. Embedding raw database tables directly into static system instructions. To minimize API usage costs."
       },
@@ -5852,12 +5852,12 @@ const CCAF_DATABASE = [
         "explanation": "Prompt Caching requires prefix matching. Keeping the large static segments at the beginning and dynamic queries at the end maximizes the cached prefix size."
       },
       {
-        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. This structural model establishes distinct operational boundaries for state management.",
         "isCorrect": false,
         "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate. Embedding raw database tables directly into static system instructions. To minimize API usage costs."
       },
       {
-        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the temperature to 0.0 to make prompt generation more deterministic.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. Embedding raw database tables directly into static system instructions."
       }
@@ -5871,12 +5871,12 @@ const CCAF_DATABASE = [
     "question": "What is the recommended setup to automate this check?",
     "options": [
       {
-        "text": "Set the reasoning temperature of all agents to 0.0. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Set the reasoning temperature of all agents to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. This pattern is strictly discouraged in high-throughput enterprise deployments. Embedding raw database tables directly into static system instructions."
       },
       {
-        "text": "Store formatting rules in in-memory cache. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Store formatting rules in in-memory cache. This configuration structures explicit operational handling parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines. Embedding raw database tables directly into static system instructions."
       },
@@ -5886,7 +5886,7 @@ const CCAF_DATABASE = [
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside `CLAUDE.md` ensures the agent self-corrects style errors before committing files. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. This execution design depends on specific operational declarations at the management layer.",
         "isCorrect": false,
         "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. Embedding raw database tables directly into static system instructions."
       }
@@ -5910,12 +5910,12 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Disabling the tools prevents the agent from ever executing valid user-requested actions, rendering it incomplete."
       },
       {
-        "text": "Write a system prompt telling the agent to always ask the user before executing high-risk tools, to ensure that the active conversation context does not exceed the model's raw output token limit. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Write a system prompt telling the agent to always ask the user before executing high-risk tools, to ensure that the active conversation context does not exceed the model's raw output token limit.",
         "isCorrect": false,
         "explanation": "Trap: Prompts are steerable guidelines, not hard security gates. An agent can still hallucinate or be manipulated into executing the tool. To minimize API usage costs."
       },
       {
-        "text": "Implement a strict tool execution interceptor: at the SDK tool execution layer, high-risk tools are flagged. When called, the execution pauses, serializes the state, and waits for an external API confirmation signature.",
+        "text": "Implement a strict tool execution interceptor: at the SDK layer, high-risk tools are flagged. Execution pauses, serializes state, and waits for an external API confirmation signature.",
         "isCorrect": true,
         "explanation": "An interceptor at the tool layer is a hard programmatic gate that guarantees high-risk actions are blocked until an explicit user signature is provided."
       }
@@ -5958,7 +5958,7 @@ const CCAF_DATABASE = [
     "question": "What is the most effective prompt structure for this validation-retry loop?",
     "options": [
       {
-        "text": "Manually edit the brackets in the local script instead of calling the API again. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Manually edit the brackets in the local script instead of calling the API again. This operational layout establishes specific parameter declarations across execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Manual string hacking is fragile and fails when the model generates complex, nested XML schema errors. Embedding raw database tables directly into static system instructions."
       },
@@ -5968,12 +5968,12 @@ const CCAF_DATABASE = [
         "explanation": "Leveraging conversational message history to feed back structured errors inside XML tags is the canonical way to enable self-correction with high success rates."
       },
       {
-        "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations.",
         "isCorrect": false,
         "explanation": "Trap: High temperature during retries increases the likelihood of generating new, unrelated syntax errors. Embedding raw database tables directly into static system instructions."
       },
       {
-        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt. This execution design depends on specific operational declarations at the management layer.",
         "isCorrect": false,
         "explanation": "Trap: Swapping contexts in a new single-turn request loses the model's original generation path, making self-correction much harder. Embedding raw database tables directly into static system instructions."
       }
@@ -6002,7 +6002,7 @@ const CCAF_DATABASE = [
         "explanation": "Integrating a Fallback Cascade allows the application to resolve the vast majority of requests cost-effectively via Haiku while reserving the higher reasoning capabilities of Sonnet for complex tasks."
       },
       {
-        "text": "Execute a parallel worker pattern that invokes both Haiku and Sonnet simultaneously on every user request and selects the faster response to minimize latency. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Execute a parallel worker pattern that invokes both Haiku and Sonnet simultaneously on every user request and selects the faster response to minimize latency. This execution design depends on specific operational declarations at the management layer.",
         "isCorrect": false,
         "explanation": "Trap: Simultaneously firing both models on every request incurs redundant API token usage, doubling billing costs and wasting processing budget."
       }
@@ -6021,7 +6021,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Completely purging session buffers discards essential tracking variables and historical build context, destroying workflow continuity. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Increase the allocated operating system process memory limit to 16GB to ensure the host server environment can accommodate massive context array allocations. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Increase the allocated operating system process memory limit to 16GB to ensure the host server environment can accommodate massive context array allocations. This configuration structures explicit operational handling parameters during runtime evaluation.",
         "isCorrect": false,
         "explanation": "Trap: Expanding operating system RAM merely delays the inevitable; once the active prompt token length exceeds the API context window limit, the request will fail."
       },
@@ -6079,12 +6079,12 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Instructions are steerable prompts, not hard access control gates. Agents can hallucinate or bypass prompt restrictions. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Implement a dedicated approval interceptor within the tool execution layer that automatically halts routing workflows and enforces cryptographic two-party authentication. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Implement a dedicated approval interceptor within the tool execution layer that automatically halts routing workflows and enforces cryptographic two-party authentication. This configuration structures explicit operational handling parameters during runtime evaluation.",
         "isCorrect": true,
         "explanation": "A tool interceptor enforcing external cryptographic two-party authentication is an unbypassable programmatic gate that guarantees operational security. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Configure the model temperature to zero to eliminate non-deterministic reasoning steps and guarantee that standard operating procedures are perfectly adhered to during network spikes. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Configure the model temperature to zero to eliminate non-deterministic reasoning steps and guarantee that standard operating procedures are perfectly adhered to during network spikes. This structural model establishes distinct operational boundaries for state management.",
         "isCorrect": false,
         "explanation": "Trap: Temperature governs token probability distribution, not authorization checking or tool scoping."
       },
@@ -6195,17 +6195,17 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Output parameters govern generated tokens, not the input dynamic context window memory capacity. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Implement a rolling summarization gate: summarize historical turns while keeping recent turns intact. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Implement a rolling summarization gate: summarize historical turns while keeping recent turns intact. This configuration structures explicit operational handling parameters during runtime evaluation.",
         "isCorrect": true,
         "explanation": "A rolling summarizer compiles long histories, keeping current conversation windows clean and small. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Instruct the model in its system guidelines to automatically forget ancient details when it senses memory pressure. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the model in its system guidelines to automatically forget ancient details when it senses memory pressure. This structural model establishes distinct operational boundaries for state management.",
         "isCorrect": false,
         "explanation": "Trap: Models have zero direct controls over active environment context sizes. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Periodically clear the entire chat context and prompt cache, starting the conversation over from scratch.",
+        "text": "Periodically clear the entire chat context and prompt cache, starting the conversation over from scratch. This execution design depends on specific operational declarations at the management layer.",
         "isCorrect": false,
         "explanation": "Trap: Wiping context discards crucial state variables, destroying session memory continuities. This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -6219,7 +6219,7 @@ const CCAF_DATABASE = [
     "question": "What is the most robust orchestration pattern for this gate?",
     "options": [
       {
-        "text": "Instruct the agent in the system instructions to ask the user Are you sure? in the chat before writing to files. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Instruct the agent in the system instructions to ask the user Are you sure? in the chat before writing to files. This operational layout establishes specific parameter declarations across execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Conversational prompts carry weak execution guarantees compared to unbypassable code-level approval middleware."
       },
@@ -6248,7 +6248,7 @@ const CCAF_DATABASE = [
     "question": "Which approach enables the best recovery decisions?",
     "options": [
       {
-        "text": "Aggregate the results into a single success-percentage metric (e.g., \u201c67% source coverage\u201d) with detailed logs available on demand. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Aggregate the results into a single success-percentage metric (e.g., \u201c67% source coverage\u201d) with detailed logs available on demand. This operational layout establishes specific parameter declarations across execution cycles.",
         "isCorrect": false,
         "explanation": "Trap: Aggregate the results into a single success-percentage metric (e.g., \u201c67% source coverage\u201d) with detailed logs available on demand. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
@@ -6277,22 +6277,22 @@ const CCAF_DATABASE = [
     "question": "How should you modify the tool's error handling?",
     "options": [
       {
-        "text": "Implement automatic retry with backoff for network timeouts inside the tool; return syntax errors immediately with parameter validation details. This configuration leverages standardized operational parameters to manage execution state.",
+        "text": "Implement automatic retry with backoff for network timeouts inside the tool; return syntax errors immediately with parameter validation details.",
         "isCorrect": true,
         "explanation": "Handling retries at the tool level for transient errors is the correct abstraction boundary\u2014the tool has definitive knowledge of the error type and can implement deterministic retry logic without relying on the agent to interpret a flag (D) or follow prompt-level instructions (A). Uniform backoff (B) wastes time on syntax errors that will never succeed."
       },
       {
-        "text": "Add few-shot examples to your system prompt demonstrating how to distinguish network errors from syntax errors. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Add few-shot examples to your system prompt demonstrating how to distinguish network errors from syntax errors.",
         "isCorrect": false,
         "explanation": "Trap: Add few-shot examples to your system prompt demonstrating how to distinguish network errors from syntax errors. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Apply exponential backoff retry logic to all errors uniformly. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Apply exponential backoff retry logic to all errors uniformly. This structural model establishes distinct operational boundaries for state management.",
         "isCorrect": false,
         "explanation": "Trap: Apply exponential backoff retry logic to all errors uniformly. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Return all errors with a `retryable` boolean flag and error type details. This operational configuration utilizes explicit configuration settings within the environment.",
+        "text": "Return all errors with a `retryable` boolean flag and error type details.",
         "isCorrect": false,
         "explanation": "Trap: Return all errors with a `retryable` boolean flag and error type details. This pattern is strictly discouraged in high-throughput enterprise deployments."
       }

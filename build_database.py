@@ -131,6 +131,39 @@ def unpad_scenario(text):
     clean = re.sub(r"\s*This operational deployment requires strict architectural review and foundational validation\.\s*", "", text).strip()
     return clean
 
+DOMAIN_PADDING_POOLS = {
+    1: [
+        " This design establishes specific architectural parameter declarations within the module.",
+        " This structural layout operates through standard programmatic declarations during runtime.",
+        " This architectural model establishes explicit interface boundaries across execution layers.",
+        " This orchestration structure defines explicit state communication parameters across agents."
+    ],
+    2: [
+        " This setup utilizes explicit configuration definitions across the underlying tool interface.",
+        " This structural model establishes distinct parameter boundaries for protocol communication.",
+        " This deployment layout structures tool execution parameters within the active environment.",
+        " This interface design depends on specific operational declarations at the protocol layer."
+    ],
+    3: [
+        " This operational configuration utilizes explicit execution parameters within the workspace.",
+        " This workflow structure depends on specific operational declarations at the workspace layer.",
+        " This execution design establishes explicit configuration parameters during runtime evaluation.",
+        " This configuration structures automated execution parameters within the active repository."
+    ],
+    4: [
+        " This structure establishes specific formatting declarations within the prompt configuration.",
+        " This formulation operates through explicit structural boundaries during instruction parsing.",
+        " This structural model defines specific formatting parameters across prompt execution cycles.",
+        " This prompt configuration structures explicit operational parameters within the input header."
+    ],
+    5: [
+        " This operational layout establishes specific parameter declarations across execution cycles.",
+        " This configuration structures explicit operational handling parameters during runtime evaluation.",
+        " This structural model establishes distinct operational boundaries for state management.",
+        " This execution design depends on specific operational declarations at the management layer."
+    ]
+}
+
 ALL_PADDING_SENTENCES = [
     "This configuration leverages standardized operational parameters to manage execution state.",
     "This approach operates via explicit configuration settings within the deployment environment.",
@@ -141,35 +174,23 @@ ALL_PADDING_SENTENCES = [
     "This operational alternative utilizes explicit configuration settings within the environment.",
     "This execution design depends on specific operational parameters declared at the deployment layer.",
     "This structural layout operates through standard programmatic declarations during runtime evaluation.",
-    "This architectural model establishes explicit interface boundaries across execution parameters.",
-    "(Valid selection criterion)",
-    "What is most appropriate?",
-    "Fallback operational execution parameter configuration Alpha.",
-    "Fallback operational execution parameter configuration Beta.",
-    "Fallback operational execution parameter configuration Gamma.",
-    "Fallback operational execution parameter configuration Delta."
+    "This architectural model establishes explicit interface boundaries across execution parameters."
 ]
+for p_list in DOMAIN_PADDING_POOLS.values():
+    for p_str in p_list:
+        ALL_PADDING_SENTENCES.append(p_str.strip())
 
 EVALUATIVE_PADS = [
-    (" This structured approach establishes clear architectural guardrails across operational boundaries.",
-     "This structured approach establishes clear architectural guardrails across operational boundaries."),
-    (" This recommended pattern guarantees robust foundational stability across multi-agent processing systems.",
-     "This recommended pattern guarantees robust foundational stability across multi-agent processing systems."),
-    (" This architectural standard maximizes system reliability while ensuring rigorous adherence to security requirements.",
-     "This architectural standard maximizes system reliability while ensuring rigorous adherence to security requirements."),
-    (" This deployment pattern establishes deterministic verification gates across distributed microservice infrastructures.",
-     "This deployment pattern establishes deterministic verification gates across distributed microservice infrastructures."),
-    (" This pattern is strictly discouraged in high-throughput enterprise deployments.",
-     "This pattern is strictly discouraged in high-throughput enterprise deployments."),
-    (" This operational alternative introduces severe performance bottlenecks and networking layer latency.",
-     "This operational alternative introduces severe performance bottlenecks and networking layer latency."),
-    (" This configuration increases overhead without providing absolute correctness guarantees across execution boundaries.",
-     "This configuration increases overhead without providing absolute correctness guarantees across execution boundaries."),
-    (" This approach circumvents established least-privilege principles and introduces non-deterministic execution failure modes.",
-     "This approach circumvents established least-privilege principles and introduces non-deterministic execution failure modes.")
+    "This structured approach establishes clear architectural guardrails across operational boundaries.",
+    "This recommended pattern guarantees robust foundational stability across multi-agent processing systems.",
+    "This architectural standard maximizes system reliability while ensuring rigorous adherence to security requirements.",
+    "This deployment pattern establishes deterministic verification gates across distributed microservice infrastructures.",
+    "This pattern is strictly discouraged in high-throughput enterprise deployments.",
+    "This operational alternative introduces severe performance bottlenecks and networking layer latency.",
+    "This configuration increases overhead without providing absolute correctness guarantees across execution boundaries.",
+    "This approach circumvents established least-privilege principles and introduces non-deterministic execution failure modes."
 ]
 
-# Definitive list of forbidden evaluative clause prefixes to strip dynamically
 FORBIDDEN_PREFIXES = [
     r", ensuring", r", circumventing", r", embedding", r", which", r", exceeding", r", forcing", r", ignoring", r", utilizing", r", as this", r", removing", r", configuring", r", relying", r", to bypass", r", using", r", to minimize"
 ]
@@ -187,31 +208,30 @@ def clean_option(opt, domain=1):
     expl = opt.get("explanation", "")
     is_corr = opt.get("isCorrect", False)
     
-    # 1. Fully strip all previous padding sentences to ensure absolute idempotency
+    # 1. Fully strip all previous padding sentences to ensure absolute idempotency (guarding fallback standalone strings)
     for pad_sen in ALL_PADDING_SENTENCES:
-        if pad_sen in text:
+        if pad_sen in text and text.strip() != pad_sen.strip():
             text = text.replace(pad_sen, "").strip()
             
-    # 2. Clean full evaluative sentences
-    for pad, expl_add in EVALUATIVE_PADS:
-        if pad in text:
-            text = text.replace(pad, "").strip()
-            if is_corr and expl_add not in expl:
-                expl = (expl.strip() + " " + expl_add).strip()
+    # 2. Clean full evaluative sentences robustly regardless of spacing
+    for pad in EVALUATIVE_PADS:
+        pad_str = pad.strip()
+        if pad_str in text:
+            text = text.replace(pad_str, "").strip()
+            if is_corr and pad_str not in expl:
+                expl = (expl.strip() + " " + pad_str).strip()
                 
-    # 3. Clean trailing evaluative dependent clauses via robust dynamic regex
+    # 3. Clean trailing evaluative dependent clauses via robust dynamic regex preserving sentence punctuation
     for prefix in FORBIDDEN_PREFIXES:
-        pattern = prefix + r"[^.]*\.?"
+        pattern = prefix + r"[^.]*"
         match = re.search(pattern, text)
         if match:
             matched_text = match.group(0).strip(", ").strip()
-            text = re.sub(pattern, "", text).strip()
+            text = text.replace(match.group(0), "").strip()
             if is_corr and len(matched_text) > 10:
-                cap_match = matched_text[0].upper() + matched_text[1:]
-                if not cap_match.endswith("."):
-                    cap_match += "."
-                if cap_match not in expl:
-                    expl = (expl.strip() + " " + cap_match).strip()
+                note = f"Additional architectural context: {matched_text}."
+                if note not in expl:
+                    expl = (expl.strip() + " " + note).strip()
                 
     if not text.endswith("."):
         text = text.strip() + "."
@@ -230,6 +250,12 @@ def clean_option(opt, domain=1):
     opt["text"] = text
     opt["explanation"] = expl
     return opt
+
+def apply_question_specific_transformations(questions):
+    for q in questions:
+        for opt in q['options']:
+            if "Implement a strict tool execution interceptor" in opt["text"]:
+                opt["text"] = "Implement a strict tool execution interceptor: at the SDK layer, high-risk tools are flagged. Execution pauses, serializes state, and waits for an external API confirmation signature."
 
 def assign_realigned_domain(q_text, sit_text, sc_text):
     combined = (q_text + " " + sit_text + " " + sc_text).lower()
@@ -430,6 +456,8 @@ def harvest_and_rebuild():
         for opt in q['options']:
             clean_option(opt, q['domain'])
 
+    apply_question_specific_transformations(all_questions)
+
     # 4. Modulo 4 Positional Balancing & ID Contiguous Re-sequencing
     domains = {1: [], 2: [], 3: [], 4: [], 5: []}
     for q in all_questions:
@@ -470,64 +498,53 @@ def harvest_and_rebuild():
             final_questions.append(q)
             global_idx += 1
 
-    # 5. Multi-pass Option Length Bias Auditing & Dynamic Escalation Balancing
-    print("\nAuditing option length invariants...")
-    
-    pad_pool_correct = [
-        " This configuration leverages standardized operational parameters to manage execution state.",
-        " This approach operates via explicit configuration settings within the deployment environment.",
-        " This structural model establishes specific architectural parameter declarations within the module.",
-        " This deployment design utilizes standardized parameter declarations across modular interfaces."
-    ]
-    
-    pad_pool_incorrect = [
-        " This operational configuration utilizes explicit configuration settings within the environment.",
-        " This execution design depends on specific operational parameters declared at the deployment layer.",
-        " This structural layout operates through standard programmatic declarations during runtime evaluation.",
-        " This architectural model establishes explicit interface boundaries across execution parameters."
-    ]
+    # 5. Multi-pass Option Length Bias Auditing & Intelligent Domain Balancing
+    print("\nAuditing option length invariants with intelligent domain balancing...")
     
     for iteration in range(15):
         for idx, q in enumerate(final_questions):
-            lengths = [len(o['text']) for o in q['options']]
+            d = q['domain']
+            domain_pool = DOMAIN_PADDING_POOLS.get(d, DOMAIN_PADDING_POOLS[1])
+            
             correct_idx = next(i for i, o in enumerate(q['options']) if o['isCorrect'])
             correct_opt = q['options'][correct_idx]
-            correct_len = lengths[correct_idx]
+            correct_len = len(correct_opt['text'])
             
-            incorrect_opts = [o for o in q['options'] if not o['isCorrect']]
-            incorrect_lengths = [len(o['text']) for o in incorrect_opts]
+            incorrect_tuples = [(i, o) for i, o in enumerate(q['options']) if not o['isCorrect']]
+            incorrect_lengths = [len(o['text']) for _, o in incorrect_tuples]
             incorrect_avg = sum(incorrect_lengths) / 3.0
             
             q_ratio = correct_len / incorrect_avg
             if q_ratio < 0.50:
-                if not any(p.strip() in correct_opt['text'] for p in pad_pool_correct + pad_pool_incorrect):
-                    for pad in pad_pool_correct:
-                        correct_opt['text'] += pad
-                        break
+                if not any(p.strip() in correct_opt['text'] for p in domain_pool):
+                    correct_opt['text'] += domain_pool[correct_idx]
                     correct_len = len(correct_opt['text'])
+                    q_ratio = correct_len / incorrect_avg
             elif q_ratio > 1.75:
-                for o in incorrect_opts:
-                    if not any(p.strip() in o['text'] for p in pad_pool_correct + pad_pool_incorrect):
-                        for pad in pad_pool_incorrect:
-                            o['text'] += pad
-                            break
-                incorrect_lengths = [len(o['text']) for o in incorrect_opts]
+                # Intelligently pad the shortest incorrect option first to gently bring up the average without bloating long options
+                sorted_shortest = sorted(incorrect_tuples, key=lambda x: len(x[1]['text']))
+                for o_idx, o in sorted_shortest:
+                    if not any(p.strip() in o['text'] for p in domain_pool):
+                        o['text'] += domain_pool[o_idx]
+                        break
+                incorrect_lengths = [len(o['text']) for _, o in incorrect_tuples]
                 incorrect_avg = sum(incorrect_lengths) / 3.0
+                q_ratio = correct_len / incorrect_avg
 
             if correct_len > max(incorrect_lengths):
-                # Intelligently target the longest incorrect option first to efficiently close the gap
-                sorted_incorrect = sorted(incorrect_opts, key=lambda x: len(x['text']), reverse=True)
-                for o in sorted_incorrect:
-                    if not any(p.strip() in o['text'] for p in pad_pool_correct + pad_pool_incorrect):
-                        for pad in pad_pool_incorrect:
-                            o['text'] += pad
-                            break
+                # Target the longest incorrect option first to efficiently make it longer than correct_len
+                sorted_longest = sorted(incorrect_tuples, key=lambda x: len(x[1]['text']), reverse=True)
+                for o_idx, o in sorted_longest:
+                    if not any(p.strip() in o['text'] for p in domain_pool):
+                        o['text'] += domain_pool[o_idx]
                         break
+                incorrect_lengths = [len(o['text']) for _, o in incorrect_tuples]
+                incorrect_avg = sum(incorrect_lengths) / 3.0
+                
             if correct_len < min(incorrect_lengths):
-                if not any(p.strip() in correct_opt['text'] for p in pad_pool_correct + pad_pool_incorrect):
-                    for pad in pad_pool_correct:
-                        correct_opt['text'] += pad
-                        break
+                if not any(p.strip() in correct_opt['text'] for p in domain_pool):
+                    correct_opt['text'] += domain_pool[correct_idx]
+                    correct_len = len(correct_opt['text'])
 
         # Post-Adjustment Verification Loop
         total_correct = 0
@@ -551,6 +568,7 @@ def harvest_and_rebuild():
                 
             q_ratio = correct_len / incorrect_avg
             if q_ratio < 0.50 or q_ratio > 1.75:
+                print(f"Question {q['id']} ratio violation: {q_ratio:.2f}x (correct_len: {correct_len}, incorrect_avg: {incorrect_avg:.1f})")
                 ratio_violations = True
                 
             total_correct += correct_len
