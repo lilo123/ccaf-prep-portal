@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2019-09/schema",
+  "title": "CCAFQuestion",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^CCAF-[1-5]-[0-9]{3}$",
+      "description": "Unique identifier format: CCAF-[domain_id]-[sequence]"
+    },
+    "domain": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Domain ID from 1 to 5 corresponding to CCAF domains"
+    },
+    "scenario": {
+      "type": "string",
+      "minLength": 50,
+      "description": "Detailed situational scenario establishing architectural context"
+    },
+    "question": {
+      "type": "string",
+      "minLength": 15,
+      "description": "Specific question asking for architectural trade-off decision"
+    },
+    "options": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^opt_[1-4]$",
+            "description": "Immutable stable option identifier"
+          },
+          "text": { "type": "string", "minLength": 5 },
+          "isCorrect": { "type": "boolean" },
+          "explanation": { "type": "string", "minLength": 10 }
+        },
+        "required": ["text", "isCorrect", "explanation"],
+        "additionalProperties": false
+      },
+      "minItems": 4,
+      "maxItems": 4,
+      "contains": {
+        "properties": {
+          "isCorrect": { "const": true }
+        }
+      },
+      "minContains": 1,
+      "maxContains": 1,
+      "description": "Exactly 4 multiple-choice option objects with exactly 1 correct option"
+    },
+    "reference": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https://[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}(/.*)?$",
+      "description": "Deep-link to official Anthropic/Claude documentation reference"
+    }
+  },
+  "required": ["id", "domain", "scenario", "question", "options", "reference"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "domain": { "const": 1 } } },
+      "then": { "properties": { "id": { "pattern": "^CCAF-1-" } } }
+    },
+    {
+      "if": { "properties": { "domain": { "const": 2 } } },
+      "then": { "properties": { "id": { "pattern": "^CCAF-2-" } } }
+    },
+    {
+      "if": { "properties": { "domain": { "const": 3 } } },
+      "then": { "properties": { "id": { "pattern": "^CCAF-3-" } } }
+    },
+    {
+      "if": { "properties": { "domain": { "const": 4 } } },
+      "then": { "properties": { "id": { "pattern": "^CCAF-4-" } } }
+    },
+    {
+      "if": { "properties": { "domain": { "const": 5 } } },
+      "then": { "properties": { "id": { "pattern": "^CCAF-5-" } } }
+    }
+  ]
+}

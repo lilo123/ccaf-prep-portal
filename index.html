@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CCAF Study & Mock Exam System</title>
+  <script>
+    // Prevent Flash of Unstyled Content (FOUC) by synchronously applying theme preference before DOM render
+    const savedTheme = localStorage.getItem('CCAF_APP_THEME') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  </script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Persistent App Header -->
+    <header>
+      <div class="header-left">
+        <h1>CCAF Study Engine</h1>
+        <span class="version-badge">v1.5.1</span>
+      </div>
+      <div class="header-right">
+        <button id="btn-theme-toggle" class="theme-toggle-btn" aria-label="Toggle Light/Dark Mode">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-svg" id="theme-icon-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="theme-icon-svg" id="theme-icon-moon" style="display: none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button id="btn-home" class="nav-btn">Home Dashboard</button>
+      </div>
+    </header>
+
+    <main>
+      <!-- 1. HOME DASHBOARD VIEW -->
+      <div id="view-dashboard" class="view-panel active">
+        <div class="dashboard-header">
+          <h2>Welcome to Claude Certified Architect - Foundations Prep</h2>
+          <p>Track your progress, drill scenario domains, and take realistic mock exams completely offline.</p>
+        </div>
+
+        <div class="launcher-grid">
+          <!-- Domain Study Module Launcher -->
+          <div class="launcher-card">
+            <div class="card-icon-wrapper">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            </div>
+            <h3>Domain Study Drill</h3>
+            <p>Focus on specific CCAF competency domains with immediate feedback, trap explanations, and documentation links.</p>
+            <button id="launch-study" class="btn">Start Drilling</button>
+          </div>
+
+          <!-- 10-Minute Sprint Launcher -->
+          <div class="launcher-card">
+            <div class="card-icon-wrapper icon-sprint">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            </div>
+            <h3>10-Minute Adaptive Sprint</h3>
+            <p>Quick, smart 10-question timed sprint session prioritizing unseen or missed scenarios to maximize efficiency.</p>
+            <button id="launch-sprint" class="btn btn-success">Launch Sprint</button>
+          </div>
+
+          <!-- Mock Exam Mode Launcher -->
+          <div class="launcher-card card-full">
+            <div class="card-icon-wrapper icon-exam">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="card-icon"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            </div>
+            <h3>Realistic Mock Exam</h3>
+            <p>Simulate the actual proctored CCAF exam: 60 scenario-based multiple choice questions, drawn proportionally to syllabus weights, with a 120-minute timer.</p>
+            <button id="launch-exam" class="btn btn-dark">Start Mock Exam (120 mins)</button>
+          </div>
+        </div>
+
+        <!-- Syllabus Mastery Grid Coverage -->
+        <div class="mastery-section">
+          <h3>Syllabus Mastery & Database Coverage</h3>
+          <div id="dashboard-mastery-grid" class="mastery-grid">
+            <!-- Rendered dynamically in ui.js -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. DOMAIN STUDY DRILL SETUP VIEW -->
+      <div id="view-study-setup" class="view-panel">
+        <div class="dashboard-header">
+          <h2>Select a Competency Domain to Drill</h2>
+          <p>Focusing on one domain at a time allows you to master specific architectural concepts.</p>
+        </div>
+        <div class="launcher-grid" id="study-domain-selector-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- 3. ACTIVE SESSION VIEW (Drives Study, Sprint, and Exam) -->
+      <div id="view-session" class="view-panel">
+        <div class="session-header">
+          <span id="session-title-text">Active Session</span>
+          <div id="session-timer-badge" class="timer-badge" style="display: none;">
+            Timer: <span id="session-timer-text">00:00</span>
+          </div>
+        </div>
+
+        <!-- Visual Progress Bar -->
+        <div class="progress-bar-container" style="height: 10px; margin-bottom: 20px;">
+          <div id="session-progress-fill" class="progress-fill" style="width: 0%;"></div>
+        </div>
+        <div id="session-progress-text" style="font-size: 0.85rem; color: var(--text-light); margin-top: -15px; margin-bottom: 20px; text-align: right;">Question 1 of 10</div>
+
+        <!-- Scenario Question Container -->
+        <div id="active-question-container">
+          <!-- Populated dynamically in ui.js -->
+        </div>
+
+        <!-- Navigation Action Bar -->
+        <div class="action-bar">
+          <button id="btn-prev-question" class="btn" style="background-color: #a0aec0;">Previous</button>
+          <button id="btn-submit-exam" class="btn" style="background-color: var(--error); display: none;">Submit Exam</button>
+          <button id="btn-next-question" class="btn">Next Question</button>
+        </div>
+      </div>
+
+      <!-- 4. RESULTS SHEET VIEW -->
+      <div id="view-results" class="view-panel results-panel">
+        <h2>Session Evaluation & Performance Sheet</h2>
+        <div id="results-status-card" class="result-status-card">
+          <!-- Pass/Fail Status Banner -->
+        </div>
+
+        <div class="score-badge">
+          Score: <span id="results-score-text">0 / 0</span> (<span id="results-percentage-text">0%</span>)
+        </div>
+
+        <h3>Domain Performance Breakdowns</h3>
+        <table class="breakdown-table">
+          <thead>
+            <tr>
+              <th>Competency Domain</th>
+              <th>Accuracy</th>
+              <th>Score</th>
+              <th>Progress Bar</th>
+            </tr>
+          </thead>
+          <tbody id="results-breakdown-tbody">
+            <!-- Rendered dynamically in ui.js -->
+          </tbody>
+        </table>
+
+        <button id="btn-results-dashboard" class="btn">Return to Dashboard</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Core Scripts Local Loading (CORS Exempt) -->
+  <script src="questions.js?v=1.5.1"></script>
+  <script src="logic.js?v=1.5.1"></script>
+  <script src="ui.js?v=1.5.1"></script>
+  <script src="app.js?v=1.5.1"></script>
+</body>
+</html>
