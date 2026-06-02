@@ -184,7 +184,7 @@ function evaluateExam(drawnQuestions, selections) {
   };
   const historyUpdates = [];
 
-  // Antipattern fix: Cache module index lookups outside the evaluation loop
+  // Cache module index lookups outside the evaluation loop
   let cachedNodeIndex = null;
   if (typeof module !== 'undefined' && module.exports) {
     try {
@@ -199,14 +199,14 @@ function evaluateExam(drawnQuestions, selections) {
     const q = drawnQuestions[i];
     if (!q || typeof q !== 'object' || !q.id) continue;
     
-    // Support both full question objects and lightweight reference pointers
-    let qObj = q;
-    if (!Array.isArray(q.options)) {
-      if (typeof window !== 'undefined' && window.CCAF_DATABASE_INDEX && window.CCAF_DATABASE_INDEX.byId && window.CCAF_DATABASE_INDEX.byId.has(q.id)) {
-        qObj = window.CCAF_DATABASE_INDEX.byId.get(q.id);
-      } else if (cachedNodeIndex && cachedNodeIndex.has(q.id)) {
-        qObj = cachedNodeIndex.get(q.id);
-      }
+    // Explicit pointer resolution and precedence contract
+    let qObj = null;
+    if (typeof window !== 'undefined' && window.CCAF_DATABASE_INDEX && window.CCAF_DATABASE_INDEX.byId && window.CCAF_DATABASE_INDEX.byId.has(q.id)) {
+      qObj = window.CCAF_DATABASE_INDEX.byId.get(q.id);
+    } else if (cachedNodeIndex && cachedNodeIndex.has(q.id)) {
+      qObj = cachedNodeIndex.get(q.id);
+    } else if (Array.isArray(q.options)) {
+      qObj = q;
     }
 
     // Defensive guard: skip unresolved pointers without polluting diagnostics

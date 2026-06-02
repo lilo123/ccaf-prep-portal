@@ -32,8 +32,17 @@ document.addEventListener('DOMContentLoaded', () => {
  * Initial load state: restores mastery stats and audits/resumes active session backups
  */
 function initApp() {
-  // Initialize Premium Light/Dark Theme preference with defensive matchMedia guard
-  const isDarkModePreferred = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  // Initialize Premium Light/Dark Theme preference with highly resilient matchMedia guard
+  let isDarkModePreferred = false;
+  try {
+    if (typeof window !== 'undefined' && window.matchMedia) {
+      const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      if (mediaQuery && typeof mediaQuery.matches === 'boolean') {
+        isDarkModePreferred = mediaQuery.matches;
+      }
+    }
+  } catch (e) {}
+  
   const savedTheme = localStorage.getItem('CCAF_APP_THEME') || (isDarkModePreferred ? 'dark' : 'light');
   setAppTheme(savedTheme);
 
