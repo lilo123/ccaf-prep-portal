@@ -20,6 +20,22 @@ const STORAGE_MASTERY = 'CCAF_MASTERY_LOG';
 const STORAGE_SESSION = 'CCAF_ACTIVE_SESSION';
 const APP_VERSION = '1.6.0';
 
+function getSessionStorageKey(sessionType, domainId = null) {
+  if (sessionType === 'study') {
+    return `CCAF_SESSION_study_${domainId}`;
+  }
+  return `CCAF_SESSION_${sessionType}`;
+}
+
+function getActiveSessionStorageKey() {
+  return getSessionStorageKey(state.sessionType, state.selectedDomain);
+}
+
+// Expose getSessionStorageKey globally for consistent DRY key resolution in ui.js
+if (typeof window !== 'undefined') {
+  window.getSessionStorageKey = getSessionStorageKey;
+}
+
 /**
  * Initialize Application and Event Listeners
  */
@@ -46,44 +62,65 @@ function initApp() {
   const savedTheme = localStorage.getItem('CCAF_APP_THEME') || (isDarkModePreferred ? 'dark' : 'light');
   setAppTheme(savedTheme);
 
-  // Force state recovery migration on upgraded app versions
+  // Perform true legacy session migration on upgraded app versions
   if (localStorage.getItem('CCAF_APP_VERSION') !== APP_VERSION) {
-    console.warn('New version detected. Force-clearing old storage sessions.');
-    localStorage.removeItem(STORAGE_SESSION);
+    console.warn('New version detected. Migrating legacy storage sessions.');
+    const legacySaved = localStorage.getItem(STORAGE_SESSION);
+    if (legacySaved) {
+      try {
+        const parsed = JSON.parse(legacySaved);
+        if (parsed && parsed.sessionType) {
+          const newKey = getSessionStorageKey(parsed.sessionType, parsed.selectedDomain);
+          localStorage.setItem(newKey, JSON.stringify(parsed));
+        }
+      } catch (e) {
+        console.error('Failed to migrate legacy session:', e);
+      }
+      localStorage.removeItem(STORAGE_SESSION);
+    }
     localStorage.setItem('CCAF_APP_VERSION', APP_VERSION);
   }
 
   const masteryLog = loadMasteryLog();
   window.CCAF_UI.renderMasteryGrid(masteryLog);
 
-  // tab-resilient recovery audit: check if an active session is stored in localStorage
-  const savedSession = localStorage.getItem(STORAGE_SESSION);
-  if (savedSession) {
-    try {
-      const parsed = JSON.parse(savedSession);
-      const now = Date.now();
+  // tab-resilient recovery audit: check dynamic keys in localStorage
+  const dynamicKeys = [
+    getSessionStorageKey('exam'),
+    getSessionStorageKey('sprint'),
+    getSessionStorageKey('study', 1),
+    getSessionStorageKey('study', 2),
+    getSessionStorageKey('study', 3),
+    getSessionStorageKey('study', 4),
+    getSessionStorageKey('study', 5)
+  ];
 
-      // Enforce zeroed runtime execution parameters on restoration
-      parsed.timerInterval = null;
+  let hasExpiredSession = false;
+  const now = Date.now();
 
-      // If timer was configured and has already expired during tab-close/refresh, auto-submit immediately!
-      if (parsed.endTimestamp && window.CCAF_LOGIC.calculateRemainingTime(parsed.endTimestamp, now) <= 0) {
-        console.warn('Saved session detected but timer expired offline. Auto-submitting results.');
-        state = parsed;
-        submitSession(true); // Auto-submit expired exam
-      } else {
-        // Resume active session safely
-        state = parsed;
-        console.log('Successfully resumed active session from storage:', state.sessionType);
-        resumeSession();
+  for (const key of dynamicKeys) {
+    const saved = localStorage.getItem(key);
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        parsed.timerInterval = null;
+        if ((key === getSessionStorageKey('exam') || key === getSessionStorageKey('sprint')) && parsed.endTimestamp && window.CCAF_LOGIC.calculateRemainingTime(parsed.endTimestamp, now) <= 0) {
+          console.warn(`Saved session ${key} detected but timer expired offline. Auto-submitting results.`);
+          state = parsed;
+          submitSession(true);
+          hasExpiredSession = true;
+          break; // Prevent DOM clobbering; remaining expired sessions will be handled cleanly on subsequent loads
+        }
+      } catch (e) {
+        console.error(`Failed to parse saved session backup for ${key}:`, e);
+        localStorage.removeItem(key);
       }
-    } catch (e) {
-      console.error('Failed to parse saved session backup:', e);
-      clearActiveSession();
-      window.CCAF_UI.switchView('dashboard'); // Explicitly transition on corrupted state recovery
     }
-  } else {
+  }
+
+  if (!hasExpiredSession) {
     window.CCAF_UI.switchView('dashboard');
+    window.CCAF_UI.updateDashboardResumeState();
   }
 }
 
@@ -107,27 +144,52 @@ function bindEvents() {
         return;
       }
     }
+    saveSessionBackup();
     // Switch view but maintain active session background monitoring
     window.CCAF_UI.switchView('dashboard');
-    window.CCAF_UI.updateDashboardResumeState(state);
+    window.CCAF_UI.updateDashboardResumeState();
   });
 
-  // Launch study Setup Panel with defensive active session guard
+  // Launch study Setup Panel
   ui.el.launchStudyBtn.addEventListener('click', () => {
-    if (state.sessionType && !confirm('Start new session and discard active progress?')) return;
+    saveSessionBackup();
     ui.renderDomainSelectors(startStudyDrill);
     ui.switchView('studySetup');
   });
 
-  // Launch 10-Minute Sprint Session with defensive active session guard
+  // Launch 10-Minute Sprint Session
   ui.el.launchSprintBtn.addEventListener('click', () => {
-    if (state.sessionType && !confirm('Start new session and discard active progress?')) return;
+    saveSessionBackup();
+    const storageKey = getSessionStorageKey('sprint');
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      try {
+        stopTimerInterval(); // Terminate any running timer before restoring state to avoid zombie leaks
+        state = JSON.parse(saved);
+        resumeSession();
+        return;
+      } catch (e) {
+        console.error('Failed to parse saved sprint session:', e);
+      }
+    }
     startSprintSession();
   });
 
-  // Launch Mock Exam Session with defensive active session guard
+  // Launch Mock Exam Session
   ui.el.launchExamBtn.addEventListener('click', () => {
-    if (state.sessionType && !confirm('Start new session and discard active progress?')) return;
+    saveSessionBackup();
+    const storageKey = getSessionStorageKey('exam');
+    const saved = localStorage.getItem(storageKey);
+    if (saved) {
+      try {
+        stopTimerInterval(); // Terminate any running timer before restoring state to avoid zombie leaks
+        state = JSON.parse(saved);
+        resumeSession();
+        return;
+      } catch (e) {
+        console.error('Failed to parse saved exam session:', e);
+      }
+    }
     startMockExamSession();
   });
 
@@ -163,17 +225,41 @@ function bindEvents() {
     const masteryLog = loadMasteryLog();
     window.CCAF_UI.renderMasteryGrid(masteryLog);
     window.CCAF_UI.switchView('dashboard');
-    window.CCAF_UI.updateDashboardResumeState(state);
+    window.CCAF_UI.updateDashboardResumeState();
   });
 
   // Visibility change handling for background tab timer un-throttling reconciliation
   document.addEventListener('visibilitychange', () => {
-    if (document.visibilityState === 'visible' && state.endTimestamp && state.sessionType) {
+    if (document.visibilityState === 'visible') {
       const now = Date.now();
-      const remainingSec = window.CCAF_LOGIC.calculateRemainingTime(state.endTimestamp, now);
-      if (remainingSec <= 0) {
-        console.warn('Timer expired while tab was inactive. Auto-submitting.');
-        submitSession(true);
+      // Check active in-memory session first
+      if (state.sessionType && state.endTimestamp) {
+        const remainingSec = window.CCAF_LOGIC.calculateRemainingTime(state.endTimestamp, now);
+        if (remainingSec <= 0) {
+          console.warn('Timer expired while tab was inactive. Auto-submitting.');
+          submitSession(true);
+          return;
+        }
+      }
+      // Check background sprint/exam sessions in localStorage
+      const bgKeys = [getSessionStorageKey('exam'), getSessionStorageKey('sprint')];
+      for (const key of bgKeys) {
+        const saved = localStorage.getItem(key);
+        if (saved) {
+          try {
+            const parsed = JSON.parse(saved);
+            if (parsed.endTimestamp && window.CCAF_LOGIC.calculateRemainingTime(parsed.endTimestamp, now) <= 0) {
+              console.warn(`Background session ${key} expired while tab was inactive. Auto-submitting.`);
+              saveSessionBackup(); // Save current session state before switching
+              stopTimerInterval();
+              state = parsed;
+              submitSession(true);
+              break;
+            }
+          } catch (e) {
+            localStorage.removeItem(key);
+          }
+        }
       }
     }
   });
@@ -193,14 +279,17 @@ function saveMasteryLog(log) {
 }
 
 function saveSessionBackup() {
+  if (!state.sessionType) return;
   // Exclude transient interval IDs from disk persistence to avoid zombie timer collisions
   const { timerInterval, ...serializableState } = state;
-  localStorage.setItem(STORAGE_SESSION, JSON.stringify(serializableState));
+  localStorage.setItem(getActiveSessionStorageKey(), JSON.stringify(serializableState));
 }
 
 function clearActiveSession() {
   stopTimerInterval(); // Ensure runtime intervals are securely terminated first
-  localStorage.removeItem(STORAGE_SESSION);
+  if (state.sessionType) {
+    localStorage.removeItem(getActiveSessionStorageKey());
+  }
   state = {
     sessionType: null,
     questions: [],
@@ -211,7 +300,7 @@ function clearActiveSession() {
     selectedDomain: null
   };
   if (window.CCAF_UI && window.CCAF_UI.updateDashboardResumeState) {
-    window.CCAF_UI.updateDashboardResumeState(state);
+    window.CCAF_UI.updateDashboardResumeState();
   }
 }
 
@@ -234,22 +323,32 @@ function prepareSessionQuestions(questions) {
 /**
  * Initiates a local Domain Study Drill
  */
-function startStudyDrill(domainId) {
-  // Validate domain pool prior to clearing active session state
+function startStudyDrill(domainId, forceRestart = false) {
+  stopTimerInterval();
+  saveSessionBackup(); // Save outgoing session state
+
+  const storageKey = getSessionStorageKey('study', domainId);
+  if (!forceRestart && localStorage.getItem(storageKey)) {
+    state = JSON.parse(localStorage.getItem(storageKey));
+    resumeSession();
+    return;
+  }
+
   const domainPool = window.CCAF_DATABASE_INDEX.byDomain[domainId] || [];
   if (domainPool.length === 0) {
     alert('Database Error: No questions found for the selected domain.');
     return;
   }
 
-  stopTimerInterval();
-  clearActiveSession();
-
-  state.sessionType = 'study';
-  state.selectedDomain = domainId;
-  state.questions = prepareSessionQuestions(window.CCAF_LOGIC.shuffleArray(domainPool));
-  state.currentIndex = 0;
-  state.selections = {};
+  state = {
+    sessionType: 'study',
+    selectedDomain: domainId,
+    questions: prepareSessionQuestions(window.CCAF_LOGIC.shuffleArray(domainPool)),
+    currentIndex: 0,
+    selections: {},
+    endTimestamp: null,
+    timerInterval: null
+  };
 
   saveSessionBackup();
   resumeSession();
@@ -260,18 +359,20 @@ function startStudyDrill(domainId) {
  */
 function startSprintSession() {
   stopTimerInterval();
-  clearActiveSession();
+  saveSessionBackup(); // Save outgoing session state
 
   const masteryLog = loadMasteryLog();
   const sprintQuestions = window.CCAF_LOGIC.drawSprintQuestions(window.CCAF_DATABASE, masteryLog);
 
-  state.sessionType = 'sprint';
-  state.questions = prepareSessionQuestions(sprintQuestions);
-  state.currentIndex = 0;
-  state.selections = {};
-  
-  // Configure absolute end epoch: 10 minutes (600,000 ms)
-  state.endTimestamp = Date.now() + 600000;
+  state = {
+    sessionType: 'sprint',
+    selectedDomain: null,
+    questions: prepareSessionQuestions(sprintQuestions),
+    currentIndex: 0,
+    selections: {},
+    endTimestamp: Date.now() + 600000,
+    timerInterval: null
+  };
 
   saveSessionBackup();
   resumeSession();
@@ -282,17 +383,19 @@ function startSprintSession() {
  */
 function startMockExamSession() {
   stopTimerInterval();
-  clearActiveSession();
+  saveSessionBackup(); // Save outgoing session state
 
   const examQuestions = window.CCAF_LOGIC.drawMockExamQuestions(window.CCAF_DATABASE);
 
-  state.sessionType = 'exam';
-  state.questions = prepareSessionQuestions(examQuestions);
-  state.currentIndex = 0;
-  state.selections = {};
-  
-  // Configure absolute end epoch: 120 minutes (7,200,000 ms)
-  state.endTimestamp = Date.now() + 7200000;
+  state = {
+    sessionType: 'exam',
+    selectedDomain: null,
+    questions: prepareSessionQuestions(examQuestions),
+    currentIndex: 0,
+    selections: {},
+    endTimestamp: Date.now() + 7200000,
+    timerInterval: null
+  };
 
   saveSessionBackup();
   resumeSession();

@@ -81,33 +81,55 @@ function switchView(activeViewKey) {
 /**
  * Update Dashboard Resume Card state
  */
-function updateDashboardResumeState(currentState) {
+function updateDashboardResumeState() {
   const existingResumeCard = document.getElementById('resume-session-card');
-  if (currentState && currentState.sessionType) {
-    if (!existingResumeCard) {
-      const container = document.querySelector('.launcher-grid');
-      if (container) {
-        const resumeCard = document.createElement('div');
-        resumeCard.id = 'resume-session-card';
-        resumeCard.className = 'launcher-card card-full';
-        resumeCard.style.borderColor = 'var(--primary)';
-        resumeCard.innerHTML = `
-          <h3>Active Session in Progress</h3>
-          <p>You have an ongoing ${currentState.sessionType.toUpperCase()} session. Click below to return immediately.</p>
-          <button id="resume-active-session" class="btn btn-success">Resume Active Session</button>
-        `;
-        resumeCard.querySelector('button').addEventListener('click', () => {
-          if (typeof window !== 'undefined' && window.resumeSession) {
-            window.resumeSession();
-          } else {
-            switchView('session');
-          }
-        });
-        container.prepend(resumeCard);
-      }
-    }
-  } else if (existingResumeCard) {
+  if (existingResumeCard) {
     existingResumeCard.remove();
+  }
+
+  // Update Sprint Launcher Button
+  const sprintKey = typeof window !== 'undefined' && window.getSessionStorageKey ? window.getSessionStorageKey('sprint') : 'CCAF_SESSION_sprint';
+  const savedSprint = localStorage.getItem(sprintKey);
+  if (savedSprint && el.launchSprintBtn) {
+    try {
+      const parsed = JSON.parse(savedSprint);
+      el.launchSprintBtn.textContent = `Resume Sprint (Question ${parsed.currentIndex + 1}/${parsed.questions.length})`;
+    } catch (e) {
+      el.launchSprintBtn.textContent = 'Launch Sprint';
+    }
+  } else if (el.launchSprintBtn) {
+    el.launchSprintBtn.textContent = 'Launch Sprint';
+  }
+
+  // Update Mock Exam Launcher Button
+  const examKey = typeof window !== 'undefined' && window.getSessionStorageKey ? window.getSessionStorageKey('exam') : 'CCAF_SESSION_exam';
+  const savedExam = localStorage.getItem(examKey);
+  if (savedExam && el.launchExamBtn) {
+    try {
+      const parsed = JSON.parse(savedExam);
+      el.launchExamBtn.textContent = `Resume Mock Exam (Question ${parsed.currentIndex + 1}/${parsed.questions.length})`;
+    } catch (e) {
+      el.launchExamBtn.textContent = 'Start Mock Exam (120 mins)';
+    }
+  } else if (el.launchExamBtn) {
+    el.launchExamBtn.textContent = 'Start Mock Exam (120 mins)';
+  }
+
+  // Update Study Drill Launcher Button
+  let hasStudySession = false;
+  for (let d = 1; d <= 5; d++) {
+    const studyKey = typeof window !== 'undefined' && window.getSessionStorageKey ? window.getSessionStorageKey('study', d) : `CCAF_SESSION_study_${d}`;
+    if (localStorage.getItem(studyKey)) {
+      hasStudySession = true;
+      break;
+    }
+  }
+  if (el.launchStudyBtn) {
+    if (hasStudySession) {
+      el.launchStudyBtn.textContent = 'Resume / Start Domain Drills';
+    } else {
+      el.launchStudyBtn.textContent = 'Start Drilling';
+    }
   }
 }
 
@@ -162,7 +184,7 @@ function renderMasteryGrid(masteryLog) {
 }
 
 /**
- * Render Domain Drill Selectors
+ * Render Domain Drill Selectors with DRY HTML markup
  */
 function renderDomainSelectors(onSelectCallback) {
   if (!el.domainSelectorGrid) return;
@@ -172,19 +194,43 @@ function renderDomainSelectors(onSelectCallback) {
     const domainPool = window.CCAF_DATABASE_INDEX.byDomain[d] || [];
     const card = document.createElement('div');
     card.className = 'launcher-card';
-    card.innerHTML = `
-      <div class="card-icon-wrapper">
-        ${DOMAIN_SVGS[d]}
-      </div>
+    
+    const cardHeader = `
+      <div class="card-icon-wrapper">${DOMAIN_SVGS[d]}</div>
       <h3>Domain ${d}</h3>
       <h4 style="font-size: 0.95rem; color: var(--text-dark); margin-bottom: 10px; font-weight: 700;">${DOMAIN_NAMES[d].split(': ')[1]}</h4>
       <p>${DOMAIN_DESCRIPTIONS[d]}</p>
-      <button class="btn btn-success" data-domain="${d}">Drill ${domainPool.length} Scenarios</button>
     `;
     
-    card.querySelector('button').addEventListener('click', () => {
-      onSelectCallback(d);
-    });
+    const studyKey = typeof window !== 'undefined' && window.getSessionStorageKey ? window.getSessionStorageKey('study', d) : `CCAF_SESSION_study_${d}`;
+    const saved = localStorage.getItem(studyKey);
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        card.innerHTML = cardHeader + `
+          <button class="btn btn-success btn-resume" data-domain="${d}">Resume Domain ${d} (Question ${parsed.currentIndex + 1}/${parsed.questions.length})</button>
+          <button class="btn btn-danger btn-restart" style="margin-top: 8px; padding: 6px 12px; font-size: 0.85rem;" data-domain="${d}">Start Over</button>
+        `;
+        card.querySelector('.btn-resume').addEventListener('click', () => onSelectCallback(d, false));
+        card.querySelector('.btn-restart').addEventListener('click', () => {
+          if (confirm('Are you sure you want to discard your saved progress and start over?')) {
+            onSelectCallback(d, true);
+          }
+        });
+      } catch (e) {
+        card.innerHTML = cardHeader + `
+          <button class="btn btn-success" data-domain="${d}">Drill ${domainPool.length} Scenarios</button>
+        `;
+        card.querySelector('button').addEventListener('click', () => onSelectCallback(d, false));
+      }
+    } else {
+      card.innerHTML = cardHeader + `
+        <button class="btn btn-success" data-domain="${d}">Drill ${domainPool.length} Scenarios</button>
+      `;
+      card.querySelector('button').addEventListener('click', () => {
+        onSelectCallback(d, false);
+      });
+    }
     
     el.domainSelectorGrid.appendChild(card);
   }

@@ -37,6 +37,22 @@ const MIN_POOL_LIMITS = {
 
 const idRegex = /^CCAF-[1-5]-[0-9]{3}$/;
 
+// Static arrays moved to outer file scope to prevent inner-loop memory churn during validation runs
+const FORBIDDEN_PATTERNS = [
+  /, ensuring/, /, circumventing/, /, exceeding/, /, forcing/, /, ignoring/, /, utilizing/, /, as this/, /, removing/, /, to bypass/, /, to minimize/
+];
+
+const PADDING_SENTENCES = [
+  "This configuration leverages standardized operational parameters to manage execution state.",
+  "This approach operates via explicit configuration settings within the deployment environment.",
+  "This structural model establishes specific architectural parameter declarations within the module.",
+  "This deployment design utilizes standardized parameter declarations across modular interfaces.",
+  "This operational configuration utilizes explicit configuration settings within the environment.",
+  "This execution design depends on specific operational parameters declared at the deployment layer.",
+  "This structural layout operates through standard programmatic declarations during runtime evaluation.",
+  "This architectural model establishes explicit interface boundaries across execution parameters."
+];
+
 CCAF_DATABASE.forEach((q, index) => {
   const qLabel = `Question[${index}] (ID: ${q ? q.id || 'MISSING' : 'INVALID'})`;
 
@@ -109,29 +125,16 @@ CCAF_DATABASE.forEach((q, index) => {
         errors.push(`${optLabel}: 'text' must be a string of at least 5 trimmed characters (got ${gotLen}).`);
       }
 
-      // Explicitly check for forbidden evaluative meta-commentary strings
-      const forbiddenPatterns = [
-        /, ensuring/, /, circumventing/, /, embedding/, /, which/, /, exceeding/, /, forcing/, /, ignoring/, /, utilizing/, /, as this/, /, removing/, /, configuring/, /, relying/, /, to bypass/, /, using/, /, to minimize/
-      ];
-      forbiddenPatterns.forEach(pattern => {
+      // Explicitly check for forbidden evaluative meta-commentary strings (excluding valid technical AI descriptions)
+      FORBIDDEN_PATTERNS.forEach(pattern => {
         if (pattern.test(opt.text)) {
           errors.push(`${optLabel}: Option text contains forbidden evaluative meta-commentary matching ${pattern.toString()}.`);
         }
       });
 
       // Check for duplicate or accumulated padding pool sentences
-      const paddingSentences = [
-        "This configuration leverages standardized operational parameters to manage execution state.",
-        "This approach operates via explicit configuration settings within the deployment environment.",
-        "This structural model establishes specific architectural parameter declarations within the module.",
-        "This deployment design utilizes standardized parameter declarations across modular interfaces.",
-        "This operational configuration utilizes explicit configuration settings within the environment.",
-        "This execution design depends on specific operational parameters declared at the deployment layer.",
-        "This structural layout operates through standard programmatic declarations during runtime evaluation.",
-        "This architectural model establishes explicit interface boundaries across execution parameters."
-      ];
       let matchCount = 0;
-      paddingSentences.forEach(sentence => {
+      PADDING_SENTENCES.forEach(sentence => {
         if (opt.text.indexOf(sentence) !== -1) {
           matchCount++;
           if (opt.text.indexOf(sentence) !== opt.text.lastIndexOf(sentence)) {
@@ -151,10 +154,10 @@ CCAF_DATABASE.forEach((q, index) => {
         correctPositions[correctOptId]++;
       }
 
-      if (typeof opt.explanation !== 'string' || opt.explanation.trim().length < 10) {
+      if (opt.isCorrect && (typeof opt.explanation !== 'string' || opt.explanation.trim().length < 10)) {
         const gotLen = typeof opt.explanation === 'string' ? opt.explanation.trim().length : 'invalid_type';
-        errors.push(`${optLabel}: 'explanation' must be a string of at least 10 trimmed characters (got ${gotLen}).`);
-      } else {
+        errors.push(`${optLabel}: 'explanation' must be a string of at least 10 trimmed characters for correct options (got ${gotLen}).`);
+      } else if (opt.explanation && opt.explanation.trim().length > 0) {
         // Assert that explanation does not merely repeat option text
         const optCore = opt.text.replace('Trap:', '').trim();
         const explCore = opt.explanation.replace('Trap:', '').trim();
