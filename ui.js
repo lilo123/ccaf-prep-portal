@@ -193,9 +193,18 @@ function renderDomainSelectors(onSelectCallback) {
 /**
  * Reusable DRY helper function to construct the feedback box element
  */
-function createFeedbackBox(isCorrect, selectedOption, referenceUrl) {
+function createFeedbackBox(isCorrect, selectedOption, referenceUrl, questionObj) {
   const feedbackBox = document.createElement('div');
   feedbackBox.className = `feedback-box ${isCorrect ? 'correct' : 'incorrect'}`;
+
+  let explanationText = (selectedOption && selectedOption.explanation) || '';
+  if (!explanationText && questionObj && Array.isArray(questionObj.options)) {
+    const correctOpt = questionObj.options.find(o => o && o.isCorrect);
+    if (correctOpt && correctOpt.explanation) {
+      explanationText = correctOpt.explanation;
+    }
+  }
+
   feedbackBox.innerHTML = `
     <div class="feedback-title">
       ${isCorrect 
@@ -203,7 +212,7 @@ function createFeedbackBox(isCorrect, selectedOption, referenceUrl) {
         : `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" style="color: var(--error);"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg> Trap Selection!`
       }
     </div>
-    <p style="margin-top: 8px; line-height: 1.5;">${selectedOption ? selectedOption.explanation : ''}</p>
+    <p style="margin-top: 8px; line-height: 1.5;">${explanationText}</p>
     <div class="ref-link-container">
       <a href="${referenceUrl}" target="_blank" class="ref-link">
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
@@ -281,7 +290,7 @@ function renderQuestion(questionPointer, userSelectionOptId, isEvaluatedMode, on
           else if (currentOptId === optId) li.classList.add('incorrect');
         });
 
-        const feedbackBox = createFeedbackBox(opt.isCorrect, opt, questionObj.reference);
+        const feedbackBox = createFeedbackBox(opt.isCorrect, opt, questionObj.reference, questionObj);
         card.appendChild(feedbackBox);
       }
     });
@@ -294,7 +303,7 @@ function renderQuestion(questionPointer, userSelectionOptId, isEvaluatedMode, on
   if (isEvaluatedMode && userSelectionOptId !== undefined) {
     const selectedOption = questionObj.options.find(o => o.id === userSelectionOptId);
     if (selectedOption) {
-      const feedbackBox = createFeedbackBox(selectedOption.isCorrect, selectedOption, questionObj.reference);
+      const feedbackBox = createFeedbackBox(selectedOption.isCorrect, selectedOption, questionObj.reference, questionObj);
       card.appendChild(feedbackBox);
     }
   }
