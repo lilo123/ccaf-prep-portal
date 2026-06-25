@@ -2469,17 +2469,17 @@ const CCAF_DATABASE = [
     "question": "What is the most likely cause of this MCP server JSON-RPC crash?",
     "options": [
       {
-        "text": "The custom tool handler output contains raw console.log() debugging statements. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "The custom tool handler output contains raw console.log() debugging statements.",
         "isCorrect": true,
         "explanation": "MCP communicates over stdio using JSON-RPC. Writing raw console.log() statements in tool handlers pollutes the stream, causing protocol parsing crashes. Which corrupted the standard JSON-RPC stdio stream protocol."
       },
       {
-        "text": "The tool is running inside a sandboxed container without root permissions. This execution architecture isolates runtime parameters within hermetic container sandboxes to guarantee execution integrity. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "The tool is running inside a sandboxed container without root permissions.",
         "isCorrect": false,
         "explanation": "Trap: Lack of root permissions can cause filesystem write errors, but does not trigger a JSON-RPC protocol violation error. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "The Node.js runtime environment version is less than v20. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries.",
+        "text": "The Node.js runtime environment version is less than v20.",
         "isCorrect": false,
         "explanation": "Trap: Older Node.js versions might lack specific ES6 features but do not automatically violate standard JSON-RPC parsing formats. Exceeding maximum prefill token window limits."
       },
@@ -2498,7 +2498,7 @@ const CCAF_DATABASE = [
     "question": "What is the first network troubleshooting step you should execute?",
     "options": [
       {
-        "text": "Widen the context window of the Claude client to 200,000 tokens, executing sequential tool decomposition without classification.",
+        "text": "Widen the context window of the Claude client to 200,000 tokens.",
         "isCorrect": false,
         "explanation": "Trap: Context window size has no bearing on TCP/IP connection handshake loops. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
@@ -2513,7 +2513,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: A model cannot change network interfaces or bypass firewall ports via conversational thoughts."
       },
       {
-        "text": "Clear in-memory cache keys and reload the browser SPA website. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Clear in-memory cache keys and reload the browser SPA website.",
         "isCorrect": false,
         "explanation": "Trap: Local browser state does not configure or clear low-level network websocket blocks. Circumventing protocol connection validation checks."
       }
@@ -2527,12 +2527,12 @@ const CCAF_DATABASE = [
     "question": "How should you refine the tool definition to prevent these model calling errors?",
     "options": [
       {
-        "text": "Instruct the model in the system prompt to always be very careful when calling tools. This execution architecture isolates runtime parameters within hermetic container sandboxes to guarantee execution integrity.",
+        "text": "Instruct the model in the system prompt to always be very careful when calling tools.",
         "isCorrect": false,
         "explanation": "Trap: Conversational prompt warnings are fragile and easily bypassed without strict programmatic schema gates. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "Set the model temperature to 0.0, executing sequential tool decomposition without classification.",
+        "text": "Set the model temperature to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects generative creativity, not the model's adherence to basic API input requirements."
       },
@@ -2542,7 +2542,7 @@ const CCAF_DATABASE = [
         "explanation": "Defining detailed tool schemas and explicit, descriptive parameter docs is the most robust way to ground the model's tool-calling behavior, preventing syntax errors."
       },
       {
-        "text": "Disable the search utility and replace it with a static bash shell grep execution, executing sequential tool decomposition without classification.",
+        "text": "Disable the search utility and replace it with a static bash shell grep execution.",
         "isCorrect": false,
         "explanation": "Trap: Bash grep commands are complex, slow, error-prone, and represent a downgrade in usability compared to structured APIs."
       }
@@ -2556,17 +2556,17 @@ const CCAF_DATABASE = [
     "question": "What is the best practice to handle these long-running tool executions in MCP?",
     "options": [
       {
-        "text": "Configure the MCP server to ignore all timeout errors, executing sequential tool decomposition without classification. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Configure the MCP server to ignore all timeout errors.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring timeouts results in missing data, where the agent assumes success for a broken step."
       },
       {
-        "text": "Instruct the model in the system prompt to wait patiently for slow database queries. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Instruct the model in the system prompt to wait patiently for slow database queries.",
         "isCorrect": false,
         "explanation": "Trap: Prompt instructions cannot prevent hard network/client-socket timeouts."
       },
       {
-        "text": "Widen the regional network timeout limits of all MCP servers to 1 hour, executing sequential tool decomposition without classification.",
+        "text": "Widen the regional network timeout limits of all MCP servers to 1 hour.",
         "isCorrect": false,
         "explanation": "Trap: 1-hour timeouts freeze the conversational loop, destroying the user experience. Circumventing protocol connection validation checks."
       },
@@ -2590,12 +2590,12 @@ const CCAF_DATABASE = [
         "explanation": "Using version-controlled configuration files (like `mcp_config.json` or `CLAUDE.md`) is the most reliable way to distribute unified server settings across a team."
       },
       {
-        "text": "Store the server configurations inside the static local configuration files file.",
+        "text": "Store the server configurations inside the questions.js file.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static database and has no bear on the client's MCP runtime registry. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: `questions.js` is a static database and has no bearing on the client's MCP runtime registry. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "Set the model temperature to 0.0 during server setup. This protocol specification enforces rigid parameter serialization to prevent prompt injection across transport boundaries.",
+        "text": "Set the model temperature to 0.0 during server setup.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects text generation, not low-level protocol registry systems. Exceeding maximum prefill token window limits."
       },
@@ -2614,7 +2614,7 @@ const CCAF_DATABASE = [
     "question": "Which validation pattern is most appropriate for this security check?",
     "options": [
       {
-        "text": "Implement an interval cron validation check on the server. This execution architecture isolates runtime parameters within hermetic container sandboxes to guarantee execution integrity.",
+        "text": "Implement an interval cron validation check on the server.",
         "isCorrect": false,
         "explanation": "Trap: Cron checks run post-execution and do not prevent real-time leaks to the active conversation. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
@@ -2624,7 +2624,7 @@ const CCAF_DATABASE = [
         "explanation": "Filtering outputs inside the MCP server tool handler is a secure, programmatic check that prevents sensitive data from ever escaping to the agent, completely independent of LLM behavior. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set the model temperature to 0.0. This protocol specification enforces rigid parameter serialization to prevent prompt injection across transport boundaries. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries.",
+        "text": "Set the model temperature to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Temperature does not scan buffers for hidden passwords."
       },
@@ -2643,12 +2643,12 @@ const CCAF_DATABASE = [
     "question": "How should you configure the MCP server custom command to ensure clean parsing?",
     "options": [
       {
-        "text": "Disable linter execution and rely on manual checks. This execution architecture isolates runtime parameters within hermetic container sandboxes to guarantee execution integrity.",
+        "text": "Disable linter execution and rely on manual checks.",
         "isCorrect": false,
         "explanation": "Trap: Disabling the linter removes automated quality safeguards. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "Widen the linter tool timeout limit to 5 minutes, executing sequential tool decomposition without classification.",
+        "text": "Widen the linter tool timeout limit to 5 minutes.",
         "isCorrect": false,
         "explanation": "Trap: Stalls are caused by parsing errors, not execution timeouts."
       },
@@ -2672,17 +2672,17 @@ const CCAF_DATABASE = [
     "question": "Which configuration is required to enforce this boundary?",
     "options": [
       {
-        "text": "Widen the root.gitignore to include neighboring project folders, executing sequential tool decomposition without classification.",
+        "text": "Widen the root.gitignore to include neighboring project folders.",
         "isCorrect": false,
         "explanation": "Trap: Excluding folders globally in.gitignore breaks monorepo work and is highly impractical. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Delete neighboring project folders before launching the server. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Delete neighboring project folders before launching the server.",
         "isCorrect": false,
         "explanation": "Trap: Folder deletion is highly destructive and breaks monorepo local builds. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "Set the model temperature of the search tool to 0.0. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries.",
+        "text": "Set the model temperature of the search tool to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls creativity, not filesystem scope boundaries."
       },
@@ -2706,17 +2706,17 @@ const CCAF_DATABASE = [
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside CLAUDE.md ensures the agent self-corrects style errors before committing files."
       },
       {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly.",
         "isCorrect": false,
         "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Set the reasoning temperature of all agents to 0.0, executing sequential tool decomposition without classification.",
+        "text": "Set the reasoning temperature of all agents to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule."
       },
       {
-        "text": "Store formatting rules in in-memory cache. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries.",
+        "text": "Store formatting rules in in-memory cache.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines."
       }
@@ -2730,7 +2730,7 @@ const CCAF_DATABASE = [
     "question": "What is the most likely cause of this MCP server stdio crash?",
     "options": [
       {
-        "text": "The description property of the tool schema is less than 20 characters, executing sequential tool decomposition without classification.",
+        "text": "The description property of the tool schema is less than 20 characters.",
         "isCorrect": false,
         "explanation": "Trap: Short tool descriptions degrade model steering but are syntactically valid and do not crash the JSON-RPC protocol."
       },
@@ -2764,7 +2764,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: A model cannot change network interfaces or bypass firewall ports via conversational thoughts. Circumventing protocol connection validation checks."
       },
       {
-        "text": "Clear in-memory cache keys and reload the browser SPA website. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Clear in-memory cache keys and reload the browser SPA website.",
         "isCorrect": false,
         "explanation": "Trap: Local browser state does not configure or clear low-level network websocket blocks."
       },
@@ -2774,7 +2774,7 @@ const CCAF_DATABASE = [
         "explanation": "Connection refused errors indicate a network-level block; verifying that firewalls, proxies, and target ports are open is the correct first step."
       },
       {
-        "text": "Widen the context window of the Claude client to 200,000 tokens. This protocol specification enforces rigid parameter serialization to prevent prompt injection across transport boundaries.",
+        "text": "Widen the context window of the Claude client to 200,000 tokens.",
         "isCorrect": false,
         "explanation": "Trap: Context window size has no bearing on TCP/IP connection handshake loops. Exceeding maximum prefill token window limits."
       }
@@ -2788,7 +2788,7 @@ const CCAF_DATABASE = [
     "question": "What is the best validation gate pattern for this tool?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity, executing sequential tool decomposition without classification.",
+        "text": "Widen the context window of the model to maximum capacity.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity has no bearing on filesystem security or validation loops."
       },
@@ -2798,7 +2798,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Conversational prompt instructions are not absolute constraints and the model can still fail on complex generations. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "Use in-memory cache to store container variables. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation. This protocol specification enforces rigid parameter serialization to prevent prompt injection across transport boundaries.",
+        "text": "Use in-memory cache to store container variables.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is client-side browser storage and has no integration with low-level container security. Circumventing protocol connection validation checks."
       },
@@ -2822,9 +2822,9 @@ const CCAF_DATABASE = [
         "explanation": "Defining server configurations in a shared, version-controlled `mcp_config.json` ensures they are consistently loaded for all developers."
       },
       {
-        "text": "Store the configurations inside the static local configuration files file.",
+        "text": "Store the configurations inside the questions.js file.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static questions database and has no bearing on MCP server configurations. This pattern is strictly discouraged in high-throughput enterprise deployments."
+        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on MCP server configurations. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Instruct each developer to manually link the servers in their terminal.",
@@ -2832,7 +2832,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Manual linking is fragile, error-prone, and difficult to maintain across a team."
       },
       {
-        "text": "Set the model temperature to 0.0. This execution architecture isolates runtime parameters within hermetic container sandboxes to guarantee execution integrity.",
+        "text": "Set the model temperature to 0.0.",
         "isCorrect": false,
         "explanation": "Trap: Temperature does not affect low-level configuration systems. Exceeding maximum prefill token window limits."
       }
@@ -2846,7 +2846,7 @@ const CCAF_DATABASE = [
     "question": "What is the most likely cause of this SSL/TLS certificate error?",
     "options": [
       {
-        "text": "The Node.js runtime environment is outdated, executing sequential tool decomposition without classification.",
+        "text": "The Node.js runtime environment is outdated.",
         "isCorrect": false,
         "explanation": "Trap: DEC errors are cryptographic pass errors, not environment runtime issues."
       },
@@ -2856,12 +2856,12 @@ const CCAF_DATABASE = [
         "explanation": "PKCS12 decryption failures indicate that the password provided to load the certificate is incorrect or missing."
       },
       {
-        "text": "The deep-link reference in static local configuration files is invalid, executing sequential tool decomposition without classification.",
+        "text": "The deep-link reference in questions.js is invalid.",
         "isCorrect": false,
         "explanation": "Trap: Questions database references have no bearing on low-level secure API connections."
       },
       {
-        "text": "The server is running inside a sandboxed container without root permissions, executing sequential tool decomposition without classification.",
+        "text": "The server is running inside a sandboxed container without root permissions.",
         "isCorrect": false,
         "explanation": "Trap: Sandboxed container limitations do not trigger SSL decryption errors."
       }
@@ -2875,12 +2875,12 @@ const CCAF_DATABASE = [
     "question": "What is the most likely cause of this transport close?",
     "options": [
       {
-        "text": "The database pool size in static local configuration files is less than 120.",
+        "text": "The database pool size in questions.js is less than 120.",
         "isCorrect": false,
         "explanation": "Trap: Database size has no bearing on transport layer runtimes. Exceeding maximum prefill token window limits."
       },
       {
-        "text": "The server is running inside a Docker container without port mapping. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries.",
+        "text": "The server is running inside a Docker container without port mapping.",
         "isCorrect": false,
         "explanation": "Trap: Stdio-based transport does not use network ports, so port mapping is irrelevant. Circumventing protocol connection validation checks."
       },
@@ -2890,7 +2890,7 @@ const CCAF_DATABASE = [
         "explanation": "Transport stream closed errors indicate that the underlying Node.js process executing the MCP server terminated unexpectedly."
       },
       {
-        "text": "The Node.js runtime version is less than v20, executing sequential tool decomposition without classification.",
+        "text": "The Node.js runtime version is less than v20.",
         "isCorrect": false,
         "explanation": "Trap: Process crash is caused by code syntax bugs, not standard Node environment versions."
       }
@@ -2904,7 +2904,7 @@ const CCAF_DATABASE = [
     "question": "How should you design the custom command execution inside the tool handler?",
     "options": [
       {
-        "text": "Set the timeout limit of the bash command to 1 hour. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Set the timeout limit of the bash command to 1 hour.",
         "isCorrect": false,
         "explanation": "Trap: Timeout limits do not capture runtime script exit statuses. Exceeding maximum prefill token window limits."
       },
@@ -2914,7 +2914,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: An agent cannot guess or evaluate shell success without access to exit codes and stderr logs."
       },
       {
-        "text": "Ignore all non-zero exit codes to keep the pipeline running, executing sequential tool decomposition without classification.",
+        "text": "Ignore all non-zero exit codes to keep the pipeline running.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring exit codes leads to silent deployment failures, leaving the environment corrupted."
       },
@@ -2938,12 +2938,12 @@ const CCAF_DATABASE = [
         "explanation": "Scoping file mounts in Docker is a hard infrastructure-level boundary that guarantees filesystem security, completely independent of the model's instructions."
       },
       {
-        "text": "Use in-memory cache to store container variables, executing sequential tool decomposition without classification.",
+        "text": "Use in-memory cache to store container variables.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage has no bearing on low-level Linux container security or filesystem isolation. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Disable all bash tools inside the container, executing sequential tool decomposition without classification. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries.",
+        "text": "Disable all bash tools inside the container.",
         "isCorrect": false,
         "explanation": "Trap: Disabling all bash tools entirely prevents code compilation and testing, rendering the agent unusable."
       },
@@ -2962,7 +2962,7 @@ const CCAF_DATABASE = [
     "question": "Which buffer management strategy will resolve this performance issue?",
     "options": [
       {
-        "text": "Widen the Node.js process memory allocation limit to 4GB. This execution architecture isolates runtime parameters within hermetic container sandboxes to guarantee execution integrity.",
+        "text": "Widen the Node.js process memory allocation limit to 4GB.",
         "isCorrect": false,
         "explanation": "Trap: Bumping memory limits is a temporary workaround that still crashes when log sizes exceed 4GB. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
@@ -2972,7 +2972,7 @@ const CCAF_DATABASE = [
         "explanation": "Streaming log reads chunk-by-chunk prevents the entire file from loading into memory at once, avoiding buffer overflow and OOM crashes. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Disable log viewing entirely from the tool suite. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Disable log viewing entirely from the tool suite.",
         "isCorrect": false,
         "explanation": "Trap: Disabling tools removes core troubleshooting capabilities from the automated pipeline."
       },
@@ -2991,7 +2991,7 @@ const CCAF_DATABASE = [
     "question": "Which MCP transport configuration is architecturally required to connect both servers securely and efficiently?",
     "options": [
       {
-        "text": "Establish an overarching WebSocket network mesh across both servers utilizing `stdio` transport streams over public internet routing gateways to maintain consistency. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Establish an overarching WebSocket network mesh across both servers utilizing `stdio` transport streams over public internet routing gateways to maintain consistency.",
         "isCorrect": false,
         "explanation": "Trap: Stdio transport streams operate locally over standard operating system pipes and cannot be routed natively over public internet WebSocket gateways. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -3020,7 +3020,7 @@ const CCAF_DATABASE = [
     "question": "Which MCP capability should you implement to expose this structured reference data?",
     "options": [
       {
-        "text": "Define an exhaustive custom system prompt wrapper within `CLAUDE.md` that embeds all schemas and log files statically before executing any conversational turns. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries.",
+        "text": "Define an exhaustive custom system prompt wrapper within `CLAUDE.md` that embeds all schemas and log files statically before executing any conversational turns.",
         "isCorrect": false,
         "explanation": "Trap: Statically embedding real-time logs inside `CLAUDE.md` prevents dynamic state checking and exhausts prompt prefill token budget on initial startup. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -3059,7 +3059,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: LocalStorage is isolated within individual client browser runtime instances and cannot distribute unified enterprise prompt templates across developer IDEs. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Distribute a bash script that overwrites the global system instructions file on every machine start to guarantee universal formatting adherence across workflows. This protocol specification enforces rigid parameter serialization to prevent prompt injection across transport boundaries.",
+        "text": "Distribute a bash script that overwrites the global system instructions file on every machine start to guarantee universal formatting adherence across workflows.",
         "isCorrect": false,
         "explanation": "Trap: Bash scripts that overwrite system configuration files are highly intrusive, error-prone, and lack native integration with dynamic user argument handling."
       },
@@ -3093,7 +3093,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Asynchronous cron monitoring jobs evaluate execution logs post-facto and cannot prevent malicious read or write operations during active tool execution."
       },
       {
-        "text": "Store the absolute allowed filesystem directory path strings inside browser localStorage and pass them as dynamic prompt parameters during tool execution loops. This protocol specification enforces rigid parameter serialization to prevent prompt injection across transport boundaries.",
+        "text": "Store the absolute allowed filesystem directory path strings inside browser localStorage and pass them as dynamic prompt parameters during tool execution loops.",
         "isCorrect": false,
         "explanation": "Trap: Relying on localStorage variables passed as prompt parameters provides zero underlying filesystem security boundaries at the running MCP server layer."
       }
@@ -3112,17 +3112,17 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Tool description warnings carry zero programmatic security guarantees against malicious inputs. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Implement an online regex check inside the system prompt that filters out common SQL injection keywords like SELECT or DROP. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Implement an online regex check inside the system prompt that filters out common SQL injection keywords like SELECT or DROP.",
         "isCorrect": false,
         "explanation": "Trap: Regex filters are easily bypassed by sophisticated attackers and add massive context prefill token loads."
       },
       {
-        "text": "Restrict tool inputs to parameterized parameters and compile queries using prepared statements. This security architecture mandates ephemeral execution environments with zero-trust network and host filesystem isolation.",
+        "text": "Restrict tool inputs to parameterized parameters and compile queries using prepared statements.",
         "isCorrect": true,
         "explanation": "Enforcing rigid structured schemas and prepared queries inside server code prevents injection vulnerabilities completely. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set up a post-execution database audit log that flags SQL injection query attempts after they have already executed. This integration enforces strict Model Context Protocol schema compliance to establish immutable tool discovery boundaries.",
+        "text": "Set up a post-execution database audit log that flags SQL injection query attempts after they have already executed.",
         "isCorrect": false,
         "explanation": "Trap: Post-execution audits log breaches but do not protect the database from being compromised."
       }
@@ -3307,7 +3307,7 @@ const CCAF_DATABASE = [
       {
         "text": "Expand each tool\u2019s description with input formats, examples, and boundaries This execution architecture isolates runtime parameters within hermetic container sandboxes to guarantee execution integrity.",
         "isCorrect": true,
-        "explanation": "Tool descriptions are the model\u2019s primary selection mechanism. This is the lowest-effort, highest-impact fix. A adds tokens without addressing the root cause. C is overengineering. D requires more effort than justified.",
+        "explanation": "Tool descriptions are the model\u2019s primary selection mechanism. Expanding each tool's description is the lowest-effort, highest-impact fix. Providing few-shot examples adds tokens without addressing the root cause. Adding a routing layer is overengineering. Merging the tools requires more effort than justified.",
         "letter": "B"
       },
       {
@@ -3384,7 +3384,7 @@ const CCAF_DATABASE = [
         "explanation": "Claude Code's reasoning engine resides on Anthropic's cloud; running it requires outbound API access, which must be secured via proxy. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Download the static local configuration files database to the local directory to enable offline compilation.",
+        "text": "Download the questions.js database to the local directory to enable offline compilation.",
         "isCorrect": false,
         "explanation": "Trap: Having a data file locally does not resolve the core client's API network dependencies. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       }
@@ -3437,9 +3437,9 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Global local installations are hard to maintain, sync, and do not integrate as a native Claude Code slash command. Forcing strict AST checks, to prevent pipeline failures."
       },
       {
-        "text": "Store the slash command script inside thestatic local configuration files file. This execution contract guarantees predictable module resolution and version-locked dependency graph execution.",
+        "text": "Store the slash command script inside the questions.js file. This execution contract guarantees predictable module resolution and version-locked dependency graph execution.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static data pool and cannot configure the Claude Code client command registry. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
+        "explanation": "Trap: `questions.js` is a static data pool and cannot configure the Claude Code client command registry. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       },
       {
         "text": "Instruct each developer to manually run the `/skill add` CLI command in their local Claude Code session.",
@@ -3572,9 +3572,9 @@ const CCAF_DATABASE = [
     "question": "What is the best place to store these strict architectural and testing rules?",
     "options": [
       {
-        "text": "Store these rules in the static local configuration files file.",
+        "text": "Store these rules in the questions.js file.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is an offline data store and has no integration with Claude Code's active workspace instructions. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
+        "explanation": "Trap: `questions.js` is an offline data store and has no integration with Claude Code's active workspace instructions. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
       },
       {
         "text": "Add these instructions inside a structured `[testing]` section in the shared `CLAUDE.md` file at the root directory.",
@@ -3780,9 +3780,9 @@ const CCAF_DATABASE = [
         "explanation": "Hardcoding the exact test command inside `CLAUDE.md` ensures the automated test runner executes the correct coverage scripts persistently."
       },
       {
-        "text": "Store the jest configuration scripts inside static local configuration files.",
+        "text": "Store the jest configuration scripts inside questions.js.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static question database and has no bear on terminal command configurations. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
+        "explanation": "Trap: `questions.js` is a static question database and has no bearing on terminal command configurations. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
       },
       {
         "text": "Set the model temperature to 0.0 during tests. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
@@ -3848,9 +3848,9 @@ const CCAF_DATABASE = [
         "explanation": "Documenting behavior constraints (like planning before writing) in `CLAUDE.md` ensures the instructions are persistently loaded as system behavior gates for all tasks."
       },
       {
-        "text": "Store the planning instructions inside the static local configuration files file.",
+        "text": "Store the planning instructions inside the questions.js file.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static database and does not configure the Claude Code client's runtime instructions. Ensuring deterministic execution constraints."
+        "explanation": "Trap: `questions.js` is a static database and does not configure the Claude Code client's runtime instructions. Ensuring deterministic execution constraints."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3920,9 +3920,9 @@ const CCAF_DATABASE = [
     "question": "Where should you define these commands to guarantee consistency?",
     "options": [
       {
-        "text": "Store the commands inside the static local configuration files file.",
+        "text": "Store the commands inside the questions.js file.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static questions database and cannot configure the Claude Code command registry. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
+        "explanation": "Trap: `questions.js` is a static questions database and cannot configure the Claude Code command registry. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
       },
       {
         "text": "Inside the `[commands]` section of the shared, version-controlled `CLAUDE.md` file at the root of the repository.",
@@ -3954,9 +3954,9 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Manual instructions do not automate the agent's test runner pipeline, leading to incomplete test execution. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
       },
       {
-        "text": "Store the go coverage configuration scripts inside static local configuration files.",
+        "text": "Store the go coverage configuration scripts inside questions.js.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static questions database and has no bear on terminal command configurations. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
+        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on terminal command configurations. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
       },
       {
         "text": "Define the exact test command mapping with coverage thresholds (e.g., `go test -coverprofile=cover.out ./... && go tool cover -func=cover.out`) inside the `[commands]` section of `CLAUDE.md`.",
@@ -3964,7 +3964,7 @@ const CCAF_DATABASE = [
         "explanation": "Hardcoding the exact test command with coverage thresholds inside `CLAUDE.md` ensures the automated test runner executes the correct coverage scripts persistently. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set the model temperature to 0.0 during testsmd instruction modules do not pollute the active shell execution environments.",
+        "text": "Set the model temperature to 0.0 during tests. CLAUDE.md instruction modules do not pollute the active shell execution environments.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects text creativity, not go test command structures. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
       }
@@ -5602,9 +5602,9 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Hardcoding makes prompts difficult to maintain, version-control, or validate statically. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
       },
       {
-        "text": "Store the system prompt directly inside the `static local configuration files` database.",
+        "text": "Store the system prompt directly inside the `questions.js` database.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static questions database and has no bearing on runtime prompt configurations. Using strict XML schema checks. To bypass token prefill limits."
+        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on runtime prompt configurations. Using strict XML schema checks. To bypass token prefill limits."
       },
       {
         "text": "Store system prompts in dedicated `.md` or `.txt` files and reference them programmatically.",
@@ -5694,9 +5694,9 @@ const CCAF_DATABASE = [
         "explanation": "Documenting prompt guidelines in `CLAUDE.md` ensures they are persistently loaded as system guidelines for all prompt engineering tasks."
       },
       {
-        "text": "Store the guidelines inside the static local configuration files file.",
+        "text": "Store the guidelines inside the questions.js file.",
         "isCorrect": false,
-        "explanation": "Trap: `static local configuration files` is a static questions database and has no bearing on terminal command configurations. Preventing markdown backtick noise. Using strict XML schema checks."
+        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on terminal command configurations. Preventing markdown backtick noise. Using strict XML schema checks."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6236,7 +6236,7 @@ const CCAF_DATABASE = [
     "question": "Which Anthropic-specific optimization strategy will minimize these prefill token costs?",
     "options": [
       {
-        "text": "Hardcode the entire document directly inside static local configuration files. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
+        "text": "Hardcode the entire document directly inside questions.js. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
         "isCorrect": false,
         "explanation": "Trap: Storing documents in the static questions database has no integration with Claude's live API prefill caching system."
       },

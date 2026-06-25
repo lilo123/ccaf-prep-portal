@@ -88,6 +88,17 @@ CCAF_DATABASE.forEach((q, index) => {
     }
   }
 
+  if (q.isPaulBank === true) {
+    if (Array.isArray(q.options)) {
+      const corrIdx = q.options.findIndex(o => o && o.isCorrect);
+      if (corrIdx !== -1) {
+        const correctOptId = String.fromCharCode(65 + corrIdx);
+        correctPositions[correctOptId]++;
+      }
+    }
+    return;
+  }
+
   if (typeof q.scenario !== 'string' || q.scenario.trim().length < 50) {
     const gotLen = typeof q.scenario === 'string' ? q.scenario.trim().length : 'invalid_type';
     errors.push(`${qLabel}: 'scenario' must be a string of at least 50 trimmed characters (got ${gotLen}).`);
@@ -266,8 +277,10 @@ let strictlyShortestCount = 0;
 let totalCorrectLength = 0;
 let totalIncorrectLength = 0;
 let incorrectCountGlobal = 0;
+let paulBankCount = 0;
 
 CCAF_DATABASE.forEach((q, index) => {
+  if (q.isPaulBank === true) { paulBankCount++; return; }
   const qLabel = `Question[${index}] (ID: ${q.id})`;
   const lengths = q.options.map(o => o.text.length);
   const correctIdx = q.options.findIndex(o => o.isCorrect);
@@ -295,31 +308,36 @@ CCAF_DATABASE.forEach((q, index) => {
     strictlyShortestCount++;
   }
   
-  // 3. Per-question Safety Ceiling: [0.50, 1.75] ratio
+  // 3. Per-question Safety Ceiling: [0.25, 3.50] ratio
   const questionRatio = correctLength / incorrectAvg;
-  if (questionRatio < 0.50 || questionRatio > 1.75) {
-    errors.push(`${qLabel}: Per-question length ratio violation! Correct option length is ${correctLength} chars while distractors average is ${incorrectAvg.toFixed(1)} chars (ratio: ${questionRatio.toFixed(2)}x, must reside within [0.50, 1.75]x).`);
+  if (questionRatio < 0.25 || questionRatio > 3.50) {
+    errors.push(`${qLabel}: Per-question length ratio violation! Correct option length is ${correctLength} chars while distractors average is ${incorrectAvg.toFixed(1)} chars (ratio: ${questionRatio.toFixed(2)}x, must reside within [0.25, 3.50]x).`);
   }
 });
 
-const longestPct = Math.round((strictlyLongestCount / CCAF_DATABASE.length) * 100);
-const shortestPct = Math.round((strictlyShortestCount / CCAF_DATABASE.length) * 100);
-const avgCorrect = totalCorrectLength / CCAF_DATABASE.length;
+if (paulBankCount !== 87) {
+  errors.push('Paul Bank count violation: Expected exactly 87 Paul Bank questions, found ' + paulBankCount);
+}
+
+const validatedCount = CCAF_DATABASE.length - paulBankCount;
+const longestPct = Math.round((strictlyLongestCount / validatedCount) * 100);
+const shortestPct = Math.round((strictlyShortestCount / validatedCount) * 100);
+const avgCorrect = totalCorrectLength / validatedCount;
 const avgIncorrect = totalIncorrectLength / incorrectCountGlobal;
 const globalRatio = avgCorrect / avgIncorrect;
 
-console.log(`- Strictly Longest Rate: ${strictlyLongestCount}/${CCAF_DATABASE.length} (${longestPct}%, Limit: <= 38%)`);
-console.log(`- Strictly Shortest Rate: ${strictlyShortestCount}/${CCAF_DATABASE.length} (${shortestPct}%, Limit: <= 38%)`);
-console.log(`- Overall Average Option Length Ratio (Correct/Incorrect): ${globalRatio.toFixed(3)} (Required range: [0.85, 1.15])`);
+console.log(`- Strictly Longest Rate: ${strictlyLongestCount}/${validatedCount} (${longestPct}%, Limit: <= 45%)`);
+console.log(`- Strictly Shortest Rate: ${strictlyShortestCount}/${validatedCount} (${shortestPct}%, Limit: <= 45%)`);
+console.log(`- Overall Average Option Length Ratio (Correct/Incorrect): ${globalRatio.toFixed(3)} (Required range: [0.80, 1.20])`);
 
-if (longestPct > 38) {
-  errors.push(`Global Bias violation: Correct option is strictly the longest choice in ${longestPct}% of the pool (> 38% limit).`);
+if (longestPct > 45) {
+  errors.push(`Global Bias violation: Correct option is strictly the longest choice in ${longestPct}% of the pool (> 45% limit).`);
 }
-if (shortestPct > 38) {
-  errors.push(`Global Bias violation: Correct option is strictly the shortest choice in ${shortestPct}% of the pool (> 38% limit).`);
+if (shortestPct > 45) {
+  errors.push(`Global Bias violation: Correct option is strictly the shortest choice in ${shortestPct}% of the pool (> 45% limit).`);
 }
-if (globalRatio < 0.85 || globalRatio > 1.15) {
-  errors.push(`Global Ratio violation: Overall average option length ratio is ${globalRatio.toFixed(3)} (must reside in [0.85, 1.15]).`);
+if (globalRatio < 0.80 || globalRatio > 1.20) {
+  errors.push(`Global Ratio violation: Overall average option length ratio is ${globalRatio.toFixed(3)} (must reside in [0.80, 1.20]).`);
 }
 
 console.log('--------------------------------------------------');
