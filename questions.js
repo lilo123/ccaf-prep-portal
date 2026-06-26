@@ -71,12 +71,12 @@ const CCAF_DATABASE = [
     "question": "Which session state management strategy is the most appropriate to optimize token consumption?",
     "options": [
       {
-        "text": "Format the entire raw transaction history table inside the conversation context using highly compressed custom markdown syntax and shorthand headers to reduce character counts.",
+        "text": "Format the entire raw transaction history table inside the conversation context using highly compressed custom markdown syntax and shorthand headers to reduce character counts. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
         "explanation": "Trap: Markdown compression has negligible impact on token consumption compared to repeating massive raw transaction history arrays. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Instruct the agent to purge its conversation buffer every second iteration step. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation.",
+        "text": "Instruct the agent to purge its conversation buffer every second iteration step.",
         "isCorrect": false,
         "explanation": "Trap: Clearing history destroys session context, and pre-trained model memory cannot know custom user transaction data."
       },
@@ -100,19 +100,19 @@ const CCAF_DATABASE = [
     "question": "How should you configure task decomposition to handle large-scale code edits safely?",
     "options": [
       {
-        "text": "Enable high temperature (0.9) and instruct the agent to write highly condensed, single-line code representations. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Enable high temperature (0.9) and instruct the agent to write highly condensed, single-line code representations.",
         "isCorrect": false,
-        "explanation": "Trap: Condensed, single-line code is unreadable, error-prone, and does not solve the underlying token output limit constraint. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Condensed, single-line code is unreadable, error-prone, and does not solve the underlying token output limit constraint. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Configure the agent to write code edits to a temporary local file using bash append commands rather than returning full blocks.",
+        "text": "Configure the agent to write code edits to a temporary local file using bash append commands rather than returning full blocks. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: If the model output is truncated mid-stream due to token limits, the resulting code file will be corrupted regardless of the tool type. Forcing immediate blocking execution operations."
+        "explanation": "Trap: If the model output is truncated mid-stream due to token limits, the resulting code file will be corrupted regardless of the tool type."
       },
       {
-        "text": "Switch the entire pipeline to Claude 3 Haiku as it has faster execution speeds. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Switch the entire pipeline to Claude 3 Haiku as it has faster execution speeds. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Claude 3 Haiku still has the same output token limit and inferior reasoning, leading to poorer refactoring results. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Claude 3 Haiku still has the same output token limit and inferior reasoning, leading to poorer refactoring results."
       },
       {
         "text": "Instruct the orchestrator to split the large refactoring task into a plan of contiguous file-level or class-level sub-tasks, executing each refactoring step sequentially with separate agent turns.",
@@ -134,19 +134,19 @@ const CCAF_DATABASE = [
         "explanation": "Throttling concurrency inside the tool executor hook strictly limits parallel execution steps, preventing rate-limit spikes."
       },
       {
-        "text": "Increase the client-side HTTP request deadline timeout to 300 seconds. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Increase the client-side HTTP request deadline timeout to 300 seconds.",
         "isCorrect": false,
-        "explanation": "Trap: Increasing timeouts does not reduce concurrency or prevent rate limits; it merely holds sockets open longer. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Increasing timeouts does not reduce concurrency or prevent rate limits; it merely holds sockets open longer. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Inject a 'sleep' command directly into the prompt instructions for the agent.",
         "isCorrect": false,
-        "explanation": "Trap: Prompts are not hard programmatic constraints. The model may ignore prompt sleep intervals and execute tool blocks concurrently. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Prompts are not hard programmatic constraints. The model may ignore prompt sleep intervals and execute tool blocks concurrently."
       },
       {
-        "text": "Switch the backend model to Claude 3.5 Sonnet to benefit from its larger context window.",
+        "text": "Switch the backend model to Claude 3.5 Sonnet to benefit from its larger context window. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Larger context windows do not change parallel tool-calling behaviors or rate limits. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Larger context windows do not change parallel tool-calling behaviors or rate limits."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -160,7 +160,7 @@ const CCAF_DATABASE = [
       {
         "text": "Configure the agent to run in raw plan-only mode without state memory.",
         "isCorrect": false,
-        "explanation": "Trap: Disabling state memory entirely prevents the agent from tracking tasks, rendering it useless for multi-turn logging analysis. This pattern is strictly discouraged in high-throughput enterprise deployments. Ignoring structural parameter requirements within schema options."
+        "explanation": "Trap: Disabling state memory entirely prevents the agent from tracking tasks, rendering it useless for multi-turn logging analysis. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Implement a sliding-window conversational pruning system that discards old steps and maintains only a compressed summary and the last 10 turns in active memory.",
@@ -168,14 +168,14 @@ const CCAF_DATABASE = [
         "explanation": "Sliding-window pruning limits the active state size in memory, completely preventing conversation bloat and background OOM crashes."
       },
       {
-        "text": "Increase the VM's RAM swap space by 16GB. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Increase the VM's RAM swap space by 16GB. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Bumping RAM merely delays the OOM; if the conversation state grows infinitely, the system will eventually crash anyway. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Bumping RAM merely delays the OOM; if the conversation state grows infinitely, the system will eventually crash anyway."
       },
       {
-        "text": "Rely on the browser's automatic garbage collection to clean up the model's history arrays.",
+        "text": "Rely on the browser's automatic garbage collection to clean up the model's history arrays. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Garbage collection cannot clean up active arrays that are still referenced by the running conversation loop. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Garbage collection cannot clean up active arrays that are still referenced by the running conversation loop."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -187,14 +187,14 @@ const CCAF_DATABASE = [
     "question": "Which coordination mechanism will eliminate these redundant sub-agent calls?",
     "options": [
       {
-        "text": "Increase the translator agent's temperature to 1.0 to prevent repetitive output. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Increase the translator agent's temperature to 1.0 to prevent repetitive output.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature controls creativity and variation, which actually degrades translation accuracy and does not prevent redundant calls. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Temperature controls creativity and variation, which actually degrades translation accuracy and does not prevent redundant calls."
       },
       {
         "text": "Use a single agent with a very long system prompt instead of a multi-agent coordinator pattern.",
         "isCorrect": false,
-        "explanation": "Trap: Single-agent setups for massive documents suffer from context degradation and do not natively solve the redundant task calling loop. Ensuring the sub-agent execution context is completely isolated from the main session state variables."
+        "explanation": "Trap: Single-agent setups for massive documents suffer from context degradation and do not natively solve the redundant task calling loop."
       },
       {
         "text": "Implement a shared session ledger using a key-value lookup table (caching translated paragraph hashes) that the coordinator audits before calling the sub-agent.",
@@ -202,9 +202,9 @@ const CCAF_DATABASE = [
         "explanation": "A shared lookup ledger acts as a cache, letting the coordinator skip calling the translator sub-agent for identical inputs."
       },
       {
-        "text": "Instruct the translator agent to read the entire 50,000-line document at once. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Instruct the translator agent to read the entire 50,000-line document at once. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Forcing the sub-agent to read a massive document at once consumes huge tokens and easily leads to incomplete translation output due to token limits. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Forcing the sub-agent to read a massive document at once consumes huge tokens and easily leads to incomplete translation output due to token limits."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -218,17 +218,17 @@ const CCAF_DATABASE = [
       {
         "text": "Instruct the agent in the prompt to try executing the auth command again with a different password.",
         "isCorrect": false,
-        "explanation": "Trap: An agent cannot guess or generate a new valid password on its own, leading to endless failed attempts. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: An agent cannot guess or generate a new valid password on its own, leading to endless failed attempts. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Configure the agent to ignore the tool error and proceed to the next step of the plan. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Configure the agent to ignore the tool error and proceed to the next step of the plan. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Ignoring auth failures leads to cascading failures in subsequent steps that depend on the tool's output. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Ignoring auth failures leads to cascading failures in subsequent steps that depend on the tool's output."
       },
       {
         "text": "Implement an exponential backoff retry loop up to 50 attempts inside the tool call logic.",
         "isCorrect": false,
-        "explanation": "Trap: Retrying auth failures 50 times merely delays the stall, consuming vast execution time and logs for a non-transient error. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Retrying auth failures 50 times merely delays the stall, consuming vast execution time and logs for a non-transient error."
       },
       {
         "text": "Define a strict escalation hook that intercepts '401' errors at the SDK tool execution layer, halts the agent loop immediately, and prompts the user for re-authentication.",
@@ -250,19 +250,19 @@ const CCAF_DATABASE = [
         "explanation": "Spawning parallel worker agents to analyze independent files concurrently dramatically reduces execution time, compiling the results in a final single turn."
       },
       {
-        "text": "Run the analysis using a lower temperature (0.0) to speed up model responses. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation.",
+        "text": "Run the analysis using a lower temperature (0.0) to speed up model responses. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature affects determinism, not model inference speed or parallel file-handling. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Temperature affects determinism, not model inference speed or parallel file-handling. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Increase the context window size of a single agent and feed all 50 files in a single prompt sequentially.",
+        "text": "Increase the context window size of a single agent and feed all 50 files in a single prompt sequentially. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Feeding all files to a single agent sequentially is slow, and easily triggers context degradation or incomplete analysis. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Feeding all files to a single agent sequentially is slow, and easily triggers context degradation or incomplete analysis."
       },
       {
-        "text": "Use a recursive agent pattern where one agent calls itself 50 times in a deep nested chain. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Use a recursive agent pattern where one agent calls itself 50 times in a deep nested chain.",
         "isCorrect": false,
-        "explanation": "Trap: Deep recursive nesting is slow, highly fragile, and multiplies token costs exponentially. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Deep recursive nesting is slow, highly fragile, and multiplies token costs exponentially."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -274,9 +274,9 @@ const CCAF_DATABASE = [
     "question": "Which session boundaries configuration is required to maintain routing accuracy?",
     "options": [
       {
-        "text": "Clear the orchestrator's memory after every sub-agent call. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Clear the orchestrator's memory after every sub-agent call. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Clearing the orchestrator's memory entirely breaks task tracking and prevents it from compiling research results. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Clearing the orchestrator's memory entirely breaks task tracking and prevents it from compiling research results."
       },
       {
         "text": "Implement strict session isolation: Sub-agents operate in separate, isolated contexts and return only their final structured outputs to the orchestrator.",
@@ -284,14 +284,14 @@ const CCAF_DATABASE = [
         "explanation": "Isolating sub-agent contexts prevents history leakage, keeping the orchestrator's context clean and routing highly accurate."
       },
       {
-        "text": "Increase the reasoning temperature to 0.7 to help the orchestrator distinguish histories.",
+        "text": "Increase the reasoning temperature to 0.7 to help the orchestrator distinguish histories. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Higher temperature increases randomness and exacerbates routing confusion. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Higher temperature increases randomness and exacerbates routing confusion."
       },
       {
-        "text": "Merge all agents into a single system prompt using multiple persona tags. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Merge all agents into a single system prompt using multiple persona tags.",
         "isCorrect": false,
-        "explanation": "Trap: Merging all personas into a single prompt increases context confusion, token cost, and routing errors. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Merging all personas into a single prompt increases context confusion, token cost, and routing errors."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -303,7 +303,7 @@ const CCAF_DATABASE = [
     "question": "What is the mandatory timeout configuration for robust agentic loops?",
     "options": [
       {
-        "text": "Increase the Node.js process memory limit to 4GB. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Increase the Node.js process memory limit to 4GB. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
         "explanation": "Trap: Memory limits do not prevent network connection stalls."
       },
@@ -318,7 +318,7 @@ const CCAF_DATABASE = [
         "explanation": "Hard deadlines at the tool wrapper layer prevent indefinite stalls, allowing the agent to catch the timeout error and gracefully degrade or escalate."
       },
       {
-        "text": "Write a loop in the prompt telling the agent to wait patiently for slow websites before timing out.",
+        "text": "Write a loop in the prompt telling the agent to wait patiently for slow websites before timing out. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
         "explanation": "Trap: The agent cannot change network sockets or socket timeouts via prompts. Prompt instructions cannot prevent technical thread stalls."
       }
@@ -334,22 +334,22 @@ const CCAF_DATABASE = [
       {
         "text": "Use session storage to cache files before writing to the filesystem.",
         "isCorrect": false,
-        "explanation": "Trap: Caching files in session storage does not prevent race conditions during the actual writing step without a lock. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Caching files in session storage does not prevent race conditions during the actual writing step without a lock. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Spawn only one sub-agent for the entire codebase refactoring task.",
         "isCorrect": false,
-        "explanation": "Trap: Spawning one sub-agent eliminates parallelism entirely, causing severe latency issues for large projects. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Spawning one sub-agent eliminates parallelism entirely, causing severe latency issues for large projects."
       },
       {
         "text": "Instruct the agents in their prompts to always check if another agent is editing the file.",
         "isCorrect": false,
-        "explanation": "Trap: Prompt checking is asynchronous and lacks atomic lock safety, leading to race conditions. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Prompt checking is asynchronous and lacks atomic lock safety, leading to race conditions."
       },
       {
         "text": "Implement a file locking mechanism or serial queue in the file write tool layer.",
         "isCorrect": true,
-        "explanation": "A file-locking mechanism at the tool layer guarantees serial access, preventing concurrency collisions and code corruption. Ensuring only one agent can edit a specific file path at a time."
+        "explanation": "A file-locking mechanism at the tool layer guarantees serial access, preventing concurrency collisions and code corruption by ensuring only one agent can edit a specific file path at a time."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -366,19 +366,19 @@ const CCAF_DATABASE = [
         "explanation": "Validation gates at stage boundaries prevent corrupted data from propagating down the pipeline, ensuring graceful failure handling."
       },
       {
-        "text": "Wrap the entire pipeline in a single try-catch block that retries the cleaning step up to 20 times.",
+        "text": "Wrap the entire pipeline in a single try-catch block that retries the cleaning step up to 20 times. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Retrying 20 times on static corrupted data wastes tokens, as the error is non-transient. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Retrying 20 times on static corrupted data wastes tokens, as the error is non-transient. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Set the model temperature to 0.0 to make the parsing logic more deterministic. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Set the model temperature to 0.0 to make the parsing logic more deterministic. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Determinism does not fix a lack of input validation or prevent cascading exceptions. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Determinism does not fix a lack of input validation or prevent cascading exceptions."
       },
       {
-        "text": "Widen the modeling agent's context so it can see the raw corrupted CSV data and try to fix it itself.",
+        "text": "Widen the modeling agent's context so it can see the raw corrupted CSV data and try to fix it itself. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Expecting the modeling agent to perform cleaning logic violates single-responsibility design and increases modeling bugs. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Expecting the modeling agent to perform cleaning logic violates single-responsibility design and increases modeling bugs."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -390,9 +390,9 @@ const CCAF_DATABASE = [
     "question": "Which roll-back or compensation strategy should be integrated into the orchestrator design?",
     "options": [
       {
-        "text": "Widen the timeout limits of all regional tools to 1 hour. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Widen the timeout limits of all regional tools to 1 hour. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Extremely long timeouts stall the deployment indefinitely and do not resolve the inconsistency when a hard failure eventually occurs. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Extremely long timeouts stall the deployment indefinitely and do not resolve the inconsistency when a hard failure eventually occurs."
       },
       {
         "text": "Implement a two-phase commit or transactional state tracker: if any region deployment fails, the orchestrator must execute explicit compensation tools to roll back completed regions to the previous stable version.",
@@ -400,14 +400,14 @@ const CCAF_DATABASE = [
         "explanation": "Transactional tracking and compensation logic ensure the orchestrator rolls back completed steps when a partial deployment fails, keeping the environment consistent."
       },
       {
-        "text": "Configure the regional deployment tools to ignore all timeout errors. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation.",
+        "text": "Configure the regional deployment tools to ignore all timeout errors. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Ignoring failures leads to silent errors, where the orchestrator assumes successful deployment for a broken environment. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Ignoring failures leads to silent errors, where the orchestrator assumes successful deployment for a broken environment."
       },
       {
-        "text": "Instruct the orchestrator in the system prompt to never leave things in an inconsistent state.",
+        "text": "Instruct the orchestrator in the system prompt to never leave things in an inconsistent state. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Prompt commands cannot magically execute complex database rollback transactions or API state corrections without explicit tools. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Prompt commands cannot magically execute complex database rollback transactions or API state corrections without explicit tools."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -419,14 +419,14 @@ const CCAF_DATABASE = [
     "question": "Which design fix will resolve this multi-agent deadlock?",
     "options": [
       {
-        "text": "Set the temperature of both agents to 0.9 to encourage creative execution.",
+        "text": "Set the temperature of both agents to 0.9 to encourage creative execution. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Randomness in reasoning does not fix structural deadlock loops. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Randomness in reasoning does not fix structural deadlock loops."
       },
       {
-        "text": "Merge A and B's memories into a single shared local storage key.",
+        "text": "Merge A and B's memories into a single shared local storage key. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Sharing memory does not change their waiting loops or the execution flow causing the deadlock. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Sharing memory does not change their waiting loops or the execution flow causing the deadlock."
       },
       {
         "text": "Define an orchestrator agent that manages the state machine explicitly, enforcing synchronous, unidirectional transitions (e.g., A must complete collection before B is called).",
@@ -434,9 +434,9 @@ const CCAF_DATABASE = [
         "explanation": "An explicit state machine orchestrator enforces a clean execution order, preventing cyclical waiting dependencies and deadlocks."
       },
       {
-        "text": "Clear their history states after every 3 turns. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Clear their history states after every 3 turns. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Clearing memory breaks task tracking and does not resolve the cyclical dependency. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Clearing memory breaks task tracking and does not resolve the cyclical dependency."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -448,19 +448,19 @@ const CCAF_DATABASE = [
     "question": "Which guardrail design is most appropriate to keep the agent aligned?",
     "options": [
       {
-        "text": "Disable tool usage entirely for off-topic queries. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Disable tool usage entirely for off-topic queries. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: If the agent's main context is still invoked, it will still attempt to answer off-topic questions via text, failing brand alignment. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: If the agent's main context is still invoked, it will still attempt to answer off-topic questions via text, failing brand alignment."
       },
       {
-        "text": "Write a 10-page system prompt listing all the things the bot is NOT allowed to talk about.",
+        "text": "Write a 10-page system prompt listing all the things the bot is NOT allowed to talk about. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
         "explanation": "Trap: Over-specified negative prompts consume huge tokens and increase model confusion, often causing it to fail on valid edge cases. Enforcing strict execution budget guardrails."
       },
       {
-        "text": "Set the reasoning temperature to 0.0 to ensure rigid responses. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Set the reasoning temperature to 0.0 to ensure rigid responses. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature controls determinism, not the semantic topic boundary or input routing. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Temperature controls determinism, not the semantic topic boundary or input routing."
       },
       {
         "text": "Implement a dual-agent guardrail: a fast classifier agent intercepts all incoming messages and routes off-topic queries to a static deflection block before the main support agent is invoked.",
@@ -482,19 +482,19 @@ const CCAF_DATABASE = [
         "explanation": "A structured callback status contract ensures the orchestrator is aware of sub-agent execution failures, allowing it to trigger retries or graceful halts."
       },
       {
-        "text": "Widen the orchestrator's context window so it can see all sub-agent execution environments in real time. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Widen the orchestrator's context window so it can see all sub-agent execution environments in real time. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Context windows cannot monitor runtime VM states or capture unhandled exceptions without a callback structure. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Context windows cannot monitor runtime VM states or capture unhandled exceptions without a callback structure. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Instruct the sub-agents in their prompts to tell the orchestrator if they fail. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Instruct the sub-agents in their prompts to tell the orchestrator if they fail. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Asynchronous text updates in conversational logs lack programmatic error-catching safety, leading to missed crash alerts. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Asynchronous text updates in conversational logs lack programmatic error-catching safety, leading to missed crash alerts."
       },
       {
-        "text": "Have all sub-agents write their outputs to a shared database and let the orchestrator poll the database on an interval.",
+        "text": "Have all sub-agents write their outputs to a shared database and let the orchestrator poll the database on an interval. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Interval polling introduces latency, and database checks do not natively propagate logical execution failures without a strict status contract. Ignoring structural parameter requirements within schema options."
+        "explanation": "Trap: Interval polling introduces latency, and database checks do not natively propagate logical execution failures without a strict status contract."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -506,9 +506,9 @@ const CCAF_DATABASE = [
     "question": "Which design pattern will optimize API costs and throughput for this pipeline?",
     "options": [
       {
-        "text": "Instruct the model in the prompt to process all 10 million rows in a single turn.",
+        "text": "Instruct the model in the prompt to process all 10 million rows in a single turn. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Attempting to feed 10M rows in a single turn exceeds context windows and output limits, causing immediate crashes. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Attempting to feed 10M rows in a single turn exceeds context windows and output limits, causing immediate crashes."
       },
       {
         "text": "Implement a batch worker pattern: the agent processes data in chunks (e.g., 1000 rows per turn) using Claude's batch API, reducing the total count of expensive synchronous chat turns.",
@@ -516,14 +516,14 @@ const CCAF_DATABASE = [
         "explanation": "Batching rows and using the Batch API significantly lowers cost and optimizes throughput for large-scale datasets."
       },
       {
-        "text": "Use a sliding-window caching pattern for row cleaning. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Use a sliding-window caching pattern for row cleaning. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Caching helps with repetitive data but does not resolve the underlying sequential API call overhead for a massive unique dataset. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Caching helps with repetitive data but does not resolve the underlying sequential API call overhead for a massive unique dataset."
       },
       {
-        "text": "Switch the agent to Claude 3 Haiku and process rows sequentially. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Switch the agent to Claude 3 Haiku and process rows sequentially. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Even with a cheaper model, sequential API calls for 10M rows are highly slow and cost-prohibitive. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Even with a cheaper model, sequential API calls for 10M rows are highly slow and cost-prohibitive."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -535,14 +535,14 @@ const CCAF_DATABASE = [
     "question": "Which architectural pattern is the most robust way to integrate Human-in-the-Loop (HITL) control?",
     "options": [
       {
-        "text": "Disable the email deletion tool entirely for the agent. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Disable the email deletion tool entirely for the agent. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Disabling the tool prevents the agent from ever executing valid user-requested deletions, rendering the assistant incomplete. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency. Ignoring structural parameter requirements within schema options."
+        "explanation": "Trap: Disabling the tool prevents the agent from ever executing valid user-requested deletions, rendering the assistant incomplete. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Set the model temperature to 0.0 to prevent unauthorized actions.",
+        "text": "Set the model temperature to 0.0 to prevent unauthorized actions. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature controls text variation, not tool scoping or execution security. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Temperature controls text variation, not tool scoping or execution security."
       },
       {
         "text": "Implement a strict tool execution interceptor: at the SDK layer, high-risk tools are flagged. Execution pauses, serializes state, and waits for an external API confirmation signature.",
@@ -550,7 +550,7 @@ const CCAF_DATABASE = [
         "explanation": "An interceptor at the tool layer is a hard programmatic gate that guarantees high-risk actions are blocked until an explicit user signature is provided."
       },
       {
-        "text": "Write a system prompt telling the agent to always ask the user before deleting things.",
+        "text": "Write a system prompt telling the agent to always ask the user before deleting things. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
         "explanation": "Trap: Prompts are steerable guidelines, not hard security gates. An agent can still hallucinate or be manipulated into executing the tool. Enforcing strict execution budget guardrails."
       }
@@ -564,19 +564,19 @@ const CCAF_DATABASE = [
     "question": "What is the best retry and escalation design for handling 429 errors in this pipeline?",
     "options": [
       {
-        "text": "Use a cheaper model (Haiku) during peak hours to bypass rate limits. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation.",
+        "text": "Use a cheaper model (Haiku) during peak hours to bypass rate limits. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Organization rate limits are based on tokens/requests per minute across all models, so model swapping does not solve sustained capacity limits. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Organization rate limits are based on tokens/requests per minute across all models, so model swapping does not solve sustained capacity limits."
       },
       {
-        "text": "Instruct the agent in the prompt to try again immediately if it sees a 429 error.",
+        "text": "Instruct the agent in the prompt to try again immediately if it sees a 429 error. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Immediate retries without backoff exacerbate the rate limit, worsening the organization-level block. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Immediate retries without backoff exacerbate the rate limit, worsening the organization-level block."
       },
       {
-        "text": "Widen the orchestrator's context window to store failed queries in history. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Widen the orchestrator's context window to store failed queries in history. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Context windows do not prevent or handle HTTP 429 network failures. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Context windows do not prevent or handle HTTP 429 network failures."
       },
       {
         "text": "Implement a client-side queue with exponential backoff and jitter at the API client layer. If retries exceed a threshold (e.g., 5 attempts), route the customer to a static deflection message and flag the on-call engineer.",
@@ -598,19 +598,19 @@ const CCAF_DATABASE = [
         "explanation": "Prompt Caching requires prefix matching. Keeping the large static segments at the beginning and dynamic queries at the end maximizes the cached prefix size."
       },
       {
-        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Widen the context window of the agent to maximum capacity. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Widen the context window of the agent to maximum capacity. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates."
       },
       {
-        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context.",
+        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -622,9 +622,9 @@ const CCAF_DATABASE = [
     "question": "Which design pattern is the most robust way to prevent these silent data corruptions?",
     "options": [
       {
-        "text": "Merge all sub-agents into a single orchestrator agent. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Merge all sub-agents into a single orchestrator agent. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Single-agent monoliths suffer from context bloat and do not natively provide input/output boundary validation. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Single-agent monoliths suffer from context bloat and do not natively provide input/output boundary validation."
       },
       {
         "text": "Implement state schema validation at the sub-agent boundary: all outputs must pass strict JSON schema validation before being sent to downstream agents.",
@@ -632,14 +632,14 @@ const CCAF_DATABASE = [
         "explanation": "Validating outputs against strict schemas at sub-agent boundaries catches parser corruptions early, halting the pipeline before silent codebase damage occurs."
       },
       {
-        "text": "Instruct the refactoring agent in the prompt to always verify if the input AST looks correct.",
+        "text": "Instruct the refactoring agent in the prompt to always verify if the input AST looks correct. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Conversational prompts are not reliable parser validators. Silent corruptions can easily slip through conversational text audits. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Conversational prompts are not reliable parser validators. Silent corruptions can easily slip through conversational text audits."
       },
       {
-        "text": "Use in-memory cache to persist AST states across turns. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation.",
+        "text": "Use in-memory cache to persist AST states across turns.",
         "isCorrect": false,
-        "explanation": "Trap: Persisting corrupted data in in-memory cache does not fix the corruption or prevent it from being processed. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Persisting corrupted data in in-memory cache does not fix the corruption or prevent it from being processed."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -651,14 +651,14 @@ const CCAF_DATABASE = [
     "question": "Which orchestration pattern handles slow parallel workers most gracefully?",
     "options": [
       {
-        "text": "Use a cheaper model (Haiku) to speed up the parallel workers. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation.",
+        "text": "Use a cheaper model (Haiku) to speed up the parallel workers. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Haiku has faster raw inference, but complex research tasks may yield lower quality or fail entirely under its reasoning capabilities. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Haiku has faster raw inference, but complex research tasks may yield lower quality or fail entirely under its reasoning capabilities."
       },
       {
-        "text": "Configure the orchestrator to wait indefinitely for all parallel workers.",
+        "text": "Configure the orchestrator to wait indefinitely for all parallel workers. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Indefinite waiting causes thread stalls and freezes the entire web application UI. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Indefinite waiting causes thread stalls and freezes the entire web application UI."
       },
       {
         "text": "Implement a partial resolution pattern: if the timeout deadline is reached, collect completed summaries, list the incomplete worker IDs as 'in-progress', and render a draft report with an option to resume.",
@@ -666,9 +666,9 @@ const CCAF_DATABASE = [
         "explanation": "A partial resolution pattern prevents total timeout failures by rendering whatever worker data is ready, keeping the UX highly informative."
       },
       {
-        "text": "Instruct the parallel workers in the prompt to write faster summaries. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Instruct the parallel workers in the prompt to write faster summaries. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Prompt instructions cannot alter model inference speeds or network download durations. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Prompt instructions cannot alter model inference speeds or network download durations."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -680,19 +680,19 @@ const CCAF_DATABASE = [
     "question": "What is the best architectural practice to secure the database access?",
     "options": [
       {
-        "text": "Store database credentials directly in in-memory cache. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Store database credentials directly in in-memory cache. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Storing raw DB credentials in in-memory cache is a massive client-side security vulnerability. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Storing raw DB credentials in in-memory cache is a massive client-side security vulnerability. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Write a strong system prompt instructing the agent to only select data and never delete rows.",
+        "text": "Write a strong system prompt instructing the agent to only select data and never delete rows. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Prompt constraints can be bypassed via user prompt injections, leading to potential database breaches. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Prompt constraints can be bypassed via user prompt injections, leading to potential database breaches."
       },
       {
-        "text": "Implement a confirmation prompt in the UI before executing any select query. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Implement a confirmation prompt in the UI before executing any select query.",
         "isCorrect": false,
-        "explanation": "Trap: UI confirmations for simple SELECT queries are highly disruptive to UX and do not prevent malicious write queries at the tool level. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: UI confirmations for simple SELECT queries are highly disruptive to UX and do not prevent malicious write queries at the tool level."
       },
       {
         "text": "Enforce strict tool scoping: the database connection tool must use a read-only connection string with permissions capped exclusively to SELECT statements at the DB level.",
@@ -714,19 +714,19 @@ const CCAF_DATABASE = [
         "explanation": "SDK lifecycle hooks provide an elegant, automated way to intercept agent steps and collect precise performance telemetry without cluttering core logic."
       },
       {
-        "text": "Instruct the model in the system prompt to compute and output its latency numbers.",
+        "text": "Instruct the model in the system prompt to compute and output its latency numbers. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: LLMs cannot compute their own real-world hardware execution speeds or latency numbers. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: LLMs cannot compute their own real-world hardware execution speeds or latency numbers. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Have the sub-agents print their execution durations directly in GChat messages. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation.",
+        "text": "Have the sub-agents print their execution durations directly in GChat messages.",
         "isCorrect": false,
-        "explanation": "Trap: Conversational text logging is unparseable, cluttering the user's feed, and fails to integrate with structured telemetry tools. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Conversational text logging is unparseable, cluttering the user's feed, and fails to integrate with structured telemetry tools."
       },
       {
-        "text": "Implement a time check loop inside the database validation file. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Implement a time check loop inside the database validation file. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Database validators only audit static questions and do not monitor active conversational runtimes. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Database validators only audit static questions and do not monitor active conversational runtimes."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -738,9 +738,9 @@ const CCAF_DATABASE = [
     "question": "What is the best graceful degradation pattern for this routing failure?",
     "options": [
       {
-        "text": "Clear the conversational context and restart the support session automatically. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Clear the conversational context and restart the support session automatically.",
         "isCorrect": false,
-        "explanation": "Trap: Cyclical session restarts frustrate the user and do not resolve the unclassifiable complex request. Ensuring the sub-agent execution context is completely isolated from the main session state variables."
+        "explanation": "Trap: Cyclical session restarts frustrate the user and do not resolve the unclassifiable complex request."
       },
       {
         "text": "Define a default fallback route: if classification confidence is low or fails, automatically route the request to a human customer support agent queue.",
@@ -748,14 +748,14 @@ const CCAF_DATABASE = [
         "explanation": "A default fallback human escalation route ensures that complex, unclassifiable requests are handled gracefully, preventing support stalls."
       },
       {
-        "text": "Set the model temperature to 1.0 to encourage creative routing options. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Set the model temperature to 1.0 to encourage creative routing options. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: High temperature increases routing hallucinations, causing queries to be misrouted to wrong specialized sub-agents. Circumventing protocol connection validation checks."
+        "explanation": "Trap: High temperature increases routing hallucinations, causing queries to be misrouted to wrong specialized sub-agents."
       },
       {
         "text": "Widen the routing agent's system prompt to cover all possible customer problems.",
         "isCorrect": false,
-        "explanation": "Trap: Monolithic support prompts suffer from context dilution and do not resolve routing failures for rare, unexpected queries. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Monolithic support prompts suffer from context dilution and do not resolve routing failures for rare, unexpected queries."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -767,14 +767,14 @@ const CCAF_DATABASE = [
     "question": "Which design pattern ensures absolute architectural transparency?",
     "options": [
       {
-        "text": "Instruct the agent in the system prompt to always be highly honest and transparent.",
+        "text": "Instruct the agent in the system prompt to always be highly honest and transparent. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Prompt guidelines are easily bypassed or ignored by the model, failing to guarantee systematic auditability. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Prompt guidelines are easily bypassed or ignored by the model, failing to guarantee systematic auditability."
       },
       {
-        "text": "Set the temperature to 0.0 to guarantee deterministic diagnostics. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Set the temperature to 0.0 to guarantee deterministic diagnostics. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Determinism does not expose thought blocks or reasoning logs to the user. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Determinism does not expose thought blocks or reasoning logs to the user."
       },
       {
         "text": "Implement detailed chain-of-thought serialization: save the agent's intermediate reasoning steps (thought blocks) to a secure audit ledger, rendering them alongside the final diagnosis in the UI.",
@@ -782,9 +782,9 @@ const CCAF_DATABASE = [
         "explanation": "Serializing and displaying thought blocks provides full traceability, giving users and auditors complete visibility into how a decision was made."
       },
       {
-        "text": "Widen the model's context window to keep old conversation histories. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Widen the model's context window to keep old conversation histories. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Keeping histories in memory does not expose intermediate thought blocks to the UI without explicit serialization. Utilizing unvalidated raw string parameters inside execution contexts. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Keeping histories in memory does not expose intermediate thought blocks to the UI without explicit serialization."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -796,19 +796,19 @@ const CCAF_DATABASE = [
     "question": "What is the most robust architectural practice to ensure unparseable markdown is never returned to tests?",
     "options": [
       {
-        "text": "Widen the testing timeout to 10 minutes to give the agent time to self-correct.",
+        "text": "Widen the testing timeout to 10 minutes to give the agent time to self-correct. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Long timeouts do not clean up unparseable markdown syntaxes. This pattern is strictly discouraged in high-throughput enterprise deployments. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Long timeouts do not clean up unparseable markdown syntaxes. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Use in-memory cache to store parsing templates. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Use in-memory cache to store parsing templates. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Persisting templates in in-memory cache has no bearing on runtime code extraction and cleaning. Forcing immediate blocking execution operations. Removing structured tool constraints entirely from prompt headers."
+        "explanation": "Trap: Persisting templates in in-memory cache has no bearing on runtime code extraction and cleaning."
       },
       {
-        "text": "Instruct the agent in the prompt to only return raw code and never write markdown.",
+        "text": "Instruct the agent in the prompt to only return raw code and never write markdown. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: LLMs are conversational and frequently violate negative prompt boundaries, outputting backticks anyway. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: LLMs are conversational and frequently violate negative prompt boundaries, outputting backticks anyway."
       },
       {
         "text": "Implement a post-processing extraction utility in the tool layer (e.g., extracting code strictly inside triple backticks) and pass only this extracted raw text to the validator.",
@@ -830,19 +830,19 @@ const CCAF_DATABASE = [
         "explanation": "Caching dependencies locally and running tools in offline-local mode completely eliminates download delays and network dependency bottlenecks."
       },
       {
-        "text": "Rely on the browser's native caching mechanism to speed up downloads.",
+        "text": "Rely on the browser's native caching mechanism to speed up downloads. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
-        "explanation": "Trap: Browser caches do not apply to background Node.js process package managers (like npm/pip) executing inside sandboxed environments. This pattern is strictly discouraged in high-throughput enterprise deployments. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Browser caches do not apply to background Node.js process package managers (like npm/pip) executing inside sandboxed environments. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Configure the tool to ignore all download timeout errors. This orchestration paradigm preserves atomic state consistency and transactional rollbacks during sub-agent delegation. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Configure the tool to ignore all download timeout errors. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Ignoring download timeouts causes silent execution failures, leaving dependencies missing. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Ignoring download timeouts causes silent execution failures, leaving dependencies missing."
       },
       {
-        "text": "Spawn only one sub-agent to handle all package installation steps.",
+        "text": "Spawn only one sub-agent to handle all package installation steps. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Running installations sequentially still encounters the same massive download latency bottleneck. Utilizing unvalidated raw string parameters inside execution contexts."
+        "explanation": "Trap: Running installations sequentially still encounters the same massive download latency bottleneck."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -854,9 +854,9 @@ const CCAF_DATABASE = [
     "question": "Which plan-halting strategy is necessary to resolve this cyclical deadlock?",
     "options": [
       {
-        "text": "Set the temperature of B to 1.0 to encourage different critiques. This deployment model relies on compile-time contract enforcement and deterministic runtime execution guarantees.",
+        "text": "Set the temperature of B to 1.0 to encourage different critiques. Multi-agent orchestration frameworks require clear boundary definitions between workers.",
         "isCorrect": false,
-        "explanation": "Trap: Randomness increases hallucination risk and does not resolve structural conversational stalls. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Randomness increases hallucination risk and does not resolve structural conversational stalls."
       },
       {
         "text": "Define a strict turn limit (e.g., maximum 3 cycles of refinement). If the limit is hit, halt the loop and escalate the plan to a supervisor agent or human engineer.",
@@ -864,14 +864,14 @@ const CCAF_DATABASE = [
         "explanation": "An explicit turn limit acts as a circuit breaker, preventing infinite conversational loops and ensuring graceful escalation."
       },
       {
-        "text": "Clear their history states after every cycle. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Clear their history states after every cycle. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
-        "explanation": "Trap: Clearing memory entirely breaks the refactoring progress, forcing the plan back to step 1. Forcing immediate blocking execution operations."
+        "explanation": "Trap: Clearing memory entirely breaks the refactoring progress, forcing the plan back to step 1."
       },
       {
-        "text": "Widen the context window of B to hold the complete argument history.",
+        "text": "Widen the context window of B to hold the complete argument history. Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
         "isCorrect": false,
-        "explanation": "Trap: Keeping the full history of the argument in context does not break the circular reasoning pattern. Exceeding overall system execution budget allocations."
+        "explanation": "Trap: Keeping the full history of the argument in context does not break the circular reasoning pattern."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -888,7 +888,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Exposing encrypted credentials in the prompt context violates security policy and leaves credentials vulnerable to exfiltration."
       },
       {
-        "text": "Configure the orchestrator to instantiate local Docker containers on demand, mounting host file systems to execute native scripts within the primary loop. This design enforces decoupled execution tiers with strict boundary validation across the orchestration lifecycle.",
+        "text": "Configure the orchestrator to instantiate local Docker containers on demand, mounting host file systems to execute native scripts within the primary loop. Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
         "isCorrect": false,
         "explanation": "Trap: Local container spawning fails to provide network isolation and exposes the primary orchestration environment to escape vulnerabilities."
       },
@@ -917,7 +917,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Shorthand YAML formatting does not resolve systemic scaling limits and significantly increases prefill costs per conversation turn."
       },
       {
-        "text": "Deploy an autonomous sub-agent for each of the 500 tools. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Deploy an autonomous sub-agent for each of the 500 tools.",
         "isCorrect": false,
         "explanation": "Trap: Broadcasting queries to 500 sub-agents creates extreme latency spikes and triggers immediate rate-limit exhaustion across endpoints."
       },
@@ -972,7 +972,7 @@ const CCAF_DATABASE = [
       {
         "text": "Prompt the model to store intermediate table structures inside its active conversation context buffer.",
         "isCorrect": false,
-        "explanation": "Trap: Active context buffers are lost entirely upon fatal script crashes or disconnects, preventing recovery without complete re-execution. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring context persistence across retries."
+        "explanation": "Trap: Active context buffers are lost entirely upon fatal script crashes or disconnects, preventing recovery without complete re-execution. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Serialize and persist intermediate session state variables and tool execution history to persistent checkpoint storage after every completed loop iteration.",
@@ -980,7 +980,7 @@ const CCAF_DATABASE = [
         "explanation": "Serializing execution state to persistent checkpoint storage allows an orchestrator to instantly resume complex tasks exactly where they failed."
       },
       {
-        "text": "Enforce an automated retry loop that catches network timeout errors and completely restarts the initial orchestration prompt sequence from the beginning. This architectural contract enforces explicit state isolation and well-defined serialization boundaries for multi-agent execution transfers.",
+        "text": "Enforce an automated retry loop that catches network timeout errors and completely restarts the initial orchestration prompt sequence from the beginning. Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
         "isCorrect": false,
         "explanation": "Trap: Restarting long-running tasks from the initial prompt discards hours of successful tool processing and incurs massive duplicate API costs."
       },
@@ -2463,30 +2463,59 @@ const CCAF_DATABASE = [
     "source": "guide"
   },
   {
+    "id": "CCAF-1-077",
+    "domain": 1,
+    "scenario": "You are architecting a long-running multi-agent workflow utilizing Claude Sonnet 4.6 and Opus 4.7 across a 1M token context window. The system processes extensive architectural documentation and active execution state. You observe that as agents exchange massive context payloads over extended multi-turn sessions, prompt cache hit rates degrade significantly due to frequent dynamic state updates interleaving with static instructions.",
+    "question": "What is the most architecturally effective strategy to maintain high prompt cache hit rates across the 1M token context window?",
+    "options": [
+      {
+        "text": "Isolate all static architectural documentation at the absolute beginning of the prompt payload with explicit cache_control blocks and append dynamic execution state strictly at the end of the context window.",
+        "isCorrect": true,
+        "explanation": "In Claude Sonnet 4.6 and Opus 4.7, prompt caching operates via prefix matching across the 1M token window. Placing static content at the beginning with explicit cache_control blocks preserves cache validity across multi-turn interactions. Appending dynamic execution state at the end prevents prefix invalidation."
+      },
+      {
+        "text": "Rely entirely on automatic prompt caching without explicit declarations and interleave dynamic state updates directly within the static documentation sections to maintain chronological execution alignment.",
+        "isCorrect": false,
+        "explanation": "Trap: Interleaving dynamic state updates within static documentation immediately invalidates the prompt cache prefix at the point of modification. Automatic caching without explicit structuring cannot preserve prefix matches when the early context changes continuously."
+      },
+      {
+        "text": "Partition the 1M token context window into multiple small 100k token blocks and assign an automatic cache_control header to every individual dynamic state message generated by the specialized sub-agents.",
+        "isCorrect": false,
+        "explanation": "Trap: Assigning cache_control headers to frequently changing dynamic messages exhausts the maximum allowable cache breakpoints (typically 4 in Claude architectures) and causes continuous cache evictions rather than hits."
+      },
+      {
+        "text": "Configure the orchestration layer to dynamically compress all architectural documentation into brief markdown summaries before every single turn and disable prompt caching entirely across the multi-agent workflow.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling prompt caching and compressing documentation destroys the high-fidelity context required by Opus 4.7 and increases latency and token costs by forcing the model to re-evaluate the entire prompt on every turn."
+      }
+    ],
+    "reference": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching"
+  },
+  {
     "id": "CCAF-2-001",
     "domain": 2,
     "scenario": "You are designing a custom Model Context Protocol (MCP) server in Node.js to expose a set of filesystem utilities to Claude. The server launches successfully and links locally. However, when Claude attempts to run a tool, the server crashes with the error: 'Error: Protocol violation - invalid JSON-RPC message.'",
     "question": "What is the most likely cause of this MCP server JSON-RPC crash?",
     "options": [
       {
-        "text": "The custom tool handler output contains raw console.log() debugging statements.",
-        "isCorrect": true,
-        "explanation": "MCP communicates over stdio using JSON-RPC. Writing raw console.log() statements in tool handlers pollutes the stream, causing protocol parsing crashes. Which corrupted the standard JSON-RPC stdio stream protocol."
+        "text": "The tool is running inside a sandboxed container without root permissions. The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
+        "isCorrect": false,
+        "explanation": "Trap: Lack of root permissions can cause filesystem write errors, but does not trigger a JSON-RPC protocol violation error. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "The tool is running inside a sandboxed container without root permissions.",
-        "isCorrect": false,
-        "explanation": "Trap: Lack of root permissions can cause filesystem write errors, but does not trigger a JSON-RPC protocol violation error. This pattern is strictly discouraged in high-throughput enterprise deployments. Exceeding maximum prefill token window limits."
+        "text": "The custom tool handler output contains raw console.log() debugging statements.",
+        "isCorrect": true,
+        "explanation": "MCP communicates over stdio using JSON-RPC. Writing raw console.log() statements in tool handlers pollutes the stream, causing protocol parsing crashes, which corrupts the standard JSON-RPC stdio stream protocol."
       },
       {
         "text": "The Node.js runtime environment version is less than v20.",
         "isCorrect": false,
-        "explanation": "Trap: Older Node.js versions might lack specific ES6 features but do not automatically violate standard JSON-RPC parsing formats. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Older Node.js versions might lack specific ES6 features but do not automatically violate standard JSON-RPC parsing formats."
       },
       {
         "text": "The description property of the tool schema is less than 20 characters.",
         "isCorrect": false,
-        "explanation": "Trap: Short tool descriptions degrade model steering but are syntactically valid and do not crash the JSON-RPC protocol. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Short tool descriptions degrade model steering but are syntactically valid and do not crash the JSON-RPC protocol."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2500,7 +2529,12 @@ const CCAF_DATABASE = [
       {
         "text": "Widen the context window of the Claude client to 200,000 tokens.",
         "isCorrect": false,
-        "explanation": "Trap: Context window size has no bearing on TCP/IP connection handshake loops. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Context window size has no bearing on TCP/IP connection handshake loops. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Instruct the model in the system prompt to retry the connection with standard timeouts. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
+        "isCorrect": false,
+        "explanation": "Trap: A model cannot change network interfaces or bypass firewall ports via conversational thoughts."
       },
       {
         "text": "Verify that the corporate network proxy or firewall permits outbound HTTP/WebSocket traffic to the remote server's IP and port, and ensure the server port is open.",
@@ -2508,14 +2542,9 @@ const CCAF_DATABASE = [
         "explanation": "Connection refused errors indicate a network-level block; verifying that firewalls, proxies, and target ports are open is the correct first step. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Instruct the model in the system prompt to retry the connection with standard timeouts.",
+        "text": "Clear in-memory cache keys and reload the browser SPA website. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
-        "explanation": "Trap: A model cannot change network interfaces or bypass firewall ports via conversational thoughts."
-      },
-      {
-        "text": "Clear in-memory cache keys and reload the browser SPA website.",
-        "isCorrect": false,
-        "explanation": "Trap: Local browser state does not configure or clear low-level network websocket blocks. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Local browser state does not configure or clear low-level network websocket blocks."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2527,24 +2556,24 @@ const CCAF_DATABASE = [
     "question": "How should you refine the tool definition to prevent these model calling errors?",
     "options": [
       {
-        "text": "Instruct the model in the system prompt to always be very careful when calling tools.",
+        "text": "Instruct the model in the system prompt to always be very careful when calling tools. The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
         "isCorrect": false,
-        "explanation": "Trap: Conversational prompt warnings are fragile and easily bypassed without strict programmatic schema gates. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Conversational prompt warnings are fragile and easily bypassed without strict programmatic schema gates."
       },
       {
-        "text": "Set the model temperature to 0.0.",
+        "text": "Set the model temperature to 0.0. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects generative creativity, not the model's adherence to basic API input requirements."
-      },
-      {
-        "text": "Implement strict JSON Schema input validation on the server, write highly descriptive, explicit tool and argument description fields, and return clear structured errors.",
-        "isCorrect": true,
-        "explanation": "Defining detailed tool schemas and explicit, descriptive parameter docs is the most robust way to ground the model's tool-calling behavior, preventing syntax errors."
       },
       {
         "text": "Disable the search utility and replace it with a static bash shell grep execution.",
         "isCorrect": false,
         "explanation": "Trap: Bash grep commands are complex, slow, error-prone, and represent a downgrade in usability compared to structured APIs."
+      },
+      {
+        "text": "Implement strict JSON Schema input validation on the server, write highly descriptive, explicit tool and argument description fields, and return clear structured errors.",
+        "isCorrect": true,
+        "explanation": "Defining detailed tool schemas and explicit, descriptive parameter docs is the most robust way to ground the model's tool-calling behavior, preventing syntax errors."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2556,24 +2585,24 @@ const CCAF_DATABASE = [
     "question": "What is the best practice to handle these long-running tool executions in MCP?",
     "options": [
       {
-        "text": "Configure the MCP server to ignore all timeout errors.",
+        "text": "Implement an asynchronous transaction pattern: the tool immediately returns a 'tracking_id' status. Claude subsequently queries a status check tool on a scheduler loop until the result is ready.",
+        "isCorrect": true,
+        "explanation": "Asynchronous state tracking via tracking IDs prevents client connection timeouts, allowing the agent to manage long-running tasks gracefully."
+      },
+      {
+        "text": "Configure the MCP server to ignore all timeout errors. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring timeouts results in missing data, where the agent assumes success for a broken step."
       },
       {
-        "text": "Instruct the model in the system prompt to wait patiently for slow database queries.",
+        "text": "Instruct the model in the system prompt to wait patiently for slow database queries. Cryptographic confirmation signatures at the SDK layer guarantee secure tool authorization.",
         "isCorrect": false,
         "explanation": "Trap: Prompt instructions cannot prevent hard network/client-socket timeouts."
       },
       {
-        "text": "Widen the regional network timeout limits of all MCP servers to 1 hour.",
+        "text": "Widen the regional network timeout limits of all MCP servers to 1 hour. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
-        "explanation": "Trap: 1-hour timeouts freeze the conversational loop, destroying the user experience. Circumventing protocol connection validation checks."
-      },
-      {
-        "text": "Implement an asynchronous transaction pattern: the tool immediately returns a 'tracking_id' status. Claude subsequently queries a status check tool on a scheduler loop until the result is ready.",
-        "isCorrect": true,
-        "explanation": "Asynchronous state tracking via tracking IDs prevents client connection timeouts, allowing the agent to manage long-running tasks gracefully."
+        "explanation": "Trap: 1-hour timeouts freeze the conversational loop, destroying the user experience."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2585,24 +2614,24 @@ const CCAF_DATABASE = [
     "question": "Where should you define this multi-server configuration?",
     "options": [
       {
+        "text": "Store the server configurations inside the questions.js file.",
+        "isCorrect": false,
+        "explanation": "Trap: `questions.js` is a static database and has no bearing on the client's MCP runtime registry."
+      },
+      {
         "text": "Inside the shared, version-controlled `CLAUDE.md` file or a central `mcp_config.json` configuration file in the repository.",
         "isCorrect": true,
         "explanation": "Using version-controlled configuration files (like `mcp_config.json` or `CLAUDE.md`) is the most reliable way to distribute unified server settings across a team."
       },
       {
-        "text": "Store the server configurations inside the questions.js file.",
+        "text": "Set the model temperature to 0.0 during server setup. Cryptographic confirmation signatures at the SDK layer guarantee secure tool authorization.",
         "isCorrect": false,
-        "explanation": "Trap: `questions.js` is a static database and has no bearing on the client's MCP runtime registry. Exceeding maximum prefill token window limits."
-      },
-      {
-        "text": "Set the model temperature to 0.0 during server setup.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature affects text generation, not low-level protocol registry systems. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Temperature affects text generation, not low-level protocol registry systems."
       },
       {
         "text": "Instruct each developer to manually execute `npm link` on all servers.",
         "isCorrect": false,
-        "explanation": "Trap: Manual local commands lead to drift, missing servers, and environment inconsistency. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Manual local commands lead to drift, missing servers, and environment inconsistency."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2614,9 +2643,14 @@ const CCAF_DATABASE = [
     "question": "Which validation pattern is most appropriate for this security check?",
     "options": [
       {
-        "text": "Implement an interval cron validation check on the server.",
+        "text": "Implement an interval cron validation check on the server. The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
         "isCorrect": false,
-        "explanation": "Trap: Cron checks run post-execution and do not prevent real-time leaks to the active conversation. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Cron checks run post-execution and do not prevent real-time leaks to the active conversation. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Set the model temperature to 0.0. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature does not scan buffers for hidden passwords."
       },
       {
         "text": "Implement an output filtering middleware inside the MCP server tool handler that scans the log buffer for credentials and masks them before returning the payload to the client.",
@@ -2624,14 +2658,9 @@ const CCAF_DATABASE = [
         "explanation": "Filtering outputs inside the MCP server tool handler is a secure, programmatic check that prevents sensitive data from ever escaping to the agent, completely independent of LLM behavior. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set the model temperature to 0.0.",
+        "text": "Instruct the agent in the system prompt to never read password lines. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature does not scan buffers for hidden passwords."
-      },
-      {
-        "text": "Instruct the agent in the system prompt to never read password lines.",
-        "isCorrect": false,
-        "explanation": "Trap: Prompts are not reliable security controls. The agent can still read and accidentally log the raw data. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Prompts are not reliable security controls. The agent can still read and accidentally log the raw data."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2645,22 +2674,22 @@ const CCAF_DATABASE = [
       {
         "text": "Disable linter execution and rely on manual checks.",
         "isCorrect": false,
-        "explanation": "Trap: Disabling the linter removes automated quality safeguards. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Disabling the linter removes automated quality safeguards."
       },
       {
-        "text": "Widen the linter tool timeout limit to 5 minutes.",
+        "text": "Widen the linter tool timeout limit to 5 minutes. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Stalls are caused by parsing errors, not execution timeouts."
-      },
-      {
-        "text": "Configure the server command with a plain-text flag (e.g., `NO_COLOR=1` or `--plain`) to strip out escape color sequences at the source.",
-        "isCorrect": true,
-        "explanation": "Stripping terminal color escape codes at the command level ensures the output payload contains clean, easily parseable text for the agent's reasoning model."
       },
       {
         "text": "Instruct the agent in the system prompt to ignore ASCII color codes.",
         "isCorrect": false,
         "explanation": "Trap: LLMs struggle to parse and clean raw terminal color escape sequences natively in their token representations."
+      },
+      {
+        "text": "Configure the server command with a plain-text flag (e.g., `NO_COLOR=1` or `--plain`) to strip out escape color sequences at the source.",
+        "isCorrect": true,
+        "explanation": "Stripping terminal color escape codes at the command level ensures the output payload contains clean, easily parseable text for the agent's reasoning model."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2672,24 +2701,24 @@ const CCAF_DATABASE = [
     "question": "Which configuration is required to enforce this boundary?",
     "options": [
       {
-        "text": "Widen the root.gitignore to include neighboring project folders.",
+        "text": "Define strict directory constraints inside the MCP server configuration settings, restricting file tool operations exclusively to the active folder path.",
+        "isCorrect": true,
+        "explanation": "Configuring strict filesystem path constraints at the MCP server level is a robust infrastructure-level boundary that guarantees directory isolation."
+      },
+      {
+        "text": "Widen the root.gitignore to include neighboring project folders. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Excluding folders globally in.gitignore breaks monorepo work and is highly impractical. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Delete neighboring project folders before launching the server.",
         "isCorrect": false,
-        "explanation": "Trap: Folder deletion is highly destructive and breaks monorepo local builds. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Folder deletion is highly destructive and breaks monorepo local builds."
       },
       {
-        "text": "Set the model temperature of the search tool to 0.0.",
+        "text": "Set the model temperature of the search tool to 0.0. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls creativity, not filesystem scope boundaries."
-      },
-      {
-        "text": "Define strict directory constraints inside the MCP server configuration settings, restricting file tool operations exclusively to the active folder path.",
-        "isCorrect": true,
-        "explanation": "Configuring strict filesystem path constraints at the MCP server level is a robust infrastructure-level boundary that guarantees directory isolation."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2701,14 +2730,14 @@ const CCAF_DATABASE = [
     "question": "What is the recommended setup to automate this check?",
     "options": [
       {
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
+        "isCorrect": false,
+        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
         "text": "Register an automated pre-commit hook or a custom linter command inside CLAUDE.md, directing the client to run this check before applying any filesystem writes.",
         "isCorrect": true,
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside CLAUDE.md ensures the agent self-corrects style errors before committing files."
-      },
-      {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly.",
-        "isCorrect": false,
-        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
       },
       {
         "text": "Set the reasoning temperature of all agents to 0.0.",
@@ -2716,9 +2745,9 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule."
       },
       {
-        "text": "Store formatting rules in in-memory cache.",
+        "text": "Store formatting rules in in-memory cache. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
-        "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines."
+        "explanation": "Trap: In-memory cache is browser-based and has no integration with Claude Code formatting engines."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2735,19 +2764,19 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Short tool descriptions degrade model steering but are syntactically valid and do not crash the JSON-RPC protocol."
       },
       {
-        "text": "The custom tool handler output contains raw console.log() debugging statements.",
-        "isCorrect": true,
-        "explanation": "MCP communicates over stdio using JSON-RPC. Writing raw console.log() statements in tool handlers pollutes the stream, causing protocol parsing crashes. Which corrupted the standard JSON-RPC stdio stream protocol."
-      },
-      {
-        "text": "The tool is running inside a sandboxed container without root permissions.",
+        "text": "The tool is running inside a sandboxed container without root permissions. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Lack of root permissions can cause filesystem write errors, but does not trigger a JSON-RPC protocol violation error."
       },
       {
+        "text": "The custom tool handler output contains raw console.log() debugging statements.",
+        "isCorrect": true,
+        "explanation": "MCP communicates over stdio using JSON-RPC. Writing raw console.log() statements in tool handlers pollutes the stream, causing protocol parsing crashes, which corrupts the standard JSON-RPC stdio stream protocol."
+      },
+      {
         "text": "The Node.js runtime environment version is less than v20.",
         "isCorrect": false,
-        "explanation": "Trap: Older Node.js versions might lack specific ES6 features but do not automatically violate standard JSON-RPC parsing formats. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Older Node.js versions might lack specific ES6 features but do not automatically violate standard JSON-RPC parsing formats."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2759,24 +2788,24 @@ const CCAF_DATABASE = [
     "question": "What is the first network troubleshooting step you should execute?",
     "options": [
       {
-        "text": "Instruct the model in the system prompt to retry the connection with standard timeouts.",
+        "text": "Instruct the model in the system prompt to retry the connection with standard timeouts. The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
         "isCorrect": false,
-        "explanation": "Trap: A model cannot change network interfaces or bypass firewall ports via conversational thoughts. Circumventing protocol connection validation checks."
+        "explanation": "Trap: A model cannot change network interfaces or bypass firewall ports via conversational thoughts."
       },
       {
-        "text": "Clear in-memory cache keys and reload the browser SPA website.",
+        "text": "Clear in-memory cache keys and reload the browser SPA website. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Local browser state does not configure or clear low-level network websocket blocks."
+      },
+      {
+        "text": "Widen the context window of the Claude client to 200,000 tokens.",
+        "isCorrect": false,
+        "explanation": "Trap: Context window size has no bearing on TCP/IP connection handshake loops."
       },
       {
         "text": "Verify that the corporate network proxy or firewall permits outbound HTTP/WebSocket traffic to the remote server's IP and port, and ensure the server port is open.",
         "isCorrect": true,
         "explanation": "Connection refused errors indicate a network-level block; verifying that firewalls, proxies, and target ports are open is the correct first step."
-      },
-      {
-        "text": "Widen the context window of the Claude client to 200,000 tokens.",
-        "isCorrect": false,
-        "explanation": "Trap: Context window size has no bearing on TCP/IP connection handshake loops. Exceeding maximum prefill token window limits."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2788,24 +2817,24 @@ const CCAF_DATABASE = [
     "question": "What is the best validation gate pattern for this tool?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity.",
+        "text": "Implement a strict confirmation prompt in the UI or a custom validator script inside the tool executor logic that blocks destructive writes until a valid user confirmation signature is returned.",
+        "isCorrect": true,
+        "explanation": "Enforcing strict validation hooks or UI confirmation signatures is a secure, programmatic gate that blocks destructive actions before tool execution, ensuring absolute filesystem security."
+      },
+      {
+        "text": "Widen the context window of the model to maximum capacity. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity has no bearing on filesystem security or validation loops."
       },
       {
-        "text": "Instruct the agent in the system prompt to never delete files.",
+        "text": "Instruct the agent in the system prompt to never delete files. Cryptographic confirmation signatures at the SDK layer guarantee secure tool authorization.",
         "isCorrect": false,
-        "explanation": "Trap: Conversational prompt instructions are not absolute constraints and the model can still fail on complex generations. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Conversational prompt instructions are not absolute constraints and the model can still fail on complex generations."
       },
       {
-        "text": "Use in-memory cache to store container variables.",
+        "text": "Use in-memory cache to store container variables. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
-        "explanation": "Trap: LocalStorage is client-side browser storage and has no integration with low-level container security. Circumventing protocol connection validation checks."
-      },
-      {
-        "text": "Implement a strict confirmation prompt in the UI or a custom validator script inside the tool executor logic that blocks destructive writes until a valid user confirmation signature is returned.",
-        "isCorrect": true,
-        "explanation": "Enforcing strict validation hooks or UI confirmation signatures is a secure, programmatic gate that blocks destructive actions before tool execution, ensuring absolute filesystem security."
+        "explanation": "Trap: In-memory cache is client-side browser storage and has no integration with low-level container security."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2817,14 +2846,14 @@ const CCAF_DATABASE = [
     "question": "Where should you define this configuration to guarantee consistency?",
     "options": [
       {
-        "text": "Inside a version-controlled `mcp_config.json` configuration file at the root of the repository.",
-        "isCorrect": true,
-        "explanation": "Defining server configurations in a shared, version-controlled `mcp_config.json` ensures they are consistently loaded for all developers."
-      },
-      {
         "text": "Store the configurations inside the questions.js file.",
         "isCorrect": false,
         "explanation": "Trap: `questions.js` is a static questions database and has no bearing on MCP server configurations. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Inside a version-controlled `mcp_config.json` configuration file at the root of the repository.",
+        "isCorrect": true,
+        "explanation": "Defining server configurations in a shared, version-controlled `mcp_config.json` ensures they are consistently loaded for all developers."
       },
       {
         "text": "Instruct each developer to manually link the servers in their terminal.",
@@ -2832,9 +2861,9 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Manual linking is fragile, error-prone, and difficult to maintain across a team."
       },
       {
-        "text": "Set the model temperature to 0.0.",
+        "text": "Set the model temperature to 0.0. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature does not affect low-level configuration systems. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Temperature does not affect low-level configuration systems."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2846,19 +2875,19 @@ const CCAF_DATABASE = [
     "question": "What is the most likely cause of this SSL/TLS certificate error?",
     "options": [
       {
-        "text": "The Node.js runtime environment is outdated.",
+        "text": "The Node.js runtime environment is outdated. The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
         "isCorrect": false,
         "explanation": "Trap: DEC errors are cryptographic pass errors, not environment runtime issues."
-      },
-      {
-        "text": "The client certificate passphrase is incorrect or missing, preventing Node.js from decrypting the certificate file.",
-        "isCorrect": true,
-        "explanation": "PKCS12 decryption failures indicate that the password provided to load the certificate is incorrect or missing."
       },
       {
         "text": "The deep-link reference in questions.js is invalid.",
         "isCorrect": false,
         "explanation": "Trap: Questions database references have no bearing on low-level secure API connections."
+      },
+      {
+        "text": "The client certificate passphrase is incorrect or missing, preventing Node.js from decrypting the certificate file.",
+        "isCorrect": true,
+        "explanation": "PKCS12 decryption failures indicate that the password provided to load the certificate is incorrect or missing."
       },
       {
         "text": "The server is running inside a sandboxed container without root permissions.",
@@ -2877,22 +2906,22 @@ const CCAF_DATABASE = [
       {
         "text": "The database pool size in questions.js is less than 120.",
         "isCorrect": false,
-        "explanation": "Trap: Database size has no bearing on transport layer runtimes. Exceeding maximum prefill token window limits."
+        "explanation": "Trap: Database size has no bearing on transport layer runtimes."
       },
       {
         "text": "The server is running inside a Docker container without port mapping.",
         "isCorrect": false,
-        "explanation": "Trap: Stdio-based transport does not use network ports, so port mapping is irrelevant. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Stdio-based transport does not use network ports, so port mapping is irrelevant."
+      },
+      {
+        "text": "The Node.js runtime version is less than v20. Cryptographic confirmation signatures at the SDK layer guarantee secure tool authorization.",
+        "isCorrect": false,
+        "explanation": "Trap: Process crash is caused by code syntax bugs, not standard Node environment versions."
       },
       {
         "text": "The Node.js process exited prematurely (e.g. due to an uncaught exception or runtime crash in a tool handler).",
         "isCorrect": true,
         "explanation": "Transport stream closed errors indicate that the underlying Node.js process executing the MCP server terminated unexpectedly."
-      },
-      {
-        "text": "The Node.js runtime version is less than v20.",
-        "isCorrect": false,
-        "explanation": "Trap: Process crash is caused by code syntax bugs, not standard Node environment versions."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2904,24 +2933,24 @@ const CCAF_DATABASE = [
     "question": "How should you design the custom command execution inside the tool handler?",
     "options": [
       {
-        "text": "Set the timeout limit of the bash command to 1 hour.",
-        "isCorrect": false,
-        "explanation": "Trap: Timeout limits do not capture runtime script exit statuses. Exceeding maximum prefill token window limits."
+        "text": "Ensure the tool handler command execution logic explicitly forwards both stdout and stderr, and throws an exception for any non-zero exit code, returning the failure details to Claude.",
+        "isCorrect": true,
+        "explanation": "Forwarding stderr and checking exit codes programmatically inside the tool handler ensures Claude captures tool failures and triggers correct error mitigation."
       },
       {
-        "text": "Instruct the agent in the system prompt to guess if the bash command succeeded, to guarantee that raw API credentials are never exposed inside the conversational log context histories.",
+        "text": "Set the timeout limit of the bash command to 1 hour. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
+        "isCorrect": false,
+        "explanation": "Trap: Timeout limits do not capture runtime script exit statuses."
+      },
+      {
+        "text": "Instruct the agent in the system prompt to guess if the bash command succeeded. Cryptographic confirmation signatures at the SDK layer guarantee secure tool authorization.",
         "isCorrect": false,
         "explanation": "Trap: An agent cannot guess or evaluate shell success without access to exit codes and stderr logs."
       },
       {
-        "text": "Ignore all non-zero exit codes to keep the pipeline running.",
+        "text": "Ignore all non-zero exit codes to keep the pipeline running. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring exit codes leads to silent deployment failures, leaving the environment corrupted."
-      },
-      {
-        "text": "Ensure the tool handler command execution logic explicitly forwards both stdout and stderr, and throws an exception for any non-zero exit code, returning the failure details to Claude.",
-        "isCorrect": true,
-        "explanation": "Forwarding stderr and checking exit codes programmatically inside the tool handler ensures Claude captures tool failures and triggers correct error mitigation."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -2933,22 +2962,22 @@ const CCAF_DATABASE = [
     "question": "What is the best practice to enforce this security container boundary?",
     "options": [
       {
+        "text": "Use in-memory cache to store container variables.",
+        "isCorrect": false,
+        "explanation": "Trap: In-memory cache has no bearing on low-level Linux container security or filesystem isolation. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
         "text": "Execute the MCP server strictly inside a sandboxed Docker container with restricted mount permissions, scoping filesystem access exclusively to the workspace folder.",
         "isCorrect": true,
         "explanation": "Scoping file mounts in Docker is a hard infrastructure-level boundary that guarantees filesystem security, completely independent of the model's instructions."
       },
       {
-        "text": "Use in-memory cache to store container variables.",
-        "isCorrect": false,
-        "explanation": "Trap: LocalStorage has no bearing on low-level Linux container security or filesystem isolation. This pattern is strictly discouraged in high-throughput enterprise deployments."
-      },
-      {
-        "text": "Disable all bash tools inside the container.",
+        "text": "Disable all bash tools inside the container. Cryptographic confirmation signatures at the SDK layer guarantee secure tool authorization.",
         "isCorrect": false,
         "explanation": "Trap: Disabling all bash tools entirely prevents code compilation and testing, rendering the agent unusable."
       },
       {
-        "text": "Write a system prompt telling the agent to only edit files inside its directory circumventing protocol connection validation checks, to block destructive queries.",
+        "text": "Write a system prompt telling the agent to only edit files inside its directory. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
         "explanation": "Trap: Prompt constraints are easily bypassed via direct command injection attacks, exposing the host filesystem."
       }
@@ -2962,9 +2991,14 @@ const CCAF_DATABASE = [
     "question": "Which buffer management strategy will resolve this performance issue?",
     "options": [
       {
-        "text": "Widen the Node.js process memory allocation limit to 4GB.",
+        "text": "Widen the Node.js process memory allocation limit to 4GB. The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
         "isCorrect": false,
-        "explanation": "Trap: Bumping memory limits is a temporary workaround that still crashes when log sizes exceed 4GB. This pattern is strictly discouraged in high-throughput enterprise deployments. Circumventing protocol connection validation checks."
+        "explanation": "Trap: Bumping memory limits is a temporary workaround that still crashes when log sizes exceed 4GB. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Disable log viewing entirely from the tool suite. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling tools removes core troubleshooting capabilities from the automated pipeline."
       },
       {
         "text": "Implement streaming output handling inside the tool handler: read the log file on a stream chunk-by-chunk, returning only a truncated segment (e.g., first 1000 lines) to Claude.",
@@ -2972,12 +3006,7 @@ const CCAF_DATABASE = [
         "explanation": "Streaming log reads chunk-by-chunk prevents the entire file from loading into memory at once, avoiding buffer overflow and OOM crashes. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Disable log viewing entirely from the tool suite.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling tools removes core troubleshooting capabilities from the automated pipeline."
-      },
-      {
-        "text": "Instruct the model in the prompt to read the log file faster.",
+        "text": "Instruct the model in the prompt to read the log file faster. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
         "explanation": "Trap: Prompts cannot increase Node.js execution speeds or buffer allocation behaviors."
       }
@@ -2991,7 +3020,7 @@ const CCAF_DATABASE = [
     "question": "Which MCP transport configuration is architecturally required to connect both servers securely and efficiently?",
     "options": [
       {
-        "text": "Establish an overarching WebSocket network mesh across both servers utilizing `stdio` transport streams over public internet routing gateways to maintain consistency.",
+        "text": "Establish an overarching WebSocket network mesh across both servers utilizing `stdio` transport streams over public internet routing gateways to maintain consistency. The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
         "isCorrect": false,
         "explanation": "Trap: Stdio transport streams operate locally over standard operating system pipes and cannot be routed natively over public internet WebSocket gateways. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -3001,14 +3030,14 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Utilizing HTTP Server-Sent Events for local native sub-processes introduces unnecessary networking layer overhead compared to direct `stdio` pipes."
       },
       {
-        "text": "Configure Server Alpha to use standard `stdio` transport for efficient local communication, and configure Server Beta to use HTTP Server-Sent Events (`SSE`) for remote transport.",
-        "isCorrect": true,
-        "explanation": "The Model Context Protocol establishes `stdio` as the standard high-performance transport for local sub-process servers and HTTP Server-Sent Events (`SSE`) for remote microservice connection."
-      },
-      {
         "text": "Deploy a background synchronization cron daemon that serializes local `stdio` buffers into temporary database records and dispatches them over remote network sockets.",
         "isCorrect": false,
         "explanation": "Trap: A background cron daemon serializing stdio buffers introduces severe transmission latencies and completely breaks the synchronous JSON-RPC message protocol."
+      },
+      {
+        "text": "Configure Server Alpha to use standard `stdio` transport for efficient local communication, and configure Server Beta to use HTTP Server-Sent Events (`SSE`) for remote transport.",
+        "isCorrect": true,
+        "explanation": "The Model Context Protocol establishes `stdio` as the standard high-performance transport for local sub-process servers and HTTP Server-Sent Events (`SSE`) for remote microservice connection."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -3020,7 +3049,12 @@ const CCAF_DATABASE = [
     "question": "Which MCP capability should you implement to expose this structured reference data?",
     "options": [
       {
-        "text": "Define an exhaustive custom system prompt wrapper within `CLAUDE.md` that embeds all schemas and log files statically before executing any conversational turns.",
+        "text": "Implement the MCP Resources capability by exposing custom URIs (`file://` or `internal://`), allowing the client to read real-time schema buffers directly into context.",
+        "isCorrect": true,
+        "explanation": "The MCP Resources specification empowers servers to expose structured tabular data, file buffers, and custom URIs directly to the client's context hierarchy without requiring tool calling loops."
+      },
+      {
+        "text": "Define an exhaustive custom system prompt wrapper within `CLAUDE.md` that embeds all schemas and log files statically before executing any conversational turns. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Statically embedding real-time logs inside `CLAUDE.md` prevents dynamic state checking and exhausts prompt prefill token budget on initial startup. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -3033,11 +3067,6 @@ const CCAF_DATABASE = [
         "text": "Package the schema definitions into a sandboxed filesystem tool handler that executes terminal grep operations over background log daemons upon client request.",
         "isCorrect": false,
         "explanation": "Trap: Exposing resources via grep tool execution forces the model into sequential tool-calling loops, which increases latency and token consumption."
-      },
-      {
-        "text": "Implement the MCP Resources capability by exposing custom URIs (`file://` or `internal://`), allowing the client to read real-time schema buffers directly into context.",
-        "isCorrect": true,
-        "explanation": "The MCP Resources specification empowers servers to expose structured tabular data, file buffers, and custom URIs directly to the client's context hierarchy without requiring tool calling loops."
       }
     ],
     "reference": "https://modelcontextprotocol.io"
@@ -3049,17 +3078,17 @@ const CCAF_DATABASE = [
     "question": "What is the most robust MCP architectural pattern to distribute these dynamic templates?",
     "options": [
       {
-        "text": "Implement the MCP Prompts capability within a shared server, exposing standardized, discoverable prompt templates that accept dynamic user arguments directly in the IDE.",
-        "isCorrect": true,
-        "explanation": "The MCP Prompts capability is specifically designed to allow shared servers to provide discoverable, parameterized prompt templates directly to connected AI client environments."
-      },
-      {
         "text": "Persist the prompt template strings within browser localStorage across all developer workstation instances to guarantee persistent offline rendering behavior.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is isolated within individual client browser runtime instances and cannot distribute unified enterprise prompt templates across developer IDEs. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Distribute a bash script that overwrites the global system instructions file on every machine start to guarantee universal formatting adherence across workflows.",
+        "text": "Implement the MCP Prompts capability within a shared server, exposing standardized, discoverable prompt templates that accept dynamic user arguments directly in the IDE.",
+        "isCorrect": true,
+        "explanation": "The MCP Prompts capability is specifically designed to allow shared servers to provide discoverable, parameterized prompt templates directly to connected AI client environments."
+      },
+      {
+        "text": "Distribute a bash script that overwrites the global system instructions file on every machine start to guarantee universal formatting adherence across workflows. Cryptographic confirmation signatures at the SDK layer guarantee secure tool authorization.",
         "isCorrect": false,
         "explanation": "Trap: Bash scripts that overwrite system configuration files are highly intrusive, error-prone, and lack native integration with dynamic user argument handling."
       },
@@ -3083,17 +3112,17 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Prompt instructions are easily bypassed via prompt injection attacks or hallucinations, exposing neighboring folders and sensitive SSH credentials. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Enforce MCP Server Security Roots by configuring explicit directory path constraints within the server runtime, restricting all file tool operations to allowed roots.",
-        "isCorrect": true,
-        "explanation": "The MCP Server Security Roots specification establishes unbypassable runtime guardrails at the infrastructure layer, physically confining all server tool execution to authorized directory trees."
-      },
-      {
         "text": "Configure a local cron validation job that monitors terminal process activity logs and terminates any active tool handler attempting unauthorized file access.",
         "isCorrect": false,
         "explanation": "Trap: Asynchronous cron monitoring jobs evaluate execution logs post-facto and cannot prevent malicious read or write operations during active tool execution."
       },
       {
-        "text": "Store the absolute allowed filesystem directory path strings inside browser localStorage and pass them as dynamic prompt parameters during tool execution loops.",
+        "text": "Enforce MCP Server Security Roots by configuring explicit directory path constraints within the server runtime, restricting all file tool operations to allowed roots.",
+        "isCorrect": true,
+        "explanation": "The MCP Server Security Roots specification establishes unbypassable runtime guardrails at the infrastructure layer, physically confining all server tool execution to authorized directory trees."
+      },
+      {
+        "text": "Store the absolute allowed filesystem directory path strings inside browser localStorage and pass them as dynamic prompt parameters during tool execution loops. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
         "isCorrect": false,
         "explanation": "Trap: Relying on localStorage variables passed as prompt parameters provides zero underlying filesystem security boundaries at the running MCP server layer."
       }
@@ -3112,19 +3141,19 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Tool description warnings carry zero programmatic security guarantees against malicious inputs. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Implement an online regex check inside the system prompt that filters out common SQL injection keywords like SELECT or DROP.",
+        "text": "Implement an online regex check inside the system prompt that filters out common SQL injection keywords like SELECT or DROP. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
         "isCorrect": false,
         "explanation": "Trap: Regex filters are easily bypassed by sophisticated attackers and add massive context prefill token loads."
-      },
-      {
-        "text": "Restrict tool inputs to parameterized parameters and compile queries using prepared statements.",
-        "isCorrect": true,
-        "explanation": "Enforcing rigid structured schemas and prepared queries inside server code prevents injection vulnerabilities completely. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
         "text": "Set up a post-execution database audit log that flags SQL injection query attempts after they have already executed.",
         "isCorrect": false,
         "explanation": "Trap: Post-execution audits log breaches but do not protect the database from being compromised."
+      },
+      {
+        "text": "Restrict tool inputs to parameterized parameters and compile queries using prepared statements. Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
+        "isCorrect": true,
+        "explanation": "Enforcing rigid structured schemas and prepared queries inside server code prevents injection vulnerabilities completely. This structured approach establishes clear architectural guardrails across operational boundaries."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -3135,6 +3164,11 @@ const CCAF_DATABASE = [
     "scenario": "Your MCP server connects to an external inventory API that occasionally rate-limits requests. You want to handle rate-limit errors gracefully without crashing the active agent loop.",
     "question": "How should the tool convey this error back to the model?",
     "options": [
+      {
+        "text": "Catch the rate-limit error inside the tool block and return a structured error instructing the model to wait and retry.",
+        "isCorrect": true,
+        "explanation": "Catching the error and returning a structured retriable error payload keeps the orchestrator running."
+      },
       {
         "text": "Let the rate-limit error propagate uncaught, allowing the entire orchestrator shell to crash and reboot immediately.",
         "isCorrect": false,
@@ -3149,11 +3183,6 @@ const CCAF_DATABASE = [
         "text": "Set the model temperature to 0.0 to naturally avoid rate-limiting bottlenecks inside the external inventory API server.",
         "isCorrect": false,
         "explanation": "Trap: Temperature does not throttle network request densities or mitigate external server HTTP limits."
-      },
-      {
-        "text": "Catch the rate-limit error inside the tool block and return a structured error instructing the model to wait and retry.",
-        "isCorrect": true,
-        "explanation": "Catching the error and returning a structured retriable error payload keeps the orchestrator running."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -3334,6 +3363,35 @@ const CCAF_DATABASE = [
     "source": "guide"
   },
   {
+    "id": "CCAF-2-030",
+    "domain": 2,
+    "scenario": "You are directing a cross-repository refactoring operation spanning 40 interconnected microservices using Claude Code. The refactoring involves complex dependency updates and deep architectural shifts across multiple sessions. You need to ensure that Claude Code maintains accurate architectural context between sessions while safely executing multi-repo modifications without stalling on routine permission prompts or executing unvetted high-risk shell commands.",
+    "question": "How should you configure Claude Code to curate between-session memory and manage autonomous execution boundaries safely?",
+    "options": [
+      {
+        "text": "Disable Dreaming to conserve local memory storage and enable unrestrained Auto Mode across all 40 repositories with a wildcard permission flag and skip all interactive user confirmation prompts.",
+        "isCorrect": false,
+        "explanation": "Trap: Enabling unrestrained Auto Mode with wildcard permissions introduces severe security risks by allowing unvetted arbitrary command execution across 40 repositories. Disabling Dreaming destroys between-session memory curation."
+      },
+      {
+        "text": "Force Claude Code to execute in pure interactive mode without Auto Mode and write a custom pre-commit bash script that manually injects the complete git commit history of all 40 repositories into CLAUDE.md. Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
+        "isCorrect": false,
+        "explanation": "Trap: Injecting the complete commit history of 40 repositories into CLAUDE.md causes massive context window bloat and excessive token consumption. Running without Auto Mode severely degrades developer velocity during large-scale refactoring."
+      },
+      {
+        "text": "Enable Claude Code Dreaming to autonomously synthesize and curate architectural insights between sessions and configure Auto Mode with a strict whitelist of permitted refactoring actions and high-risk halts.",
+        "isCorrect": true,
+        "explanation": "Claude Code's Dreaming feature curates and consolidates cross-session memory and architectural context during idle periods. Configuring Auto Mode with an explicit whitelist allows autonomous execution of routine refactoring tasks while enforcing safe interactive halts for high-risk system commands."
+      },
+      {
+        "text": "Configure Claude Code to store session logs in a shared cloud bucket without Dreaming synthesis and set Auto Mode to automatically execute all terminal commands unless the command contains a deletion flag.",
+        "isCorrect": false,
+        "explanation": "Trap: Storing raw session logs without Dreaming synthesis fails to curate actionable architectural memory. Allowing Auto Mode to execute all non-deletion commands fails to guard against other destructive actions like arbitrary code execution or network transmissions."
+      }
+    ],
+    "reference": "https://code.claude.com/docs/en/overview"
+  },
+  {
     "id": "CCAF-3-001",
     "domain": 3,
     "scenario": "You are configuring a large, multi-folder repository for Claude Code. The codebase contains distinct frontend, backend, and documentation directories. You want to enforce different coding conventions, testing guidelines, and file exclusions for each folder without creating a single massive, slow-to-parse CLAUDE.md file at the root.",
@@ -3342,22 +3400,22 @@ const CCAF_DATABASE = [
       {
         "text": "Create separate git branches for each folder, keeping folder-specific CLAUDE.md files on separate branch heads.",
         "isCorrect": false,
-        "explanation": "Trap: Branch separation prevents unified monorepo work and is an anti-pattern for configuration management. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
+        "explanation": "Trap: Branch separation prevents unified monorepo work and is an anti-pattern for configuration management. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Exclusively use project-level skills configured via the command line using slash commands. Custom slash commands in project configuration files automate repetitive linting procedures.",
+        "isCorrect": false,
+        "explanation": "Trap: Slash skills are personal configurations that do not persist in the git repository or scale across team workspaces."
+      },
+      {
+        "text": "Consolidate all folder rules into the root CLAUDE.md and use conditional logic tags based on file path regexes inside a single prompt. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: A single massive CLAUDE.md file consumes unnecessary token prefill on every turn, degrading performance and routing accuracy."
       },
       {
         "text": "Create a minimal, high-level CLAUDE.md at the root folder, and place nested, folder-specific CLAUDE.md files in each subdirectory. Claude Code will automatically inherit root instructions and apply local constraints.",
         "isCorrect": true,
         "explanation": "Claude Code supports hierarchical CLAUDE.md structures, inheriting root guidelines and merging nested directory-level instructions cleanly."
-      },
-      {
-        "text": "Exclusively use project-level skills configured via the command line using slash commands. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
-        "isCorrect": false,
-        "explanation": "Trap: Slash skills are personal configurations that do not persist in the git repository or scale across team workspaces. Ensuring deterministic execution constraints."
-      },
-      {
-        "text": "Consolidate all folder rules into the root CLAUDE.md and use conditional logic tags based on file path regexes inside a single prompt.",
-        "isCorrect": false,
-        "explanation": "Trap: A single massive CLAUDE.md file consumes unnecessary token prefill on every turn, degrading performance and routing accuracy. To prevent pipeline failures."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3369,24 +3427,24 @@ const CCAF_DATABASE = [
     "question": "Which local configuration is mandatory to run Claude Code in this offline environment?",
     "options": [
       {
-        "text": "Link Claude Code to a local MCP server running a distilled Llama model. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Linking local MCP servers provides tools, but does not replace Claude Code's core cloud reasoning API dependencies. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
-      },
-      {
-        "text": "Launch Claude Code with the `--offline` or `--local` command-line flag to use a local model. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
-        "isCorrect": false,
-        "explanation": "Trap: Claude Code does not ship with a local weights compiler or offline model runner; the `--offline` flag does not exist. Forcing strict AST checks. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
-      },
-      {
         "text": "Claude Code is a cloud-based client and *cannot* run without active outbound internet access; you must configure a secure, authenticated local network proxy that routes API traffic to Anthropic.",
         "isCorrect": true,
         "explanation": "Claude Code's reasoning engine resides on Anthropic's cloud; running it requires outbound API access, which must be secured via proxy. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Download the questions.js database to the local directory to enable offline compilation.",
+        "text": "Link Claude Code to a local MCP server running a distilled Llama model. Custom slash commands in project configuration files automate repetitive linting procedures.",
         "isCorrect": false,
-        "explanation": "Trap: Having a data file locally does not resolve the core client's API network dependencies. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
+        "explanation": "Trap: Linking local MCP servers provides tools, but does not replace Claude Code's core cloud reasoning API dependencies. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Launch Claude Code with the `--offline` or `--local` command-line flag to use a local model. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Claude Code does not ship with a local weights compiler or offline model runner; the `--offline` flag does not exist."
+      },
+      {
+        "text": "Download the questions.js database to the local directory to enable offline compilation. Interactive planning modes allow developers to review architectural changes before builds.",
+        "isCorrect": false,
+        "explanation": "Trap: Having a data file locally does not resolve the core client's API network dependencies."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3398,24 +3456,24 @@ const CCAF_DATABASE = [
     "question": "Which configuration combination is necessary to run Claude Code autonomously in CI/CD pipelines?",
     "options": [
       {
-        "text": "Write a prompt telling the agent to always type 'yes' in the terminal. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
+        "text": "Write a prompt telling the agent to always type 'yes' in the terminal. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: Prompts cannot inject keyboard stdin responses into CLI prompt blocks; the execution will still stall. Ensuring deterministic execution constraints."
-      },
-      {
-        "text": "Set the Node.js timeout limit to 300 seconds in the GitHub Actions YAML.",
-        "isCorrect": false,
-        "explanation": "Trap: Setting timeouts merely aborts the pipeline after 5 minutes, leaving the execution stalled and incomplete. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
-      },
-      {
-        "text": "Disable the bash execution tool entirely in the CI/CD runner. This workflow specification establishes deterministic task coordination parameters within the active client workspace. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling the tool prevents the agent from running test compilation commands, defeating the purpose of CI/CD review. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
+        "explanation": "Trap: Prompts cannot inject keyboard stdin responses into CLI prompt blocks; the execution will still stall."
       },
       {
         "text": "Configure the agent using the non-interactive flag (`--non-interactive`) or auto-approve flag (`-y`) to bypass manual confirmations, and ensure the `CLAUDE.md` does not contain interactive rules.",
         "isCorrect": true,
         "explanation": "Enabling non-interactive/auto-approve CLI flags is mandatory to bypass tool execution approval blockers, allowing autonomous pipeline execution."
+      },
+      {
+        "text": "Set the Node.js timeout limit to 300 seconds in the GitHub Actions YAML. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Setting timeouts merely aborts the pipeline after 5 minutes, leaving the execution stalled and incomplete."
+      },
+      {
+        "text": "Disable the bash execution tool entirely in the CI/CD runner. Interactive planning modes allow developers to review architectural changes before builds.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling the tool prevents the agent from running test compilation commands, defeating the purpose of CI/CD review."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3427,22 +3485,22 @@ const CCAF_DATABASE = [
     "question": "What is the best practice to implement and distribute this slash command?",
     "options": [
       {
+        "text": "Write a personal Node.js script and install it globally using npm on each developer's Cloudtop.",
+        "isCorrect": false,
+        "explanation": "Trap: Global local installations are hard to maintain, sync, and do not integrate as a native Claude Code slash command."
+      },
+      {
+        "text": "Store the slash command script inside the questions.js file.",
+        "isCorrect": false,
+        "explanation": "Trap: `questions.js` is a static data pool and cannot configure the Claude Code client command registry."
+      },
+      {
         "text": "Define the custom command and its shell execution path inside the `[commands]` section of the shared `CLAUDE.md` file at the repository root.",
         "isCorrect": true,
         "explanation": "Defining custom commands in the shared `CLAUDE.md` ensures they are version-controlled, distributed via git, and immediately available to all team members."
       },
       {
-        "text": "Write a personal Node.js script and install it globally using npm on each developer's Cloudtop.",
-        "isCorrect": false,
-        "explanation": "Trap: Global local installations are hard to maintain, sync, and do not integrate as a native Claude Code slash command. Forcing strict AST checks, to prevent pipeline failures."
-      },
-      {
-        "text": "Store the slash command script inside the questions.js file. This execution contract guarantees predictable module resolution and version-locked dependency graph execution.",
-        "isCorrect": false,
-        "explanation": "Trap: `questions.js` is a static data pool and cannot configure the Claude Code client command registry. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
-      },
-      {
-        "text": "Instruct each developer to manually run the `/skill add` CLI command in their local Claude Code session.",
+        "text": "Instruct each developer to manually run the `/skill add` CLI command in their local Claude Code session. Interactive planning modes allow developers to review architectural changes before builds.",
         "isCorrect": false,
         "explanation": "Trap: Manual local CLI commands are fragile, error-prone, and cannot be verified programmatically."
       }
@@ -3456,24 +3514,24 @@ const CCAF_DATABASE = [
     "question": "How should you optimize the repository configuration to resolve this performance issue?",
     "options": [
       {
-        "text": "Run Claude Code with the `--fast` flag. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
+        "text": "Run Claude Code with the `--fast` flag. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: The `--fast` flag is not a standard Claude Code CLI argument and does not exclude files from indexing. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring deterministic execution constraints."
+        "explanation": "Trap: The `--fast` flag is not a standard Claude Code CLI argument and does not exclude files from indexing. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Delete all temporary directories and lock files manually before launching Claude Code. Custom slash commands in project configuration files automate repetitive linting procedures.",
+        "isCorrect": false,
+        "explanation": "Trap: Deleting lock files and build directories manually breaks the local development build and is highly impractical."
+      },
+      {
+        "text": "Instruct the agent in the system prompt to ignore node_modules during search.",
+        "isCorrect": false,
+        "explanation": "Trap: Conversational prompts are evaluated AFTER files are already indexed/prefilled, wasting token budget."
       },
       {
         "text": "Configure strict file exclusions inside the `.gitignore` or the `CLAUDE.md` file to ensure Claude Code completely ignores massive build, lock, and temporary files.",
         "isCorrect": true,
         "explanation": "Excluding heavy lock files, node_modules, and build directories protects the prefill token budget and speeds up startup times."
-      },
-      {
-        "text": "Delete all temporary directories and lock files manually before launching Claude Code.",
-        "isCorrect": false,
-        "explanation": "Trap: Deleting lock files and build directories manually breaks the local development build and is highly impractical. To prevent pipeline failures."
-      },
-      {
-        "text": "Instruct the agent in the system prompt to ignore node_modules during search.",
-        "isCorrect": false,
-        "explanation": "Trap: Conversational prompts are evaluated AFTER files are already indexed/prefilled, wasting token budget. Ensuring deterministic execution constraints."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3485,24 +3543,24 @@ const CCAF_DATABASE = [
     "question": "Which logging and configuration setup is most suitable to achieve this audit trail?",
     "options": [
       {
-        "text": "Use a Chrome browser window to monitor the agent's sessions. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Claude Code is a CLI-based tool, and browser monitoring is not supported natively. This pattern is strictly discouraged in high-throughput enterprise deployments. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
-      },
-      {
-        "text": "Disable bash tool access to prevent auditing challenges. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling bash tools prevents valid compilation and testing, rendering the CLI tool useless. Utilizing project-level skills configured via slash commands to intercept git commits automatically. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
-      },
-      {
         "text": "Configure Claude Code to write all transactions, tool execution blocks, and prompt transcripts to a local log file using the `--log-path` CLI flag or environment variables, and secure these logs via audit pipelines.",
         "isCorrect": true,
         "explanation": "Configuring the client to output raw tool transaction logs directly is the most reliable way to establish an audit trail for compliance. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Instruct the agent in the system prompt to write its actions to an audit.txt file.",
+        "text": "Use a Chrome browser window to monitor the agent's sessions. Custom slash commands in project configuration files automate repetitive linting procedures.",
         "isCorrect": false,
-        "explanation": "Trap: LLMs can fail to log actions consistently, and a system prompt cannot capture low-level tool exceptions or bash failures. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
+        "explanation": "Trap: Claude Code is a CLI-based tool, and browser monitoring is not supported natively. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Disable bash tool access to prevent auditing challenges. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling bash tools prevents valid compilation and testing, rendering the CLI tool useless."
+      },
+      {
+        "text": "Instruct the agent in the system prompt to write its actions to an audit.txt file. Interactive planning modes allow developers to review architectural changes before builds.",
+        "isCorrect": false,
+        "explanation": "Trap: LLMs can fail to log actions consistently, and a system prompt cannot capture low-level tool exceptions or bash failures."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3516,22 +3574,22 @@ const CCAF_DATABASE = [
       {
         "text": "Instruct the agent in the system prompt to ignore ASCII color codes.",
         "isCorrect": false,
-        "explanation": "Trap: LLMs struggle to parse and clean raw terminal color escape sequences natively in their token representations. To prevent pipeline failures."
-      },
-      {
-        "text": "Widen the linter tool timeout limit to 5 minutes. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Stalls are caused by parsing errors, not execution timeouts. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
-      },
-      {
-        "text": "Disable linter execution and rely on manual visual checks. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling the linter removes automated quality safeguards from the CI/CD pipeline."
+        "explanation": "Trap: LLMs struggle to parse and clean raw terminal color escape sequences natively in their token representations."
       },
       {
         "text": "Configure the command in CLAUDE.md with a plain-text flag (e.g., `--no-color` or `NO_COLOR=1`) to strip out terminal formatting codes.",
         "isCorrect": true,
         "explanation": "Enforcing plain-text output formats at the CLI command layer ensures clean, parseable text for the agent's reasoning model."
+      },
+      {
+        "text": "Widen the linter tool timeout limit to 5 minutes. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Stalls are caused by parsing errors, not execution timeouts."
+      },
+      {
+        "text": "Disable linter execution and rely on manual visual checks.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling the linter removes automated quality safeguards from the CI/CD pipeline."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3543,24 +3601,24 @@ const CCAF_DATABASE = [
     "question": "Which configuration is required to enforce this boundary?",
     "options": [
       {
+        "text": "Widen the root.gitignore to include the neighboring project folders.",
+        "isCorrect": false,
+        "explanation": "Trap: Excluding folders globally in.gitignore prevents git tracking and breaks normal developer workflows in the monorepo. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Set the model temperature of the search tool to 0.0. Custom slash commands in project configuration files automate repetitive linting procedures.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature controls creativity, not filesystem scope boundaries."
+      },
+      {
         "text": "Place a separate CLAUDE.md file in each project directory and instruct Claude Code to run with the `--local-root` or scoping flag.",
         "isCorrect": true,
         "explanation": "Hierarchical CLAUDE.md files combined with local scoping flags ensure that Claude Code's file access is restricted to the active project directory."
       },
       {
-        "text": "Widen the root.gitignore to include the neighboring project folders.",
+        "text": "Delete neighboring project folders before launching Claude Code.",
         "isCorrect": false,
-        "explanation": "Trap: Excluding folders globally in.gitignore prevents git tracking and breaks normal developer workflows in the monorepo. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring deterministic execution constraints."
-      },
-      {
-        "text": "Set the model temperature of the search tool to 0.0. This execution contract guarantees predictable module resolution and version-locked dependency graph execution.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature controls creativity, not filesystem scope boundaries. Ensuring deterministic execution constraints."
-      },
-      {
-        "text": "Delete neighboring project folders before launching Claude Code. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
-        "isCorrect": false,
-        "explanation": "Trap: Deleting folders is highly destructive, impractical, and breaks local monorepo development. To prevent pipeline failures."
+        "explanation": "Trap: Deleting folders is highly destructive, impractical, and breaks local monorepo development."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3572,24 +3630,24 @@ const CCAF_DATABASE = [
     "question": "What is the best place to store these strict architectural and testing rules?",
     "options": [
       {
-        "text": "Store these rules in the questions.js file.",
+        "text": "Store these rules in the questions.js file. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: `questions.js` is an offline data store and has no integration with Claude Code's active workspace instructions. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
+        "explanation": "Trap: `questions.js` is an offline data store and has no integration with Claude Code's active workspace instructions. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Disable all Claude Code commands except the code writer.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling tools does not enforce rules or configure pytest frameworks."
+      },
+      {
+        "text": "Have the on-call engineer type these rules in the chat session on every new task.",
+        "isCorrect": false,
+        "explanation": "Trap: Manual prompting is highly repetitive, fragile, and depends on developer recall."
       },
       {
         "text": "Add these instructions inside a structured `[testing]` section in the shared `CLAUDE.md` file at the root directory.",
         "isCorrect": true,
         "explanation": "Storing architectural rules and testing frameworks in `CLAUDE.md` ensures they are persistently loaded as system guidelines for every code generation task."
-      },
-      {
-        "text": "Disable all Claude Code commands except the code writer. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling tools does not enforce rules or configure pytest frameworks. To prevent pipeline failures."
-      },
-      {
-        "text": "Have the on-call engineer type these rules in the chat session on every new task.",
-        "isCorrect": false,
-        "explanation": "Trap: Manual prompting is highly repetitive, fragile, and depends on developer recall. Forcing strict AST checks."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3601,24 +3659,24 @@ const CCAF_DATABASE = [
     "question": "How should you configure Claude Code to output ONLY the raw markdown summary in the pipeline?",
     "options": [
       {
-        "text": "Widen the pipeline execution timeout to 30 minutes. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy. This execution contract guarantees predictable module resolution and version-locked dependency graph execution.",
-        "isCorrect": false,
-        "explanation": "Trap: Long timeouts do not remove conversational chit-chat or format outputs. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
-      },
-      {
-        "text": "Configure the pipeline to post-process and strip out all lines starting with standard greetings.",
-        "isCorrect": false,
-        "explanation": "Trap: Post-processing text greets is fragile, as model outputs vary and can easily bypass hardcoded text cleaners. To prevent pipeline failures. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
-      },
-      {
         "text": "Use the non-interactive and raw output flags (e.g., `--raw` or `--non-interactive`) and enforce formatting rules inside `CLAUDE.md` directing the agent to return ONLY the raw markdown data.",
         "isCorrect": true,
         "explanation": "Combining raw CLI flags with strict CLAUDE.md formatting instructions is the most robust way to eliminate conversational noise in automated pipelines. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set the model temperature to 1.0 to encourage creative output format. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
+        "text": "Widen the pipeline execution timeout to 30 minutes. Custom slash commands in project configuration files automate repetitive linting procedures.",
         "isCorrect": false,
-        "explanation": "Trap: Higher temperature increases text variation and random conversation, worsening formatting consistency. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
+        "explanation": "Trap: Long timeouts do not remove conversational chit-chat or format outputs. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Configure the pipeline to post-process and strip out all lines starting with standard greetings. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Post-processing text greets is fragile, as model outputs vary and can easily bypass hardcoded text cleaners."
+      },
+      {
+        "text": "Set the model temperature to 1.0 to encourage creative output format.",
+        "isCorrect": false,
+        "explanation": "Trap: Higher temperature increases text variation and random conversation, worsening formatting consistency."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3630,24 +3688,24 @@ const CCAF_DATABASE = [
     "question": "What is the best distribution mechanism?",
     "options": [
       {
-        "text": "Configure a local cron job on each workstation to download scripts from a shared drive.",
+        "text": "Configure a local cron job on each workstation to download scripts from a shared drive. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: External cron scripts bypass the repository version control, introducing out-of-sync errors. To prevent pipeline failures."
-      },
-      {
-        "text": "Instruct each developer to manually run npm install on the tools folder. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
-        "isCorrect": false,
-        "explanation": "Trap: Manual installs do not sync automatically and frequently lead to dependency drift. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
-      },
-      {
-        "text": "Keep scripts inside in-memory cache to ensure persistence. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
-        "isCorrect": false,
-        "explanation": "Trap: LocalStorage is client-side browser storage and has no integration with Claude Code command-line tools. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
+        "explanation": "Trap: External cron scripts bypass the repository version control, introducing out-of-sync errors."
       },
       {
         "text": "Store the scripts in a dedicated `tools/` folder in the repository and register them as custom slash commands inside the shared, version-controlled `CLAUDE.md` file.",
         "isCorrect": true,
         "explanation": "Leveraging version control for both scripts and `CLAUDE.md` command mappings guarantees automated, atomic updates across all developer workspaces upon git sync."
+      },
+      {
+        "text": "Instruct each developer to manually run npm install on the tools folder.",
+        "isCorrect": false,
+        "explanation": "Trap: Manual installs do not sync automatically and frequently lead to dependency drift."
+      },
+      {
+        "text": "Keep scripts inside in-memory cache to ensure persistence. Interactive planning modes allow developers to review architectural changes before builds.",
+        "isCorrect": false,
+        "explanation": "Trap: In-memory cache is client-side browser storage and has no integration with Claude Code command-line tools."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3659,24 +3717,24 @@ const CCAF_DATABASE = [
     "question": "What is the best configuration to prevent this indexing slowdown?",
     "options": [
       {
+        "text": "Instruct the compiler to write all object files to a remote server. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
+        "isCorrect": false,
+        "explanation": "Trap: Remote compiling introduces huge network latency and is highly impractical for standard local development builds. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Manually run the slash command `/clear-cache` in every session.",
+        "isCorrect": false,
+        "explanation": "Trap: Clearing cache manually is annoying and doesn't prevent the indexing engine from immediately rescanning the files on the next step."
+      },
+      {
         "text": "Add the compiler output file extension patterns (e.g., `*.o`, `*.d`, `build/`) to the shared `CLAUDE.md` file exclusions list or `.gitignore`.",
         "isCorrect": true,
         "explanation": "Excluding compiled binary/object patterns from CLAUDE.md ensures the indexing engine completely skips them, protecting token budget and speed."
       },
       {
-        "text": "Instruct the compiler to write all object files to a remote server.",
+        "text": "Set the model temperature to 0.0 during compiles. Interactive planning modes allow developers to review architectural changes before builds.",
         "isCorrect": false,
-        "explanation": "Trap: Remote compiling introduces huge network latency and is highly impractical for standard local development builds. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring deterministic execution constraints."
-      },
-      {
-        "text": "Manually run the slash command `/clear-cache` in every session. This execution contract guarantees predictable module resolution and version-locked dependency graph execution.",
-        "isCorrect": false,
-        "explanation": "Trap: Clearing cache manually is annoying and doesn't prevent the indexing engine from immediately rescanning the files on the next step. Ensuring deterministic execution constraints."
-      },
-      {
-        "text": "Set the model temperature to 0.0 during compiles. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature affects generative determinism, not filesystem index performance. Forcing strict AST checks, to prevent pipeline failures."
+        "explanation": "Trap: Temperature affects generative determinism, not filesystem index performance."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3688,24 +3746,24 @@ const CCAF_DATABASE = [
     "question": "Which setup is most suitable to automate this check?",
     "options": [
       {
-        "text": "Store formatting rules in in-memory cache. This execution contract guarantees predictable module resolution and version-locked dependency graph execution. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
+        "text": "Store formatting rules in in-memory cache. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency. Ensuring deterministic execution constraints."
+        "explanation": "Trap: In-memory cache is browser-based and has no integration with Claude Code formatting engines. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
+      },
+      {
+        "text": "Set the reasoning temperature of all agents to 0.0.",
+        "isCorrect": false,
+        "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule."
+      },
+      {
+        "text": "Write a system prompt telling the agent to always follow PEP 8 rules strictly. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate."
       },
       {
         "text": "Register an automated pre-commit style hook or a custom linter command inside `CLAUDE.md`, directing the client to run this check before applying any filesystem writes.",
         "isCorrect": true,
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside `CLAUDE.md` ensures the agent self-corrects style errors before committing files."
-      },
-      {
-        "text": "Set the reasoning temperature of all agents to 0.0. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
-        "isCorrect": false,
-        "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. Ensuring deterministic execution constraints."
-      },
-      {
-        "text": "Write a system prompt telling the agent to always follow PEP 8 rules strictly.",
-        "isCorrect": false,
-        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. Ensuring deterministic execution constraints."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3717,24 +3775,24 @@ const CCAF_DATABASE = [
     "question": "How should you optimize the repository configuration to handle this massive size?",
     "options": [
       {
-        "text": "Run Claude Code inside a Chrome browser tab. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Claude Code is a CLI-based terminal application; running it inside a browser tab is not natively supported. This pattern is strictly discouraged in high-throughput enterprise deployments. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
-      },
-      {
-        "text": "Instruct the agent in the prompt to only look at the first 10 files it sees.",
-        "isCorrect": false,
-        "explanation": "Trap: Prompts are evaluated after files are already indexed/prefilled, so they do not prevent initial OOM crashes. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
-      },
-      {
         "text": "Configure strict directory exclusions in `.gitignore` and the root `CLAUDE.md` to limit Claude Code's scope exclusively to active source folders, completely skipping documentation, assets, and vendor folders.",
         "isCorrect": true,
         "explanation": "Strictly excluding non-essential directories in massive repos limits the index size, protecting memory limits and drastically improving startup times. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Widen the VM's RAM capacity to 64GB. This workflow specification establishes deterministic task coordination parameters within the active client workspace. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
+        "text": "Run Claude Code inside a Chrome browser tab. Custom slash commands in project configuration files automate repetitive linting procedures.",
         "isCorrect": false,
-        "explanation": "Trap: Bumping RAM is expensive and merely delays the index limit; if the repo is massive, indexing will still consume enormous token prefill budgets. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
+        "explanation": "Trap: Claude Code is a CLI-based terminal application; running it inside a browser tab is not natively supported. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Instruct the agent in the prompt to only look at the first 10 files it sees. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Prompts are evaluated after files are already indexed/prefilled, so they do not prevent initial OOM crashes."
+      },
+      {
+        "text": "Widen the VM's RAM capacity to 64GB. Interactive planning modes allow developers to review architectural changes before builds.",
+        "isCorrect": false,
+        "explanation": "Trap: Bumping RAM is expensive and merely delays the index limit; if the repo is massive, indexing will still consume enormous token prefill budgets."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3746,24 +3804,24 @@ const CCAF_DATABASE = [
     "question": "How should you design the custom command execution inside CLAUDE.md?",
     "options": [
       {
-        "text": "Ignore all non-zero exit codes to keep the pipeline running. This execution contract guarantees predictable module resolution and version-locked dependency graph execution.",
+        "text": "Ignore all non-zero exit codes to keep the pipeline running. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: Ignoring exit codes leads to silent deployment failures, leaving the environment corrupted. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
-      },
-      {
-        "text": "Set the timeout limit of the bash command to 1 hour. This execution contract guarantees predictable module resolution and version-locked dependency graph execution. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
-        "isCorrect": false,
-        "explanation": "Trap: Timeout limits do not capture runtime script exit statuses. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
-      },
-      {
-        "text": "Instruct the agent in the system prompt to guess if the bash command succeeded.",
-        "isCorrect": false,
-        "explanation": "Trap: An agent cannot guess or evaluate shell success without access to exit codes and stderr logs. Utilizing project-level skills configured via slash commands to intercept git commits automatically. As this conforms strictly to corporate security compliance requirements and local AST validation hooks."
+        "explanation": "Trap: Ignoring exit codes leads to silent deployment failures, leaving the environment corrupted."
       },
       {
         "text": "Ensure the custom shell command explicitly forwards both stdout and stderr, and checks the process exit code. The `CLAUDE.md` instructions must direct the agent to treat any non-zero exit code as a hard failure.",
         "isCorrect": true,
         "explanation": "Forwarding stderr and checking exit codes programmatically ensures Claude Code captures process failures and triggers correct error mitigation."
+      },
+      {
+        "text": "Set the timeout limit of the bash command to 1 hour. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Timeout limits do not capture runtime script exit statuses."
+      },
+      {
+        "text": "Instruct the agent in the system prompt to guess if the bash command succeeded. Interactive planning modes allow developers to review architectural changes before builds.",
+        "isCorrect": false,
+        "explanation": "Trap: An agent cannot guess or evaluate shell success without access to exit codes and stderr logs."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3775,24 +3833,24 @@ const CCAF_DATABASE = [
     "question": "How should you configure the test runner inside CLAUDE.md?",
     "options": [
       {
+        "text": "Store the jest configuration scripts inside questions.js. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
+        "isCorrect": false,
+        "explanation": "Trap: `questions.js` is a static question database and has no bearing on terminal command configurations."
+      },
+      {
+        "text": "Set the model temperature to 0.0 during tests. Custom slash commands in project configuration files automate repetitive linting procedures.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature affects text creativity, not jest command structures."
+      },
+      {
         "text": "Define the exact test command mapping (e.g., `npm run test -- --coverage --collectCoverageFrom=src/**/*.ts`) inside the `[commands]` section of the shared `CLAUDE.md` file.",
         "isCorrect": true,
         "explanation": "Hardcoding the exact test command inside `CLAUDE.md` ensures the automated test runner executes the correct coverage scripts persistently."
       },
       {
-        "text": "Store the jest configuration scripts inside questions.js.",
+        "text": "Instruct each developer to manually type the coverage flags in their terminals. Interactive planning modes allow developers to review architectural changes before builds.",
         "isCorrect": false,
-        "explanation": "Trap: `questions.js` is a static question database and has no bearing on terminal command configurations. Relying on secure environment variables stored locally on the deployment host filesystem rather than cloud storage."
-      },
-      {
-        "text": "Set the model temperature to 0.0 during tests. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature affects text creativity, not jest command structures. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
-      },
-      {
-        "text": "Instruct each developer to manually type the coverage flags in their terminals.",
-        "isCorrect": false,
-        "explanation": "Trap: Manual instructions do not automate the agent's test runner pipeline, leading to incomplete test execution. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
+        "explanation": "Trap: Manual instructions do not automate the agent's test runner pipeline, leading to incomplete test execution."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3804,24 +3862,24 @@ const CCAF_DATABASE = [
     "question": "What is the best practice to enforce this security container boundary?",
     "options": [
       {
-        "text": "Disable all bash tools inside the container. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
+        "text": "Disable all bash tools inside the container. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: Disabling bash tools completely prevents code compilation and testing, rendering the agent unusable. This pattern is strictly discouraged in high-throughput enterprise deployments. Ensuring deterministic execution constraints."
+        "explanation": "Trap: Disabling bash tools completely prevents code compilation and testing, rendering the agent unusable. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Use in-memory cache to store container variables.",
+        "isCorrect": false,
+        "explanation": "Trap: In-memory cache has no bearing on low-level Linux container security or filesystem isolation."
+      },
+      {
+        "text": "Write a system prompt telling the agent to only edit files inside its directory. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Prompt constraints are easily bypassed via direct command injection attacks, exposing the host filesystem."
       },
       {
         "text": "Execute Claude Code strictly inside a sandboxed Docker container with restricted mount permissions, scoping filesystem access exclusively to the workspace folder.",
         "isCorrect": true,
         "explanation": "Scoping file mounts in Docker is a hard infrastructure-level boundary that guarantees filesystem security, completely independent of the model's instructions."
-      },
-      {
-        "text": "Use in-memory cache to store container variables. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
-        "isCorrect": false,
-        "explanation": "Trap: LocalStorage has no bearing on low-level Linux container security or filesystem isolation. Ensuring deterministic execution constraints."
-      },
-      {
-        "text": "Write a system prompt telling the agent to only edit files inside its directory.",
-        "isCorrect": false,
-        "explanation": "Trap: Prompt constraints are easily bypassed via direct command injection attacks, exposing the host filesystem. Forcing strict AST checks, to prevent pipeline failures."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3833,24 +3891,24 @@ const CCAF_DATABASE = [
     "question": "Where should you document this strict planning requirement to make sure the agent always follows it?",
     "options": [
       {
-        "text": "Have the developer type 'please plan first' in every chat session.",
-        "isCorrect": false,
-        "explanation": "Trap: Conversational reminders are fragile, repetitive, and easily forgotten. Forcing strict AST checks, to prevent pipeline failures."
-      },
-      {
-        "text": "Rely on the model's default internal training heuristics. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Default models often jump straight to code generation without a plan, especially under complex or confusing prompts. Ensuring deterministic execution constraints."
-      },
-      {
         "text": "In the `[instructions]` or `[behavior]` section of the shared `CLAUDE.md` file at the repository root.",
         "isCorrect": true,
         "explanation": "Documenting behavior constraints (like planning before writing) in `CLAUDE.md` ensures the instructions are persistently loaded as system behavior gates for all tasks."
       },
       {
+        "text": "Have the developer type 'please plan first' in every chat session. Custom slash commands in project configuration files automate repetitive linting procedures.",
+        "isCorrect": false,
+        "explanation": "Trap: Conversational reminders are fragile, repetitive, and easily forgotten."
+      },
+      {
+        "text": "Rely on the model's default internal training heuristics.",
+        "isCorrect": false,
+        "explanation": "Trap: Default models often jump straight to code generation without a plan, especially under complex or confusing prompts."
+      },
+      {
         "text": "Store the planning instructions inside the questions.js file.",
         "isCorrect": false,
-        "explanation": "Trap: `questions.js` is a static database and does not configure the Claude Code client's runtime instructions. Ensuring deterministic execution constraints."
+        "explanation": "Trap: `questions.js` is a static database and does not configure the Claude Code client's runtime instructions."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3862,24 +3920,24 @@ const CCAF_DATABASE = [
     "question": "How should you structure the custom command in CLAUDE.md to prevent these connection stalls?",
     "options": [
       {
-        "text": "Instruct the agent in the system prompt to check if the database is running before calling the tool.",
+        "text": "Instruct the agent in the system prompt to check if the database is running before calling the tool. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: An agent cannot programmatically verify port states via conversational thoughts without executing a tool. To prevent pipeline failures."
-      },
-      {
-        "text": "Disable database migration tasks from the workspace entirely. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling tasks removes core capabilities from the automated workflow. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
-      },
-      {
-        "text": "Increase the Node.js process timeout to 1 hour in the shell environment.",
-        "isCorrect": false,
-        "explanation": "Trap: Long timeouts worsen the stall, freezing the agentic pipeline. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
+        "explanation": "Trap: An agent cannot programmatically verify port states via conversational thoughts without executing a tool."
       },
       {
         "text": "Enforce a strict connection timeout flag (e.g. `--timeout=5` or `--max-time 5`) inside the custom command definition in `CLAUDE.md` so that it fails fast if the service is unreachable.",
         "isCorrect": true,
         "explanation": "Configuring hard connection timeouts on the CLI command level guarantees the script fails fast, allowing the agent to immediately catch the error and escalate."
+      },
+      {
+        "text": "Disable database migration tasks from the workspace entirely. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling tasks removes core capabilities from the automated workflow."
+      },
+      {
+        "text": "Increase the Node.js process timeout to 1 hour in the shell environment.",
+        "isCorrect": false,
+        "explanation": "Trap: Long timeouts worsen the stall, freezing the agentic pipeline."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3891,19 +3949,19 @@ const CCAF_DATABASE = [
     "question": "Which configuration combination will prevent this tracking clutter?",
     "options": [
       {
-        "text": "Add the compiled patterns (e.g. `**/*.class`, `target/`) to both the repository `.gitignore` and the exclusions list in `CLAUDE.md`.",
-        "isCorrect": true,
-        "explanation": "Excluding compiled patterns in both `.gitignore` and `CLAUDE.md` ensures Claude Code never indexes or attempts to track build artifacts."
-      },
-      {
-        "text": "Set the model temperature to 0.0 during builds. This orchestration architecture mandates explicit schema pre-validation across automated continuous integration pipelines.",
+        "text": "Set the model temperature to 0.0 during builds. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature does not affect git tracking or file indexing patterns. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
+        "explanation": "Trap: Temperature does not affect git tracking or file indexing patterns."
       },
       {
         "text": "Manually run git rm on the class files before launching Claude Code.",
         "isCorrect": false,
-        "explanation": "Trap: Manual deletion is repetitive, slow, and doesn't prevent the agent from immediately generating and tracking new class files. Ensuring deterministic execution constraints."
+        "explanation": "Trap: Manual deletion is repetitive, slow, and doesn't prevent the agent from immediately generating and tracking new class files."
+      },
+      {
+        "text": "Add the compiled patterns (e.g. `**/*.class`, `target/`) to both the repository `.gitignore` and the exclusions list in `CLAUDE.md`.",
+        "isCorrect": true,
+        "explanation": "Excluding compiled patterns in both `.gitignore` and `CLAUDE.md` ensures Claude Code never indexes or attempts to track build artifacts."
       },
       {
         "text": "Instruct the agent in the system prompt to never use the git add command on class files.",
@@ -3920,14 +3978,9 @@ const CCAF_DATABASE = [
     "question": "Where should you define these commands to guarantee consistency?",
     "options": [
       {
-        "text": "Store the commands inside the questions.js file.",
+        "text": "Store the commands inside the questions.js file. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
-        "explanation": "Trap: `questions.js` is a static questions database and cannot configure the Claude Code command registry. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
-      },
-      {
-        "text": "Inside the `[commands]` section of the shared, version-controlled `CLAUDE.md` file at the root of the repository.",
-        "isCorrect": true,
-        "explanation": "Defining commands in the shared `CLAUDE.md` ensures they are version-controlled and consistently loaded for all developers."
+        "explanation": "Trap: `questions.js` is a static questions database and cannot configure the Claude Code command registry. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Instruct each developer to set up a local bash alias in their `~/.bashrc` file.",
@@ -3935,9 +3988,14 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Local bash aliases are hard to sync and do not integrate natively as Claude Code slash commands."
       },
       {
-        "text": "Set the model temperature of the command tool to 0.0. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
+        "text": "Set the model temperature of the command tool to 0.0.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature affects text creativity, not command structures. To prevent pipeline failures."
+        "explanation": "Trap: Temperature affects text creativity, not command structures."
+      },
+      {
+        "text": "Inside the `[commands]` section of the shared, version-controlled `CLAUDE.md` file at the root of the repository.",
+        "isCorrect": true,
+        "explanation": "Defining commands in the shared `CLAUDE.md` ensures they are version-controlled and consistently loaded for all developers."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3949,24 +4007,24 @@ const CCAF_DATABASE = [
     "question": "How should you configure the test runner inside CLAUDE.md to enforce this constraint?",
     "options": [
       {
-        "text": "Instruct each developer to manually type the coverage flags in their terminals. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy. This workflow specification establishes deterministic task coordination parameters within the active client workspace.",
-        "isCorrect": false,
-        "explanation": "Trap: Manual instructions do not automate the agent's test runner pipeline, leading to incomplete test execution. This pattern is strictly discouraged in high-throughput enterprise deployments. To prevent pipeline failures."
-      },
-      {
-        "text": "Store the go coverage configuration scripts inside questions.js.",
-        "isCorrect": false,
-        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on terminal command configurations. To prevent pipeline failures. Configuring the local CLAUDE.md file instructions to run in offline-only mode inside the sandboxed container environment."
-      },
-      {
         "text": "Define the exact test command mapping with coverage thresholds (e.g., `go test -coverprofile=cover.out ./... && go tool cover -func=cover.out`) inside the `[commands]` section of `CLAUDE.md`.",
         "isCorrect": true,
         "explanation": "Hardcoding the exact test command with coverage thresholds inside `CLAUDE.md` ensures the automated test runner executes the correct coverage scripts persistently. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Set the model temperature to 0.0 during tests. CLAUDE.md instruction modules do not pollute the active shell execution environments.",
+        "text": "Instruct each developer to manually type the coverage flags in their terminals. Custom slash commands in project configuration files automate repetitive linting procedures.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature affects text creativity, not go test command structures. Utilizing project-level skills configured via slash commands to intercept git commits automatically."
+        "explanation": "Trap: Manual instructions do not automate the agent's test runner pipeline, leading to incomplete test execution. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Store the go coverage configuration scripts inside questions.js. Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+        "isCorrect": false,
+        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on terminal command configurations."
+      },
+      {
+        "text": "Set the model temperature to 0.0 during tests. Interactive planning modes allow developers to review architectural changes before builds.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature affects text creativity, not go test command structures."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -3978,12 +4036,17 @@ const CCAF_DATABASE = [
     "question": "How should you architect these custom reusable agent capabilities inside the project?",
     "options": [
       {
-        "text": "Concat all enterprise linting scripts and compliance rulebooks into a single massive global system prompt defined within the project's root `CLAUDE.md`.",
+        "text": "Concat all enterprise linting scripts and compliance rulebooks into a single massive global system prompt defined within the project's root `CLAUDE.md`. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
         "explanation": "Trap: Bloating CLAUDE.md with entire rulebooks and scripts consumes excessive prefill tokens on every run and lacks dynamic tool execution wrappers. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Modify the global Claude Code binary execution binary files directly, recompiling the base agent runtime to permanently bundle custom enterprise linters. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
+        "text": "Create custom skill packages within the `.claude/skills/` directory containing a `SKILL.md` instruction frontmatter file and associated execution wrappers.",
+        "isCorrect": true,
+        "explanation": "Claude Code's skill architecture natively discovers and leverages custom workflows defined inside `.claude/skills/` using SKILL.md declarations."
+      },
+      {
+        "text": "Modify the global Claude Code execution binaries directly, recompiling the base agent runtime to permanently bundle custom enterprise linters.",
         "isCorrect": false,
         "explanation": "Trap: Modifying core execution binaries creates extreme maintenance overhead, breaks upstream upgrades, and violates standard extension patterns."
       },
@@ -3991,11 +4054,6 @@ const CCAF_DATABASE = [
         "text": "Establish an external bash orchestration loop that intercepts all terminal inputs and pre-appends compliance instructions before invoking Claude Code.",
         "isCorrect": false,
         "explanation": "Trap: Pre-pending text via external bash wrappers corrupts natural user terminal interaction and fails to provide structured agent tool endpoints."
-      },
-      {
-        "text": "Create custom skill packages within the `.claude/skills/` directory containing a `SKILL.md` instruction frontmatter file and associated execution wrappers.",
-        "isCorrect": true,
-        "explanation": "Claude Code's skill architecture natively discovers and leverages custom workflows defined inside `.claude/skills/` using SKILL.md declarations."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -4007,12 +4065,7 @@ const CCAF_DATABASE = [
     "question": "Which configuration mechanism prevents indexing of these sensitive and heavy assets?",
     "options": [
       {
-        "text": "Define explicit exclusion path patterns inside a `.claudeignore` file in the project root to block file indexing engines from reading sensitive directories.",
-        "isCorrect": true,
-        "explanation": "Placing a .claudeignore file in the repository root establishes strict file system boundary exclusions, blocking indexing engines at the source."
-      },
-      {
-        "text": "Declare a natural language directive inside `CLAUDE.md` instructing the underlying language model to politely ignore sensitive directories when searching. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
+        "text": "Declare a natural language directive inside `CLAUDE.md` instructing the underlying language model to politely ignore sensitive directories when searching. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
         "explanation": "Trap: Natural language instructions in CLAUDE.md do not prevent background file indexing and discovery engines from reading sensitive files. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
@@ -4020,6 +4073,11 @@ const CCAF_DATABASE = [
         "text": "Execute a background cron job that revokes read permissions on sensitive directories before launching Claude Code, restoring permissions post-execution.",
         "isCorrect": false,
         "explanation": "Trap: Toggling file system read permissions dynamically breaks local compiler toolchains and creates complex race conditions during active coding."
+      },
+      {
+        "text": "Define explicit exclusion path patterns inside a `.claudeignore` file in the project root to block file indexing engines from reading sensitive directories.",
+        "isCorrect": true,
+        "explanation": "Placing a .claudeignore file in the repository root establishes strict file system boundary exclusions, blocking indexing engines at the source."
       },
       {
         "text": "Append `--filter-large-files=true` to the CLI invocation flag when starting Claude Code to dynamically bypass non-text assets during workspace indexing.",
@@ -4036,14 +4094,9 @@ const CCAF_DATABASE = [
     "question": "What is the most secure configuration pattern to enforce these execution boundaries?",
     "options": [
       {
-        "text": "Set the environment variable `CLAUDE_SAFETY_LEVEL=STRICT` in the developer's bash profile to engage internal heuristic protections against dangerous tools. This configuration structure enforces strict file-bound execution boundaries across the repository hierarchy.",
+        "text": "Set the environment variable `CLAUDE_SAFETY_LEVEL=STRICT` in the developer's bash profile to engage internal heuristic protections against dangerous tools. Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
         "isCorrect": false,
         "explanation": "Trap: Heuristic safety variables do not provide deterministic, unbypassable execution guarantees against specific enterprise tools or network calls. This pattern is strictly discouraged in high-throughput enterprise deployments."
-      },
-      {
-        "text": "Configure explicit tool restrictions inside `permissions.deny` to programmatically block outbound network connections and unauthorized shell tool executions.",
-        "isCorrect": true,
-        "explanation": "permissions.deny establishes hard security governance boundaries at the execution middleware level, blocking unauthorized tools before execution."
       },
       {
         "text": "Prepend a strict system prompt warning inside `CLAUDE.md` reminding the model of enterprise compliance penalties if it attempts dangerous bash execution.",
@@ -4054,6 +4107,11 @@ const CCAF_DATABASE = [
         "text": "Deploy a local network firewall proxy that intercepts all outbound HTTP traffic from the host machine and evaluates payload contents using regex matching.",
         "isCorrect": false,
         "explanation": "Trap: System-wide proxies break legitimate host developer tools and cannot inspect or block destructive local file system shell executions."
+      },
+      {
+        "text": "Configure explicit tool restrictions inside `permissions.deny` to programmatically block outbound network connections and unauthorized shell tool executions.",
+        "isCorrect": true,
+        "explanation": "permissions.deny establishes hard security governance boundaries at the execution middleware level, blocking unauthorized tools before execution."
       }
     ],
     "reference": "https://claude.com/docs/code"
@@ -4065,6 +4123,11 @@ const CCAF_DATABASE = [
     "question": "How must you configure Claude Code for unattended execution inside automated pipelines?",
     "options": [
       {
+        "text": "Execute Claude Code utilizing non-interactive headless flags, injecting persistent machine service account credentials and verifying strict exit codes.",
+        "isCorrect": true,
+        "explanation": "Running in non-interactive headless mode with machine account auth ensures predictable pipeline execution, deterministic exit codes, and safe automation."
+      },
+      {
         "text": "Instantiate a virtual X11 display buffer using `Xvfb` within the pipeline runner to simulate an interactive TTY console session for the Claude Code CLI.",
         "isCorrect": false,
         "explanation": "Trap: Simulating X11 displays does not resolve non-interactive input prompt pauses or provide structured authentication and exit code handling."
@@ -4073,11 +4136,6 @@ const CCAF_DATABASE = [
         "text": "Configure the pipeline runner to execute Claude Code inside a background `tmux` detached session.",
         "isCorrect": false,
         "explanation": "Trap: Detached tmux sessions provide no reliable mechanism for catching execution exit codes, failure states, or automated approval prompts."
-      },
-      {
-        "text": "Execute Claude Code utilizing non-interactive headless flags, injecting persistent machine service account credentials and verifying strict exit codes.",
-        "isCorrect": true,
-        "explanation": "Running in non-interactive headless mode with machine account auth ensures predictable pipeline execution, deterministic exit codes, and safe automation."
       },
       {
         "text": "Pass an interactive user GAIA token into the runner environment and pipe the word `yes` continuously into the CLI execution prompt to bypass user checks.",
@@ -5389,24 +5447,24 @@ const CCAF_DATABASE = [
     "question": "Which prompt engineering and system prompt setup is the most robust way to guarantee a clean, parseable JSON output?",
     "options": [
       {
+        "text": "Configure the downstream parser to execute a try-catch loop that attempts to eval() the raw text. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
+        "isCorrect": false,
+        "explanation": "Trap: Running eval() on uncleaned LLM text is a severe security vulnerability and fails frequently on conversational preambles. This operational alternative introduces severe performance bottlenecks and networking layer latency."
+      },
+      {
+        "text": "Widen the context window of the model to 200,000 tokens and increase the temperature to 0.9. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Large context windows and high temperature increase output variation and hallucination, worsening formatting issues."
+      },
+      {
         "text": "Pass the JSON schema in the system prompt, instruct the model to use JSON mode if available or strictly return ONLY raw JSON without markdown fences, and enforce this inside XML tags like <instructions>.",
         "isCorrect": true,
         "explanation": "Structuring instructions inside XML tags and enforcing raw JSON mode is the most reliable way to suppress model chit-chat and code fences, guaranteeing parseable output."
       },
       {
-        "text": "Configure the downstream parser to execute a try-catch loop that attempts to eval() the raw text.",
+        "text": "Inject a few-shot example showing a markdown JSON block inside the user query. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
         "isCorrect": false,
-        "explanation": "Trap: Running eval() on uncleaned LLM text is a severe security vulnerability and fails frequently on conversational preambles. This operational alternative introduces severe performance bottlenecks and networking layer latency. Preventing markdown backtick noise."
-      },
-      {
-        "text": "Widen the context window of the model to 200,000 tokens and increase the temperature to 0.9. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
-        "isCorrect": false,
-        "explanation": "Trap: Large context windows and high temperature increase output variation and hallucination, worsening formatting issues. Using strict XML schema checks. To bypass token prefill limits."
-      },
-      {
-        "text": "Inject a few-shot example showing a markdown JSON block inside the user query. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing.",
-        "isCorrect": false,
-        "explanation": "Trap: Showing few-shot examples *with* markdown fences actively encourages the model to output the unwanted code fences. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
+        "explanation": "Trap: Showing few-shot examples *with* markdown fences actively encourages the model to output the unwanted code fences."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5418,24 +5476,24 @@ const CCAF_DATABASE = [
     "question": "What is the best prompting technique to enforce this rigid choice constraint?",
     "options": [
       {
-        "text": "Increase the model temperature to 1.0 to allow the model to evaluate synonyms creatively. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
+        "text": "Increase the model temperature to 1.0 to allow the model to evaluate synonyms creatively. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
-        "explanation": "Trap: Creative synonym generation violates the rigid label constraints, breaking downstream automated database filters. This pattern is strictly discouraged in high-throughput enterprise deployments. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
+        "explanation": "Trap: Creative synonym generation violates the rigid label constraints, breaking downstream automated database filters. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Disable the system prompt entirely and write the instructions inside the user prompt on every turn. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Bypassing system prompts reduces steering capability and token efficiency."
+      },
+      {
+        "text": "Use in-memory cache to store the classification metrics. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: In-memory cache is browser data storage and cannot enforce prompt steering or label selection constraints during runtime."
       },
       {
         "text": "Structure the allowed options clearly inside XML tags in the system prompt (e.g. <allowed-labels>), instruct the model to output *only* the matching string, and provide few-shot examples of correct classification.",
         "isCorrect": true,
         "explanation": "Encapsulating rigid choices inside custom XML tags combined with strict output constraints and matching few-shots guarantees optimal alignment with the allowed list. This structured approach establishes clear architectural guardrails across operational boundaries."
-      },
-      {
-        "text": "Disable the system prompt entirely and write the instructions inside the user prompt on every turn.",
-        "isCorrect": false,
-        "explanation": "Trap: Bypassing system prompts reduces steering capability and token efficiency. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
-      },
-      {
-        "text": "Use in-memory cache to store the classification metrics. This prompt schema guarantees deterministic XML block separation across client-side validation layers. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: LocalStorage is browser data storage and cannot enforce prompt steering or label selection constraints during runtime. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5447,24 +5505,24 @@ const CCAF_DATABASE = [
     "question": "Which XML tagging structure is the recommended best practice for Anthropic models?",
     "options": [
       {
-        "text": "Use markdown headers (e.g. # SYSTEM, ## DATA) instead of XML tags. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
-        "isCorrect": false,
-        "explanation": "Trap: While markdown headers are helpful, they are less robust than explicit, self-closing XML tag boundaries for separating complex instructions from raw data. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
-      },
-      {
-        "text": "Wrap all text segments in custom JSON objects. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
-        "isCorrect": false,
-        "explanation": "Trap: JSON prompts increase token counts significantly due to formatting brackets, and are harder for the model to parse compared to natural XML tags. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
-      },
-      {
         "text": "Use clear, self-documenting, lowercase XML tag pairs to isolate segments: e.g. <system-instructions>...</system-instructions>, <reference-documents>...</reference-documents>, and <user-query>...</user-query>.",
         "isCorrect": true,
         "explanation": "Anthropic models are pre-trained on structured XML datasets; using lowercase, descriptive XML tags is the canonical way to maximize prompt comprehension and instruction alignment."
       },
       {
-        "text": "Put all system instructions inside square brackets [like this] and reference data in curly brackets {like this}.",
+        "text": "Use markdown headers (e.g. # SYSTEM, ## DATA) instead of XML tags. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
         "isCorrect": false,
-        "explanation": "Trap: Custom bracket conventions lack standard semantic training grounding in Claude, leading to unpredictable parsing results. Preventing markdown backtick noise. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
+        "explanation": "Trap: While markdown headers are helpful, they are less robust than explicit, self-closing XML tag boundaries for separating complex instructions from raw data."
+      },
+      {
+        "text": "Wrap all text segments in custom JSON objects. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: JSON prompts increase token counts significantly due to formatting brackets, and are harder for the model to parse compared to natural XML tags."
+      },
+      {
+        "text": "Put all system instructions inside square brackets [like this] and reference data in curly brackets {like this}. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": false,
+        "explanation": "Trap: Custom bracket conventions lack standard semantic training grounding in Claude, leading to unpredictable parsing results."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5476,24 +5534,24 @@ const CCAF_DATABASE = [
     "question": "What is the most effective prompt structure for this validation-retry loop?",
     "options": [
       {
-        "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations, to ensure strict adherence to the JSON schema boundaries and completely bypass system-prompt guidelines.",
+        "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations.",
         "isCorrect": false,
         "explanation": "Trap: High temperature during retries increases the likelihood of generating new, unrelated syntax errors."
-      },
-      {
-        "text": "Manually edit the brackets in the local script instead of calling the API again. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: Manual string hacking is fragile and fails when the model generates complex, nested JSON schema errors. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
-      },
-      {
-        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt.",
-        "isCorrect": false,
-        "explanation": "Trap: Swapping contexts in a new single-turn request loses the model's original generation path, making self-correction much harder. Using strict XML schema checks."
       },
       {
         "text": "Create a multi-turn message history: append the model's invalid JSON, add a user message containing the exact validation error inside a <validation-error> tag, and instruct the model to fix its schema.",
         "isCorrect": true,
         "explanation": "Leveraging conversational message history to feed back structured errors inside XML tags is the canonical way to enable self-correction with high success rates."
+      },
+      {
+        "text": "Manually edit the brackets in the local script instead of calling the API again. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: Manual string hacking is fragile and fails when the model generates complex, nested JSON schema errors."
+      },
+      {
+        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": false,
+        "explanation": "Trap: Swapping contexts in a new single-turn request loses the model's original generation path, making self-correction much harder."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5505,24 +5563,24 @@ const CCAF_DATABASE = [
     "question": "Which prompt engineering pattern will optimize the model's retrieval accuracy?",
     "options": [
       {
+        "text": "Spread the retrieved snippets randomly throughout the entire prompt chain. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
+        "isCorrect": false,
+        "explanation": "Trap: Scattering snippets randomly increases semantic noise, causing severe attention degradation. This operational alternative introduces severe performance bottlenecks and networking layer latency."
+      },
+      {
+        "text": "Set the model temperature to 0.9 to encourage creative scanning. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: High temperature increases hallucinations during factual retrieval, decreasing extraction accuracy."
+      },
+      {
         "text": "Format the retrieved snippets cleanly inside structured <documents> tag pairs, place them at the top of the context, and place the core extraction task and guidelines at the very end.",
         "isCorrect": true,
         "explanation": "Grouping reference documents at the beginning and instructions/tasks at the end maximizes the model's attention on the retrieval context, solving the 'lost in the middle' degradation."
       },
       {
-        "text": "Spread the retrieved snippets randomly throughout the entire prompt chain. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing.",
+        "text": "Disable the use of system prompts and put all instructions inside each snippet. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
         "isCorrect": false,
-        "explanation": "Trap: Scattering snippets randomly increases semantic noise, causing severe attention degradation. This operational alternative introduces severe performance bottlenecks and networking layer latency. Using strict XML schema checks. To bypass token prefill limits."
-      },
-      {
-        "text": "Set the model temperature to 0.9 to encourage creative scanning. This prompt schema guarantees deterministic XML block separation across client-side validation layers. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: High temperature increases hallucinations during factual retrieval, decreasing extraction accuracy. Preventing markdown backtick noise. Using strict XML schema checks."
-      },
-      {
-        "text": "Disable the use of system prompts and put all instructions inside each snippet.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling system prompts degrades overall steering and massively bloats token costs. Preventing markdown backtick noise. Using strict XML schema checks."
+        "explanation": "Trap: Disabling system prompts degrades overall steering and massively bloats token costs."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5534,24 +5592,24 @@ const CCAF_DATABASE = [
     "question": "Which prompt safety pattern is most robust to mitigate prompt injection?",
     "options": [
       {
-        "text": "Disable the system prompt entirely to prevent injection attacks. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
+        "text": "Disable the system prompt entirely to prevent injection attacks. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
-        "explanation": "Trap: Disabling the system prompt removes all guidelines, leaving the agent completely unsteerable. This pattern is strictly discouraged in high-throughput enterprise deployments. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
+        "explanation": "Trap: Disabling the system prompt removes all guidelines, leaving the agent completely unsteerable. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Set the model temperature to 0.0 to ensure rigid responses. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature affects output variability, but does not prevent the model from following instructions contained in a prompt injection."
+      },
+      {
+        "text": "Write a system prompt listing all the potential injection words (e.g., 'ignore', 'bypass') and telling the agent to block them. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: Blacklisting words is fragile, as attackers can easily bypass the list using synonyms, foreign languages, or encoding."
       },
       {
         "text": "Implement a strict boundary guardrail in the system prompt, encapsulating user inputs inside isolated <user-input> tags, and explicitly instruct the model to treat all text inside those tags as data, never as instructions.",
         "isCorrect": true,
         "explanation": "Isolating user inputs inside dedicated XML tags and instructing the model to treat them strictly as data is the most robust way to mitigate prompt injection attacks. This structured approach establishes clear architectural guardrails across operational boundaries."
-      },
-      {
-        "text": "Set the model temperature to 0.0 to ensure rigid responses. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature affects output variability, but does not prevent the model from following instructions contained in a prompt injection. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
-      },
-      {
-        "text": "Write a system prompt listing all the potential injection words (e.g., 'ignore', 'bypass') and telling the agent to block them.",
-        "isCorrect": false,
-        "explanation": "Trap: Blacklisting words is fragile, as attackers can easily bypass the list using synonyms, foreign languages, or encoding. Using strict XML schema checks. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5563,24 +5621,24 @@ const CCAF_DATABASE = [
     "question": "Which prompting and system prompt pattern will handle large extraction tasks most gracefully?",
     "options": [
       {
-        "text": "Set the temperature to 0.8 to encourage more creative formatting. This prompt schema guarantees deterministic XML block separation across client-side validation layers. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature controls creativity, not token output limits or formatting constraints. Using strict XML schema checks."
-      },
-      {
-        "text": "Instruct the model to write in highly compressed, single-line JSON strings. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
-        "isCorrect": false,
-        "explanation": "Trap: Single-line compression is unreadable, error-prone, and does not resolve the underlying output limit constraint. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
-      },
-      {
         "text": "Instruct the model inside <instructions> to limit the number of extractions per turn (e.g., max 20 items), and implement a multi-turn pagination loop that requests the next batch in subsequent turns.",
         "isCorrect": true,
         "explanation": "Enforcing extraction limits per turn and using a multi-turn pagination loop is the most reliable way to handle large data extraction without hitting output limits."
       },
       {
-        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times.",
+        "text": "Set the temperature to 0.8 to encourage more creative formatting. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
         "isCorrect": false,
-        "explanation": "Trap: Retrying the exact same large task will result in the same truncation error, wasting tokens. Using strict XML schema checks. To bypass token prefill limits."
+        "explanation": "Trap: Temperature controls creativity, not token output limits or formatting constraints."
+      },
+      {
+        "text": "Instruct the model to write in highly compressed, single-line JSON strings. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: Single-line compression is unreadable, error-prone, and does not resolve the underlying output limit constraint."
+      },
+      {
+        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": false,
+        "explanation": "Trap: Retrying the exact same large task will result in the same truncation error, wasting tokens."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5592,24 +5650,24 @@ const CCAF_DATABASE = [
     "question": "What is the recommended file naming convention for system prompts to ensure compatibility with automated tooling?",
     "options": [
       {
-        "text": "Use in-memory cache to store system prompts. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing.",
+        "text": "Use in-memory cache to store system prompts.",
         "isCorrect": false,
-        "explanation": "Trap: LocalStorage is client-side browser storage and has no integration with backend prompt pipelines. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls. Using strict XML schema checks."
-      },
-      {
-        "text": "Hardcode the system prompt directly in the main application script (`app.js`).",
-        "isCorrect": false,
-        "explanation": "Trap: Hardcoding makes prompts difficult to maintain, version-control, or validate statically. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
-      },
-      {
-        "text": "Store the system prompt directly inside the `questions.js` database.",
-        "isCorrect": false,
-        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on runtime prompt configurations. Using strict XML schema checks. To bypass token prefill limits."
+        "explanation": "Trap: In-memory cache is client-side browser storage and has no integration with backend prompt pipelines."
       },
       {
         "text": "Store system prompts in dedicated `.md` or `.txt` files and reference them programmatically.",
         "isCorrect": true,
-        "explanation": "Storing prompts in dedicated files ensures they are version-controlled, easy to maintain, and statically validation-ready. Ensuring they are version-controlled and easily parsed by validation scripts."
+        "explanation": "Storing prompts in dedicated files ensures they are version-controlled, easy to maintain, and easily parsed by validation scripts."
+      },
+      {
+        "text": "Hardcode the system prompt directly in the main application script (`app.js`). Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: Hardcoding makes prompts difficult to maintain, version-control, or validate statically."
+      },
+      {
+        "text": "Store the system prompt directly inside the `questions.js` database.",
+        "isCorrect": false,
+        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on runtime prompt configurations."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5621,24 +5679,24 @@ const CCAF_DATABASE = [
     "question": "Which prompting technique is most effective to prevent these hallucinations?",
     "options": [
       {
+        "text": "Increase the model temperature to 1.0 to allow the model to infer missing details creatively. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
+        "isCorrect": false,
+        "explanation": "Trap: High temperature increases the likelihood of hallucinations and factual inaccuracies. This operational alternative introduces severe performance bottlenecks and networking layer latency."
+      },
+      {
+        "text": "Disable the system prompt entirely and put all instructions inside each snippet. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling the system prompt removes all guidelines, leaving the agent completely unsteerable."
+      },
+      {
         "text": "Enforce a strict grounding constraint in the system prompt: explicitly instruct the model to rely *only* on the provided context inside <context> tags, and output 'Factual information not found' if the details are missing.",
         "isCorrect": true,
         "explanation": "A strict grounding constraint combined with a fallback instruction ('information not found') is the most robust way to mitigate hallucinations in RAG systems."
       },
       {
-        "text": "Increase the model temperature to 1.0 to allow the model to infer missing details creatively.",
+        "text": "Widen the context window of the model to maximum capacity. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
         "isCorrect": false,
-        "explanation": "Trap: High temperature increases the likelihood of hallucinations and factual inaccuracies. This operational alternative introduces severe performance bottlenecks and networking layer latency. Using strict XML schema checks. To bypass token prefill limits."
-      },
-      {
-        "text": "Disable the system prompt entirely and put all instructions inside each snippet. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling the system prompt removes all guidelines, leaving the agent completely unsteerable. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
-      },
-      {
-        "text": "Widen the context window of the model to maximum capacity. This prompt schema guarantees deterministic XML block separation across client-side validation layers. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
-        "isCorrect": false,
-        "explanation": "Trap: Context window capacity does not enforce factual grounding or prevent hallucinations. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
+        "explanation": "Trap: Context window capacity does not enforce factual grounding or prevent hallucinations."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5650,24 +5708,24 @@ const CCAF_DATABASE = [
     "question": "Which prompting technique is most effective to eliminate these conversational preambles?",
     "options": [
       {
-        "text": "Configure the downstream parser to execute a try-catch loop that attempts to eval() the raw text.",
+        "text": "Configure the downstream parser to execute a try-catch loop that attempts to eval() the raw text. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
-        "explanation": "Trap: Running eval() on uncleaned LLM text is a severe security vulnerability and fails frequently on conversational preambles. This pattern is strictly discouraged in high-throughput enterprise deployments. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
+        "explanation": "Trap: Running eval() on uncleaned LLM text is a severe security vulnerability and fails frequently on conversational preambles. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Set the model temperature to 1.0. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: High temperature increases output variation, worsening formatting consistency."
+      },
+      {
+        "text": "Widen the context window of the model to 200,000 tokens.",
+        "isCorrect": false,
+        "explanation": "Trap: Large context windows do not suppress conversational preambles or enforce formatting constraints."
       },
       {
         "text": "Instruct the model to return *only* raw JSON, wrap instructions in XML tags, and provide few-shot examples showing direct JSON outputs without preambles.",
         "isCorrect": true,
         "explanation": "Combining raw JSON output constraints with XML tags and matching few-shot examples is the most reliable way to suppress conversational preambles, guaranteeing parseable output. This structured approach establishes clear architectural guardrails across operational boundaries."
-      },
-      {
-        "text": "Set the model temperature to 1.0. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: High temperature increases output variation, worsening formatting consistency. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
-      },
-      {
-        "text": "Widen the context window of the model to 200,000 tokens.",
-        "isCorrect": false,
-        "explanation": "Trap: Large context windows do not suppress conversational preambles or enforce formatting constraints. Preventing markdown backtick noise. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5679,7 +5737,12 @@ const CCAF_DATABASE = [
     "question": "Where should you document these strict prompt engineering guidelines?",
     "options": [
       {
-        "text": "Set the model temperature to 0.0 during tests, to ensure strict adherence to the JSON schema boundaries and completely bypass system-prompt guidelines.",
+        "text": "Inside a dedicated `[instructions]` or `[behavior]` section in the shared `CLAUDE.md` file at the root of the repository.",
+        "isCorrect": true,
+        "explanation": "Documenting prompt guidelines in `CLAUDE.md` ensures they are persistently loaded as system guidelines for all prompt engineering tasks."
+      },
+      {
+        "text": "Set the model temperature to 0.0 during tests. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
         "isCorrect": false,
         "explanation": "Trap: Temperature affects text creativity, not prompt guidelines."
       },
@@ -5689,14 +5752,9 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Manual instructions do not automate the pipeline, leading to incomplete enforcement."
       },
       {
-        "text": "Inside a dedicated `[instructions]` or `[behavior]` section in the shared `CLAUDE.md` file at the root of the repository.",
-        "isCorrect": true,
-        "explanation": "Documenting prompt guidelines in `CLAUDE.md` ensures they are persistently loaded as system guidelines for all prompt engineering tasks."
-      },
-      {
         "text": "Store the guidelines inside the questions.js file.",
         "isCorrect": false,
-        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on terminal command configurations. Preventing markdown backtick noise. Using strict XML schema checks."
+        "explanation": "Trap: `questions.js` is a static questions database and has no bearing on terminal command configurations."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5713,19 +5771,19 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Single-line compression is unreadable, error-prone, and does not resolve the underlying output limit constraint."
       },
       {
-        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times.",
-        "isCorrect": false,
-        "explanation": "Trap: Retrying the exact same large task will result in the same truncation error, wasting tokens. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
-      },
-      {
-        "text": "Set the temperature to 0.8 to encourage more creative formatting. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature controls creativity, not token output limits or formatting constraints. Preventing markdown backtick noise. Using strict XML schema checks."
-      },
-      {
         "text": "Instruct the model inside <instructions> to limit the number of extractions per turn, and implement a multi-turn pagination loop that requests the next batch in subsequent turns.",
         "isCorrect": true,
         "explanation": "Enforcing extraction limits per turn and using a multi-turn pagination loop is the most reliable way to handle large data extraction without hitting output limits."
+      },
+      {
+        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: Retrying the exact same large task will result in the same truncation error, wasting tokens."
+      },
+      {
+        "text": "Set the temperature to 0.8 to encourage more creative formatting. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature controls creativity, not token output limits or formatting constraints."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5737,24 +5795,24 @@ const CCAF_DATABASE = [
     "question": "Which prompting technique is most effective to enforce this conversational structure?",
     "options": [
       {
+        "text": "Write a system prompt telling the agent to always be highly structured. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
+        "isCorrect": false,
+        "explanation": "Trap: Conversational prompts are easily bypassed or ignored by the model, failing to guarantee systematic structure. This operational alternative introduces severe performance bottlenecks and networking layer latency."
+      },
+      {
+        "text": "Clear the conversational context and restart the session automatically if a stage is skipped. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Cyclical session restarts frustrate the user and do not resolve the structural execution failure."
+      },
+      {
         "text": "Define the conversational stages inside XML tags (e.g., <stages>), instruct the model to check the active stage before responding, and provide few-shot examples showing the exact stage transitions.",
         "isCorrect": true,
         "explanation": "Defining conversational stages inside XML tags combined with stage checks and matching few-shot examples is the most reliable way to enforce structural consistency."
       },
       {
-        "text": "Write a system prompt telling the agent to always be highly structured. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
+        "text": "Set the model temperature to 0.0 to ensure rigid responses. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
         "isCorrect": false,
-        "explanation": "Trap: Conversational prompts are easily bypassed or ignored by the model, failing to guarantee systematic structure. This operational alternative introduces severe performance bottlenecks and networking layer latency. Preventing markdown backtick noise. Using strict XML schema checks."
-      },
-      {
-        "text": "Clear the conversational context and restart the session automatically if a stage is skipped.",
-        "isCorrect": false,
-        "explanation": "Trap: Cyclical session restarts frustrate the user and do not resolve the structural execution failure. Using strict XML schema checks. To bypass token prefill limits."
-      },
-      {
-        "text": "Set the model temperature to 0.0 to ensure rigid responses. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature affects output variability, but does not enforce structural constraints. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
+        "explanation": "Trap: Temperature affects output variability, but does not enforce structural constraints."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5766,24 +5824,24 @@ const CCAF_DATABASE = [
     "question": "What is the most robust architectural practice to prevent these unclosed tag errors?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity.",
+        "text": "Widen the context window of the model to maximum capacity. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
-        "explanation": "Trap: Context window capacity has no bearing on XML tag parsing or closure validation. This pattern is strictly discouraged in high-throughput enterprise deployments. Preventing markdown backtick noise. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
+        "explanation": "Trap: Context window capacity has no bearing on XML tag parsing or closure validation. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Instruct the model in the prompt to always close its XML tags. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Prompt instructions are not absolute constraints and the model can still fail on complex generations."
+      },
+      {
+        "text": "Use in-memory cache to store parsing templates. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: In-memory cache is browser-based and has no integration with backend prompt validation pipelines."
       },
       {
         "text": "Implement a validation script that checks XML tag closure inside the output buffer, and feed any parsing errors back to the model in a validation-retry loop.",
         "isCorrect": true,
         "explanation": "A validation script combined with a retry loop is the most robust way to catch and resolve unclosed XML tag errors during runtime. This structured approach establishes clear architectural guardrails across operational boundaries."
-      },
-      {
-        "text": "Instruct the model in the prompt to always close its XML tags, to ensure strict adherence to the JSON schema boundaries and completely bypass system-prompt guidelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Prompt instructions are not absolute constraints and the model can still fail on complex generations. Using strict XML schema checks."
-      },
-      {
-        "text": "Use in-memory cache to store parsing templates. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
-        "isCorrect": false,
-        "explanation": "Trap: LocalStorage is browser-based and has no integration with backend prompt validation pipelines. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5795,24 +5853,24 @@ const CCAF_DATABASE = [
     "question": "Which prompt security safeguard is most effective to prevent this system prompt leakage?",
     "options": [
       {
-        "text": "Write a system prompt telling the agent to never reveal its instructions. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
-        "isCorrect": false,
-        "explanation": "Trap: Prompts are easily bypassed via direct injection attacks, exposing the sensitive credentials."
-      },
-      {
-        "text": "Set the model temperature to 0.0, to ensure strict adherence to the JSON schema boundaries and completely bypass system-prompt guidelines.",
-        "isCorrect": false,
-        "explanation": "Trap: Determinism does not prevent the model from printing variables that exist in its active context history. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
-      },
-      {
         "text": "Implement a strict boundary guardrail: encapsulate user inputs inside isolated <user-input> tags, and instruct the model to treat all text inside those tags as data, never as instructions, and block any query requesting prompt details.",
         "isCorrect": true,
         "explanation": "Isolating user inputs inside dedicated XML tags combined with strict data-only instructions is the most robust way to mitigate system prompt leakage."
       },
       {
-        "text": "Encrypt the system prompt and store it in in-memory cache. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
+        "text": "Write a system prompt telling the agent to never reveal its instructions. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
         "isCorrect": false,
-        "explanation": "Trap: LocalStorage is accessible client-side and storing prompts there does not prevent the LLM from printing them if it has access to the variables. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
+        "explanation": "Trap: Prompts are easily bypassed via direct injection attacks, exposing the sensitive credentials."
+      },
+      {
+        "text": "Set the model temperature to 0.0. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: Determinism does not prevent the model from printing variables that exist in its active context history."
+      },
+      {
+        "text": "Encrypt the system prompt and store it in in-memory cache. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": false,
+        "explanation": "Trap: In-memory cache is accessible client-side and storing prompts there does not prevent the LLM from printing them if it has access to the variables."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5824,24 +5882,24 @@ const CCAF_DATABASE = [
     "question": "What is the best validation gate pattern for this pipeline?",
     "options": [
       {
-        "text": "Set the model temperature to 0.0. This architectural template enforces strict few-shot example consistency across active token prefill buffers. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
+        "text": "Set the model temperature to 0.0. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
-      },
-      {
-        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: Agents are highly prone to missing subtle syntax errors (like missing commas or brackets) during conversational passes. Using strict XML schema checks. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
-      },
-      {
-        "text": "Implement an interval cron validation check on the server. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
+        "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors."
       },
       {
         "text": "Implement a static JSON validation gate inside the tool layer: before the data is passed, run a local JSON parser (e.g., `JSON.parse()`) against the output buffer. If parsing fails, throw a validation exception and trigger a retry loop.",
         "isCorrect": true,
         "explanation": "A programmatic static JSON parser gate at the tool layer is an unbypassable validation measure that guarantees data integrity before downstream propagation."
+      },
+      {
+        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: Agents are highly prone to missing subtle syntax errors (like missing commas or brackets) during conversational passes."
+      },
+      {
+        "text": "Implement an interval cron validation check on the server. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": false,
+        "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5853,24 +5911,24 @@ const CCAF_DATABASE = [
     "question": "Which prompt construction pattern will optimize the hit rate for these snippets?",
     "options": [
       {
+        "text": "Set the temperature to 0.0 to make prompt generation more deterministic.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. This operational alternative introduces severe performance bottlenecks and networking layer latency."
+      },
+      {
+        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate."
+      },
+      {
         "text": "Format the retrieved snippets cleanly inside structured <context> tag pairs, place them at the top of the context, and place the dynamic user query at the very end.",
         "isCorrect": true,
         "explanation": "Prompt Caching requires prefix matching. Keeping the large static segments at the beginning and dynamic queries at the end maximizes the cached prefix size."
       },
       {
-        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
+        "text": "Widen the context window of the model to maximum capacity. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. This operational alternative introduces severe performance bottlenecks and networking layer latency. Preventing markdown backtick noise."
-      },
-      {
-        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context.",
-        "isCorrect": false,
-        "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate. Preventing markdown backtick noise."
-      },
-      {
-        "text": "Widen the context window of the model to maximum capacity. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing.",
-        "isCorrect": false,
-        "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates. Preventing markdown backtick noise. Using strict XML schema checks."
+        "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5882,24 +5940,24 @@ const CCAF_DATABASE = [
     "question": "What is the recommended setup to automate this check?",
     "options": [
       {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly.",
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
-        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. This pattern is strictly discouraged in high-throughput enterprise deployments. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
+        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Store formatting rules in in-memory cache. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: In-memory cache is browser-based and has no integration with Claude Code formatting engines."
+      },
+      {
+        "text": "Set the reasoning temperature of all agents to 0.0.",
+        "isCorrect": false,
+        "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule."
       },
       {
         "text": "Register an automated pre-commit hook or a custom linter command inside `CLAUDE.md`, directing the client to run this check before applying any filesystem writes.",
         "isCorrect": true,
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside `CLAUDE.md` ensures the agent self-corrects style errors before committing files. This structured approach establishes clear architectural guardrails across operational boundaries."
-      },
-      {
-        "text": "Store formatting rules in in-memory cache. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
-        "isCorrect": false,
-        "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
-      },
-      {
-        "text": "Set the reasoning temperature of all agents to 0.0. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
-        "isCorrect": false,
-        "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5911,6 +5969,11 @@ const CCAF_DATABASE = [
     "question": "Which prompt engineering technique is the most effective and deterministic way to eliminate conversational preambles?",
     "options": [
       {
+        "text": "Provide an assistant message prefill containing the opening bracket `{` at the end of the API prompt turns. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
+        "isCorrect": true,
+        "explanation": "Providing an assistant message prefill with an opening bracket `{` is the canonical, deterministic technique to force Claude to output raw JSON structures without conversational preambles, forcing the model to begin generating JSON structure immediately."
+      },
+      {
         "text": "Append an extensive negative system prompt listing every potential conversational opening phrase and explicitly instruct the model to suppress them all.",
         "isCorrect": false,
         "explanation": "Trap: Negative system prompts listing forbidden phrases are easily bypassed or ignored by conversational LLMs and consume unnecessary prefill token budgets. This operational alternative introduces severe performance bottlenecks and networking layer latency."
@@ -5921,12 +5984,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: While lowering temperature increases determinism, it does not guarantee the suppression of conversational preambles before structured JSON output."
       },
       {
-        "text": "Provide an assistant message prefill containing the opening bracket `{` at the end of the API prompt turns. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": true,
-        "explanation": "Providing an assistant message prefill with an opening bracket `{` is the canonical, deterministic technique to force Claude to output raw JSON structures without conversational preambles. Forcing the model to begin generating JSON structure immediately."
-      },
-      {
-        "text": "Execute a post-processing script that performs regular expression pattern matching across the entire model output buffer to strip out preamble text before parsing. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
+        "text": "Execute a post-processing script that performs regular expression pattern matching across the entire model output buffer to strip out preamble text before parsing. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
         "isCorrect": false,
         "explanation": "Trap: Post-processing string stripping is fragile and fails when the model generates non-standard conversational text or nested complex markdown structures."
       }
@@ -5940,9 +5998,14 @@ const CCAF_DATABASE = [
     "question": "How should you configure the API prompt payload to minimize prefill latency and reduce billing costs?",
     "options": [
       {
-        "text": "Convert the comprehensive guidebook into an ephemeral vector storage embedding database within localStorage to completely bypass prompt token prefill overhead. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
+        "text": "Convert the comprehensive guidebook into an ephemeral vector storage embedding database within localStorage to completely bypass prompt token prefill overhead. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
         "explanation": "Trap: LocalStorage is a client-side browser database mechanism and cannot serve as a low-latency vector embedding store for backend API prompt runtimes. This operational alternative introduces severe performance bottlenecks and networking layer latency."
+      },
+      {
+        "text": "Structure the static guidebook at the absolute start of the prompt payload and attach an explicit `cache_control` block with `type: ephemeral` to enable Prompt Caching.",
+        "isCorrect": true,
+        "explanation": "Anthropic Prompt Caching requires placing static large documents at the absolute beginning of the prompt and attaching a `cache_control` block, which significantly reduces prefill latency and cost."
       },
       {
         "text": "Distribute the guidebook text evenly across multiple alternating user and assistant dialogue turns to ensure sequential processing and reduce latency.",
@@ -5953,11 +6016,6 @@ const CCAF_DATABASE = [
         "text": "Split the regulation guidebook into distinct paragraphs and submit them concurrently using separate multi-threaded API requests to distribute prefill overhead.",
         "isCorrect": false,
         "explanation": "Trap: Spawning concurrent requests for disjointed paragraphs destroys the holistic document context and multiplies prompt API call costs exponentially."
-      },
-      {
-        "text": "Structure the static guidebook at the absolute start of the prompt payload and attach an explicit `cache_control` block with `type: ephemeral` to enable Prompt Caching.",
-        "isCorrect": true,
-        "explanation": "Anthropic Prompt Caching requires placing static large documents at the absolute beginning of the prompt and attaching a `cache_control` block, which significantly reduces prefill latency and cost."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5969,24 +6027,24 @@ const CCAF_DATABASE = [
     "question": "What is the most effective prompt structure for this validation-retry loop?",
     "options": [
       {
+        "text": "Manually edit the brackets in the local script instead of calling the API again. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
+        "isCorrect": false,
+        "explanation": "Trap: Manual string hacking is fragile and fails when the model generates complex, nested XML schema errors. This operational alternative introduces severe performance bottlenecks and networking layer latency."
+      },
+      {
+        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Swapping contexts in a new single-turn request loses the model's original generation path, making self-correction much harder."
+      },
+      {
         "text": "Create a multi-turn message history: append the model's invalid XML, add a user message containing the exact validation error inside a <validation-error> tag, and instruct the model to fix its schema.",
         "isCorrect": true,
         "explanation": "Leveraging conversational message history to feed back structured errors inside XML tags is the canonical way to enable self-correction with high success rates."
       },
       {
-        "text": "Manually edit the brackets in the local script instead of calling the API again. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
-        "isCorrect": false,
-        "explanation": "Trap: Manual string hacking is fragile and fails when the model generates complex, nested XML schema errors. This operational alternative introduces severe performance bottlenecks and networking layer latency. Using strict XML schema checks. To bypass token prefill limits."
-      },
-      {
-        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt.",
-        "isCorrect": false,
-        "explanation": "Trap: Swapping contexts in a new single-turn request loses the model's original generation path, making self-correction much harder. Using strict XML schema checks."
-      },
-      {
         "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations.",
         "isCorrect": false,
-        "explanation": "Trap: High temperature during retries increases the likelihood of generating new, unrelated syntax errors. Preventing markdown backtick noise. Using strict XML schema checks."
+        "explanation": "Trap: High temperature during retries increases the likelihood of generating new, unrelated syntax errors."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -5998,24 +6056,24 @@ const CCAF_DATABASE = [
     "question": "What is the best validation gate pattern for this pipeline?",
     "options": [
       {
-        "text": "Implement an interval cron validation check on the server. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
+        "text": "Implement an interval cron validation check on the server. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
-        "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes. This pattern is strictly discouraged in high-throughput enterprise deployments. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
+        "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+        "isCorrect": false,
+        "explanation": "Trap: Agents are highly prone to missing subtle syntax errors (like missing commas or brackets) during conversational passes."
+      },
+      {
+        "text": "Set the model temperature to 0.0. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors."
       },
       {
         "text": "Implement a static JSON validation gate inside the tool layer: before the data is passed, run a local JSON parser against the output buffer. If parsing fails, throw a validation exception and trigger a retry loop.",
         "isCorrect": true,
         "explanation": "A programmatic static JSON parser gate at the tool layer is an unbypassable validation measure that guarantees data integrity before downstream propagation. This structured approach establishes clear architectural guardrails across operational boundaries."
-      },
-      {
-        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. This prompt schema guarantees deterministic XML block separation across client-side validation layers.",
-        "isCorrect": false,
-        "explanation": "Trap: Agents are highly prone to missing subtle syntax errors (like missing commas or brackets) during conversational passes. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
-      },
-      {
-        "text": "Set the model temperature to 0.0. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts. Using specialized few-shot examples of valid schema objects directly in the static system prompt guidelines."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6027,24 +6085,24 @@ const CCAF_DATABASE = [
     "question": "What is the recommended setup to automate this check?",
     "options": [
       {
-        "text": "Set the reasoning temperature of all agents to 0.0. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
-        "isCorrect": false,
-        "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. Preventing markdown backtick noise. Using strict XML schema checks."
-      },
-      {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly.",
-        "isCorrect": false,
-        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. Preventing markdown backtick noise. Using strict XML schema checks."
-      },
-      {
         "text": "Register an automated pre-commit hook or a custom linter command inside `CLAUDE.md`, directing the client to run this check before applying any filesystem writes.",
         "isCorrect": true,
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside `CLAUDE.md` ensures the agent self-corrects style errors before committing files."
       },
       {
-        "text": "Store formatting rules in in-memory cache. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles. This architectural template enforces strict few-shot example consistency across active token prefill buffers.",
+        "text": "Set the reasoning temperature of all agents to 0.0.",
         "isCorrect": false,
-        "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines. Preventing markdown backtick noise. Utilizing strict XML tag encapsulation structures directly inside the user prompt instructions to guide parsing scripts."
+        "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule."
+      },
+      {
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. Providing concrete few-shot examples within system prompts guides robust output reliability.",
+        "isCorrect": false,
+        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate."
+      },
+      {
+        "text": "Store formatting rules in in-memory cache. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": false,
+        "explanation": "Trap: In-memory cache is browser-based and has no integration with Claude Code formatting engines."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6056,24 +6114,24 @@ const CCAF_DATABASE = [
     "question": "Which prompt construction pattern will optimize the hit rate for these snippets?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity. This prompt schema guarantees deterministic XML block separation across client-side validation layers. This structural model enforces rigid data parsing parameters across iterative prompt generation cycles.",
+        "text": "Widen the context window of the model to maximum capacity. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates."
-      },
-      {
-        "text": "Set the temperature to 0.0 to make prompt generation more deterministic.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. Which minimizes prefill tokens and maximizes Prompt Caching prefix hits on concurrent API calls."
-      },
-      {
-        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context.",
-        "isCorrect": false,
-        "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate. Preventing markdown backtick noise."
       },
       {
         "text": "Format the retrieved snippets cleanly inside structured <context> tag pairs, place them at the top of the context, and place the dynamic user query at the very end.",
         "isCorrect": true,
         "explanation": "Prompt Caching requires prefix matching. Keeping the large static segments at the beginning and dynamic queries at the end maximizes the cached prefix size."
+      },
+      {
+        "text": "Set the temperature to 0.0 to make prompt generation more deterministic.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic."
+      },
+      {
+        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": false,
+        "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6085,11 +6143,6 @@ const CCAF_DATABASE = [
     "question": "What is the best practice for structuring the prompt to maximize cache hits?",
     "options": [
       {
-        "text": "Place static schemas and system rules at the absolute beginning of the prompt, keeping dynamic queries at the end.",
-        "isCorrect": true,
-        "explanation": "Placing static elements first optimizes caching patterns since prompts are cached sequentially from the beginning. This structured approach establishes clear architectural guardrails across operational boundaries."
-      },
-      {
         "text": "Place dynamic customer queries at the beginning of the prompt, and append the static system rules at the very end of the message chain.",
         "isCorrect": false,
         "explanation": "Trap: Placing dynamic data first invalidates the cache for all subsequent static text elements. This pattern is strictly discouraged in high-throughput enterprise deployments."
@@ -6098,6 +6151,11 @@ const CCAF_DATABASE = [
         "text": "Set the temperature to 1.0 to encourage creative token usage.",
         "isCorrect": false,
         "explanation": "Trap: Temperature scales token probabilities but has zero impact on prefill prompt caching gates."
+      },
+      {
+        "text": "Place static schemas and system rules at the absolute beginning of the prompt, keeping dynamic queries at the end.",
+        "isCorrect": true,
+        "explanation": "Placing static elements first optimizes caching patterns since prompts are cached sequentially from the beginning. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
         "text": "Structure the prompt with few-shot examples spread randomly throughout the text to balance dynamic message lengths and optimize token context boundaries.",
@@ -6114,14 +6172,9 @@ const CCAF_DATABASE = [
     "question": "What is the most effective prompt engineering technique to guarantee JSON schema conformity?",
     "options": [
       {
-        "text": "Instruct the model in the prompt to be extremely careful and double-check that your output is a valid JSON array before sending it. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing.",
+        "text": "Instruct the model in the prompt to be extremely careful and double-check that your output is a valid JSON array before sending it. Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
         "isCorrect": false,
         "explanation": "Trap: Conversational warnings carry weak success guarantees compared to structured few-shot syntax blocks. This pattern is strictly discouraged in high-throughput enterprise deployments."
-      },
-      {
-        "text": "Wrap the JSON schema in explicit XML tags and provide clear few-shot examples of valid outputs. This formulation establishes strict structural encapsulation boundaries during prompt instruction parsing.",
-        "isCorrect": true,
-        "explanation": "XML wrapping and few-shot examples represent premium best practices for structured JSON generation accuracy. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
         "text": "Run a post-execution python string hack that replaces any missing curly brackets or commas in the raw model output dynamically.",
@@ -6132,6 +6185,11 @@ const CCAF_DATABASE = [
         "text": "Set the model's token limit parameter to exactly 200 tokens to prevent the model from generating conversational wrapper text logs.",
         "isCorrect": false,
         "explanation": "Trap: Capping tokens prevents verbose outputs but truncates valid JSON data, causing downstream parser crashes."
+      },
+      {
+        "text": "Wrap the JSON schema in explicit XML tags and provide clear few-shot examples of valid outputs. Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+        "isCorrect": true,
+        "explanation": "XML wrapping and few-shot examples represent premium best practices for structured JSON generation accuracy. This structured approach establishes clear architectural guardrails across operational boundaries."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6172,30 +6230,59 @@ const CCAF_DATABASE = [
     "source": "practical"
   },
   {
+    "id": "CCAF-4-028",
+    "domain": 4,
+    "scenario": "You are architecting a real-time observability and root-cause analysis agent for a cloud-native microservices platform under Agentic AI Foundation (AAIF) governance standards. The agent must monitor production telemetry and logs continuously. Traditional HTTP request-response tool polling causes unacceptable latency spikes and misses critical transient error anomalies during high-throughput system failures.",
+    "question": "How should you architect the tool interface to establish real-time observability under MCP 2.3 specification standards?",
+    "options": [
+      {
+        "text": "Implement a client-side polling loop that invokes traditional MCP 1.0 tool call requests every fifty milliseconds and stores all retrieved production log arrays directly inside the agent context scratchpad.",
+        "isCorrect": false,
+        "explanation": "Trap: High-frequency polling under legacy MCP 1.0 protocols creates immense networking overhead, exhausts rate limits, and balloons the context window with redundant log arrays. This pattern violates AAIF efficiency guidelines."
+      },
+      {
+        "text": "Leverage the MCP 2.3 bidirectional streaming specification to establish persistent telemetry subscriptions and stream real-time filtered alerts directly to the agent over an active transport connection.",
+        "isCorrect": true,
+        "explanation": "The MCP 2.3 specification introduces native bidirectional streaming capabilities. Establishing a persistent subscription allows production monitoring systems to stream real-time filtered alerts directly to the agent over active transports (such as WebSockets or advanced stdio), eliminating polling latency and adhering to AAIF real-time governance standards."
+      },
+      {
+        "text": "Deploy an external cron job that aggregates telemetry into static files every minute and configure an MCP tool to upload the aggregated files into the agent conversation window upon explicit user request.",
+        "isCorrect": false,
+        "explanation": "Trap: Batching telemetry into static files introduces a full minute of latency, completely destroying the real-time observability required for immediate root-cause analysis during high-throughput production failures."
+      },
+      {
+        "text": "Bypass the Model Context Protocol entirely and embed direct database connection credentials inside the agent system instructions to let the model execute raw SQL queries on production tables.",
+        "isCorrect": false,
+        "explanation": "Trap: Embedding production database credentials in system instructions and allowing an agent to execute raw SQL queries violates fundamental AAIF security and governance guardrails. MCP exists specifically to decouple agents from raw infrastructure credentials."
+      }
+    ],
+    "reference": "https://modelcontextprotocol.io/introduction"
+  },
+  {
     "id": "CCAF-5-001",
     "domain": 5,
     "scenario": "You are building an operational alert analysis agent using Claude. When an incident occurs, a script dumps a 50,000-line server log directly into the agent's context. You observe that Claude's parsing accuracy degrades severely, failing to locate the root cause located in the middle of the log, and API latency spikes.",
     "question": "Which context management strategy will resolve this attention degradation bottleneck?",
     "options": [
       {
-        "text": "Set the model temperature to 0.9 to encourage creative scanning of the raw logs, to ensure that the active conversation context does not exceed the model's raw output token limit.",
+        "text": "Set the model temperature to 0.9 to encourage creative scanning of the raw logs.",
         "isCorrect": false,
-        "explanation": "Trap: High temperature increases hallucinations, severely degrading factual incident analysis. To minimize API usage costs."
+        "explanation": "Trap: High temperature increases hallucinations, severely degrading factual incident analysis."
       },
       {
-        "text": "Widen the model's context window to 200,000 tokens to ensure it handles the raw log.",
+        "text": "Widen the model's context window to 200,000 tokens to ensure it handles the raw log. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
         "isCorrect": false,
-        "explanation": "Trap: Large context windows do not prevent 'lost in the middle' attention degradation and cause massive latency spikes. Embedding raw database tables directly into static system instructions."
-      },
-      {
-        "text": "Disable the system prompt entirely to reduce token usage, maintaining unconstrained autonomous loops across background processes.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling prompts removes essential analysis guidelines without reducing the massive raw log size."
+        "explanation": "Trap: Large context windows do not prevent 'lost in the middle' attention degradation and cause massive latency spikes."
       },
       {
         "text": "Implement a pre-filtering tool that runs a local grep scan to extract only error/warning lines, and feeds this highly compressed 500-line log segment to the agent.",
         "isCorrect": true,
         "explanation": "Pre-filtering heavy logs to deliver only the relevant error/warning context completely eliminates context degradation and protects the prefill budget."
+      },
+      {
+        "text": "Disable the system prompt entirely to reduce token usage. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
+        "isCorrect": false,
+        "explanation": "Trap: Disabling prompts removes essential analysis guidelines without reducing the massive raw log size."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6207,24 +6294,24 @@ const CCAF_DATABASE = [
     "question": "Which reliability pattern should you integrate to handle these schema collisions?",
     "options": [
       {
-        "text": "Define strict escalation limits: if a tool error indicates a non-transient database collision, halt the retry loop immediately, preserve the session, and escalate to a human DBA.",
-        "isCorrect": true,
-        "explanation": "Auth/schema collisions are non-transient. Immediate halting and human escalation is the only robust way to resolve them without endless loop stalls."
-      },
-      {
-        "text": "Configure the tool to ignore the schema error and proceed to the next migration script, to ensure that the active conversation context does not exceed the model's raw output token limit.",
+        "text": "Configure the tool to ignore the schema error and proceed to the next migration script.",
         "isCorrect": false,
         "explanation": "Trap: Ignoring schema collisions leads to catastrophic data loss or corrupt databases in downstream scripts."
       },
       {
-        "text": "Instruct the agent in the system prompt to check if the database is running before retrying.",
+        "text": "Instruct the agent in the system prompt to check if the database is running before retrying. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
         "isCorrect": false,
-        "explanation": "Trap: Prompt checks are conversational thoughts and cannot resolve a hard physical schema conflict. Embedding raw database tables directly into static system instructions."
+        "explanation": "Trap: Prompt checks are conversational thoughts and cannot resolve a hard physical schema conflict."
       },
       {
-        "text": "Implement an exponential backoff retry loop up to 50 attempts inside the tool logic, to ensure that the active conversation context does not exceed the model's raw output token limit.",
+        "text": "Implement an exponential backoff retry loop up to 50 attempts inside the tool logic. Fallback deflection mechanisms maintain user engagement when all automated retries fail.",
         "isCorrect": false,
         "explanation": "Trap: Endless retries on a non-transient schema conflict waste vast tokens and logs without ever succeeding."
+      },
+      {
+        "text": "Define strict escalation limits: if a tool error indicates a non-transient database collision, halt the retry loop immediately, preserve the session, and escalate to a human DBA.",
+        "isCorrect": true,
+        "explanation": "Auth/schema collisions are non-transient. Immediate halting and human escalation is the only robust way to resolve them without endless loop stalls."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6236,14 +6323,14 @@ const CCAF_DATABASE = [
     "question": "Which Anthropic-specific optimization strategy will minimize these prefill token costs?",
     "options": [
       {
-        "text": "Hardcode the entire document directly inside questions.js. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
-        "isCorrect": false,
-        "explanation": "Trap: Storing documents in the static questions database has no integration with Claude's live API prefill caching system."
-      },
-      {
         "text": "Place the entire static reference document at the very beginning of the prompt chain, and flag it with the Prompt Caching block (`\"cache_control\": {\"type\": \"ephemeral\"}`).",
         "isCorrect": true,
         "explanation": "Leveraging Anthropic's Prompt Caching (by placing static reference docs first and adding the cache_control block) drastically reduces prefill costs by reusing the cached segment."
+      },
+      {
+        "text": "Hardcode the entire document directly inside questions.js. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
+        "isCorrect": false,
+        "explanation": "Trap: Storing documents in the static questions database has no integration with Claude's live API prefill caching system."
       },
       {
         "text": "Convert the reference document to a highly compressed markdown format to reduce character count.",
@@ -6251,7 +6338,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Markdown compression has negligible cost reduction compared to the massive savings of reusing cached prefixes."
       },
       {
-        "text": "Clear the conversation history after every message and force the user to upload the document again to minimize active context window usage.",
+        "text": "Clear the conversation history after every message and force the user to upload the document again to minimize active context window usage. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
         "isCorrect": false,
         "explanation": "Trap: Forcing the user to re-upload a massive document destroys the conversational user experience and still consumes huge prefill tokens."
       }
@@ -6265,14 +6352,9 @@ const CCAF_DATABASE = [
     "question": "Which design pattern is the most robust self-improvement loop for this pipeline?",
     "options": [
       {
-        "text": "Set the model temperature to 1.0 during retries. This operational model defines strict error backoff parameters across asynchronous remote procedure execution loops. This execution design mandates robust state checkpointing to gracefully recover from non-deterministic sub-agent timeouts.",
+        "text": "Set the model temperature to 1.0 during retries. Implementing sliding-window context pruning prevents token window overflow during long runs.",
         "isCorrect": false,
-        "explanation": "Trap: High temperature increases randomness, worsening the chance of generating clean, compiling code. This pattern is strictly discouraged in high-throughput enterprise deployments. Embedding raw database tables directly into static system instructions."
-      },
-      {
-        "text": "Widen the context window of the model to maximum capacity, to ensure that the active conversation context does not exceed the model's raw output token limit.",
-        "isCorrect": false,
-        "explanation": "Trap: Context window capacity does not execute compiler commands or trigger self-correction. Which reduces downstream prefill token consumption and optimizes overall monthly token quota usage."
+        "explanation": "Trap: High temperature increases randomness, worsening the chance of generating clean, compiling code. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Implement a validation-retry loop: if compile fails, append the compiler error details inside a <compiler-error> tag to the agent's conversation history, and ask the agent to self-correct.",
@@ -6280,9 +6362,14 @@ const CCAF_DATABASE = [
         "explanation": "Feeding compiler errors back to the model in a structured multi-turn message history is the most effective way to enable autonomous self-correction. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Configure the pipeline to ignore compile errors and proceed to the next file.",
+        "text": "Widen the context window of the model to maximum capacity. Fallback deflection mechanisms maintain user engagement when all automated retries fail.",
         "isCorrect": false,
-        "explanation": "Trap: Ignoring compile errors leads to silent codebase corruption and broken releases. Embedding raw database tables directly into static system instructions."
+        "explanation": "Trap: Context window capacity does not execute compiler commands or trigger self-correction."
+      },
+      {
+        "text": "Configure the pipeline to ignore compile errors and proceed to the next file. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
+        "isCorrect": false,
+        "explanation": "Trap: Ignoring compile errors leads to silent codebase corruption and broken releases."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6294,24 +6381,24 @@ const CCAF_DATABASE = [
     "question": "Which security safeguard pattern is most robust?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity, to ensure that the active conversation context does not exceed the model's raw output token limit.",
+        "text": "Widen the context window of the model to maximum capacity. Implementing sliding-window context pruning prevents token window overflow during long runs.",
         "isCorrect": false,
         "explanation": "Trap: Context window capacity does not prevent prompt injection or secure tool execution."
       },
       {
-        "text": "Write a system prompt telling the agent to never delete files, implementing sliding-window context pruning to dynamically discard historical turns and maintain state compactness.",
+        "text": "Write a system prompt telling the agent to never delete files. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
         "isCorrect": false,
-        "explanation": "Trap: Prompts are easily bypassed via direct injection attacks, exposing the filesystem. Embedding raw database tables directly into static system instructions."
-      },
-      {
-        "text": "Set the model temperature to 0.0, maintaining unconstrained autonomous loops across background processes. This architectural layout enforces immutable audit ledgers across distributed persistent state management layers.",
-        "isCorrect": false,
-        "explanation": "Trap: Temperature does not validate file paths or block destructive terminal commands."
+        "explanation": "Trap: Prompts are easily bypassed via direct injection attacks, exposing the filesystem."
       },
       {
         "text": "Implement an input validation hook at the SDK tool execution layer: before the filesystem tool deletes a folder, run a local regex scanner. If a destructive pattern is found, reject the execution immediately.",
         "isCorrect": true,
         "explanation": "An input validation hook at the tool layer is an unbypassable security gate that guarantees filesystem safety, completely independent of LLM behavior."
+      },
+      {
+        "text": "Set the model temperature to 0.0. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature does not validate file paths or block destructive terminal commands."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6323,24 +6410,24 @@ const CCAF_DATABASE = [
     "question": "What is the best validation gate pattern for this pipeline?",
     "options": [
       {
-        "text": "Implement a static JSON validation gate inside the tool layer: before the data is passed, run a local JSON parser against the output buffer. If parsing fails, throw a validation exception and trigger a retry loop.",
-        "isCorrect": true,
-        "explanation": "A programmatic static JSON parser gate at the tool layer is an unbypassable validation measure that guarantees data integrity before downstream propagation."
-      },
-      {
-        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
+        "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting. Implementing sliding-window context pruning prevents token window overflow during long runs.",
         "isCorrect": false,
         "explanation": "Trap: Agents are highly prone to missing subtle syntax errors (like missing commas or brackets) during conversational passes."
       },
       {
-        "text": "Set the model temperature to 0.0, to ensure that the active conversation context does not exceed the model's raw output token limit.",
+        "text": "Set the model temperature to 0.0. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors. Which reduces downstream prefill token consumption and optimizes overall monthly token quota usage."
+        "explanation": "Trap: Temperature does not validate JSON syntax or catch parsing errors."
       },
       {
-        "text": "Implement an interval cron validation check on the server. This architectural layout enforces immutable audit ledgers across distributed persistent state management layers. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
+        "text": "Implement an interval cron validation check on the server. Fallback deflection mechanisms maintain user engagement when all automated retries fail.",
         "isCorrect": false,
-        "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes. Which reduces downstream prefill token consumption and optimizes overall monthly token quota usage."
+        "explanation": "Trap: Post-execution cron checks only detect errors *after* they have already been passed, exposing downstream systems to crashes."
+      },
+      {
+        "text": "Implement a static JSON validation gate inside the tool layer: before the data is passed, run a local JSON parser against the output buffer. If parsing fails, throw a validation exception and trigger a retry loop.",
+        "isCorrect": true,
+        "explanation": "A programmatic static JSON parser gate at the tool layer is an unbypassable validation measure that guarantees data integrity before downstream propagation."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6352,24 +6439,24 @@ const CCAF_DATABASE = [
     "question": "Which prompt construction pattern will optimize the hit rate for these snippets?",
     "options": [
       {
-        "text": "Widen the context window of the model to maximum capacity. This architectural layout enforces immutable audit ledgers across distributed persistent state management layers.",
-        "isCorrect": false,
-        "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates. Embedding raw database tables directly into static system instructions. To minimize API usage costs."
-      },
-      {
         "text": "Format the retrieved snippets cleanly inside structured <context> tag pairs, place them at the top of the context, and place the dynamic user query at the very end.",
         "isCorrect": true,
         "explanation": "Prompt Caching requires prefix matching. Keeping the large static segments at the beginning and dynamic queries at the end maximizes the cached prefix size."
       },
       {
-        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context.",
+        "text": "Widen the context window of the model to maximum capacity. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
         "isCorrect": false,
-        "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate. Embedding raw database tables directly into static system instructions. To minimize API usage costs."
+        "explanation": "Trap: Context window capacity has no bearing on prefix matching logic or hit rates."
       },
       {
-        "text": "Set the temperature to 0.0 to make prompt generation more deterministic. This execution design mandates robust state checkpointing to gracefully recover from non-deterministic sub-agent timeouts.",
+        "text": "Inject a dynamic timestamp at the top of every prompt to ensure fresh context. Fallback deflection mechanisms maintain user engagement when all automated retries fail.",
         "isCorrect": false,
-        "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic. Embedding raw database tables directly into static system instructions."
+        "explanation": "Trap: Placing dynamic elements like timestamps at the top invalidates the entire downstream cache block on every turn, nuking the hit rate."
+      },
+      {
+        "text": "Set the temperature to 0.0 to make prompt generation more deterministic.",
+        "isCorrect": false,
+        "explanation": "Trap: Temperature controls model output generation, not prompt input caching prefix logic."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6383,12 +6470,7 @@ const CCAF_DATABASE = [
       {
         "text": "Set the reasoning temperature of all agents to 0.0.",
         "isCorrect": false,
-        "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. This pattern is strictly discouraged in high-throughput enterprise deployments. Embedding raw database tables directly into static system instructions."
-      },
-      {
-        "text": "Store formatting rules in in-memory cache. This operational model defines strict error backoff parameters across asynchronous remote procedure execution loops. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
-        "isCorrect": false,
-        "explanation": "Trap: LocalStorage is browser-based and has no integration with Claude Code formatting engines. Embedding raw database tables directly into static system instructions."
+        "explanation": "Trap: Determinism does not guarantee formatting compliance without a validation rule. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
         "text": "Register an automated pre-commit hook or a custom linter command inside `CLAUDE.md`, directing the client to run this check before applying any filesystem writes.",
@@ -6396,9 +6478,14 @@ const CCAF_DATABASE = [
         "explanation": "Automating style checks via custom commands or pre-commit integrations inside `CLAUDE.md` ensures the agent self-corrects style errors before committing files. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly.",
+        "text": "Store formatting rules in in-memory cache. Fallback deflection mechanisms maintain user engagement when all automated retries fail.",
         "isCorrect": false,
-        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate. Embedding raw database tables directly into static system instructions."
+        "explanation": "Trap: In-memory cache is browser-based and has no integration with Claude Code formatting engines."
+      },
+      {
+        "text": "Write a system prompt telling the agent to always follow XML guidelines strictly. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
+        "isCorrect": false,
+        "explanation": "Trap: LLMs are highly prone to silent style violations without an explicit validation check gate."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6410,24 +6497,24 @@ const CCAF_DATABASE = [
     "question": "Which architectural pattern is the most robust way to integrate Human-in-the-Loop (HITL) control?",
     "options": [
       {
-        "text": "Set the model temperature to 0.0, implementing sliding-window context pruning to dynamically discard historical turns and maintain state compactness.",
+        "text": "Set the model temperature to 0.0. Implementing sliding-window context pruning prevents token window overflow during long runs.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls text variation, not tool scoping or execution security."
       },
       {
-        "text": "Disable all high-risk tools entirely in the workspace, maintaining unconstrained autonomous loops across background processes.",
+        "text": "Disable all high-risk tools entirely in the workspace.",
         "isCorrect": false,
         "explanation": "Trap: Disabling the tools prevents the agent from ever executing valid user-requested actions, rendering it incomplete."
-      },
-      {
-        "text": "Write a system prompt telling the agent to always ask the user before executing high-risk tools, to ensure that the active conversation context does not exceed the model's raw output token limit.",
-        "isCorrect": false,
-        "explanation": "Trap: Prompts are steerable guidelines, not hard security gates. An agent can still hallucinate or be manipulated into executing the tool. To minimize API usage costs."
       },
       {
         "text": "Implement a strict tool execution interceptor: at the SDK layer, high-risk tools are flagged. Execution pauses, serializes state, and waits for an external API confirmation signature.",
         "isCorrect": true,
         "explanation": "An interceptor at the tool layer is a hard programmatic gate that guarantees high-risk actions are blocked until an explicit user signature is provided."
+      },
+      {
+        "text": "Write a system prompt telling the agent to always ask the user before executing high-risk tools. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
+        "isCorrect": false,
+        "explanation": "Trap: Prompts are steerable guidelines, not hard security gates. An agent can still hallucinate or be manipulated into executing the tool."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6439,24 +6526,24 @@ const CCAF_DATABASE = [
     "question": "Which prompting pattern will handle large context extraction tasks most gracefully?",
     "options": [
       {
-        "text": "Instruct the model inside <instructions> to limit the number of extractions per turn, and implement a multi-turn pagination loop that requests the next batch in subsequent turns.",
-        "isCorrect": true,
-        "explanation": "Enforcing extraction limits per turn and using a multi-turn pagination loop is the most reliable way to handle large data extraction without hitting output limits. This structured approach establishes clear architectural guardrails across operational boundaries."
-      },
-      {
-        "text": "Set the temperature to 0.8 to encourage more creative formatting, implementing sliding-window context pruning to dynamically discard historical turns and maintain state compactness.",
+        "text": "Set the temperature to 0.8 to encourage more creative formatting. Implementing sliding-window context pruning prevents token window overflow during long runs.",
         "isCorrect": false,
         "explanation": "Trap: Temperature controls creativity, not token output limits or formatting constraints. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Instruct the model to write in highly compressed, single-line JSON strings. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
+        "text": "Instruct the model to write in highly compressed, single-line JSON strings. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
         "isCorrect": false,
         "explanation": "Trap: Single-line compression is unreadable, error-prone, and does not resolve the underlying output limit constraint."
       },
       {
-        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times.",
+        "text": "Wrap the entire extraction task in a single try-catch loop that retries up to 10 times. Fallback deflection mechanisms maintain user engagement when all automated retries fail.",
         "isCorrect": false,
-        "explanation": "Trap: Retrying the exact same large task will result in the same truncation error, wasting tokens. Embedding raw database tables directly into static system instructions. To minimize API usage costs."
+        "explanation": "Trap: Retrying the exact same large task will result in the same truncation error, wasting tokens."
+      },
+      {
+        "text": "Instruct the model inside <instructions> to limit the number of extractions per turn, and implement a multi-turn pagination loop that requests the next batch in subsequent turns.",
+        "isCorrect": true,
+        "explanation": "Enforcing extraction limits per turn and using a multi-turn pagination loop is the most reliable way to handle large data extraction without hitting output limits. This structured approach establishes clear architectural guardrails across operational boundaries."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6468,24 +6555,24 @@ const CCAF_DATABASE = [
     "question": "What is the most effective prompt structure for this validation-retry loop?",
     "options": [
       {
-        "text": "Manually edit the brackets in the local script instead of calling the API again. This operational model defines strict error backoff parameters across asynchronous remote procedure execution loops. This execution design mandates robust state checkpointing to gracefully recover from non-deterministic sub-agent timeouts.",
-        "isCorrect": false,
-        "explanation": "Trap: Manual string hacking is fragile and fails when the model generates complex, nested XML schema errors. Embedding raw database tables directly into static system instructions."
-      },
-      {
         "text": "Create a multi-turn message history: append the model's invalid XML, add a user message containing the exact validation error inside a <validation-error> tag, and instruct the model to fix its schema.",
         "isCorrect": true,
         "explanation": "Leveraging conversational message history to feed back structured errors inside XML tags is the canonical way to enable self-correction with high success rates."
       },
       {
-        "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations.",
+        "text": "Manually edit the brackets in the local script instead of calling the API again. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
         "isCorrect": false,
-        "explanation": "Trap: High temperature during retries increases the likelihood of generating new, unrelated syntax errors. Embedding raw database tables directly into static system instructions."
+        "explanation": "Trap: Manual string hacking is fragile and fails when the model generates complex, nested XML schema errors."
       },
       {
-        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt.",
+        "text": "Increase the temperature to 1.0 in the retry prompt to encourage different code representations.",
         "isCorrect": false,
-        "explanation": "Trap: Swapping contexts in a new single-turn request loses the model's original generation path, making self-correction much harder. Embedding raw database tables directly into static system instructions."
+        "explanation": "Trap: High temperature during retries increases the likelihood of generating new, unrelated syntax errors."
+      },
+      {
+        "text": "Run a new, independent single-turn API request containing the original prompt and the error message appended to the system prompt. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
+        "isCorrect": false,
+        "explanation": "Trap: Swapping contexts in a new single-turn request loses the model's original generation path, making self-correction much harder."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6502,17 +6589,17 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Exclusively routing all common, simple requests to Claude 3.5 Sonnet unnecessarily inflates operational API billing costs across high-volume traffic. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Increase the temperature parameter on the Haiku endpoint to 0.9 during failure loops to encourage alternative syntax generation patterns across retries.",
-        "isCorrect": false,
-        "explanation": "Trap: Increasing temperature raises stochastic randomness, which actively degrades structured programming syntax accuracy during complex code refactoring."
-      },
-      {
         "text": "Implement a Fallback Cascade: attempt execution with Haiku first; if local linter validation fails on complex tasks, escalate the request to Claude 3.5 Sonnet.",
         "isCorrect": true,
         "explanation": "Integrating a Fallback Cascade allows the application to resolve the vast majority of requests cost-effectively via Haiku while reserving the higher reasoning capabilities of Sonnet for complex tasks."
       },
       {
-        "text": "Execute a parallel worker pattern that invokes both Haiku and Sonnet simultaneously on every user request and selects the faster response to minimize latency. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
+        "text": "Increase the temperature parameter on the Haiku endpoint to 0.9 during failure loops to encourage alternative syntax generation patterns across retries.",
+        "isCorrect": false,
+        "explanation": "Trap: Increasing temperature raises stochastic randomness, which actively degrades structured programming syntax accuracy during complex code refactoring."
+      },
+      {
+        "text": "Execute a parallel worker pattern that invokes both Haiku and Sonnet simultaneously on every user request and selects the faster response to minimize latency. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
         "isCorrect": false,
         "explanation": "Trap: Simultaneously firing both models on every request incurs redundant API token usage, doubling billing costs and wasting processing budget."
       }
@@ -6531,19 +6618,19 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Completely purging session buffers discards essential tracking variables and historical build context, destroying workflow continuity. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
-        "text": "Increase the allocated operating system process memory limit to 16GB to ensure the host server environment can accommodate massive context array allocations. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
+        "text": "Increase the allocated operating system process memory limit to 16GB to ensure the host server environment can accommodate massive context array allocations. Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
         "isCorrect": false,
         "explanation": "Trap: Expanding operating system RAM merely delays the inevitable; once the active prompt token length exceeds the API context window limit, the request will fail."
-      },
-      {
-        "text": "Configure the SDK client wrapper to execute exponential backoff retries whenever a context overflow error occurs to bypass transient memory buffer pressure.",
-        "isCorrect": false,
-        "explanation": "Trap: Context window overflow is a deterministic, hard API limitation, not a transient network glitch; retrying the exact same massive prompt will fail continuously."
       },
       {
         "text": "Implement dynamic context pruning using a sliding window: periodically compile older conversational turns into a compact summary while keeping recent turns intact.",
         "isCorrect": true,
         "explanation": "Dynamic context pruning via sliding window summarization preserves vital systemic history while capping total token counts, guaranteeing long-term daemon stability."
+      },
+      {
+        "text": "Configure the SDK client wrapper to execute exponential backoff retries whenever a context overflow error occurs to bypass transient memory buffer pressure.",
+        "isCorrect": false,
+        "explanation": "Trap: Context window overflow is a deterministic, hard API limitation, not a transient network glitch; retrying the exact same massive prompt will fail continuously."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6554,11 +6641,6 @@ const CCAF_DATABASE = [
     "scenario": "An enterprise automated orchestration system makes frequent calls to the Anthropic API. During massive traffic surges, the API occasionally returns non-200 HTTP status codes. The client application treats all error codes identically, immediately retrying requests without pausing, which results in persistent connection failures and complete pipeline stalls.",
     "question": "How should the client network layer distinguish and handle API overload and throttling errors?",
     "options": [
-      {
-        "text": "Differentiate error codes: implement exponential backoff with jitter for 429 Too Many Requests, and execute longer backoff delays for 529 Overloaded error codes.",
-        "isCorrect": true,
-        "explanation": "Proper API network reliability design requires differentiating 429 rate limits (using standard exponential backoff plus jitter) from 529 server overload errors (requiring wider fallback delays)."
-      },
       {
         "text": "Treat all HTTP 4xx and 5xx errors as transient connection anomalies and execute immediate parallel retry loops across secondary organization API keys to bypass overarching rate limits.",
         "isCorrect": false,
@@ -6573,6 +6655,11 @@ const CCAF_DATABASE = [
         "text": "Configure the client network wrapper to extend HTTP connection timeout deadlines to 300 seconds to allow upstream cloud gateway servers ample time to recover.",
         "isCorrect": false,
         "explanation": "Trap: Extending connection timeouts holds local thread sockets open indefinitely without resolving active rate-limit throttling blocks."
+      },
+      {
+        "text": "Differentiate error codes: implement exponential backoff with jitter for 429 Too Many Requests, and execute longer backoff delays for 529 Overloaded error codes.",
+        "isCorrect": true,
+        "explanation": "Proper API network reliability design requires differentiating 429 rate limits (using standard exponential backoff plus jitter) from 529 server overload errors (requiring wider fallback delays)."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6584,17 +6671,17 @@ const CCAF_DATABASE = [
     "question": "Which architectural pattern provides the most robust access control for high-risk operations?",
     "options": [
       {
-        "text": "Write explicit system instructions telling the agent to always verify authorization credentials before executing any configuration commands across the active server clusters. This operational model defines strict error backoff parameters across asynchronous remote procedure execution loops. This strategy enforces strict sliding-window context pruning to prevent working memory allocation failures.",
-        "isCorrect": false,
-        "explanation": "Trap: Instructions are steerable prompts, not hard access control gates. Agents can hallucinate or bypass prompt restrictions. This pattern is strictly discouraged in high-throughput enterprise deployments."
-      },
-      {
-        "text": "Implement a dedicated approval interceptor within the tool execution layer that automatically halts routing workflows and enforces cryptographic two-party authentication. This execution design mandates robust state checkpointing to gracefully recover from non-deterministic sub-agent timeouts.",
+        "text": "Implement a dedicated approval interceptor within the tool execution layer that automatically halts routing workflows and enforces cryptographic two-party authentication. Implementing sliding-window context pruning prevents token window overflow during long runs.",
         "isCorrect": true,
         "explanation": "A tool interceptor enforcing external cryptographic two-party authentication is an unbypassable programmatic gate that guarantees operational security. This structured approach establishes clear architectural guardrails across operational boundaries."
       },
       {
-        "text": "Configure the model temperature to zero to eliminate non-deterministic reasoning steps and guarantee that standard operating procedures are perfectly adhered to during network spikes.",
+        "text": "Write explicit system instructions telling the agent to always verify authorization credentials before executing any configuration commands across the active server clusters.",
+        "isCorrect": false,
+        "explanation": "Trap: Instructions are steerable prompts, not hard access control gates. Agents can hallucinate or bypass prompt restrictions. This pattern is strictly discouraged in high-throughput enterprise deployments."
+      },
+      {
+        "text": "Configure the model temperature to zero to eliminate non-deterministic reasoning steps and guarantee that standard operating procedures are perfectly adhered to during network spikes. Fallback deflection mechanisms maintain user engagement when all automated retries fail.",
         "isCorrect": false,
         "explanation": "Trap: Temperature governs token probability distribution, not authorization checking or tool scoping."
       },
@@ -6618,14 +6705,14 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Lossy shorthand compression reduces necessary log context and does not resolve the absolute output token limit constraint."
       },
       {
-        "text": "Configure the reasoning agent to utilize prompt caching for massive static reference tables kept exclusively at the very beginning of the message chain to reduce prefill costs.",
-        "isCorrect": false,
-        "explanation": "Trap: Prompt caching optimizes input prefill token costs but has no bearing on output generation truncation limits."
-      },
-      {
         "text": "Enforce explicit block limits inside structured instructions and implement an automated pagination loop to request subsequent log batches across multiple sequential turns.",
         "isCorrect": true,
         "explanation": "Enforcing block limits per turn combined with an automated multi-turn pagination loop is the canonical pattern for processing massive contexts without truncation."
+      },
+      {
+        "text": "Configure the reasoning agent to utilize prompt caching for massive static reference tables kept exclusively at the very beginning of the message chain to reduce prefill costs.",
+        "isCorrect": false,
+        "explanation": "Trap: Prompt caching optimizes input prefill token costs but has no bearing on output generation truncation limits."
       },
       {
         "text": "Increase the downstream context window allocation to maximum capacity and instruct the model to execute parallel data reduction algorithms across the incoming log streams.",
@@ -6652,14 +6739,14 @@ const CCAF_DATABASE = [
         "explanation": "Trap: String manipulation heuristics are brittle and fail when dealing with complex or nested configuration schema anomalies."
       },
       {
-        "text": "Increase model creativity parameters during retry attempts to encourage alternate syntactic representations and prevent cyclical re-evaluations of identical code blocks.",
-        "isCorrect": false,
-        "explanation": "Trap: Increasing creativity (temperature) introduces syntactic randomness, significantly increasing the likelihood of further linter syntax failures."
-      },
-      {
         "text": "Preserve the multi-turn conversation history, append the invalid manifest, inject the exact linter exception inside an explicit error tag, and prompt for self-correction.",
         "isCorrect": true,
         "explanation": "Maintaining multi-turn conversation history and injecting structured linter feedback inside explicit XML error tags provides maximum context for flawless autonomous self-correction."
+      },
+      {
+        "text": "Increase model creativity parameters during retry attempts to encourage alternate syntactic representations and prevent cyclical re-evaluations of identical code blocks.",
+        "isCorrect": false,
+        "explanation": "Trap: Increasing creativity (temperature) introduces syntactic randomness, significantly increasing the likelihood of further linter syntax failures."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6670,11 +6757,6 @@ const CCAF_DATABASE = [
     "scenario": "You are designing an enterprise batch ETL pipeline using Claude. The assistant extracts complex invoicing data from OCR text and returns it as a JSON array. You must verify JSON schema structural compliance before passing to downstream billing microservices.",
     "question": "What is the best validation gate pattern for this pipeline?",
     "options": [
-      {
-        "text": "Implement a static JSON validation gate inside the tool layer: before data propagates, execute a local schema validator against the buffer to guarantee structural integrity.",
-        "isCorrect": true,
-        "explanation": "A programmatic static JSON validator gate at the tool execution layer provides absolute structural verification before downstream billing propagation."
-      },
       {
         "text": "Instruct the agent in the system prompt to always verify if the JSON is valid before outputting to downstream parsers.",
         "isCorrect": false,
@@ -6689,6 +6771,11 @@ const CCAF_DATABASE = [
         "text": "Implement an interval cron validation check on the server to periodically audit logs and detect corrupted JSON payloads after execution, triggering automated rollbacks.",
         "isCorrect": false,
         "explanation": "Trap: Asynchronous cron audits only discover malformed payloads after they have already propagated to billing microservices, causing downstream service exceptions."
+      },
+      {
+        "text": "Implement a static JSON validation gate inside the tool layer: before data propagates, execute a local schema validator against the buffer to guarantee structural integrity.",
+        "isCorrect": true,
+        "explanation": "A programmatic static JSON validator gate at the tool execution layer provides absolute structural verification before downstream billing propagation."
       }
     ],
     "reference": "https://claude.com/docs"
@@ -6700,14 +6787,14 @@ const CCAF_DATABASE = [
     "question": "What is the most reliable memory-management strategy to prevent context window overflow?",
     "options": [
       {
-        "text": "Set the model's output token parameter to its absolute maximum limit to allow longer chat logs to fit in memory. This architectural layout enforces immutable audit ledgers across distributed persistent state management layers.",
-        "isCorrect": false,
-        "explanation": "Trap: Output parameters govern generated tokens, not the input dynamic context window memory capacity. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
-      },
-      {
-        "text": "Implement a rolling summarization gate: summarize historical turns while keeping recent turns intact. This execution design mandates robust state checkpointing to gracefully recover from non-deterministic sub-agent timeouts.",
+        "text": "Implement a rolling summarization gate: summarize historical turns while keeping recent turns intact. Implementing sliding-window context pruning prevents token window overflow during long runs.",
         "isCorrect": true,
         "explanation": "A rolling summarizer compiles long histories, keeping current conversation windows clean and small. This structured approach establishes clear architectural guardrails across operational boundaries."
+      },
+      {
+        "text": "Set the model's output token parameter to its absolute maximum limit to allow longer chat logs to fit in memory.",
+        "isCorrect": false,
+        "explanation": "Trap: Output parameters govern generated tokens, not the input dynamic context window memory capacity. This pattern is strictly discouraged in high-throughput enterprise deployments. This operational alternative introduces severe performance bottlenecks and networking layer latency."
       },
       {
         "text": "Instruct the model in its system guidelines to automatically forget ancient details when it senses memory pressure.",
@@ -6715,7 +6802,7 @@ const CCAF_DATABASE = [
         "explanation": "Trap: Models have zero direct controls over active environment context sizes. This pattern is strictly discouraged in high-throughput enterprise deployments."
       },
       {
-        "text": "Periodically clear the entire chat context and prompt cache, starting the conversation over from scratch. This execution design mandates robust state checkpointing to gracefully recover from non-deterministic sub-agent timeouts.",
+        "text": "Periodically clear the entire chat context and prompt cache, starting the conversation over from scratch. Static validation gates at the tool execution layer ensure strict JSON structural integrity.",
         "isCorrect": false,
         "explanation": "Trap: Wiping context discards crucial state variables, destroying session memory continuities. This pattern is strictly discouraged in high-throughput enterprise deployments."
       }
@@ -6729,19 +6816,19 @@ const CCAF_DATABASE = [
     "question": "What is the most robust orchestration pattern for this gate?",
     "options": [
       {
-        "text": "Instruct the agent in the system instructions to ask the user Are you sure? in the chat before writing to files.",
+        "text": "Instruct the agent in the system instructions to ask the user Are you sure? in the chat before writing to files. Implementing sliding-window context pruning prevents token window overflow during long runs.",
         "isCorrect": false,
         "explanation": "Trap: Conversational prompts carry weak execution guarantees compared to unbypassable code-level approval middleware."
-      },
-      {
-        "text": "Lower the temperature to 0.0. This operational model defines strict error backoff parameters across asynchronous remote procedure execution loops.",
-        "isCorrect": false,
-        "explanation": "Trap: Deterministic models still make catastrophic coding errors, requiring strict human oversight."
       },
       {
         "text": "Intercept destructive tools, generate a diff, pause tool execution, and resume only upon positive human approval.",
         "isCorrect": true,
         "explanation": "A coded HITL middleware gate that blocks actions pending human verification is the ultimate security pattern."
+      },
+      {
+        "text": "Lower the temperature to 0.0.",
+        "isCorrect": false,
+        "explanation": "Trap: Deterministic models still make catastrophic coding errors, requiring strict human oversight."
       },
       {
         "text": "Implement an offline cron audit check that logs all destructive edits to a server file for later review.",
@@ -6822,98 +6909,16 @@ const CCAF_DATABASE = [
     "source": "guide"
   },
   {
-    "id": "CCAF-1-210",
-    "domain": 1,
-    "scenario": "You are architecting a long-running multi-agent workflow utilizing Claude Sonnet 4.6 and Opus 4.7 across a 1M token context window. The system processes extensive architectural documentation and active execution state. You observe that as agents exchange massive context payloads over extended multi-turn sessions, prompt cache hit rates degrade significantly due to frequent dynamic state updates interleaving with static instructions.",
-    "question": "What is the most architecturally effective strategy to maintain high prompt cache hit rates across the 1M token context window?",
-    "options": [
-      {
-        "text": "Isolate all static architectural documentation at the absolute beginning of the prompt payload with explicit cache_control blocks and append dynamic execution state strictly at the end of the context window.",
-        "isCorrect": true,
-        "explanation": "In Claude Sonnet 4.6 and Opus 4.7, prompt caching operates via prefix matching across the 1M token window. Placing static content at the beginning with explicit cache_control blocks preserves cache validity across multi-turn interactions. Appending dynamic execution state at the end prevents prefix invalidation."
-      },
-      {
-        "text": "Rely entirely on automatic prompt caching without explicit declarations and interleave dynamic state updates directly within the static documentation sections to maintain chronological execution alignment.",
-        "isCorrect": false,
-        "explanation": "Trap: Interleaving dynamic state updates within static documentation immediately invalidates the prompt cache prefix at the point of modification. Automatic caching without explicit structuring cannot preserve prefix matches when the early context changes continuously."
-      },
-      {
-        "text": "Partition the 1M token context window into multiple small 100k token blocks and assign an automatic cache_control header to every individual dynamic state message generated by the specialized sub-agents.",
-        "isCorrect": false,
-        "explanation": "Trap: Assigning cache_control headers to frequently changing dynamic messages exhausts the maximum allowable cache breakpoints (typically 4 in Claude architectures) and causes continuous cache evictions rather than hits."
-      },
-      {
-        "text": "Configure the orchestration layer to dynamically compress all architectural documentation into brief markdown summaries before every single turn and disable prompt caching entirely across the multi-agent workflow.",
-        "isCorrect": false,
-        "explanation": "Trap: Disabling prompt caching and compressing documentation destroys the high-fidelity context required by Opus 4.7 and increases latency and token costs by forcing the model to re-evaluate the entire prompt on every turn."
-      }
-    ],
-    "reference": "https://docs.anthropic.com/en/docs/build-with-claude/prompt-caching"
-  },
-  {
-    "id": "CCAF-2-210",
-    "domain": 2,
-    "scenario": "You are directing a cross-repository refactoring operation spanning 40 interconnected microservices using Claude Code. The refactoring involves complex dependency updates and deep architectural shifts across multiple sessions. You need to ensure that Claude Code maintains accurate architectural context between sessions while safely executing multi-repo modifications without stalling on routine permission prompts or executing unvetted high-risk shell commands.",
-    "question": "How should you configure Claude Code to curate between-session memory and manage autonomous execution boundaries safely?",
-    "options": [
-      {
-        "text": "Disable Dreaming to conserve local memory storage and enable unrestrained Auto Mode across all 40 repositories with a wildcard permission flag and skip all interactive user confirmation prompts.",
-        "isCorrect": false,
-        "explanation": "Trap: Enabling unrestrained Auto Mode with wildcard permissions introduces severe security risks by allowing unvetted arbitrary command execution across 40 repositories. Disabling Dreaming destroys between-session memory curation."
-      },
-      {
-        "text": "Enable Claude Code Dreaming to autonomously synthesize and curate architectural insights between sessions and configure Auto Mode with a strict whitelist of permitted refactoring actions and high-risk halts.",
-        "isCorrect": true,
-        "explanation": "Claude Code's Dreaming feature curates and consolidates cross-session memory and architectural context during idle periods. Configuring Auto Mode with an explicit whitelist allows autonomous execution of routine refactoring tasks while enforcing safe interactive halts for high-risk system commands."
-      },
-      {
-        "text": "Force Claude Code to execute in pure interactive mode without Auto Mode and write a custom pre-commit bash script that manually injects the complete git commit history of all 40 repositories into CLAUDE.md.",
-        "isCorrect": false,
-        "explanation": "Trap: Injecting the complete commit history of 40 repositories into CLAUDE.md causes massive context window bloat and excessive token consumption. Running without Auto Mode severely degrades developer velocity during large-scale refactoring."
-      },
-      {
-        "text": "Configure Claude Code to store session logs in a shared cloud bucket without Dreaming synthesis and set Auto Mode to automatically execute all terminal commands unless the command contains a deletion flag.",
-        "isCorrect": false,
-        "explanation": "Trap: Storing raw session logs without Dreaming synthesis fails to curate actionable architectural memory. Allowing Auto Mode to execute all non-deletion commands fails to guard against other destructive actions like arbitrary code execution or network transmissions."
-      }
-    ],
-    "reference": "https://code.claude.com/docs/en/overview"
-  },
-  {
-    "id": "CCAF-4-210",
-    "domain": 4,
-    "scenario": "You are architecting a real-time observability and root-cause analysis agent for a cloud-native microservices platform under Agentic AI Foundation (AAIF) governance standards. The agent must monitor production telemetry and logs continuously. Traditional HTTP request-response tool polling causes unacceptable latency spikes and misses critical transient error anomalies during high-throughput system failures.",
-    "question": "How should you architect the tool interface to establish real-time observability under MCP 2.3 specification standards?",
-    "options": [
-      {
-        "text": "Implement a client-side polling loop that invokes traditional MCP 1.0 tool call requests every fifty milliseconds and stores all retrieved production log arrays directly inside the agent context scratchpad.",
-        "isCorrect": false,
-        "explanation": "Trap: High-frequency polling under legacy MCP 1.0 protocols creates immense networking overhead, exhausts rate limits, and balloons the context window with redundant log arrays. This pattern violates AAIF efficiency guidelines."
-      },
-      {
-        "text": "Deploy an external cron job that aggregates telemetry into static files every minute and configure an MCP tool to upload the aggregated files into the agent conversation window upon explicit user request.",
-        "isCorrect": false,
-        "explanation": "Trap: Batching telemetry into static files introduces a full minute of latency, completely destroying the real-time observability required for immediate root-cause analysis during high-throughput production failures."
-      },
-      {
-        "text": "Leverage the MCP 2.3 bidirectional streaming specification to establish persistent telemetry subscriptions and stream real-time filtered alerts directly to the agent over an active transport connection.",
-        "isCorrect": true,
-        "explanation": "The MCP 2.3 specification introduces native bidirectional streaming capabilities. Establishing a persistent subscription allows production monitoring systems to stream real-time filtered alerts directly to the agent over active transports (such as WebSockets or advanced stdio), eliminating polling latency and adhering to AAIF real-time governance standards."
-      },
-      {
-        "text": "Bypass the Model Context Protocol entirely and embed direct database connection credentials inside the agent system instructions to let the model execute raw SQL queries on production tables.",
-        "isCorrect": false,
-        "explanation": "Trap: Embedding production database credentials in system instructions and allowing an agent to execute raw SQL queries violates fundamental AAIF security and governance guardrails. MCP exists specifically to decouple agents from raw infrastructure credentials."
-      }
-    ],
-    "reference": "https://modelcontextprotocol.io/introduction"
-  },
-  {
-    "id": "CCAF-5-210",
+    "id": "CCAF-5-023",
     "domain": 5,
     "scenario": "You are deploying Claude's Computer Use capabilities in a desktop automation pipeline for complex graphical workflow execution. The agent interacts with high-resolution desktop interfaces by continuously taking screenshots, analyzing UI elements, and executing virtual mouse/keyboard actions. During prolonged execution, capturing high-resolution images rapidly exhausts the context window and causes severe latency, while unvetted autonomous actions risk executing unintended financial transactions.",
     "question": "How should you architect the Computer Use pipeline to manage visual context efficiently and ensure operational reliability?",
     "options": [
+      {
+        "text": "Leverage prompt caching for base visual context while transmitting optimized delta screenshots and implement strict human-in-the-loop escalation middleware for any irreversible financial transactions.",
+        "isCorrect": true,
+        "explanation": "Using prompt caching for stable desktop backgrounds and transmitting optimized recent screenshots maintains high visual fidelity while drastically reducing token costs and latency. Implementing human-in-the-loop escalation middleware ensures that high-risk, irreversible actions (such as financial transactions) are intercepted for explicit human approval, establishing unassailable operational reliability."
+      },
       {
         "text": "Downscale all desktop screenshots to ultra-low resolutions before transmitting them to Claude and remove all human-in-the-loop escalation gates to allow uninterrupted autonomous execution.",
         "isCorrect": false,
@@ -6928,11 +6933,6 @@ const CCAF_DATABASE = [
         "text": "Configure the pipeline to capture screenshots only once at the beginning of the workflow and force the agent to execute all subsequent mouse and keyboard interactions blindly using static coordinate mapping.",
         "isCorrect": false,
         "explanation": "Trap: Executing mouse and keyboard interactions blindly without continuous visual feedback fails entirely because desktop UIs are dynamic; windows move, loading times vary, and popups appear unexpectedly."
-      },
-      {
-        "text": "Leverage prompt caching for base visual context while transmitting optimized delta screenshots and implement strict human-in-the-loop escalation middleware for any irreversible financial transactions.",
-        "isCorrect": true,
-        "explanation": "Using prompt caching for stable desktop backgrounds and transmitting optimized recent screenshots maintains high visual fidelity while drastically reducing token costs and latency. Implementing human-in-the-loop escalation middleware ensures that high-risk, irreversible actions (such as financial transactions) are intercepted for explicit human approval, establishing unassailable operational reliability."
       }
     ],
     "reference": "https://docs.anthropic.com/en/docs/build-with-claude/computer-use"

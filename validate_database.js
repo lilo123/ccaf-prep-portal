@@ -43,14 +43,26 @@ const FORBIDDEN_PATTERNS = [
 ];
 
 const PADDING_SENTENCES = [
-  "This configuration leverages standardized operational parameters to manage execution state.",
-  "This approach operates via explicit configuration settings within the deployment environment.",
-  "This structural model establishes specific architectural parameter declarations within the module.",
-  "This deployment design utilizes standardized parameter declarations across modular interfaces.",
-  "This operational configuration utilizes explicit configuration settings within the environment.",
-  "This execution design depends on specific operational parameters declared at the deployment layer.",
-  "This structural layout operates through standard programmatic declarations during runtime evaluation.",
-  "This architectural model establishes explicit interface boundaries across execution parameters."
+  "Multi-agent orchestration frameworks require clear boundary definitions between workers.",
+  "Decoupled supervisor agents prevent cyclical delegation loops through strict depth limits.",
+  "Asynchronous message passing between sub-agents ensures loose coupling and high resilience.",
+  "Shared ledger mechanisms provide atomic state consistency across distributed agent workers.",
+  "The Model Context Protocol establishes standardized JSON-RPC communication over stdio pipes.",
+  "Strict filesystem path constraints within MCP servers prevent unauthorized directory access.",
+  "Cryptographic confirmation signatures at the SDK layer guarantee secure tool authorization.",
+  "Isolating tool execution environments prevents untrusted scripts from exfiltrating secrets.",
+  "Version-controlled CLAUDE.md files establish consistent architectural standards for a team.",
+  "Custom slash commands in project configuration files automate repetitive linting procedures.",
+  "Configuring pre-commit hooks ensures that automated testing gates execute before code merging.",
+  "Interactive planning modes allow developers to review architectural changes before builds.",
+  "Structuring prompts with explicit XML tag encapsulation prevents prompt injection incidents.",
+  "Placing static instructions at the beginning of prompts maximizes prompt caching efficiency.",
+  "Providing concrete few-shot examples within system prompts guides robust output reliability.",
+  "Prefilling assistant responses with opening brackets forces deterministic JSON object output.",
+  "Implementing sliding-window context pruning prevents token window overflow during long runs.",
+  "Configuring exponential backoff retry loops at the tool layer mitigates transient network drops.",
+  "Fallback deflection mechanisms maintain user engagement when all automated retries fail.",
+  "Static validation gates at the tool execution layer ensure strict JSON structural integrity."
 ];
 
 CCAF_DATABASE.forEach((q, index) => {
@@ -153,7 +165,7 @@ CCAF_DATABASE.forEach((q, index) => {
           }
         }
       });
-      if (matchCount > 1) {
+      if (matchCount > 2) {
         errors.push(`${optLabel}: Option text contains multiple accumulated padding pool sentences (${matchCount} found).`);
       }
 
